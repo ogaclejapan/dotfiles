@@ -1,0 +1,7 @@
+echo "loading... .bashrc.osx"
+
+# java
+export JAVA_HOME=`/usr/libexec/java_home`
+export JAVA_OPTS='-Dfile.encoding=UTF-8'
+
+
