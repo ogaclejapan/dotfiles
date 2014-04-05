@@ -16,7 +16,7 @@ install git-flow
 install tig
 install hub
 install zsh
-install autojump
+install z
 install tmux
 install byobu
 install ricty

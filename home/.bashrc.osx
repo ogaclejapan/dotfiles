@@ -1,5 +1,18 @@
 echo "loading... .bashrc.osx"
 
+BREW_PREFIX=`brew --prefix`
+
+# z
+if [ -f "${BREW_PREFIX}/etc/profile.d/z.sh" ]; then
+  source $BREW_PREFIX/etc/profile.d/z.sh
+fi
+
+# byobu
+export BYOBU_PREFIX=$BREW_PREFIX
+
+# hub
+eval "$(hub alias -s)"
+
 # java
 export JAVA_HOME=`/usr/libexec/java_home`
 export JAVA_OPTS='-Dfile.encoding=UTF-8'
