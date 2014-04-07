@@ -1,8 +1,5 @@
-# command alias
-alias ls='ls -F'
-alias ll='ls -lF'
-alias la='ls -aF'
-alias df='df -h'
+# load alias
+[ -f ~/.bashrc.alias ] && source ~/.bashrc.alias
 
 # load os settings
 case "${OSTYPE}" in

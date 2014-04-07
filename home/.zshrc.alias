@@ -1,0 +1,5 @@
+# command alias
+alias ls='ls -F'
+alias ll='ls -lF'
+alias la='ls -aF'
+alias df='df -h'

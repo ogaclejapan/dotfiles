@@ -20,4 +20,3 @@ eval "$(hub alias -s)"
 export JAVA_HOME=`/usr/libexec/java_home`
 export JAVA_OPTS='-Dfile.encoding=UTF-8'
 
-
