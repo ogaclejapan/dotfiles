@@ -57,5 +57,5 @@ set nowrap
 set linebreak
 
 " Bundle Settings
-let g:lightline = { 'colorscheme' : 'solarized' }
+"let g:lightline = { 'colorscheme' : 'solarized' }
 

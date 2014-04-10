@@ -7,3 +7,5 @@ colorscheme solarized
 set anti enc=utf-8
 set guifont=Sauce\ Code\ Powerline:h12
 
+" Bundle Settings
+let g:lightline = { 'colorscheme' : 'solarized' }
