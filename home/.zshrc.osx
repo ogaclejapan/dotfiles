@@ -1,5 +1,7 @@
+# __/__/__/__/__/__/__/__/__/__/__/__/__/__/__/
+# __/.zshrc.osx is file to customize for Mac common.
+# __/__/__/__/__/__/__/__/__/__/__/__/__/__/__/
 
-# Homebrew settings
 BREW_PREFIX=`brew --prefix`
 
 # z
@@ -8,7 +10,6 @@ if [ -f "${BREW_PREFIX}/etc/profile.d/z.sh" ]; then
 fi
 
 # rbenv
-export RBENV_ROOT=$BREW_PREFIX/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # hub

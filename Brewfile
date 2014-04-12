@@ -16,6 +16,7 @@ install hub
 install zsh
 install z
 install tmux
+install fish
 install ricty
 install wget
 install curl

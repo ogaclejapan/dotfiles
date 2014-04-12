@@ -1,7 +1,11 @@
-# Custom .zshrc.local
+# __/__/__/__/__/__/__/__/__/__/__/__/__/__/__/
+# __/.zshrc.local is file to customize for local.
+# __/__/__/__/__/__/__/__/__/__/__/__/__/__/__/
 
-# Load os settings
+# Load a OS settings
 case ${OSTYPE} in
   darwin* ) [ -f ~/.zshrc.osx ] && source ~/.zshrc.osx ;;
   linux* ) [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux ;;
 esac
+
+
