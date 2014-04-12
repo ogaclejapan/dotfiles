@@ -1,0 +1,5 @@
+# Custom .zshenv.local
+
+# Java
+export JAVA_OPTS='-Dfile.encoding=UTF-8'
+#export JAVA_HOME=`/usr/libexec/java_home`

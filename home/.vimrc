@@ -32,6 +32,8 @@ set autoread
 set hidden
 
 syntax on
+set laststatus=2
+set background=dark
 
 let mapleader="," 
 

@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="fishy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -14,14 +14,5 @@ plugins=(git z brew)
 
 source $ZSH/oh-my-zsh.sh
 
-# load alias settings
-[ -f ~/.zshrc.alias ] && source ~/.zshrc.alias
-
-# load os settings
-case "${OSTYPE}" in
-  "darwin*" ) [ -f ~/.zshrc.osx ] && source ~/.zshrc.osx ;;
-  "linux*" ) [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux ;;
-esac
-
-# load local settings
+# Load local settings
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
