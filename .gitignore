@@ -2,3 +2,6 @@
 
 .DS_Store
 home/.vim/*
+home/.config/fish
+!home/.config/fish/config.fish
+
