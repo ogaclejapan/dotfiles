@@ -2,7 +2,7 @@
 # __/.zshrc is file to customize for common.
 # __/__/__/__/__/__/__/__/__/__/__/__/__/__/__/
 
-if [ -d "$HOME/.oh-my-zsh" ] then
+if [ -d "$HOME/.oh-my-zsh" ]; then
 
   # Path to your oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
