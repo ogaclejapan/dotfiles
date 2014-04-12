@@ -59,6 +59,3 @@ set listchars=tab:\ \ ,trail:-
 set nowrap
 set linebreak
 
-" Bundle Settings
-let g:lightline = { 'colorscheme' : 'solarized' }
-
