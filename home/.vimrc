@@ -27,7 +27,7 @@ set history=1000
 set showcmd
 set showmode
 set visualbell
-set autoread                 
+set autoread
 
 set hidden
 
@@ -35,7 +35,7 @@ syntax on
 set laststatus=2
 set background=dark
 
-let mapleader="," 
+let mapleader=","
 
 set noswapfile
 set nobackup
@@ -53,11 +53,12 @@ set clipboard=unnamed
 set encoding=utf-8 nobomb
 set backspace=indent,eol,start
 
-set list listchars=tab:\ \ ,trail:·
+set list
+set listchars=tab:\ \ ,trail:-
 
 set nowrap
 set linebreak
 
 " Bundle Settings
-"let g:lightline = { 'colorscheme' : 'solarized' }
+let g:lightline = { 'colorscheme' : 'solarized' }
 
