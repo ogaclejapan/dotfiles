@@ -13,15 +13,13 @@ install git
 install git-flow
 install tig
 install hub
-install zsh
+install fish
 install z
 install tmux
-install fish
 install ricty
 install wget
 install curl
 install tree
-install maven
 install jq
 install rbenv ruby-build
 

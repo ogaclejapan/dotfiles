@@ -1,7 +1,0 @@
-# __/__/__/__/__/__/__/__/__/__/__/__/__/__/__/
-# __/.zshenv.local is file to customize for local.
-# __/__/__/__/__/__/__/__/__/__/__/__/__/__/__/
-
-# Java
-export JAVA_OPTS='-Dfile.encoding=UTF-8'
-#export JAVA_HOME=`/usr/libexec/java_home`

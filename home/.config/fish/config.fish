@@ -1,3 +1,4 @@
+set -x PATH $HOME/bin /usr/local/bin $PATH
 
 # Path to your oh-my-fish.
 set fish_path $HOME/.oh-my-fish
@@ -12,7 +13,7 @@ set fish_theme gitstatus
 set fish_plugins rbenv sublime tmux
 
 # Path to your custom folder (default path is $FISH/custom)
-#set fish_custom $HOME/dotfiles/oh-my-fish
+set fish_custom $HOME/.config/fish/oh-my-fish
 
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
