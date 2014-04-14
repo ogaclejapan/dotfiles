@@ -10,7 +10,7 @@ set fish_theme gitstatus
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # Example format: set fish_plugins autojump bundler
-set fish_plugins rbenv sublime tmux
+set fish_plugins rbenv sublime tmux macvim jira
 
 # Path to your custom folder (default path is $FISH/custom)
 set fish_custom $HOME/.config/fish/oh-my-fish

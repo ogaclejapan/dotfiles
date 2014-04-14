@@ -1,0 +1,3 @@
+if test -d "/Applications/MacVim.app"
+	_append_path /Applications/MacVim.app/Contents/MacOS
+end
