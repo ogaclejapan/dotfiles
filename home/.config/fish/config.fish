@@ -1,20 +1,19 @@
+set -x LANG ja_JP.UTF-8
+set -x EDITOR vim
 set -x PATH $HOME/bin /usr/local/bin $PATH
 
-# Path to your oh-my-fish.
-set fish_path $HOME/.oh-my-fish
+set HOST_FISH ~/.config/fish/(hostname).fish
+if test -f $HOST_FISH
+   . $HOST_FISH
+else
+   echo Creating host fish: $HOST_FISH
+   touch $HOST_FISH
+end
 
-# Theme
-#set fish_theme robbyrussell
-set fish_theme gitstatus
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
-# Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
-# Example format: set fish_plugins autojump bundler
-set fish_plugins rbenv sublime tmux macvim jira
-
-# Path to your custom folder (default path is $FISH/custom)
-set fish_custom $HOME/.config/fish/oh-my-fish
-
-# Load oh-my-fish configuration.
-. $fish_path/oh-my-fish.fish
-
+set PLATFORM_FISH ~/.config/fish/(uname -s).fish
+if test -f $PLATFORM_FISH
+   . $PLATFORM_FISH
+else
+   echo Creating platform fish: $PLATFORM_FISH
+   touch $PLATFORM_FISH
+end
