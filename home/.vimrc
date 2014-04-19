@@ -1,3 +1,6 @@
+"__/__/__/__/__/__/__/__/__/__/
+"__/ NeoBundle Settings
+"__/__/__/__/__/__/__/__/__/__/
 
 " :NeoBundleInstall
 if has('vim_starting')
@@ -21,42 +24,97 @@ filetype plugin indent on
 
 NeoBundleCheck
 
-" Builtin Settings
-set number
-set backspace=indent,eol,start
-set history=1000
-set showcmd
-set showmode
-set visualbell
-set autoread
+"__/__/__/__/__/__/__/__/__/__/
+"__/ Display Settings
+"__/__/__/__/__/__/__/__/__/__/
 
-set hidden
-
+"コードのハイライト表示
 syntax on
-set laststatus=2
+
+"文字エンコード
+set encoding=utf-8 nobomb
+
+"背景色
 set background=dark
 
-let mapleader=","
+"行番号を表示
+set number
 
-set noswapfile
-set nobackup
-set nowb
-
-set autoindent
-set smartindent
-set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-set expandtab
-
-set clipboard=unnamed
-set encoding=utf-8 nobomb
-set backspace=indent,eol,start
-
+"不可視文字を表示する
 set list
+
+"不可視文字のフォーマット
 set listchars=tab:\ \ ,trail:-
 
+"ステータスラインを常に表示する
+set laststatus=2
+
+"入力コマンドをステータスラインに表示
+set showcmd
+
+"モードをステータスラインに表示
+set showmode
+
+"1行が画面幅を超えても折り返さない
 set nowrap
-set linebreak
+
+"__/__/__/__/__/__/__/__/__/__/
+"__/ Search Settings
+"__/__/__/__/__/__/__/__/__/__/
+
+"検索条件の大文字小文字を区別しない
+set ignorecase
+
+"検索条件に大文字を含む場合のみ大文字小文字を区別する
+set smartcase
+
+"最後まで検索したら最初に戻る
+set wrapscan
+
+"__/__/__/__/__/__/__/__/__/__/
+"__/ Basic Settings
+"__/__/__/__/__/__/__/__/__/__/
+
+"<Leader>のキーバインド
+let mapleader=","
+
+"BSキーの挙動を他エディタと合わせる
+set backspace=indent,eol,start
+
+"タブインデントをスペースにする
+set expandtab
+
+"1タブあたりの表示スペース数
+set tabstop=2
+
+"自動インデント時のスペース数
+set shiftwidth=2
+
+"自動インデント
+set smartindent
+
+"改行時にインデントを現在行に合わせる
+set autoindent
+
+"最大履歴数
+set history=1000
+
+"ビープ音を鳴らさない
+set visualbell
+
+"外部からの変更時を自動リロードする
+set autoread
+
+"編集中のファイルから他ファイルに切替可能
+set hidden
+
+"クリップボードをWindowsと連携する
+set clipboard=unnamed
+
+"swapファイルは作成しない
+set noswapfile
+
+"backupファイルは作成しない
+set nobackup
+set nowb
 
