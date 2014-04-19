@@ -1,11 +1,19 @@
+"__/__/__/__/__/__/__/__/__/__/
+"__/ GUI Settings
+"__/__/__/__/__/__/__/__/__/__/
 
-" GUI Settings
+"カラースキーマ
 colorscheme solarized
 
-":set guifont
-set anti enc=utf-8
-set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14
+"アンチエイリアスを適用
+set antialias
 
-" Bundle Settings
-let g:lightline = { 'colorscheme' : 'solarized' }
+"表示フォント(:set guifont=*でフォント変更)
+"set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14
+set guifont=Sauce\ Code\ Powerline\ Light:h14
+
+"メニューバー非表示
+set guioptions-=m
+"ツールバー非表示
+set guioptions-=T
 

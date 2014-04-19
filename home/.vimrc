@@ -34,11 +34,15 @@ syntax on
 "文字エンコード
 set encoding=utf-8 nobomb
 
-"背景色
-set background=dark
-
 "行番号を表示
 set number
+
+"背景色(dark/light)
+if has("gui_running")
+  set background=light
+else
+  set background=dark
+end
 
 "不可視文字を表示する
 set list
@@ -117,4 +121,12 @@ set noswapfile
 "backupファイルは作成しない
 set nobackup
 set nowb
+
+"__/__/__/__/__/__/__/__/__/__/
+"__/ Bundle Settings
+"__/__/__/__/__/__/__/__/__/__/
+
+if has("gui_running")
+  let g:lightline = { 'colorscheme' : 'solarized' }
+endif
 
