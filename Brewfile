@@ -2,7 +2,7 @@
 update
 
 # Update already-installed formula (takes too much time, I will do it manually later)
-# upgrade
+upgrade
 
 # Add repository
 tap homebrew/versions || true
@@ -16,6 +16,7 @@ install hub
 install fish
 install z
 install tmux
+install reattach-to-user-namespace
 install ricty
 install wget
 install curl
