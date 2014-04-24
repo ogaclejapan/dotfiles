@@ -17,3 +17,13 @@ else
    echo Creating platform fish: $PLATFORM_FISH
    touch $PLATFORM_FISH
 end
+
+if [ -z "$TMUX" ]
+  tmux has-session ^/dev/null; and tmux list-session | grep -q '^local'
+  if [ $status -eq 0 ]
+    tmux attach -t local
+  else
+    tmux new -s local
+  end
+end
+
