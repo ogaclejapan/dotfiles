@@ -19,11 +19,11 @@ else
 end
 
 if [ -z "$AUTO_TMUX" -a -z "$TMUX" ]
-  tmux has-session ^/dev/null; and tmux list-session | grep -q '^local'
+  tmux has-session ^/dev/null; and tmux list-session | grep -q '^LOCAL'
   if [ $status -eq 0 ]
-    tmux attach -t local
+    tmux attach -t LOCAL
   else
-    tmux new -s local
+    tmux new -s LOCAL
   end
 end
 
