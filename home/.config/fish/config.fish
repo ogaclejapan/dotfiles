@@ -18,7 +18,7 @@ else
    touch $PLATFORM_FISH
 end
 
-if [ -z "$TMUX" ]
+if [ -z "$AUTO_TMUX" -a -z "$TMUX" ]
   tmux has-session ^/dev/null; and tmux list-session | grep -q '^local'
   if [ $status -eq 0 ]
     tmux attach -t local

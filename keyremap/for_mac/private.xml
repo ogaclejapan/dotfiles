@@ -37,378 +37,413 @@
   </item>
 
   <item>
-   <name>Space( ␣ ) + P | Slash( / ) to PageUp/PageDown</name>
-   <appendix>カーソルを移動 - ページ上下</appendix>
-   <identifier>ogaclejapan.remap_vimode_like_bf</identifier>
-   <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::P, ModifierFlag::EXTRA1, 
-    KeyCode::PAGEUP
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::SLASH, ModifierFlag::EXTRA1,
-    KeyCode::PAGEDOWN
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + U | N to Document Head/Tail</name>
-  <appendix>カーソルを移動 - 先頭／末尾</appendix>
-  <identifier>ogaclejapan.remap_vimode_like_gG</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::U, ModifierFlag::EXTRA1, 
-    KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::N, ModifierFlag::EXTRA1, 
-    KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + Dot( . ) | Comma( , ) to Line Head/Tail</name>
-  <appendix>カーソルを移動 - 行頭／行末</appendix>
-  <identifier>ogaclejapan.remap_vimode_like_0doller</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::COMMA, ModifierFlag::EXTRA1,
-    KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::DOT, ModifierFlag::EXTRA1, 
-    KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + I | O to Word Prev/Next</name>
-  <appendix>カーソルを移動 - 前の単語／次の単語</appendix>
-  <identifier>ogaclejapan.remap_vimode_like_bw</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::I, ModifierFlag::EXTRA1, 
-    KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::O, ModifierFlag::EXTRA1, 
-    KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + 1..9 | 0 | Minus( - ) | Equal( = ) to F1..F12</name>
-  <appendix>ショートカット - F1〜F12補完</appendix>
-  <identifier>ogaclejapan.remap_number_function_keys</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::KEY_1, ModifierFlag::EXTRA1,
-    KeyCode::F1
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::KEY_2, ModifierFlag::EXTRA1, 
-    KeyCode::F2
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::KEY_3, ModifierFlag::EXTRA1,
-    KeyCode::F3
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::KEY_4, ModifierFlag::EXTRA1, 
-    KeyCode::F4
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::KEY_5, ModifierFlag::EXTRA1,
-    KeyCode::F5
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::KEY_6, ModifierFlag::EXTRA1,
-    KeyCode::F6
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::KEY_7, ModifierFlag::EXTRA1,
-    KeyCode::F7
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::KEY_8, ModifierFlag::EXTRA1, 
-    KeyCode::F8
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::KEY_9, ModifierFlag::EXTRA1,
-    KeyCode::F9
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::KEY_0, ModifierFlag::EXTRA1, 
-    KeyCode::F10
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::MINUS, ModifierFlag::EXTRA1, 
-    KeyCode::F11
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::EQUAL, ModifierFlag::EXTRA1, 
-    KeyCode::F12
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + M to Change Input Method</name>
-  <appendix>ショートカット - IME入力切替</appendix>
-  <identifier>ogaclejapan.remap_change_input_method</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::M, ModifierFlag::EXTRA1, 
-    KeyCode::SPACE, ModifierFlag::COMMAND_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + SemiColon( ; ) to Code Completion for IDE</name>
-  <appendix>ショートカット - コード補完</appendix>  
-  <identifier>ogaclejapan.remap_code_completion</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::SEMICOLON, ModifierFlag::EXTRA1, 
-    KeyCode::SPACE, ModifierFlag::CONTROL_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + Quote( ' ) to Alias of tmux prefix key(C-b)</name>
-  <appendix>ショートカット - tmuxプレフィックスキー</appendix>  
-  <identifier>ogaclejapan.remap_alias_of_tmux_prefix_key</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::QUOTE, ModifierFlag::EXTRA1, 
-    KeyCode::B, ModifierFlag::CONTROL_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + G to Paste</name>
-  <appendix>ショートカット - ペースト</appendix>  
-  <identifier>ogaclejapan.remap_paste</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::G, ModifierFlag::EXTRA1, 
-    KeyCode::V, ModifierFlag::COMMAND_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + F to Copy</name>
-  <appendix>ショートカット - コピー</appendix>  
-  <identifier>ogaclejapan.remap_copy</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::F, ModifierFlag::EXTRA1, 
-    KeyCode::C, ModifierFlag::COMMAND_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + D to Cut</name>
-  <appendix>ショートカット - カット</appendix>  
-  <identifier>ogaclejapan.remap_cut</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::D, ModifierFlag::EXTRA1, 
-    KeyCode::X, ModifierFlag::COMMAND_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + S to Save</name>
-  <appendix>ショートカット - 保存</appendix>  
-  <identifier>ogaclejapan.remap_save</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::S, ModifierFlag::EXTRA1, 
-    KeyCode::S, ModifierFlag::COMMAND_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + A to SelectAll</name>
-  <appendix>ショートカット - 全選択</appendix>  
-  <identifier>ogaclejapan.remap_selectall</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::A, ModifierFlag::EXTRA1, 
-    KeyCode::A, ModifierFlag::COMMAND_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + Q to Quit</name>
-  <appendix>ショートカット - 閉じる</appendix>  
-  <identifier>ogaclejapan.remap_quit</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::Q, ModifierFlag::EXTRA1, 
-    KeyCode::W, ModifierFlag::COMMAND_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + W to Whitespace x 2</name>
-  <appendix>ショートカット - 半角スペース2つ分</appendix>  
-  <identifier>ogaclejapan.remap_whitespace_x2</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::W, ModifierFlag::EXTRA1, 
-    KeyCode::SPACE, KeyCode::SPACE
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + E to Escape</name>
-  <appendix>ショートカット - ESC</appendix>  
-  <identifier>ogaclejapan.remap_escape</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::E, ModifierFlag::EXTRA1, 
-    KeyCode::ESCAPE
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + R to Reverse Switch Window</name>
-  <appendix>ショートカット - ウィンドウ逆切り替え</appendix>  
-  <identifier>ogaclejapan.remap_reverse_switch_window</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::R, ModifierFlag::EXTRA1, 
-    KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-  </autogen>
-</item>
-<item>
-  <name>Space( ␣ ) + T to Switch Window</name>
-  <appendix>ショートカット - ウィンドウ切り替え</appendix>  
-  <identifier>ogaclejapan.remap_switch_window</identifier>
-  <autogen>
-    __KeyOverlaidModifier__
-    KeyCode::SPACE,
-    KeyCode::VK_MODIFIER_EXTRA1,
-    KeyCode::SPACE
-  </autogen>
-  <autogen>
-    __KeyToKey__
-    KeyCode::T, ModifierFlag::EXTRA1, 
-    KeyCode::TAB, ModifierFlag::COMMAND_L
-  </autogen>
-</item>
+    <name>Space( ␣ ) + P | Slash( / ) to PageUp/PageDown</name>
+    <appendix>カーソルを移動 - ページ上下</appendix>
+    <identifier>ogaclejapan.remap_vimode_like_bf</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::P, ModifierFlag::EXTRA1, 
+      KeyCode::PAGEUP
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SLASH, ModifierFlag::EXTRA1,
+      KeyCode::PAGEDOWN
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + U | N to Document Head/Tail</name>
+    <appendix>カーソルを移動 - 先頭／末尾</appendix>
+    <identifier>ogaclejapan.remap_vimode_like_gG</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::U, ModifierFlag::EXTRA1, 
+      KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::N, ModifierFlag::EXTRA1, 
+      KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + Dot( . ) | Comma( , ) to Line Head/Tail</name>
+    <appendix>カーソルを移動 - 行頭／行末</appendix>
+    <identifier>ogaclejapan.remap_vimode_like_0doller</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMA, ModifierFlag::EXTRA1,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::DOT, ModifierFlag::EXTRA1, 
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + I | O to Word Prev/Next</name>
+    <appendix>カーソルを移動 - 前の単語／次の単語</appendix>
+    <identifier>ogaclejapan.remap_vimode_like_bw</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::I, ModifierFlag::EXTRA1, 
+      KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::O, ModifierFlag::EXTRA1, 
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + 1..9 | 0 | Minus( - ) | Equal( = ) to F1..F12</name>
+    <appendix>ショートカット - F1〜F12補完</appendix>
+    <identifier>ogaclejapan.remap_number_function_keys</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_1, ModifierFlag::EXTRA1,
+      KeyCode::F1
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_2, ModifierFlag::EXTRA1, 
+      KeyCode::F2
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_3, ModifierFlag::EXTRA1,
+      KeyCode::F3
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_4, ModifierFlag::EXTRA1, 
+      KeyCode::F4
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_5, ModifierFlag::EXTRA1,
+      KeyCode::F5
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_6, ModifierFlag::EXTRA1,
+      KeyCode::F6
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_7, ModifierFlag::EXTRA1,
+      KeyCode::F7
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_8, ModifierFlag::EXTRA1, 
+      KeyCode::F8
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_9, ModifierFlag::EXTRA1,
+      KeyCode::F9
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_0, ModifierFlag::EXTRA1, 
+      KeyCode::F10
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::MINUS, ModifierFlag::EXTRA1, 
+      KeyCode::F11
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::EQUAL, ModifierFlag::EXTRA1, 
+      KeyCode::F12
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + M to Change Input Method</name>
+    <appendix>ショートカット - IME入力切替</appendix>
+    <identifier>ogaclejapan.remap_change_input_method</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::M, ModifierFlag::EXTRA1, 
+      KeyCode::SPACE, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + V to Paste</name>
+    <appendix>ショートカット - 貼り付け</appendix>  
+    <identifier>ogaclejapan.remap_paste</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::V, ModifierFlag::EXTRA1, 
+      KeyCode::V, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + C to Copy</name>
+    <appendix>ショートカット - コピー</appendix>  
+    <identifier>ogaclejapan.remap_copy</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::C, ModifierFlag::EXTRA1, 
+      KeyCode::C, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + X to Cut</name>
+    <appendix>ショートカット - 切り取り</appendix>  
+    <identifier>ogaclejapan.remap_cut</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::X, ModifierFlag::EXTRA1, 
+      KeyCode::X, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + Z to Undo</name>
+    <appendix>ショートカット - 取り消す</appendix>  
+    <identifier>ogaclejapan.remap_undo</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::Z, ModifierFlag::EXTRA1, 
+      KeyCode::Z, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + F to Find</name>
+    <appendix>ショートカット - 検索</appendix>  
+    <identifier>ogaclejapan.remap_find</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F, ModifierFlag::EXTRA1, 
+      KeyCode::F, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + S to Save</name>
+    <appendix>ショートカット - 保存</appendix>  
+    <identifier>ogaclejapan.remap_save</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::EXTRA1, 
+      KeyCode::S, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + A to SelectAll</name>
+    <appendix>ショートカット - 全選択</appendix>  
+    <identifier>ogaclejapan.remap_selectall</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::EXTRA1, 
+      KeyCode::A, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + T to Switch Window</name>
+    <appendix>ショートカット - ウィンドウ切り替え</appendix>  
+    <identifier>ogaclejapan.remap_switch_window</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::T, ModifierFlag::EXTRA1, 
+      KeyCode::TAB, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + R to Reverse Switch Window</name>
+    <appendix>ショートカット - ウィンドウ逆切り替え</appendix>  
+    <identifier>ogaclejapan.remap_reverse_switch_window</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::R, ModifierFlag::EXTRA1, 
+      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + E to Escape</name>
+    <appendix>ショートカット - ESC</appendix>  
+    <identifier>ogaclejapan.remap_escape</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::E, ModifierFlag::EXTRA1, 
+      KeyCode::ESCAPE
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + W to Close Window</name>
+    <appendix>ショートカット - 閉じる</appendix>  
+    <identifier>ogaclejapan.remap_close</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::W, ModifierFlag::EXTRA1, 
+      KeyCode::W, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>Space( ␣ ) + Q to Quit Application</name>
+    <appendix>ショートカット - アプリ終了</appendix>  
+    <identifier>ogaclejapan.remap_quit</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::Q, ModifierFlag::EXTRA1, 
+      KeyCode::Q, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
 
-<!--
-<item>
- <name>Swap Command_L with Control_L</name>
- <identifier>remap.app_commandL_and_controlL</identifier>
- <not>TERMINAL, VI, VIRTUALMACHINE, GOOGLE_CHROME, REMOTEDESKTOPCONNECTION</not>
- <autogen>--KeyToKey-- KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
- <autogen>--KeyToKey-- KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
-</item>
--->
+  <!-- 
+    Specify application settings
+   -->
+
+  <appdef>
+    <appname>INTELLI_J</appname>
+    <equal>com.jetbrains.intellij</equal>
+  </appdef>
+
+  <item>
+    <name>Space( ␣ ) + SemiColon( ; ) to Code Completion for IDE</name>
+    <appendix>アプリケーション(Eclipse, IntelliJのみ) - コード補完(Ctrl+Space)</appendix>  
+    <identifier>ogaclejapan.remap_code_completion_for_ide</identifier>
+    <only>ECLIPSE, INTELLI_J</only>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, ModifierFlag::EXTRA1, 
+      KeyCode::SPACE, ModifierFlag::CONTROL_L
+    </autogen>
+  </item>
+
+  <item>
+    <name>Space( ␣ ) + SemiColon( ; ) to Prefix key for tmux</name>
+    <appendix>アプリケーション(tmuxのみ) - プレフィックスキー(Ctrl+b)</appendix>  
+    <identifier>ogaclejapan.remap_prefix_key_for_tmux</identifier>
+    <only>TERMINAL</only>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, ModifierFlag::EXTRA1, 
+      KeyCode::B, ModifierFlag::CONTROL_L
+    </autogen>
+  </item>
 
 </root>
 

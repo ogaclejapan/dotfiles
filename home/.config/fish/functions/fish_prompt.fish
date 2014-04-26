@@ -6,7 +6,7 @@ function _tmux_pane_number
   echo (tmux display -p -t $TMUX_PANE '#P')
 end
 
-function fish_prompt
+function fish_prompt --on-event fish_prompt_event
 
   set -l cyan (set_color cyan)
   set -l normal (set_color normal)
@@ -30,6 +30,5 @@ function fish_prompt
   end
 
   echo -n $prompt' '
-
 
 end
