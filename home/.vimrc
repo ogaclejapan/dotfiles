@@ -2,6 +2,11 @@
 "__/ NeoBundle Settings
 "__/__/__/__/__/__/__/__/__/__/
 
+" fish shell is not supported. see #215
+if &shell =~# 'fish$'
+  set shell=sh
+endif
+
 " :NeoBundleInstall
 if has('vim_starting')
   set nocompatible
@@ -16,7 +21,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'vim-scripts/fish.vim'
+NeoBundle 'vim-scripts/fish-syntax'
 
 call neobundle#end()
 
