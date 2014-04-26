@@ -20,7 +20,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Install Bundle
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'vim-scripts/fish-syntax'
 
 call neobundle#end()
@@ -45,8 +45,10 @@ set number
 "背景色(dark/light)
 if has("gui_running")
   set background=light
+  colorscheme solarized
 else
   set background=dark
+  colorscheme hybrid
 end
 
 "不可視文字を表示する
