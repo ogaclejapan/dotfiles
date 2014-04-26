@@ -2,9 +2,9 @@ function _git_branch_name
   echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
 end
 
-function _tmux_pane_number
-  echo (tmux display -p -t $TMUX_PANE '#P')
-end
+#function _tmux_pane_number
+#  echo (tmux display -p -t $TMUX_PANE '#P')
+#end
 
 function fish_prompt --on-event fish_prompt_event
 
@@ -22,13 +22,13 @@ function fish_prompt --on-event fish_prompt_event
     set prompt "$prompt $git_status"
   end
 
-  if [ $TMUX ]
-    set -l tmux_status (_tmux_pane_number)
-    set prompt $prompt'$'$tmux_status
-  else
-    set prompt $prompt'$'
-  end
+#  if [ $TMUX ]
+#    set -l tmux_status (_tmux_pane_number)
+#    set prompt $prompt'$'$tmux_status
+#  else
+#    set prompt $prompt'$'
+#  end
 
-  echo -n $prompt' '
+  echo -n $prompt'$ '
 
 end
