@@ -33,7 +33,7 @@ end
 
 set AUTO_TMUX $TMUX_AUTO_ATTACH
 if [ -n "$AUTO_TMUX" -a -z "$TMUX_PANE" ]
-  tmux has-session ^/dev/null; and tmux list-session | grep -q "\^$AUTO_TMUX"
+  tmux has-session ^/dev/null; and tmux list-session | grep -q "^$AUTO_TMUX"
   if [ $status -eq 0 ]
     tmux attach -t $AUTO_TMUX
   else
