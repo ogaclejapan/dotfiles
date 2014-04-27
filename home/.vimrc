@@ -48,7 +48,8 @@ if has("gui_running")
   colorscheme solarized
 else
   set background=dark
-  colorscheme jellybeans
+  "colorscheme jellybeans
+  colorscheme wombat256mod
 end
 
 "不可視文字を表示する
@@ -136,6 +137,6 @@ set nowb
 if has("gui_running")
   let g:lightline = { 'colorscheme' : 'solarized' }
 else
-  let g:lightline = { 'colorscheme' : 'jellybeans' }
+  "let g:lightline = { 'colorscheme' : 'jellybeans' }
 endif
 
