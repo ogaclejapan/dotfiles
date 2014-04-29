@@ -14,7 +14,6 @@ install git-flow
 install tig
 install hub
 install fish
-install z
 install tmux
 install reattach-to-user-namespace
 install ricty

@@ -86,8 +86,6 @@ set wrapscan
 "__/ Basic Settings
 "__/__/__/__/__/__/__/__/__/__/
 
-"<Leader>のキーバインド
-let mapleader=","
 
 "BSキーの挙動を他エディタと合わせる
 set backspace=indent,eol,start
@@ -128,6 +126,67 @@ set noswapfile
 "backupファイルは作成しない
 set nobackup
 set nowb
+
+"__/__/__/__/__/__/__/__/__/__/
+"__/ Key Settings
+"__/__/__/__/__/__/__/__/__/__/
+
+"<Leader>のキーバインド
+let mapleader=";"
+
+"バッファ一覧を表示する
+nnoremap <Leader><Leader> :<C-u>Unite buffer -buffer-name=file<CR>
+
+"バッファを終了する
+nnoremap <Leader>q :<C-u>bd<CR>
+
+"ウィンドウを横に分割にする
+nnoremap <Leader>h :<C-u>split<CR>
+
+"ウィンドウを縦に分割にする
+nnoremap <Leader>v :<C-u>vsplit<CR>
+
+"ウィンドウに移動する
+nnoremap <Leader><Left> <C-w>h
+nnoremap <Leader><Down> <C-w>j
+nnoremap <Leader><Up> <C-w>k
+nnoremap <Leader><Right> <C-w>l
+
+"次のウィンドウに移動する
+nnoremap <Leader>o <C-w>w
+
+"現在のウィンドウを最大化する
+nnoremap <Leader>z <C-w>_<C-w>|
+
+"現在のウィンドウ横幅を拡大する
+nnoremap <Leader>> <C-w>>
+
+"現在のウィンドウ横幅を縮小する
+nnoremap <Leader>< <C-w><
+
+"現在のウィンドウ縦幅を拡大する
+nnoremap <Leader>+ <C-w>+
+
+"現在のウィンドウ縦幅を縮小する
+nnoremap <Leader>- <C-w>-
+
+"現在のウィンドウを閉じる
+nnoremap <Leader>x :<C-u>q<CR>
+
+"タブを新規作成する
+nnoremap <Leader>c :<C-u>tabnew<CR>
+
+"次のタブに切り替える
+nnoremap <Leader>n gt
+
+"前のタブに切り替える
+nnoremap <Leader>p gT
+
+"タブの一覧を表示する
+nnoremap <Leader>w :<C-u>Unite tab<CR>
+
+"タブのバッファ一覧を表示する
+nnoremap <Leader>t :<C-u>Unite buffer_tab -buffer-name=file<CR>
 
 "__/__/__/__/__/__/__/__/__/__/
 "__/ Bundle Settings
