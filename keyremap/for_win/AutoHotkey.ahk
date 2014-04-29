@@ -1,8 +1,4 @@
 
-;
-; Keyremap settings for AutoHotkey
-; @see http://www.autohotkey.com/
-;
 LWin::LCtrl
 Space::Send, {Blind}{Space}
 
@@ -67,28 +63,34 @@ Space & =::Send, {Blind}{F12}
 Space & m::Send, {vkF3sc029}
 
 ;
-; Space( ␣ ) + SemiColon( ; ) to Code Completion for IDE
-; ショートカット - コード補完
+; Space( ␣ ) + V to Paste
+; ショートカット - 貼り付け
 ;
-Space & `;::Send, {Blind}^{Space}
+Space & v::Send, {Blind}^v
 
 ;
-; Space( ␣ ) + G to Paste
-; ショートカット - ペースト
-;
-Space & g::Send, {Blind}^v
-
-;
-; Space( ␣ ) + F to Copy
+; Space( ␣ ) + C to Copy
 ; ショートカット - コピー
 ;
-Space & f::Send, {Blind}^c
+Space & c::Send, {Blind}^c
 
 ;
-; Space( ␣ ) + D to Cut
-; ショートカット - カット
+; Space( ␣ ) + X to Cut
+; ショートカット - 切り取り
 ;
-Space & d::Send, {Blind}^x
+Space & x::Send, {Blind}^x
+
+;
+; Space( ␣ ) + Z to Undo
+; ショートカット - 取り消す
+;
+Space & z::Send, {Blind}^z
+
+;
+; Space( ␣ ) + F to Find
+; ショートカット - 検索
+;
+Space & f::Send, {Blind}^f
 
 ;
 ; Space( ␣ ) + S to Save
@@ -103,22 +105,10 @@ Space & s::Send, {Blind}^s
 Space & a::Send, {Blind}^a
 
 ;
-; Space( ␣ ) + Q to Quit
-; ショートカット - 閉じる
-;
-Space & q::Send, {Blind}^w
-
-;
-; Space( ␣ ) + W to Whitespace Indent
-; ショートカット - 半角スペース×2
-;
-Space & w::Send, {Space}{Space}
-
-;
-; Space( ␣ ) + E to Escape
-; ショートカット - ESC
-;
-Space & e::Send, {Blind}{Esc}
+; Space( ␣ ) + T to Switch Window
+; ショートカット - ウィンドウ切り替え
+; 
+Space & t::AltTab
 
 ;
 ; Space( ␣ ) + R to Reverse Switch Window
@@ -127,8 +117,28 @@ Space & e::Send, {Blind}{Esc}
 Space & r::ShiftAltTab
 
 ;
-; Space( ␣ ) + T to Switch Window
-; ショートカット - ウィンドウ切り替え
-; 
-Space & t::AltTab
+; Space( ␣ ) + E to Escape
+; ショートカット - ESC
+;
+Space & e::Send, {Blind}{Esc}
 
+
+#IfWinActive ahk_class mintty
+
+;
+; Space( ␣ ) + SemiColon( ; ) to Prefix key for tmux
+; アプリケーション(tmuxのみ) - プレフィックスキー(Ctrl+b)
+;
+Space & `;::Send, {Blind}^b
+
+#IfWinActive
+
+#IfWinNotActive ahk_class mintty
+
+;
+; Space( ␣ ) + SemiColon( ; ) to Code Completion for IDE
+; アプリケーション(tmux以外) - コード補完(Ctrl+Space)
+;
+Space & `;::Send, {Blind}^{Space}
+
+#IfWinNotActive
