@@ -31,13 +31,13 @@ if not test -e $PLATFORM_TMUX_SYMBOLIC
    ln -s $PLATFORM_TMUX $PLATFORM_TMUX_SYMBOLIC
 end
 
-set AUTO_TMUX $TMUX_AUTO_ATTACH
-if [ -n "$AUTO_TMUX" -a -z "$TMUX_PANE" ]
-  tmux has-session ^/dev/null; and tmux list-session | grep -q "^$AUTO_TMUX"
-  if [ $status -eq 0 ]
-    tmux attach -t $AUTO_TMUX
-  else
-    tmux new -s $AUTO_TMUX
+if [ -n "$TMUX_AUTO_ATTACH" -a -z "$TMUX_PANE" ]
+  set AUTO_TMUX $TMUX_AUTO_ATTACH
+  if tmux has-session -t $AUTO_TMUX ^/dev/null
+    if tmux list-sessions -F '#S:#{session_attached}' | grep -q "^$AUTO_TMUX:[1-9][0-9]*"
+      set AUTO_TMUX ''
+    end
   end
+  test -n "$AUTO_TMUX" ; and tmux new-session -A -s $AUTO_TMUX
 end
 
