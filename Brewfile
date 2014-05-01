@@ -22,6 +22,7 @@ install curl
 install tree
 install jq
 install rbenv ruby-build
+install the_silver_searcher
 
 # Install formula (Optional)
 #install boot2docker

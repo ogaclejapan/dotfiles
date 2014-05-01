@@ -19,6 +19,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Install Bundle
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Shougo/vimproc'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'vim-scripts/fish-syntax'
@@ -188,11 +190,28 @@ nnoremap <Leader>w :<C-u>Unite tab<CR>
 "タブのバッファ一覧を表示する
 nnoremap <Leader>t :<C-u>Unite buffer_tab -buffer-name=file<CR>
 
+"ファイルエクスプローラーを表示する
+nnoremap <Leader>e :<C-u>VimFilerExplorer<CR>
+
+"カレントディレクトリ配下をgrep検索する
+nnoremap <Leader>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+
+"カレントディレクトリ配下をfind検索する
+nnoremap <Leader>f :<C-u>Unite find:.<CR>
+
 "__/__/__/__/__/__/__/__/__/__/
 "__/ Bundle Settings
 "__/__/__/__/__/__/__/__/__/__/
 
+"lightlineのカラースキーマを設定(gvimのみ)
 if has("gui_running")
   let g:lightline = { 'colorscheme' : 'solarized' }
+endif
+
+"unite grepをagに変更
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
 endif
 
