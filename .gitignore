@@ -6,5 +6,6 @@ home/.config/fish/fish_history
 home/.config/fish/*.*
 !home/.config/fish/config.fish
 !home/.config/fish/Darwin.fish
+!home/.config/fish/alias.fish
 
 
