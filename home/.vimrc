@@ -21,6 +21,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'vim-scripts/fish-syntax'
@@ -203,12 +204,19 @@ nnoremap <Leader>f :<C-u>Unite find:.<CR>
 "__/ Bundle Settings
 "__/__/__/__/__/__/__/__/__/__/
 
-"lightlineのカラースキーマを設定(gvimのみ)
+"lightlineのカラースキーマを適用する(gvimのみ)
 if has("gui_running")
   let g:lightline = { 'colorscheme' : 'solarized' }
 endif
 
-"unite grepをagに変更
+"lua対応vimならneocompleteを有効にする
+if has('lua')
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#enable_smart_case = 1
+  let g:neocomplete#sources#syntax#min_keyword_length = 3
+end
+
+"Unite grepをagに変更
 if executable('ag')
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'

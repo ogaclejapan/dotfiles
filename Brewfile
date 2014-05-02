@@ -22,6 +22,7 @@ install curl
 install tree
 install jq
 install rbenv ruby-build
+install vim --with-lua
 install the_silver_searcher
 
 # Install formula (Optional)
