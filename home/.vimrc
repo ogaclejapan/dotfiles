@@ -51,7 +51,7 @@ if has("gui_running")
   colorscheme solarized
 else
   set background=dark
-  colorscheme wombat256mod
+  colorscheme Tomorrow-Night-Bright
 end
 
 "不可視文字を表示する
