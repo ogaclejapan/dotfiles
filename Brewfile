@@ -16,7 +16,6 @@ install hub
 install fish
 install tmux
 install reattach-to-user-namespace
-install ricty
 install wget
 install curl
 install tree
