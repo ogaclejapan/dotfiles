@@ -9,14 +9,15 @@ cask install iterm2
 cask install keyremap4macbook
 cask install dropbox
 cask install google-chrome
-cask install sublime-text
 cask install virtualbox
 cask install vagrant
 cask install kobito
 cask install skitch
+cask install coteditor
 
 # Install cask formula (Optional)
 #cask install google-japanese-ime
+#cask install sublime-text
 #cask install hipchat
 #cask install skype
 #cask install xtrafinder
