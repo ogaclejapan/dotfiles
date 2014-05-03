@@ -12,20 +12,15 @@ cask install google-chrome
 cask install sublime-text
 cask install virtualbox
 cask install vagrant
-cask install skitch
 cask install kobito
-cask install totalfinder
-cask install shiftit
-
-cask install alfred
-cask alfred link
+cask install skitch
 
 # Install cask formula (Optional)
-#cask install adobe-reader
 #cask install google-japanese-ime
 #cask install hipchat
 #cask install skype
 #cask install xtrafinder
+#cask install totalfinder
 #cask install tunnelblick
 #cask install thunderbird
 #cask install gimp
