@@ -194,11 +194,11 @@ nnoremap <Leader>t :<C-u>Unite buffer_tab -buffer-name=file<CR>
 "ファイルエクスプローラーを表示する
 nnoremap <Leader>e :<C-u>VimFilerExplorer<CR>
 
-"カレントディレクトリ配下をgrep検索する
-nnoremap <Leader>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+"任意のディレクトリ配下をgrep検索する
+nnoremap <Leader>g :<C-u>Unite grep -buffer-name=search-buffer<CR>
 
-"カレントディレクトリ配下をfind検索する
-nnoremap <Leader>f :<C-u>Unite find:.<CR>
+"任意のディレクトリ配下をfind検索する
+nnoremap <Leader>f :<C-u>Unite find<CR>
 
 "__/__/__/__/__/__/__/__/__/__/
 "__/ Bundle Settings
