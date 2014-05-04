@@ -23,13 +23,11 @@ install jq
 install rbenv ruby-build
 install the_silver_searcher
 install vim --with-lua
-install macvim --with-cscope --with-lua --HEAD
 
 # Install formula (Optional)
 #install boot2docker
 #install docker
 
-linkapps --local
 
 # Remove outdated versions
 cleanup
