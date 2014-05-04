@@ -143,11 +143,11 @@ nnoremap <Leader><Leader> :<C-u>Unite buffer -buffer-name=file<CR>
 "バッファを終了する
 nnoremap <Leader>q :<C-u>bd<CR>
 
-"ウィンドウを横に分割にする
-nnoremap <Leader>h :<C-u>split<CR>
+"ウィンドウを横２面に分割にする
+nnoremap <Leader>h :<C-u>vsplit<CR>
 
-"ウィンドウを縦に分割にする
-nnoremap <Leader>v :<C-u>vsplit<CR>
+"ウィンドウを縦２面に分割にする
+nnoremap <Leader>v :<C-u>split<CR>
 
 "ウィンドウに移動する
 nnoremap <Leader><Left> <C-w>h
