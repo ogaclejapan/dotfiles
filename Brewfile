@@ -16,6 +16,7 @@ install hub
 install fish
 install tmux
 install reattach-to-user-namespace
+install z
 install wget
 install curl
 install tree
@@ -23,10 +24,13 @@ install jq
 install rbenv ruby-build
 install the_silver_searcher
 install vim --with-lua
+install maven
 
 # Install formula (Optional)
 #install boot2docker
 #install docker
+#install android-sdk
+#install gradle
 
 
 # Remove outdated versions
