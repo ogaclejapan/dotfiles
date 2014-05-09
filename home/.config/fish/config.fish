@@ -20,8 +20,7 @@ if test -f $HOST_FISH
    . $HOST_FISH
 else
    echo Creating host fish: $HOST_FISH
-   touch $HOST_FISH
-   echo "set -x TMUX_AUTO_ATTACH ''" >> $HOST_FISH
+   cat ~/.config/fish/host.fish > $HOST_FISH
 end
 
 set PLATFORM_TMUX ~/.tmux/(uname -s).conf
