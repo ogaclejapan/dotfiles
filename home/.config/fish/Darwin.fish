@@ -1,4 +1,4 @@
-alias ll='ls -lhF'
+alias ll='ls -lahF'
 alias la='ls -a'
 
 if test -d ~/.rbenv/shims
