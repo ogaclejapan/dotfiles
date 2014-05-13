@@ -22,6 +22,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle "osyo-manga/vim-over"
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'vim-scripts/fish-syntax'
@@ -84,6 +85,9 @@ set smartcase
 
 "最後まで検索したら最初に戻る
 set wrapscan
+
+"検索結果をハイライト表示する
+set hlsearch
 
 "__/__/__/__/__/__/__/__/__/__/
 "__/ Basic Settings
@@ -191,14 +195,23 @@ nnoremap <Leader>w :<C-u>Unite tab<CR>
 "タブのバッファ一覧を表示する
 nnoremap <Leader>t :<C-u>Unite buffer_tab -buffer-name=file<CR>
 
-"ファイルエクスプローラーを表示する
+"サイドにファイルエクスプローラーを表示する
 nnoremap <Leader>e :<C-u>VimFilerExplorer<CR>
+
+"全面にファイルエクスプローラーを表示する
+nnoremap <Leader>E :<C-u>VimFiler<CR>
 
 "任意のディレクトリ配下をgrep検索する
 nnoremap <Leader>g :<C-u>Unite grep -buffer-name=search-buffer<CR>
 
 "任意のディレクトリ配下をfind検索する
 nnoremap <Leader>f :<C-u>Unite find<CR>
+
+"全範囲を対象に任意の文字列を置換する
+nnoremap <Leader>r :<C-u>OverCommandLine s/<CR>
+
+"選択している範囲を対象に任意の文字列を置換する
+vnoremap <Leader>r :OverCommandLine s/<CR>
 
 "__/__/__/__/__/__/__/__/__/__/
 "__/ Bundle Settings
