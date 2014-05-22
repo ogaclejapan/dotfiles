@@ -21,6 +21,7 @@ install wget
 install curl
 install tree
 install jq
+install ranger
 install rbenv ruby-build
 install the_silver_searcher
 install vim --with-lua
