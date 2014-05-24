@@ -29,6 +29,7 @@ NeoBundle 'vim-scripts/fish-syntax'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'jtratner/vim-flavored-markdown'
+NeoBundle 'rking/ag.vim'
 
 call neobundle#end()
 
@@ -204,11 +205,11 @@ nnoremap <Leader>e :<C-u>VimFilerExplorer<CR>
 "全面にファイルエクスプローラーを表示する
 nnoremap <Leader>E :<C-u>VimFiler<CR>
 
-"任意のディレクトリ配下をgrep検索する
-nnoremap <Leader>g :<C-u>Unite grep -buffer-name=search-buffer<CR>
+"カレントディレクトリ配下をagでgrep検索する
+nnoremap <Leader>g :<C-u>Ag 
 
-"任意のディレクトリ配下をfind検索する
-nnoremap <Leader>f :<C-u>Unite find<CR>
+"カレントディレクトリ配下をagでファイル検索する
+nnoremap <Leader>f :<C-u>AgFile 
 
 "全範囲を対象に任意の文字列を置換する
 nnoremap <Leader>r :<C-u>OverCommandLine s/<CR>
