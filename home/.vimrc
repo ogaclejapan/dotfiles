@@ -22,10 +22,14 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle "osyo-manga/vim-over"
+NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'vim-scripts/fish-syntax'
+NeoBundle 'kshenoy/vim-signature'
+NeoBundle "osyo-manga/vim-over"
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
 call neobundle#end()
 
@@ -50,7 +54,7 @@ set number
 if has("gui_running")
   set background=light
   colorscheme solarized
-else
+ele
   set background=dark
   colorscheme Tomorrow-Night-Bright
 end
@@ -87,7 +91,7 @@ set smartcase
 set wrapscan
 
 "検索結果をハイライト表示する
-set hlsearch
+set nohlsearch
 
 "__/__/__/__/__/__/__/__/__/__/
 "__/ Basic Settings
@@ -213,6 +217,26 @@ nnoremap <Leader>r :<C-u>OverCommandLine s/<CR>
 "選択している範囲を対象に任意の文字列を置換する
 vnoremap <Leader>r :OverCommandLine s/<CR>
 
+"EasyMotionで表示エリア内2文字を検索して移動する
+map <Leader>s <Plug>(easymotion-s2)
+
+"EasyMotionでカーソル行から上部に行移動する
+map <Leader>k <Plug>(easymotion-k)
+
+"EasyMotionでカーソル行から下部に行移動する
+map <Leader>j <Plug>(easymotion-j)
+
+"EasyMotion within Line Motionでカーソル行１文字を検索して移動する
+map <Leader>l <Plug>(easymotion-bd-fl)
+
+"EasyMotionで検索する
+nmap / <Plug>(easymotion-sn)
+xmap / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-sn)
+nmap n <Plug>(easymotion-next)
+nmap N <Plug>(easymotion-prev)
+
+
 "__/__/__/__/__/__/__/__/__/__/
 "__/ Bundle Settings
 "__/__/__/__/__/__/__/__/__/__/
@@ -235,4 +259,17 @@ if executable('ag')
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
 endif
+
+"Markdownの拡張子に対応する
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
+"EasyMotionのデフォルトマッピングを解除
+let g:EasyMotion_do_mapping = 0
+
+"EasyMotion検索で大文字が含まれる場合のみ大文字小文字を区別する
+let g:EasyMotion_smartcase = 1
+
 
