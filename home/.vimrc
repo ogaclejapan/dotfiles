@@ -27,9 +27,8 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'vim-scripts/fish-syntax'
 NeoBundle 'kshenoy/vim-signature'
-NeoBundle "osyo-manga/vim-over"
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'jtratner/vim-flavored-markdown'
 
 call neobundle#end()
 
@@ -261,9 +260,9 @@ if executable('ag')
 endif
 
 "Markdownの拡張子に対応する
-augroup PrevimSettings
+augroup markdown
     autocmd!
-    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+    autocmd BufNewFile,BufRead *.{md,markdown} set filetype=ghmarkdown
 augroup END
 
 "EasyMotionのデフォルトマッピングを解除
