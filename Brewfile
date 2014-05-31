@@ -26,6 +26,7 @@ install rbenv ruby-build
 install the_silver_searcher
 install vim --with-lua
 install maven
+install node
 
 # Install formula (Optional)
 #install boot2docker
