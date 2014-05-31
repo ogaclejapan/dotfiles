@@ -1,6 +1,6 @@
 set -x LANG ja_JP.UTF-8
 set -x EDITOR vim
-set -x PATH $HOME/bin /usr/local/bin $PATH
+set -x PATH ./bin $HOME/bin /usr/local/bin $PATH
 
 set ALIAS_FISH ~/.config/fish/alias.fish
 if test -f $ALIAS_FISH
