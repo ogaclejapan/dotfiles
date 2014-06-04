@@ -21,6 +21,8 @@ install wget
 install curl
 install tree
 install jq
+install htop-osx
+install wrk
 install ranger
 install rbenv ruby-build
 install the_silver_searcher
@@ -33,6 +35,7 @@ install node
 #install docker
 #install android-sdk
 #install gradle
+#install tomcat
 
 
 # Remove outdated versions
