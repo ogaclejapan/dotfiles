@@ -1,5 +1,5 @@
 # Add repository
-tap phinze/homebrew-cask || true
+tap caskroom/homebrew-cask || true
 
 # Install packages
 install brew-cask
@@ -14,6 +14,7 @@ cask install vagrant
 cask install kobito
 cask install skitch
 cask install coteditor
+cask install alfred
 
 # Install cask formula (Optional)
 #cask install google-japanese-ime
@@ -25,3 +26,6 @@ cask install coteditor
 #cask install tunnelblick
 #cask install thunderbird
 #cask install gimp
+#cask install atom
+#cask install android-file-transfer
+
