@@ -3,6 +3,7 @@
 .DS_Store
 home/.vim/*
 home/.config/ranger
+home/.config/configstore
 home/.config/fish/fish_history
 home/.config/fish/*.*
 !home/.config/fish/config.fish
