@@ -13,6 +13,7 @@ cask install virtualbox
 cask install vagrant
 cask install kobito
 cask install skitch
+cask install dash
 cask install atom
 cask install coteditor
 cask install android-file-transfer
