@@ -14,7 +14,6 @@ cask install vagrant
 cask install kobito
 cask install skitch
 cask install coteditor
-cask install alfred
 
 # Install cask formula (Optional)
 #cask install google-japanese-ime
@@ -28,4 +27,6 @@ cask install alfred
 #cask install gimp
 #cask install atom
 #cask install android-file-transfer
+#cask install alfred
+#cask alfred link
 
