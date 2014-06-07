@@ -29,12 +29,12 @@ install the_silver_searcher
 install vim --with-lua
 install maven
 install node
+install android-sdk
+install gradle
 
 # Install formula (Optional)
 #install boot2docker
 #install docker
-#install android-sdk
-#install gradle
 #install tomcat
 
 

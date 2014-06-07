@@ -13,5 +13,7 @@ if test -d /usr/local/opt/android-sdk
   set -x ANDROID_HOME /usr/local/opt/android-sdk
 end
 
-
+if test -d ~/Applications/Atom.app
+  set -x ATOM_PATH ~/Applications
+end
 

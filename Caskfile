@@ -13,7 +13,10 @@ cask install virtualbox
 cask install vagrant
 cask install kobito
 cask install skitch
+cask install atom
 cask install coteditor
+cask install android-file-transfer
+cask install genymotion
 
 # Install cask formula (Optional)
 #cask install google-japanese-ime
@@ -25,8 +28,6 @@ cask install coteditor
 #cask install tunnelblick
 #cask install thunderbird
 #cask install gimp
-#cask install atom
-#cask install android-file-transfer
 #cask install alfred
 #cask alfred link
 
