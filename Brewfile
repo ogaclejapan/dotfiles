@@ -32,6 +32,7 @@ install python
 install node
 install android-sdk
 install gradle
+install groovy
 
 # Install formula (Optional)
 #install boot2docker
