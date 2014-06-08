@@ -28,6 +28,7 @@ install rbenv ruby-build
 install the_silver_searcher
 install vim --with-lua
 install maven
+install python
 install node
 install android-sdk
 install gradle
