@@ -33,6 +33,9 @@ install node
 install android-sdk
 install gradle
 install groovy
+install jad
+install dex2jar
+install apktool
 
 # Install formula (Optional)
 #install boot2docker
