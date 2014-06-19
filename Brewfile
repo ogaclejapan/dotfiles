@@ -20,6 +20,7 @@ install z
 install wget
 install curl
 install tree
+install rename
 install jq
 install htop-osx
 install wrk
