@@ -29,6 +29,7 @@ cask install genymotion || true
 #cask install tunnelblick || true
 #cask install thunderbird || true
 #cask install gimp || true
+#cask install imageoptim || true
 #cask install alfred || true
 #cask alfred link || true
 
