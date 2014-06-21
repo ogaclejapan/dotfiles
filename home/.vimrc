@@ -272,4 +272,8 @@ let g:EasyMotion_do_mapping = 0
 "EasyMotion検索で大文字が含まれる場合のみ大文字小文字を区別する
 let g:EasyMotion_smartcase = 1
 
+"Vimfilerの移動と連動してカレントディレクトリを変更する
+let g:vimfiler_enable_auto_cd = 1
+
+
 
