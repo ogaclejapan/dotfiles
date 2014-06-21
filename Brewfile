@@ -22,12 +22,14 @@ install curl
 install tree
 install rename
 install jq
+install jsonpp
 install htop-osx
 install wrk
 install ranger
 install rbenv ruby-build
 install the_silver_searcher
 install vim --with-lua
+install vimpager
 install maven
 install python
 install node
@@ -39,7 +41,6 @@ install dex2jar
 install apktool
 
 # Install formula (Optional)
-#install boot2docker
 #install docker
 #install tomcat
 
