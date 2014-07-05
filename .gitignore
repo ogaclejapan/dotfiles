@@ -5,6 +5,7 @@ home/.vim/*
 home/.config/ranger
 home/.config/configstore
 home/.config/gtk-2.0
+home/.config/gh-update
 home/.config/fish/fish_history
 home/.config/fish/*.*
 !home/.config/fish/config.fish

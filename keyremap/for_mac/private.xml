@@ -405,15 +405,23 @@
    -->
 
   <appdef>
+    <appname>ECLIPSE</appname>
+    <equal>org.eclipse.platform.ide</equal>
+  </appdef>
+  <appdef>
     <appname>INTELLI_J</appname>
     <equal>com.jetbrains.intellij</equal>
+  </appdef>
+  <appdef>
+    <appname>ANDROID_STUDIO</appname>
+    <equal>com.google.android.studio</equal>
   </appdef>
 
   <item>
     <name>Space( ␣ ) + SemiColon( ; ) to Code Completion for IDE</name>
     <appendix>アプリケーション(Eclipse, IntelliJのみ) - コード補完(Ctrl+Space)</appendix>  
     <identifier>ogaclejapan.remap_code_completion_for_ide</identifier>
-    <only>ECLIPSE, INTELLI_J</only>
+    <only>ECLIPSE, INTELLI_J, ANDROID_STUDIO</only>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,

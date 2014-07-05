@@ -18,6 +18,10 @@ cask install atom || true
 cask install coteditor || true
 cask install android-file-transfer || true
 cask install genymotion || true
+cask install gimp || true
+cask install imageoptim || true
+cask install icolors || true
+cask install pencil || true
 
 # Install cask formula (Optional)
 #cask install google-japanese-ime || true
@@ -27,10 +31,6 @@ cask install genymotion || true
 #cask install xtrafinder || true
 #cask install totalfinder || true
 #cask install tunnelblick || true
-#cask install thunderbird || true
-#cask install gimp || true
-#cask install imageoptim || true
-#cask install icolors || true
 #cask install alfred || true
 #cask alfred link || true
 

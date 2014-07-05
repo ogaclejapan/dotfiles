@@ -19,4 +19,5 @@
   d4 = diff HEAD~~~~
   d5 = diff HEAD~~~~~
   d10 = diff HEAD~~~~~~~~~~
-  
+[gh]
+  #host = your-github-enterprise

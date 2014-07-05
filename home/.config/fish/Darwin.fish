@@ -17,6 +17,11 @@ if test -d /usr/local/opt/groovy/libexec
   set -x GROOVY_HOME /usr/local/opt/groovy/libexec
 end
 
+if test -d /usr/local/opt/go
+  set -x PATH /usr/local/opt/go/libexec/bin $PATH
+  set -x GOPATH ~/.go
+end
+
 if test -d ~/Applications/Atom.app
   set -x ATOM_PATH ~/Applications
 end
