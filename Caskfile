@@ -17,6 +17,7 @@ cask install dash || true
 cask install atom || true
 cask install coteditor || true
 cask install android-file-transfer || true
+cask install android-studio || true
 cask install genymotion || true
 cask install gimp || true
 cask install imageoptim || true
