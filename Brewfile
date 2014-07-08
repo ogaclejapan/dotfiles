@@ -19,6 +19,7 @@ install reattach-to-user-namespace
 install z
 install wget
 install curl
+install httpie
 install tree
 install rename
 install jq
@@ -46,6 +47,10 @@ install peco
 # Install formula (Optional)
 #install docker
 #install tomcat
+
+
+# Pin formula
+pin android-sdk
 
 
 # Remove outdated versions
