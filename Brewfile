@@ -35,6 +35,7 @@ install maven
 install node
 install android-sdk
 install gradle
+install pidcat
 install groovy
 install jad
 install dex2jar
