@@ -4,10 +4,15 @@
     Keyremap settings for KeyRemap4MacBook
     @see https://pqrs.org/macosx/keyremap4macbook/
    -->
+  <appdef>
+    <appname>SKETCH3</appname>
+    <equal>com.bohemiancoding.sketch3</equal>
+  </appdef>
   <item>
     <name>Space( ␣ ) + H | J | K | L to Left/Down/Up/Right</name>
     <appendix>カーソルを移動 - 上下左右</appendix>
     <identifier>ogaclejapan.remap_vimode_like_hjkl</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -40,6 +45,7 @@
     <name>Space( ␣ ) + P | Slash( / ) to PageUp/PageDown</name>
     <appendix>カーソルを移動 - ページ上下</appendix>
     <identifier>ogaclejapan.remap_vimode_like_bf</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -61,6 +67,7 @@
     <name>Space( ␣ ) + U | N to Document Head/Tail</name>
     <appendix>カーソルを移動 - 先頭／末尾</appendix>
     <identifier>ogaclejapan.remap_vimode_like_gG</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -82,6 +89,7 @@
     <name>Space( ␣ ) + Dot( . ) | Comma( , ) to Line Head/Tail</name>
     <appendix>カーソルを移動 - 行頭／行末</appendix>
     <identifier>ogaclejapan.remap_vimode_like_0doller</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -103,6 +111,7 @@
     <name>Space( ␣ ) + I | O to Word Prev/Next</name>
     <appendix>カーソルを移動 - 前の単語／次の単語</appendix>
     <identifier>ogaclejapan.remap_vimode_like_bw</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -124,6 +133,7 @@
     <name>Space( ␣ ) + 1..9 | 0 | Minus( - ) | Equal( = ) to F1..F12</name>
     <appendix>ショートカット - F1〜F12補完</appendix>
     <identifier>ogaclejapan.remap_number_function_keys</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -195,6 +205,7 @@
     <name>Space( ␣ ) + M to Change Input Method</name>
     <appendix>ショートカット - IME入力切替</appendix>
     <identifier>ogaclejapan.remap_change_input_method</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -211,6 +222,7 @@
     <name>Space( ␣ ) + V to Paste</name>
     <appendix>ショートカット - 貼り付け</appendix>  
     <identifier>ogaclejapan.remap_paste</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -227,6 +239,7 @@
     <name>Space( ␣ ) + C to Copy</name>
     <appendix>ショートカット - コピー</appendix>  
     <identifier>ogaclejapan.remap_copy</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -243,6 +256,7 @@
     <name>Space( ␣ ) + X to Cut</name>
     <appendix>ショートカット - 切り取り</appendix>  
     <identifier>ogaclejapan.remap_cut</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -259,6 +273,7 @@
     <name>Space( ␣ ) + Z to Undo</name>
     <appendix>ショートカット - 取り消す</appendix>  
     <identifier>ogaclejapan.remap_undo</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -275,6 +290,7 @@
     <name>Space( ␣ ) + F to Find</name>
     <appendix>ショートカット - 検索</appendix>  
     <identifier>ogaclejapan.remap_find</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -291,6 +307,7 @@
     <name>Space( ␣ ) + S to Save</name>
     <appendix>ショートカット - 保存</appendix>  
     <identifier>ogaclejapan.remap_save</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -307,6 +324,7 @@
     <name>Space( ␣ ) + A to SelectAll</name>
     <appendix>ショートカット - 全選択</appendix>  
     <identifier>ogaclejapan.remap_selectall</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -323,6 +341,7 @@
     <name>Space( ␣ ) + T to Switch Window</name>
     <appendix>ショートカット - ウィンドウ切り替え</appendix>  
     <identifier>ogaclejapan.remap_switch_window</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -339,6 +358,7 @@
     <name>Space( ␣ ) + R to Reverse Switch Window</name>
     <appendix>ショートカット - ウィンドウ逆切り替え</appendix>  
     <identifier>ogaclejapan.remap_reverse_switch_window</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -355,6 +375,7 @@
     <name>Space( ␣ ) + E to Escape</name>
     <appendix>ショートカット - ESC</appendix>  
     <identifier>ogaclejapan.remap_escape</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -371,6 +392,7 @@
     <name>Space( ␣ ) + W to Close Window</name>
     <appendix>ショートカット - 閉じる</appendix>  
     <identifier>ogaclejapan.remap_close</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -387,6 +409,7 @@
     <name>Space( ␣ ) + Q to Quit Application</name>
     <appendix>ショートカット - アプリ終了</appendix>  
     <identifier>ogaclejapan.remap_quit</identifier>
+    <not>SKETCH3</not>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
