@@ -1,58 +1,60 @@
+#!/bin/sh
+
 # Make sure using latest Homebrew
-update
+brew update
 
 # Update already-installed formula (takes too much time, I will do it manually later)
-upgrade
+brew upgrade
 
 # Add repository
-tap homebrew/versions || true
-tap homebrew/binary || true
-tap peco/peco || true
+brew tap homebrew/versions || true
+brew tap homebrew/binary || true
+brew tap peco/peco || true
 
 # Install packages
-install git
-install git-flow
-install tig
-install fish
-install tmux
-install reattach-to-user-namespace
-install z
-install wget
-install curl
-install httpie
-install tree
-install rename
-install jq
-install jsonpp
-install htop-osx
-install wrk
-install ranger
-install rbenv ruby-build
-install the_silver_searcher
-install vim --with-lua
-install vimpager
-install maven
-install node
-install android-sdk
-install gradle
-install pidcat
-install groovy
-install jad
-install dex2jar
-install apktool
-install go
-install gh
-install peco
+brew install git
+brew install git-flow
+brew install tig
+brew install fish
+brew install tmux
+brew install reattach-to-user-namespace
+brew install z
+brew install wget
+brew install curl
+brew install httpie
+brew install tree
+brew install rename
+brew install jq
+brew install jsonpp
+brew install htop-osx
+brew install wrk
+brew install ranger
+brew install rbenv ruby-build
+brew install the_silver_searcher
+brew install vim --with-lua
+brew install vimpager
+brew install maven
+brew install node
+brew install android-sdk
+brew install gradle
+brew install pidcat
+brew install groovy
+brew install jad
+brew install dex2jar
+brew install apktool
+brew install go
+brew install gh
+brew install peco
 
 
 # Install formula (Optional)
-#install docker
-#install tomcat
+#brew install docker
+#brew install tomcat
 
 
 # Pin formula
-pin android-sdk
+brew pin android-sdk
 
 
 # Remove outdated versions
-cleanup
+brew cleanup

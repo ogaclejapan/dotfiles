@@ -1,37 +1,39 @@
+#!/bin/sh
+
 # Add repository
-tap caskroom/homebrew-cask || true
+brew tap caskroom/homebrew-cask || true
 
 # Install packages
-install brew-cask
+brew install brew-cask
 
 # Install .dmg files
-cask install iterm2 || true
-cask install keyremap4macbook || true
-cask install dropbox || true
-cask install google-chrome || true
-cask install virtualbox || true
-cask install vagrant || true
-cask install kobito || true
-cask install skitch || true
-cask install dash || true
-cask install atom || true
-cask install coteditor || true
-cask install android-file-transfer || true
-cask install android-studio || true
-cask install genymotion || true
-cask install gimp || true
-cask install imageoptim || true
-cask install icolors || true
-cask install pencil || true
+brew cask install iterm2 || true
+brew cask install keyremap4macbook || true
+brew cask install dropbox || true
+brew cask install google-chrome || true
+brew cask install virtualbox || true
+brew cask install vagrant || true
+brew cask install kobito || true
+brew cask install skitch || true
+brew cask install dash || true
+brew cask install atom || true
+brew cask install coteditor || true
+brew cask install android-file-transfer || true
+brew cask install android-studio || true
+brew cask install genymotion || true
+brew cask install gimp || true
+brew cask install imageoptim || true
+brew cask install icolors || true
+brew cask install pencil || true
 
 # Install cask formula (Optional)
-#cask install google-japanese-ime || true
-#cask install sublime-text || true
-#cask install hipchat || true
-#cask install skype || true
-#cask install xtrafinder || true
-#cask install totalfinder || true
-#cask install tunnelblick || true
-#cask install alfred || true
-#cask alfred link || true
+#brew cask install google-japanese-ime || true
+#brew cask install sublime-text || true
+#brew cask install hipchat || true
+#brew cask install skype || true
+#brew cask install xtrafinder || true
+#brew cask install totalfinder || true
+#brew cask install tunnelblick || true
+#brew cask install alfred || true
+#brew cask alfred link || true
 
