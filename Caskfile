@@ -8,19 +8,13 @@ brew install brew-cask
 
 # Install .dmg files
 brew cask install iterm2 || true
-brew cask install keyremap4macbook || true
+brew cask install karabiner || true
 brew cask install dropbox || true
-brew cask install google-chrome || true
 brew cask install virtualbox || true
 brew cask install vagrant || true
-brew cask install kobito || true
-brew cask install skitch || true
-brew cask install dash || true
 brew cask install atom || true
 brew cask install coteditor || true
 brew cask install android-file-transfer || true
-brew cask install android-studio || true
-brew cask install genymotion || true
 brew cask install gimp || true
 brew cask install imageoptim || true
 brew cask install icolors || true
@@ -35,5 +29,7 @@ brew cask install pencil || true
 #brew cask install totalfinder || true
 #brew cask install tunnelblick || true
 #brew cask install alfred || true
+#brew cask install genymotion || true
+#brew cask install dash || true
 #brew cask alfred link || true
 
