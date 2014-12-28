@@ -47,6 +47,7 @@ brew install go
 brew install gh
 brew install peco
 brew install plantuml
+brew install gpg2
 
 
 # Install formula (Optional)
