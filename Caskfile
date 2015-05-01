@@ -19,6 +19,8 @@ brew cask install gimp || true
 brew cask install imageoptim || true
 brew cask install icolors || true
 brew cask install pencil || true
+brew cask install jadengeller-helium || true
+brew cask install trailer || true
 
 # Install cask formula (Optional)
 #brew cask install google-japanese-ime || true
