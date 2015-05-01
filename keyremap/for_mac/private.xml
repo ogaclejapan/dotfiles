@@ -439,6 +439,10 @@
     <appname>ANDROID_STUDIO</appname>
     <equal>com.google.android.studio</equal>
   </appdef>
+  <appdef>
+    <appname>ATOM</appname>
+    <equal>com.github.atom</equal>
+  </appdef>
 
   <item>
     <name>Space( ␣ ) + SemiColon( ; ) to Code Completion for IDE</name>
@@ -473,6 +477,24 @@
       __KeyToKey__
       KeyCode::SEMICOLON, ModifierFlag::EXTRA1, 
       KeyCode::B, ModifierFlag::CONTROL_L
+    </autogen>
+  </item>
+
+  <item>
+    <name>Space( ␣ ) + SemiColon( ; ) to Prefix key for Atom</name>
+    <appendix>アプリケーション(Atomのみ) - プレフィックスキー(Cmd+k)</appendix>  
+    <identifier>ogaclejapan.remap_prefix_key_for_atom</identifier>
+    <only>ATOM</only>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::SPACE
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, ModifierFlag::EXTRA1, 
+      KeyCode::K, ModifierFlag::COMMAND_L
     </autogen>
   </item>
 
