@@ -17,4 +17,7 @@ home/.config/fish/*.*
 !home/.config/fish/alias.fish
 !home/.config/fish/host.fish
 
+home/.atom/*
+!home/.atom/*.cson
+
 

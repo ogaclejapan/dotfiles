@@ -1,0 +1,13 @@
+"*":
+  editor:
+    invisibles: {}
+    fontFamily: "Ubuntu Mono"
+  core:
+    themes: [
+      "atom-light-ui"
+      "atom-light-syntax"
+    ]
+  "exception-reporting":
+    userId: "7bfffbfe-0fd0-f413-c49b-bfc859999772"
+  welcome:
+    showOnStartup: false
