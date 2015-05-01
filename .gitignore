@@ -2,10 +2,14 @@
 
 .DS_Store
 home/.vim/*
-home/.config/ranger
+
+home/.config/ranger/*
+!home/.config/ranger/rc.conf
+
 home/.config/configstore
 home/.config/gtk-2.0
 home/.config/gh-update
+
 home/.config/fish/fish_history
 home/.config/fish/*.*
 !home/.config/fish/config.fish
