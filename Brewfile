@@ -49,6 +49,7 @@ brew install peco
 brew install plantuml
 brew install gpg2
 brew install highlight
+brew install fpp
 
 
 # Install formula (Optional)
