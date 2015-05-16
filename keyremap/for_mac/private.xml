@@ -428,10 +428,6 @@
    -->
 
   <appdef>
-    <appname>ECLIPSE</appname>
-    <equal>org.eclipse.platform.ide</equal>
-  </appdef>
-  <appdef>
     <appname>INTELLI_J</appname>
     <equal>com.jetbrains.intellij</equal>
   </appdef>
@@ -445,10 +441,10 @@
   </appdef>
 
   <item>
-    <name>Space( ␣ ) + SemiColon( ; ) to Code Completion for IDE</name>
-    <appendix>アプリケーション(Eclipse, IntelliJのみ) - コード補完(Ctrl+Space)</appendix>  
-    <identifier>ogaclejapan.remap_code_completion_for_ide</identifier>
-    <only>ECLIPSE, INTELLI_J, ANDROID_STUDIO</only>
+    <name>Space( ␣ ) + SemiColon( ; ) to Prefix key for idea</name>
+    <appendix>アプリケーション(IntelliJ Ideaのみ) - プレフィックスキー(Cmd+i)</appendix>  
+    <identifier>ogaclejapan.remap_prefix_key_for_idea</identifier>
+    <only>INTELLI_J, ANDROID_STUDIO</only>
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
@@ -458,7 +454,7 @@
     <autogen>
       __KeyToKey__
       KeyCode::SEMICOLON, ModifierFlag::EXTRA1, 
-      KeyCode::SPACE, ModifierFlag::CONTROL_L
+      KeyCode::I, ModifierFlag::COMMAND_L
     </autogen>
   </item>
 
