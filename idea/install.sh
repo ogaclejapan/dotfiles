@@ -3,14 +3,25 @@
 
 echo "Installing configs..."
 
-for i in $HOME/Library/Preferences/IntelliJIdea*/keymaps \
-         $HOME/Library/Preferences/IdeaIC*/keymaps \
-         $HOME/Library/Preferences/AndroidStudio*/keymaps \
-         $HOME/.IntelliJIdea*/config/keymaps \
-         $HOME/.IdeaIC*/config/keymaps \
-         $HOME/.AndroidStudio*/config/keymaps
+dirs=(
+  $HOME/Library/Preferences/IntelliJIdea*
+  $HOME/Library/Preferences/IdeaIC*
+  $HOME/Library/Preferences/AndroidStudio*
+  $HOME/.IntelliJIdea*/config
+  $HOME/.IdeaIC*/config
+  $HOME/.AndroidStudio*/config
+  )
+
+# Install keymaps
+for dir in "${dirs[@]}"
 do
-  cp -frv $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/keymaps/* $i 2> /dev/null
+  if [ -e $dir ]; then
+    if [ -d "$dir/keymaps" ]; then
+      cp -frv $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/keymaps/* "$dir/keymaps" 2> /dev/null
+    else
+      cp -frv $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/keymaps $dir 2> /dev/null
+    fi
+  fi
 done
 
 echo "Done."
