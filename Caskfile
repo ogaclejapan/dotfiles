@@ -15,6 +15,7 @@ brew cask install vagrant || true
 brew cask install atom || true
 brew cask install coteditor || true
 brew cask install android-file-transfer || true
+brew cask install androidtool || true
 brew cask install gimp || true
 brew cask install imageoptim || true
 brew cask install icolors || true
