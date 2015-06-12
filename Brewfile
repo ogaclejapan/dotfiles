@@ -46,7 +46,7 @@ brew install apktool
 brew install go
 brew install gh
 brew install peco
-brew install plantuml
+brew install plantuml graphviz
 brew install gpg2
 brew install highlight
 brew install fpp
