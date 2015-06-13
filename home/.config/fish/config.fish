@@ -1,3 +1,4 @@
+set -x SHELL fish
 set -x LANG ja_JP.UTF-8
 set -x EDITOR vim
 set -x PATH ./bin $HOME/bin /usr/local/bin $PATH
