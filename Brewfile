@@ -43,7 +43,7 @@ brew install groovy
 brew install jad
 brew install dex2jar
 brew install apktool
-brew install go
+brew install go --with-cc-all
 brew install gh
 brew install peco
 brew install plantuml graphviz
