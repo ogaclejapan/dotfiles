@@ -29,6 +29,7 @@ NeoBundle 'vim-scripts/fish-syntax'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'jtratner/vim-flavored-markdown'
+NeoBundle 'itspriddle/vim-marked'
 NeoBundle 'rking/ag.vim'
 
 call neobundle#end()
