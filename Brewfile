@@ -13,6 +13,7 @@ brew tap peco/peco || true
 
 # Install packages
 brew install git
+brew install git-lfs
 brew install git-flow
 brew install tig
 brew install fish

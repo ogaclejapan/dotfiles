@@ -21,3 +21,7 @@
   d10 = diff HEAD~~~~~~~~~~
 [gh]
   #host = your-github-enterprise
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
