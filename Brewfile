@@ -51,6 +51,8 @@ brew install plantuml graphviz
 brew install gpg2
 brew install highlight
 brew install fpp
+brew install urlview
+brew install extract_url
 
 
 # Install formula (Optional)
