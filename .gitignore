@@ -20,6 +20,5 @@ home/.config/fish/*.*
 home/.atom/*
 !home/.atom/*.cson
 
-home/.tmux/plugins/*
-
+home/.tmux/plugins/tmux-*
 
