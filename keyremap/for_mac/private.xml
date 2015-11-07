@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <root>
   <!-- 
-    Keyremap settings for KeyRemap4MacBook
-    @see https://pqrs.org/macosx/keyremap4macbook/
+    Keyremap settings for Karabiner
+    @see https://pqrs.org/osx/karabiner/index.html
    -->
   <appdef>
     <appname>SKETCH3</appname>
@@ -42,7 +42,7 @@
   </item>
 
   <item>
-    <name>Space( ␣ ) + P | Slash( / ) to PageUp/PageDown</name>
+    <name>Space( ␣ ) + U | N to PageUp/PageDown</name>
     <appendix>カーソルを移動 - ページ上下</appendix>
     <identifier>ogaclejapan.remap_vimode_like_bf</identifier>
     <not>SKETCH3</not>
@@ -54,35 +54,13 @@
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::P, ModifierFlag::EXTRA1, 
-      KeyCode::PAGEUP
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      KeyCode::SLASH, ModifierFlag::EXTRA1,
-      KeyCode::PAGEDOWN
-    </autogen>
-  </item>
-  <item>
-    <name>Space( ␣ ) + U | N to Document Head/Tail</name>
-    <appendix>カーソルを移動 - 先頭／末尾</appendix>
-    <identifier>ogaclejapan.remap_vimode_like_gG</identifier>
-    <not>SKETCH3</not>
-    <autogen>
-      __KeyOverlaidModifier__
-      KeyCode::SPACE,
-      KeyCode::VK_MODIFIER_EXTRA1,
-      KeyCode::SPACE
-    </autogen>
-    <autogen>
-      __KeyToKey__
       KeyCode::U, ModifierFlag::EXTRA1, 
-      KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L
+      KeyCode::CURSOR_UP, ModifierFlag::FN
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::N, ModifierFlag::EXTRA1, 
-      KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L
+      KeyCode::N, ModifierFlag::EXTRA1,
+      KeyCode::CURSOR_DOWN, ModifierFlag::FN
     </autogen>
   </item>
   <item>
@@ -219,7 +197,7 @@
     </autogen>
   </item>
   <item>
-    <name>Space( ␣ ) + V to Paste</name>
+    <name>Space( ␣ ) + P to Paste</name>
     <appendix>ショートカット - 貼り付け</appendix>  
     <identifier>ogaclejapan.remap_paste</identifier>
     <not>SKETCH3</not>
@@ -231,12 +209,12 @@
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::V, ModifierFlag::EXTRA1, 
+      KeyCode::P, ModifierFlag::EXTRA1, 
       KeyCode::V, ModifierFlag::COMMAND_L
     </autogen>
   </item>
   <item>
-    <name>Space( ␣ ) + C to Copy</name>
+    <name>Space( ␣ ) + Y to Copy</name>
     <appendix>ショートカット - コピー</appendix>  
     <identifier>ogaclejapan.remap_copy</identifier>
     <not>SKETCH3</not>
@@ -248,12 +226,12 @@
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::C, ModifierFlag::EXTRA1, 
+      KeyCode::Y, ModifierFlag::EXTRA1, 
       KeyCode::C, ModifierFlag::COMMAND_L
     </autogen>
   </item>
   <item>
-    <name>Space( ␣ ) + X to Cut</name>
+    <name>Space( ␣ ) + D to Cut</name>
     <appendix>ショートカット - 切り取り</appendix>  
     <identifier>ogaclejapan.remap_cut</identifier>
     <not>SKETCH3</not>
@@ -265,46 +243,12 @@
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::X, ModifierFlag::EXTRA1, 
+      KeyCode::D, ModifierFlag::EXTRA1, 
       KeyCode::X, ModifierFlag::COMMAND_L
     </autogen>
   </item>
   <item>
-    <name>Space( ␣ ) + Z to Undo</name>
-    <appendix>ショートカット - 取り消す</appendix>  
-    <identifier>ogaclejapan.remap_undo</identifier>
-    <not>SKETCH3</not>
-    <autogen>
-      __KeyOverlaidModifier__
-      KeyCode::SPACE,
-      KeyCode::VK_MODIFIER_EXTRA1,
-      KeyCode::SPACE
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      KeyCode::Z, ModifierFlag::EXTRA1, 
-      KeyCode::Z, ModifierFlag::COMMAND_L
-    </autogen>
-  </item>
-  <item>
-    <name>Space( ␣ ) + F to Find</name>
-    <appendix>ショートカット - 検索</appendix>  
-    <identifier>ogaclejapan.remap_find</identifier>
-    <not>SKETCH3</not>
-    <autogen>
-      __KeyOverlaidModifier__
-      KeyCode::SPACE,
-      KeyCode::VK_MODIFIER_EXTRA1,
-      KeyCode::SPACE
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      KeyCode::F, ModifierFlag::EXTRA1, 
-      KeyCode::F, ModifierFlag::COMMAND_L
-    </autogen>
-  </item>
-  <item>
-    <name>Space( ␣ ) + S to Save</name>
+    <name>Space( ␣ ) + W to Save</name>
     <appendix>ショートカット - 保存</appendix>  
     <identifier>ogaclejapan.remap_save</identifier>
     <not>SKETCH3</not>
@@ -316,59 +260,8 @@
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::S, ModifierFlag::EXTRA1, 
+      KeyCode::W, ModifierFlag::EXTRA1, 
       KeyCode::S, ModifierFlag::COMMAND_L
-    </autogen>
-  </item>
-  <item>
-    <name>Space( ␣ ) + A to SelectAll</name>
-    <appendix>ショートカット - 全選択</appendix>  
-    <identifier>ogaclejapan.remap_selectall</identifier>
-    <not>SKETCH3</not>
-    <autogen>
-      __KeyOverlaidModifier__
-      KeyCode::SPACE,
-      KeyCode::VK_MODIFIER_EXTRA1,
-      KeyCode::SPACE
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      KeyCode::A, ModifierFlag::EXTRA1, 
-      KeyCode::A, ModifierFlag::COMMAND_L
-    </autogen>
-  </item>
-  <item>
-    <name>Space( ␣ ) + T to Switch Window</name>
-    <appendix>ショートカット - ウィンドウ切り替え</appendix>  
-    <identifier>ogaclejapan.remap_switch_window</identifier>
-    <not>SKETCH3</not>
-    <autogen>
-      __KeyOverlaidModifier__
-      KeyCode::SPACE,
-      KeyCode::VK_MODIFIER_EXTRA1,
-      KeyCode::SPACE
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      KeyCode::T, ModifierFlag::EXTRA1, 
-      KeyCode::TAB, ModifierFlag::COMMAND_L
-    </autogen>
-  </item>
-  <item>
-    <name>Space( ␣ ) + R to Reverse Switch Window</name>
-    <appendix>ショートカット - ウィンドウ逆切り替え</appendix>  
-    <identifier>ogaclejapan.remap_reverse_switch_window</identifier>
-    <not>SKETCH3</not>
-    <autogen>
-      __KeyOverlaidModifier__
-      KeyCode::SPACE,
-      KeyCode::VK_MODIFIER_EXTRA1,
-      KeyCode::SPACE
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      KeyCode::R, ModifierFlag::EXTRA1, 
-      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
     </autogen>
   </item>
   <item>
@@ -386,40 +279,6 @@
       __KeyToKey__
       KeyCode::E, ModifierFlag::EXTRA1, 
       KeyCode::ESCAPE
-    </autogen>
-  </item>
-  <item>
-    <name>Space( ␣ ) + W to Close Window</name>
-    <appendix>ショートカット - 閉じる</appendix>  
-    <identifier>ogaclejapan.remap_close</identifier>
-    <not>SKETCH3</not>
-    <autogen>
-      __KeyOverlaidModifier__
-      KeyCode::SPACE,
-      KeyCode::VK_MODIFIER_EXTRA1,
-      KeyCode::SPACE
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      KeyCode::W, ModifierFlag::EXTRA1, 
-      KeyCode::W, ModifierFlag::COMMAND_L
-    </autogen>
-  </item>
-  <item>
-    <name>Space( ␣ ) + Q to Quit Application</name>
-    <appendix>ショートカット - アプリ終了</appendix>  
-    <identifier>ogaclejapan.remap_quit</identifier>
-    <not>SKETCH3</not>
-    <autogen>
-      __KeyOverlaidModifier__
-      KeyCode::SPACE,
-      KeyCode::VK_MODIFIER_EXTRA1,
-      KeyCode::SPACE
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      KeyCode::Q, ModifierFlag::EXTRA1, 
-      KeyCode::Q, ModifierFlag::COMMAND_L
     </autogen>
   </item>
 
