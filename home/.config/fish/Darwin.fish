@@ -5,6 +5,11 @@ if test -d ~/.rbenv/shims
 	set -x PATH ~/.rbenv/shims $PATH
 end
 
+if test -d ~/.pyenv/shims
+  set -x PATH ~/.pyenv/shims $PATH
+  set -x PYENV_SHELL fish
+end
+
 if /usr/libexec/java_home > /dev/null
   set -x JAVA_HOME (echo (command /usr/libexec/java_home))
 end
