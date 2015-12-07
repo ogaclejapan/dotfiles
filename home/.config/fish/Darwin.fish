@@ -6,8 +6,7 @@ if test -d ~/.rbenv/shims
 end
 
 if test -d ~/.pyenv/shims
-  set -x PATH ~/.pyenv/shims $PATH
-  set -x PYENV_SHELL fish
+  . (pyenv init - | psub)
 end
 
 if /usr/libexec/java_home > /dev/null
