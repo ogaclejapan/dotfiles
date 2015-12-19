@@ -62,7 +62,7 @@ brew install pyenv
 
 
 # Pin formula
-brew pin android-sdk
+#brew pin android-sdk
 
 
 # Remove outdated versions
