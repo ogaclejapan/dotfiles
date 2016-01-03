@@ -5,10 +5,6 @@ if test -d ~/.rbenv/shims
 	set -x PATH ~/.rbenv/shims $PATH
 end
 
-if test -d ~/.pyenv/shims
-  . (pyenv init - | psub)
-end
-
 if /usr/libexec/java_home > /dev/null
   set -x JAVA_HOME (echo (command /usr/libexec/java_home))
 end
