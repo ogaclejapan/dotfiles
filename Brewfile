@@ -53,6 +53,7 @@ brew install highlight
 brew install fpp
 brew install urlview
 brew install extract_url
+brew install python
 
 
 # Install formula (Optional)
