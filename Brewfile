@@ -31,7 +31,6 @@ brew install htop-osx
 brew install wrk
 brew install ranger
 brew install rbenv ruby-build
-brew install rbenv-gem-rehash
 brew install the_silver_searcher
 brew install vim --with-lua
 brew install vimpager
