@@ -54,6 +54,7 @@ brew install fpp
 brew install urlview
 brew install extract_url
 brew install python
+brew install kotlin
 
 
 # Install formula (Optional)
