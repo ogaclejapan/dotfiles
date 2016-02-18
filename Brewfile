@@ -15,6 +15,7 @@ brew tap peco/peco || true
 brew install git
 brew install git-lfs
 brew install git-flow
+brew install ghi
 brew install tig
 brew install fish
 brew install tmux
