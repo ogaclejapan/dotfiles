@@ -12,6 +12,8 @@ end
 if test -d /usr/local/opt/android-sdk
   set -x ANDROID_HOME /usr/local/opt/android-sdk
   set -x ANDROID_HVPROTO ddm
+  set -x PATH $PATH $ANDROID_HOME/platform-tools
+  set -x PATH $PATH $ANDROID_HOME/tools
 end
 
 if test -d /usr/local/opt/groovy/libexec
