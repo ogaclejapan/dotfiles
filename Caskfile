@@ -26,6 +26,7 @@ brew cask install shiftit || true
 brew cask install trailer || true
 brew cask install sketch || true
 brew cask install pixate-studio || true
+brew cask install material-colors || true
 
 # Install cask formula (Optional)
 #brew cask install google-japanese-ime || true
