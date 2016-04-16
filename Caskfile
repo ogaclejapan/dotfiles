@@ -22,6 +22,7 @@ brew cask install sketch || true
 brew cask install pixate-studio || true
 brew cask install material-colors || true
 brew cask install skitch
+brew cask install gitup
 
 # Install cask formula (Optional)
 #brew cask install dropbox || true
