@@ -55,7 +55,7 @@ brew install urlview
 brew install extract_url
 brew install python
 brew install kotlin
-
+brew install translate-shell
 
 # Install formula (Optional)
 #brew install docker
