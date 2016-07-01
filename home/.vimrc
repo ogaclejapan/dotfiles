@@ -20,7 +20,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Install Bundle
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'itchyny/lightline.vim'
