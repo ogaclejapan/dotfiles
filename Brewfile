@@ -66,7 +66,6 @@ cask 'android-file-transfer'
 cask 'androidtool'
 cask 'imageoptim'
 cask 'jadengeller-helium'
-cask 'trailer'
 cask 'sketch'
 cask 'sketch-tool'
 cask 'pixate-studio'
@@ -83,6 +82,7 @@ cask 'gitup'
 #cask 'virtualbox'
 #cask 'vagrant'
 #cask 'genymotion'
+#cask 'trailer'
 
 
 #------------------------------#
