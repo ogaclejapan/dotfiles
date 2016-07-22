@@ -53,6 +53,7 @@ brew 'translate-shell'
 
 ## Optional
 #brew 'docker'
+#brew 'dvm'
 
 #------------------------------#
 # Cask formula
