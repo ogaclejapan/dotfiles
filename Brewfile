@@ -46,6 +46,7 @@ brew 'extract_url'
 brew 'python'
 brew 'kotlin'
 brew 'translate-shell'
+brew 'webp'
 
 ## Optional
 #brew 'docker'
