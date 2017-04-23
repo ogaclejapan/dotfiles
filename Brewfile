@@ -2,11 +2,9 @@
 # Brew formula
 #------------------------------#
 
-tap 'peco/peco'
-
 brew 'git'
 brew 'git-lfs'
-brew 'git-flow'
+brew 'hub'
 brew 'gibo'
 brew 'repo'
 brew 'tig'
@@ -31,14 +29,12 @@ brew 'vim', args: ['with-lua']
 brew 'vimpager'
 brew 'maven'
 brew 'node'
-brew 'android-sdk'
 brew 'gradle'
 brew 'pidcat'
 brew 'groovy'
 brew 'dex2jar'
 brew 'apktool'
 brew 'go', args: ['with-cc-all']
-brew 'gh'
 brew 'peco'
 brew 'plantuml'
 brew 'graphviz'
@@ -65,6 +61,7 @@ cask 'iterm2'
 cask 'karabiner'
 cask 'atom'
 cask 'coteditor'
+cask 'android-sdk'
 cask 'android-file-transfer'
 cask 'androidtool'
 cask 'imageoptim'

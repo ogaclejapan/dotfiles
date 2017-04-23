@@ -9,8 +9,8 @@ if /usr/libexec/java_home > /dev/null
   set -x JAVA_HOME (echo (command /usr/libexec/java_home))
 end
 
-if test -d /usr/local/opt/android-sdk
-  set -x ANDROID_HOME /usr/local/opt/android-sdk
+if test -d /usr/local/share/android-sdk
+  set -x ANDROID_HOME /usr/local/share/android-sdk
   set -x ANDROID_HVPROTO ddm
   set -x PATH $PATH $ANDROID_HOME/platform-tools
   set -x PATH $PATH $ANDROID_HOME/tools
