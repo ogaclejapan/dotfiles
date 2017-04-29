@@ -29,6 +29,7 @@ brew 'vim', args: ['with-lua']
 brew 'vimpager'
 brew 'maven'
 brew 'node'
+brew 'yarn'
 brew 'gradle'
 brew 'pidcat'
 brew 'groovy'
