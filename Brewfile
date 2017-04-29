@@ -74,6 +74,7 @@ cask 'pixate-studio'
 cask 'material-colors'
 cask 'skitch'
 cask 'gitup'
+cask 'gitbook-editor'
 
 ## Optional
 
