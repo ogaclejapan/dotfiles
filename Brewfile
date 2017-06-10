@@ -25,6 +25,7 @@ brew 'ranger'
 brew 'rbenv'
 brew 'ruby-build'
 brew 'the_silver_searcher'
+brew 'ripgrep'
 brew 'vim', args: ['with-lua']
 brew 'vimpager'
 brew 'maven'
