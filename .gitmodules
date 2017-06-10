@@ -1,10 +1,9 @@
-[submodule "home/.vim/bundle/neobundle.vim"]
-	path = home/.vim/bundle/neobundle.vim
-	url = https://github.com/Shougo/neobundle.vim
-
 [submodule "home/.tmux/plugins/tpm"]
 	path = home/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
 [submodule "home/.bin/adb-peco"]
 	path = home/.bin/adb-peco
 	url = https://github.com/tomorrowkey/adb-peco.git
+[submodule "home/.vim/dein.vim"]
+	path = home/.vim/dein.vim
+	url = https://github.com/Shougo/dein.vim.git

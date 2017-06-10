@@ -1,57 +1,50 @@
 "__/__/__/__/__/__/__/__/__/__/
-"__/ NeoBundle Settings
+"__/ Dein Settings
 "__/__/__/__/__/__/__/__/__/__/
 
-" fish shell is not supported. see #215
-if &shell =~# 'fish$'
-  set shell=sh
-endif
-
-" :NeoBundleInstall
-if has('vim_starting')
+if &compatible
   set nocompatible
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+set runtimepath+=~/.vim/dein.vim
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+let s:dein_path = expand('~/.vim/dein')
+if dein#load_state(s:dein_path)
+  call dein#begin(s:dein_path)
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+  " Let dein manage dein
+  call dein#add('Shougo/dein.vim')
 
-" Install Bundle
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Shougo/vimproc', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'vim-scripts/fish-syntax'
-NeoBundle 'kshenoy/vim-signature'
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'jtratner/vim-flavored-markdown'
-NeoBundle 'itspriddle/vim-marked'
-NeoBundle 'rking/ag.vim'
+  " Add or remove your plugins here:
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/vimfiler.vim')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+  call dein#add('Shougo/neocomplete.vim')
+  call dein#add('Lokaltog/vim-easymotion')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('flazz/vim-colorschemes')
+  call dein#add('vim-scripts/fish-syntax')
+  call dein#add('kshenoy/vim-signature')
+  call dein#add('osyo-manga/vim-over')
+  call dein#add('jtratner/vim-flavored-markdown')
+  call dein#add('itspriddle/vim-marked')
+  call dein#add('rking/ag.vim')
 
-call neobundle#end()
+  call dein#end()
+  call dein#save_state()
+endif
 
 filetype plugin indent on
+syntax enable
 
-NeoBundleCheck
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 
 "__/__/__/__/__/__/__/__/__/__/
 "__/ Display Settings
 "__/__/__/__/__/__/__/__/__/__/
 
-"コードのハイライト表示
-syntax on
 
 "文字エンコード
 set encoding=utf-8 nobomb
