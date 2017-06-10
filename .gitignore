@@ -18,18 +18,19 @@ home/.config/fish/*.*
 !home/.config/fish/alias.fish
 !home/.config/fish/host.fish
 
-home/.config/fish/functions/*.fish
+home/.config/fish/functions/*.*
 !home/.config/fish/functions/fish_prompt.fish
 !home/.config/fish/functions/fish_right_prompt.fish
 !home/.config/fish/functions/tmux_colours.fish
 !home/.config/fish/functions/en_ja.fish
 !home/.config/fish/functions/ja_en.fish
+!home/.config/fish/functions/fisher.fish
 
-home/.config/fish/completions/*.fish
+home/.config/fish/completions/*.*
 !home/.config/fish/completions/homesick.fish
 !home/.config/fish/completions/docker.fish
 
-home/.config/fish/conf.d/*.fish
+home/.config/fish/conf.d/*.*
 
 home/.config/fisherman
 
