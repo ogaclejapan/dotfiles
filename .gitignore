@@ -1,7 +1,7 @@
 # git config --global core.excludesfile ~/.gitignore
 
 .DS_Store
-#home/.vim/*
+home/.vim/dein
 
 home/.config/ranger/*
 !home/.config/ranger/rc.conf
