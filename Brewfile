@@ -37,6 +37,7 @@ brew 'dex2jar'
 brew 'apktool'
 brew 'go', args: ['with-cc-all']
 brew 'peco'
+brew 'fzf'
 brew 'plantuml'
 brew 'graphviz'
 brew 'gpg2'
