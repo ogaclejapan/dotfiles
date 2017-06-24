@@ -76,7 +76,6 @@ cask 'kap'
 cask 'gitup'
 cask 'gitbook-editor'
 cask 'bettertouchtool'
-cask 'hammerspoon'
 
 ## Optional
 
@@ -85,6 +84,7 @@ cask 'hammerspoon'
 #cask 'vagrant'
 #cask 'genymotion'
 #cask 'trailer'
+#cask 'hammerspoon'
 
 
 #------------------------------#
