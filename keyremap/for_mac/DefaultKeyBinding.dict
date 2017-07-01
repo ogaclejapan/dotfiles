@@ -1,29 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>^/</key>
 	<string>undo:</string>
 	<key>^g</key>
-	<string>_cancelKey:</string>
+	<string>cancelOperation:</string>
 	<key>^ </key>
 	<string>setMark:</string>
 	<key>^w</key>
-  <array>
-	  <string>selectToMark:</string>
-	  <string>cut:</string>
-  </array>
+	<string>deleteToMark:</string>
 	<key>~w</key>
   <array>
-  	<string>selectToMark:</string>
-  	<string>copy:</string>
+  	<string>deleteToMark:</string>
+  	<string>yank:</string>
   </array>
 	<key>^y</key>
-	<string>paste:</string>
+	<string>yank:</string>
+	<key>~y</key>
+	<string>yankPop:</string>
 	<key>~f</key>
 	<string>moveWordForward:</string>
+	<key>~F</key>
+	<string>moveWordForwardAndModifySelection:</string>
 	<key>~b</key>
 	<string>moveWordBackward:</string>
+	<key>~B</key>
+	<string>moveWordBackwardAndModifySelection:</string>
 	<key>~d</key>
 	<string>deleteWordForward:</string>
 	<key>~^h</key>
@@ -36,12 +39,181 @@
 	<string>moveToEndOfDocument:</string>
 	<key>~&lt;</key>
 	<string>moveToBeginningOfDocument:</string>
+	<key>~c</key>
+	<string>capitalizeWord:</string>
+	<key>~l</key>
+	<string>lowercaseWord:</string>
+	<key>~u</key>
+	<string>uppercaseWord:</string>
   <key>^x</key>
   <dict>
     <key>^m</key>
     <string>selectToMark:</string>
     <key>^x</key>
     <string>swapWithMark:</string>
+  </dict>
+  <key>^c</key>
+  <dict>
+    <!-- copy without selection: C-c (w|l|a|A|e|E|p) -->
+    <key>w</key>
+    <array>
+      <string>selectWord:</string>
+	    <string>moveBackward:</string>
+      <string>setMark:</string>
+	    <string>moveWordForward:</string>
+	    <string>deleteToMark:</string>
+	    <string>yank:</string>
+    </array>
+    <key>l</key>
+    <array>
+      <string>selectLine:</string>
+	    <string>moveBackward:</string>
+      <string>setMark:</string>
+	    <string>moveToEndOfLine:</string>
+	    <string>deleteToMark:</string>
+	    <string>yank:</string>
+    </array>
+    <key>a</key>
+    <array>
+      <string>setMark:</string>
+      <string>moveToBeginningOfLine:</string>
+	    <string>deleteToMark:</string>
+      <string>yank:</string>
+    </array>
+    <key>A</key>
+    <array>
+      <string>setMark:</string>
+      <string>moveToBeginningOfDocument:</string>
+	    <string>deleteToMark:</string>
+      <string>yank:</string>
+    </array>
+    <key>e</key>
+    <array>
+      <string>setMark:</string>
+      <string>moveToEndOfLine:</string>
+	    <string>deleteToMark:</string>
+      <string>yank:</string>
+    </array>
+    <key>E</key>
+    <array>
+      <string>setMark:</string>
+      <string>moveToEndOfDocument:</string>
+	    <string>deleteToMark:</string>
+      <string>yank:</string>
+    </array>
+    <key>p</key>
+    <array>
+      <string>selectParagraph:</string>
+	    <string>moveBackward:</string>
+      <string>setMark:</string>
+	    <string>moveToEndOfParagraph:</string>
+	    <string>deleteToMark:</string>
+	    <string>yank:</string>
+    </array>
+    <key> </key>
+    <dict>
+      <!-- cut without selection: C-c ' ' (w|l|a|A|e|E|p) -->
+      <key>w</key>
+      <array>
+        <string>selectWord:</string>
+	      <string>moveBackward:</string>
+        <string>setMark:</string>
+	      <string>moveWordForward:</string>
+	      <string>deleteToMark:</string>
+      </array>
+      <key>l</key>
+      <array>
+        <string>selectLine:</string>
+	      <string>moveBackward:</string>
+        <string>setMark:</string>
+	      <string>moveToEndOfLine:</string>
+	      <string>deleteToMark:</string>
+      </array>
+      <key>a</key>
+      <array>
+        <string>setMark:</string>
+        <string>moveToBeginningOfLine:</string>
+	      <string>deleteToMark:</string>
+      </array>
+      <key>A</key>
+      <array>
+        <string>setMark:</string>
+        <string>moveToBeginningOfDocument:</string>
+	      <string>deleteToMark:</string>
+      </array>
+      <key>e</key>
+      <array>
+        <string>setMark:</string>
+        <string>moveToEndOfLine:</string>
+	      <string>deleteToMark:</string>
+      </array>
+      <key>E</key>
+      <array>
+        <string>setMark:</string>
+        <string>moveToEndOfDocument:</string>
+	      <string>deleteToMark:</string>
+      </array>
+      <key>p</key>
+      <array>
+        <string>selectParagraph:</string>
+	      <string>moveBackward:</string>
+        <string>setMark:</string>
+	      <string>moveToEndOfParagraph:</string>
+	      <string>deleteToMark:</string>
+      </array>
+      <key> </key>
+      <dict>
+        <!-- selection: C-c ' ' ' ' (w|l|a|A|e|E|p) -->
+        <key>w</key>
+        <array>
+          <string>selectWord:</string>
+	        <string>moveBackward:</string>
+          <string>setMark:</string>
+	        <string>moveWordForward:</string>
+	        <string>selectToMark:</string>
+        </array>
+        <key>l</key>
+        <array>
+          <string>selectLine:</string>
+	        <string>moveBackward:</string>
+          <string>setMark:</string>
+	        <string>moveToEndOfLine:</string>
+	        <string>selectToMark:</string>
+        </array>
+        <key>a</key>
+        <array>
+          <string>setMark:</string>
+          <string>moveToBeginningOfLine:</string>
+	        <string>selectToMark:</string>
+        </array>
+        <key>A</key>
+        <array>
+          <string>setMark:</string>
+          <string>moveToBeginningOfDocument:</string>
+	        <string>selectToMark:</string>
+        </array>
+        <key>e</key>
+        <array>
+          <string>setMark:</string>
+          <string>moveToEndOfLine:</string>
+	        <string>selectToMark:</string>
+        </array>
+        <key>E</key>
+        <array>
+          <string>setMark:</string>
+          <string>moveToEndOfDocument:</string>
+	        <string>selectToMark:</string>
+        </array>
+        <key>p</key>
+        <array>
+          <string>selectParagraph:</string>
+	        <string>moveBackward:</string>
+          <string>setMark:</string>
+	        <string>moveToEndOfParagraph:</string>
+	        <string>selectToMark:</string>
+        </array>
+      </dict>
+    </dict>
   </dict>
 </dict>
 </plist>
