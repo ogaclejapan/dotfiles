@@ -63,6 +63,7 @@ tap 'caskroom/cask'
 
 cask 'alfred'
 cask 'iterm2'
+cask 'emacs'
 cask 'atom'
 cask 'coteditor'
 cask 'android-sdk'

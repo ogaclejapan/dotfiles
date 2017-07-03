@@ -39,3 +39,7 @@ home/.atom/*
 
 home/.tmux/plugins/tmux-*
 
+home/.emacs.d/*
+!home/.emacs.d/init.el
+
+
