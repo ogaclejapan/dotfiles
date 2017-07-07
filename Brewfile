@@ -77,6 +77,7 @@ cask 'kap'
 cask 'gitup'
 cask 'gitbook-editor'
 cask 'bettertouchtool'
+cask 'karabiner-elements'
 
 ## Optional
 
