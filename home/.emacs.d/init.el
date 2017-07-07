@@ -133,17 +133,32 @@
 ;; Use text-mode on scratch buffer
 (setq initial-major-mode 'text-mode)
 
+;;--+--+--+--+--+--+--+--+--+--+
+;; Server Settings
+;;--+--+--+--+--+--+--+--+--+--+
+
+;; Start server for emacs-client
+(when window-system
+  (require 'server)
+  (unless (eq (server-running-p) 't)
+    (server-start)
+
+    ;; Minimize window when start app
+    ;;(defun iconify-emacs-when-server-is-done ()
+    ;;  (unless server-clients (iconify-frame)))
+    ;;(add-hook 'after-init-hook 'iconify-emacs-when-server-is-done)
+
+    ;; Show confirm message when exit app
+    (setq confirm-kill-emacs 'yes-or-no-p)))
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Key Settings
 ;;--+--+--+--+--+--+--+--+--+--+
 
 ;; C-h -> Backspace
-;; C-c h ->  HELP
-(keyboard-translate ?\C-h ?\C-?)
-(global-set-key "\C-h" nil)
-(global-set-key "\C-ch" 'help-command)
-
+;; C-? -> HELP
+(define-key key-translation-map [?\C-h] [?\C-?])
+(global-set-key (kbd "C-?") 'help-for-help)
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Package Settings
@@ -252,6 +267,15 @@
   '(define-key markdown-mode-map (kbd "C-x p") 'markdown-preview-file))
 
 ;;------------------------------
+
+;; https://github.com/EricCrosson/unkillable-scratch
+;; Disallow the *scratch* buffer from being killed
+(use-package unkillable-scratch
+  :ensure t
+  :init
+  (setq unkillable-scratch-behavior 'do-nothing)
+  (setq unkillable-buffers '("^\\*scratch\\*$"))
+  (unkillable-scratch 1))
 
 ;; https://github.com/rranelli/auto-package-update.el
 ;; Automatically update Emacs packages.
