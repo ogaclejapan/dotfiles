@@ -37,10 +37,35 @@
 ;; https://debbugs.gnu.org/cgi/bugreport.cgi?bug=23412
 (setq redisplay-dont-pause nil)
 
+(when (and (>= emacs-major-version 24) (not (null window-system)))
+  (let* ((font-family "Menlo")
+         (font-size 12)
+         (font-height (* font-size 10))
+         (jp-font-family "ヒラギノ角ゴ ProN"))
+    (set-face-attribute 'default nil :family font-family :height font-height)
+    (let ((name (frame-parameter nil 'font))
+          (jp-font-spec (font-spec :family jp-font-family))
+          (jp-characters '(katakana-jisx0201
+                           cp932-2-byte
+                           japanese-jisx0212
+                           japanese-jisx0213-2
+                           japanese-jisx0213.2004-1))
+          (font-spec (font-spec :family font-family))
+          (characters '((?\u00A0 . ?\u00FF)    ; Latin-1
+                        (?\u0100 . ?\u017F)    ; Latin Extended-A
+                        (?\u0180 . ?\u024F)    ; Latin Extended-B
+                        (?\u0250 . ?\u02AF)    ; IPA Extensions
+                        (?\u0370 . ?\u03FF)))) ; Greek and Coptic
+      (dolist (jp-character jp-characters)
+        (set-fontset-font name jp-character jp-font-spec))
+      (dolist (character characters)
+        (set-fontset-font name character font-spec))
+      (add-to-list 'face-font-rescale-alist (cons jp-font-family 1.2)))))
+
 ;; Transparent window
 (if window-system 
     (progn
-      (set-frame-parameter nil 'alpha 95)))
+      (set-frame-parameter nil 'alpha 90)))
 
 ;; No menu bar
 (menu-bar-mode 0)
@@ -68,12 +93,12 @@
 (setq make-backup-files nil)
 
 ;; No auto save
-;; (setq auto-save-default nil)
+(setq auto-save-default nil)
 ;; (setq auto-save-list-file-name nil)
 ;; (setq auto-save-list-file-prefix nil)
 
 ;; Delete auto save files when editor finished
-(setq delete-auto-save-files t)
+;; (setq delete-auto-save-files t)
 
 ;; No beep sound
 (defun previous-line (arg)
@@ -124,8 +149,8 @@
 ;; Package Settings
 ;;--+--+--+--+--+--+--+--+--+--+
 
-;; color-theme-sanityinc-tomorrow-theme
 ;; https://github.com/purcell/color-theme-sanityinc-tomorrow
+;; Chris Kempson's 'tomorrow' themes
 (use-package color-theme-sanityinc-tomorrow
   :ensure t
   :init (load-theme 'sanityinc-tomorrow-bright t))
@@ -200,7 +225,7 @@
 ;; https://github.com/magnars/expand-region.el
 (use-package expand-region
   :ensure t
-  :bind (("C-=" . er/expand-region)
+  :bind (("C-+" . er/expand-region)
          ("C-_" . er/contract-region)))
 
 ;;------------------------------
@@ -230,11 +255,11 @@
 
 ;; https://github.com/rranelli/auto-package-update.el
 ;; Automatically update Emacs packages.
-(use-package auto-package-update
-  :ensure t
-  :config
-  (setq auto-package-update-delete-old-versions t)
-  (auto-package-update-maybe))
+;; (use-package auto-package-update
+;;   :ensure t
+;;   :config
+;;   (setq auto-package-update-delete-old-versions t)
+;;   (auto-package-update-maybe))
 
 ;;------------------------------
 
