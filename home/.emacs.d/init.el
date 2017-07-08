@@ -148,6 +148,10 @@
     ;;  (unless server-clients (iconify-frame)))
     ;;(add-hook 'after-init-hook 'iconify-emacs-when-server-is-done)
 
+    ;; Don't finish app
+    (global-set-key (kbd "C-x C-c") 'server-edit)
+    (defalias 'exit 'save-buffers-kill-emacs)
+
     ;; Show confirm message when exit app
     (setq confirm-kill-emacs 'yes-or-no-p)))
 
