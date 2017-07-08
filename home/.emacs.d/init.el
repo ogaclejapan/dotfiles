@@ -174,6 +174,17 @@
 (define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "C-?") 'help-for-help)
 
+;; GoogleIME for Japanese Toggle Shortcuts
+(when (eq system-type 'darwin)
+  (setq google-ime "/Applications/GoogleJapaneseInput.localized")
+  (when (file-exists-p google-ime)
+    (global-set-key (kbd "C-J") (lambda ()
+       (interactive)
+       (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 104")))
+    (global-set-key (kbd "C-:") (lambda ()
+       (interactive)
+       (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 102")))))
+
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Package Settings
 ;;--+--+--+--+--+--+--+--+--+--+
@@ -236,8 +247,7 @@
 (use-package counsel
   :ensure t
   :bind
-  ("M-x" . counsel-M-x)
-  ("C-c k" . counsel-ag))
+  ("M-x" . counsel-M-x))
 
 ;;------------------------------
 
@@ -246,7 +256,7 @@
 (use-package avy
   :ensure t
   :bind
-  (("C-c SPC" . avy-goto-word-1)))
+  (("C-c SPC" . avy-goto-char-timer)))
 
 ;;------------------------------
 
@@ -274,7 +284,7 @@
   "run Marked on the current file and revert the buffer"
   (interactive)
   (shell-command 
-   (format "open -a /Applications/Marked.app %s" 
+   (format "open -a '/Applications/Marked 2.app' %s" 
        (shell-quote-argument (buffer-file-name))))
   )
 
