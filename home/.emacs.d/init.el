@@ -37,6 +37,7 @@
 ;; https://debbugs.gnu.org/cgi/bugreport.cgi?bug=23412
 (setq redisplay-dont-pause nil)
 
+;; Font
 (when (and (>= emacs-major-version 24) (not (null window-system)))
   (let* ((font-family "Menlo")
          (font-size 12)
@@ -62,10 +63,19 @@
         (set-fontset-font name character font-spec))
       (add-to-list 'face-font-rescale-alist (cons jp-font-family 1.2)))))
 
-;; Transparent window
-(if window-system 
-    (progn
-      (set-frame-parameter nil 'alpha 90)))
+;; Frame
+(when window-system
+  ;; Transparent
+  (set-frame-parameter nil 'alpha 87)
+  ;; Size and Position
+  (setq initial-frame-alist
+   (append (list
+      '(top . 0)
+      '(left . 0)
+      '(width . 95)
+      '(height . 40))
+     initial-frame-alist))
+  (setq default-frame-alist initial-frame-alist))
 
 ;; No menu bar
 (menu-bar-mode 0)
@@ -84,6 +94,9 @@
 
 ;; Show column number
 (column-number-mode 1)
+
+;; Show pairs of parentheses
+(show-paren-mode 1)
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Editor Settings
@@ -129,9 +142,6 @@
 ;; Turn off wrapping
 (setq-default truncate-partial-width-windows t)
 (setq-default truncate-lines t)
-
-;; Use text-mode on scratch buffer
-(setq initial-major-mode 'text-mode)
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Server Settings
@@ -253,6 +263,7 @@
 ;; http://jblevins.org/projects/markdown-mode/
 (use-package markdown-mode
   :ensure t
+  :init (setq initial-major-mode 'markdown-mode) ; Use on scratch buffer
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
