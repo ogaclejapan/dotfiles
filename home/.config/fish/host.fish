@@ -2,6 +2,10 @@
 # 起動時に指定したtmuxセッションに自動でアタッチする
 set -x TMUX_AUTO_ATTACH ''
 
+# デフォルトで起動するエディタ
+#set -x EDITOR 'emacsclient -n'
+#set -x EDITOR vim
+
 # JIRAコマンドのベースURL
 set -x JIRA_URL ''
 
