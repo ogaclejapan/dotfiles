@@ -12,6 +12,11 @@
   <action id="$Undo">
     <keyboard-shortcut first-keystroke="meta z" />
     <keyboard-shortcut first-keystroke="ctrl slash" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="u" />
+  </action>
+  <action id="AceAction">
+    <keyboard-shortcut first-keystroke="ctrl semicolon" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="space" />
   </action>
   <action id="AddToFavoritesPopup" />
   <action id="ChooseDebugConfiguration">
@@ -23,10 +28,16 @@
   <action id="CloseAllEditors">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="ctrl c" />
   </action>
+  <action id="CloseAllEditorsButActive">
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="0" />
+  </action>
+  <action id="CloseContent">
+    <keyboard-shortcut first-keystroke="meta w" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="k" />
+  </action>
   <action id="CodeCompletion">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="ctrl space" />
   </action>
-  <action id="CopyThenJumpPaste" />
   <action id="Debug">
     <keyboard-shortcut first-keystroke="shift f9" />
   </action>
@@ -38,11 +49,15 @@
   </action>
   <action id="Editor Undo">
     <keyboard-shortcut first-keystroke="ctrl slash" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="u" />
   </action>
   <action id="EditorBackSpace">
     <keyboard-shortcut first-keystroke="back_space" />
     <keyboard-shortcut first-keystroke="shift back_space" />
     <keyboard-shortcut first-keystroke="ctrl h" />
+  </action>
+  <action id="EditorBackwardParagraph">
+    <keyboard-shortcut first-keystroke="alt open_bracket" />
   </action>
   <action id="EditorChooseLookupItem">
     <keyboard-shortcut first-keystroke="enter" />
@@ -79,6 +94,9 @@
   <action id="EditorEscape">
     <keyboard-shortcut first-keystroke="escape" />
     <keyboard-shortcut first-keystroke="ctrl g" />
+  </action>
+  <action id="EditorForwardParagraph">
+    <keyboard-shortcut first-keystroke="alt close_bracket" />
   </action>
   <action id="EditorJoinLines" />
   <action id="EditorKillRegion">
@@ -176,7 +194,6 @@
     <mouse-shortcut keystroke="shift meta button1" />
     <mouse-shortcut keystroke="shift button2" />
   </action>
-  <action id="JustOneSpace" />
   <action id="MethodDown">
     <keyboard-shortcut first-keystroke="ctrl down" />
     <keyboard-shortcut first-keystroke="alt n" />
@@ -247,6 +264,9 @@
   <action id="SwitchUp">
     <keyboard-shortcut first-keystroke="ctrl alt up" />
   </action>
+  <action id="Tool_External Tools_Emacs">
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="e" />
+  </action>
   <action id="TypeHierarchy">
     <keyboard-shortcut first-keystroke="meta h" />
   </action>
@@ -256,67 +276,6 @@
   <action id="Vcs.QuickListPopupAction" />
   <action id="Vcs.ShowMessageHistory">
     <keyboard-shortcut first-keystroke="meta e" />
-  </action>
-  <action id="emacsIDEAs.AceJumpAndReplace.Block" />
-  <action id="emacsIDEAs.AceJumpAndReplace.Group" />
-  <action id="emacsIDEAs.AceJumpAndReplace.Line" />
-  <action id="emacsIDEAs.AceJumpAndReplace.Paragraph" />
-  <action id="emacsIDEAs.AceJumpAndReplace.Quote" />
-  <action id="emacsIDEAs.AceJumpAndReplace.String" />
-  <action id="emacsIDEAs.AceJumpAndReplace.ToLineEnd" />
-  <action id="emacsIDEAs.AceJumpAndReplace.ToLineStart" />
-  <action id="emacsIDEAs.AceJumpAndReplace.ToParagraphEnd" />
-  <action id="emacsIDEAs.AceJumpAndReplace.ToParagraphStart" />
-  <action id="emacsIDEAs.AceJumpAndReplace.Word" />
-  <action id="emacsIDEAs.AceJumpCopy" />
-  <action id="emacsIDEAs.AceJumpCopy.Block" />
-  <action id="emacsIDEAs.AceJumpCopy.Group" />
-  <action id="emacsIDEAs.AceJumpCopy.Line" />
-  <action id="emacsIDEAs.AceJumpCopy.Paragraph" />
-  <action id="emacsIDEAs.AceJumpCopy.Quote" />
-  <action id="emacsIDEAs.AceJumpCopy.String" />
-  <action id="emacsIDEAs.AceJumpCopy.ToLineEnd" />
-  <action id="emacsIDEAs.AceJumpCopy.ToLineStart" />
-  <action id="emacsIDEAs.AceJumpCopy.ToParagraphEnd" />
-  <action id="emacsIDEAs.AceJumpCopy.ToParagraphStart" />
-  <action id="emacsIDEAs.AceJumpCopy.Word" />
-  <action id="emacsIDEAs.AceJumpCut" />
-  <action id="emacsIDEAs.AceJumpDelete.Block" />
-  <action id="emacsIDEAs.AceJumpDelete.Group" />
-  <action id="emacsIDEAs.AceJumpDelete.Line" />
-  <action id="emacsIDEAs.AceJumpDelete.Paragraph" />
-  <action id="emacsIDEAs.AceJumpDelete.Quote" />
-  <action id="emacsIDEAs.AceJumpDelete.String" />
-  <action id="emacsIDEAs.AceJumpDelete.ToLineEnd" />
-  <action id="emacsIDEAs.AceJumpDelete.ToLineStart" />
-  <action id="emacsIDEAs.AceJumpDelete.ToParagraphEnd" />
-  <action id="emacsIDEAs.AceJumpDelete.ToParagraphStart" />
-  <action id="emacsIDEAs.AceJumpDelete.Word" />
-  <action id="emacsIDEAs.AceJumpMove.Block" />
-  <action id="emacsIDEAs.AceJumpMove.Group" />
-  <action id="emacsIDEAs.AceJumpMove.Line" />
-  <action id="emacsIDEAs.AceJumpMove.Paragraph" />
-  <action id="emacsIDEAs.AceJumpMove.Quote" />
-  <action id="emacsIDEAs.AceJumpMove.String" />
-  <action id="emacsIDEAs.AceJumpMove.ToLineEnd" />
-  <action id="emacsIDEAs.AceJumpMove.ToLineStart" />
-  <action id="emacsIDEAs.AceJumpMove.ToParagraphEnd" />
-  <action id="emacsIDEAs.AceJumpMove.ToParagraphStart" />
-  <action id="emacsIDEAs.AceJumpMove.Word" />
-  <action id="emacsIDEAs.AceJumpObtainThenReplace.Block" />
-  <action id="emacsIDEAs.AceJumpObtainThenReplace.Group" />
-  <action id="emacsIDEAs.AceJumpObtainThenReplace.Line" />
-  <action id="emacsIDEAs.AceJumpObtainThenReplace.Paragraph" />
-  <action id="emacsIDEAs.AceJumpObtainThenReplace.Quote" />
-  <action id="emacsIDEAs.AceJumpObtainThenReplace.String" />
-  <action id="emacsIDEAs.AceJumpObtainThenReplace.ToLineEnd" />
-  <action id="emacsIDEAs.AceJumpObtainThenReplace.ToLineStart" />
-  <action id="emacsIDEAs.AceJumpObtainThenReplace.ToParagraphEnd" />
-  <action id="emacsIDEAs.AceJumpObtainThenReplace.ToParagraphStart" />
-  <action id="emacsIDEAs.AceJumpObtainThenReplace.Word" />
-  <action id="emacsIDEAs.AceJumpSelect" />
-  <action id="emacsIDEAs.AceJumpWord">
-    <keyboard-shortcut first-keystroke="ctrl l" />
   </action>
   <action id="tasks.open.in.browser" />
 </keymap>
