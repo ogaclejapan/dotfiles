@@ -1,0 +1,222 @@
+{
+  "name": "Chrome Keyconfig",
+  "version": "1.15.1",
+  "normal_actions": {
+    "C-o": {
+      "name": "limited mode",
+      "args": [],
+      "and": false
+    }
+  },
+  "limited_actions": {
+    "Escape": {
+      "name": "normal mode",
+      "args": []
+    },
+    "e": {
+      "name": "scroll to bottom",
+      "args": [],
+      "and": false
+    },
+    "<": {
+      "name": "back",
+      "args": [],
+      "and": false
+    },
+    ">": {
+      "name": "forward",
+      "args": [],
+      "and": false
+    },
+    "r": {
+      "name": "reload",
+      "args": [],
+      "and": false
+    },
+    "R": {
+      "name": "cacheless reload",
+      "args": [],
+      "and": false
+    },
+    "[": {
+      "name": "select left tab",
+      "args": [],
+      "and": false
+    },
+    "]": {
+      "name": "select left tab",
+      "args": [],
+      "and": false
+    },
+    "-": {
+      "name": "remove quickmark",
+      "args": [],
+      "and": false
+    },
+    "+": {
+      "name": "add quickmark",
+      "args": [],
+      "and": false
+    },
+    "h": {
+      "name": "scroll left",
+      "args": [],
+      "and": false
+    },
+    "j": {
+      "name": "scroll down half page",
+      "args": [],
+      "and": false
+    },
+    "k": {
+      "name": "scroll up half page",
+      "args": [],
+      "and": false
+    },
+    "l": {
+      "name": "scroll right",
+      "args": [],
+      "and": false
+    },
+    "d": {
+      "name": "scroll down half page",
+      "args": [],
+      "and": false
+    },
+    "u": {
+      "name": "scroll up full page",
+      "args": [],
+      "and": false
+    },
+    "y": {
+      "name": "copy url",
+      "args": [],
+      "and": false
+    },
+    "D": {
+      "name": "scroll down full page",
+      "args": [],
+      "and": false
+    },
+    "U": {
+      "name": "scroll up full page",
+      "args": [],
+      "and": false
+    },
+    "g g": {
+      "name": "scroll to top",
+      "args": [],
+      "and": false
+    },
+    "G": {
+      "name": "scroll to bottom",
+      "args": [],
+      "and": false
+    },
+    "{": {
+      "name": "select first tab",
+      "args": [],
+      "and": false
+    },
+    "}": {
+      "name": "select last tab",
+      "args": [],
+      "and": false
+    },
+    "Space": {
+      "name": "hit a hint",
+      "args": [],
+      "and": false
+    },
+    "Y": {
+      "name": "copy url and title",
+      "args": [],
+      "and": false
+    },
+    "t": {
+      "name": "clone tab",
+      "args": [
+        "",
+        ""
+      ],
+      "and": false
+    },
+    "C-o": {
+      "name": "blur focus",
+      "args": [],
+      "and": false
+    },
+    "C-c": {
+      "name": "normal mode",
+      "args": [],
+      "and": false
+    },
+    "a": {
+      "name": "focus first text input",
+      "args": [],
+      "and": false
+    },
+    "/": {
+      "name": "lunch quickmark (open this tab)",
+      "args": [],
+      "and": false
+    }
+  },
+  "useTabTitle": false,
+  "smooth_scroll": true,
+  "ldrize": false,
+  "chrome_vim": false,
+  "antiAutoFocus": false,
+  "vim_normal_actions": {
+    "j": {
+      "name": "Down",
+      "args": []
+    },
+    "k": {
+      "name": "Up",
+      "args": []
+    },
+    "h": {
+      "name": "Left",
+      "args": []
+    },
+    "l": {
+      "name": "Right",
+      "args": []
+    },
+    "^": {
+      "name": "Line head",
+      "args": []
+    },
+    "$": {
+      "name": "Line foot",
+      "args": []
+    },
+    "Escape": {
+      "name": "normal mode",
+      "args": []
+    },
+    "i": {
+      "name": "insert mode",
+      "args": []
+    }
+  },
+  "vim_insert_actions": {
+    "Escape": {
+      "name": "normal mode",
+      "args": []
+    }
+  },
+  "vim_default_mode": "insert",
+  "vim_color_config": {
+    "normal": {
+      "background": "gray",
+      "text": "black"
+    },
+    "insert": {
+      "background": "white",
+      "text": "black"
+    }
+  }
+}
+
