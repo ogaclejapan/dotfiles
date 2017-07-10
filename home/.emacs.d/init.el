@@ -302,6 +302,15 @@
   (setq unkillable-buffers '("^\\*scratch\\*$"))
   (unkillable-scratch 1))
 
+;;------------------------------
+
+;; https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode
+;; Kotlin major mode
+(use-package kotlin-mode
+  :commands (kotlin-mode)
+  :mode (("\\.kt\\'" . kotlin-mode)))
+
+
 ;; https://github.com/rranelli/auto-package-update.el
 ;; Automatically update Emacs packages.
 ;; (use-package auto-package-update
