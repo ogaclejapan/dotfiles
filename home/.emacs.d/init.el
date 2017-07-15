@@ -173,6 +173,7 @@
 ;; C-? -> HELP
 (define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "C-?") 'help-for-help)
+(global-set-key (kbd "M-h") 'backward-kill-word)
 
 ;; GoogleIME for Japanese Toggle Shortcuts
 (when (eq system-type 'darwin)
