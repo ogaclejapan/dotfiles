@@ -198,24 +198,11 @@
 
 ;;------------------------------
 
-;; https://github.com/magit/magit
-;; A Git porcelain inside Emacs.
-(use-package magit
+;; https://github.com/purcell/exec-path-from-shell
+;; Make Emacs use the $PATH set up by the user's shell
+(use-package exec-path-from-shell
   :ensure t
-  :config
-  (setq magit-completing-read-function 'ivy-completing-read)
-  :diminish auto-revert-mode)
-
-;;------------------------------
-
-;; https://github.com/Wilfred/ag.el
-;; An Emacs frontend to The Silver Searcher.
-(use-package ag
-  :ensure t
-  :config
-  (add-hook 'ag-mode-hook 'toggle-truncate-lines)
-  (setq ag-highlight-search t)
-  (setq ag-reuse-buffers 't))
+  :init (exec-path-from-shell-initialize))
 
 ;;------------------------------
 
@@ -226,7 +213,20 @@
   :diminish ivy-mode
   :config
   (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
   (bind-key "C-c C-r" 'ivy-resume))
+
+;;------------------------------
+
+;; https://github.com/abo-abo/swiper
+;; A collection of Ivy-enhanced versions of common Emacs commands.
+(use-package counsel
+  :ensure t
+  :bind (("C-s" . swiper)
+         ("M-x" . counsel-M-x)
+         ("C-c g" . counsel-git)
+         ("C-c k" . counsel-rg)))
 
 ;;------------------------------
 
@@ -243,21 +243,22 @@
 
 ;;------------------------------
 
-;; https://github.com/abo-abo/swiper
-;; A collection of Ivy-enhanced versions of common Emacs commands.
-(use-package counsel
-  :ensure t
-  :bind
-  ("M-x" . counsel-M-x))
-
-;;------------------------------
-
 ;; https://github.com/abo-abo/avy
 ;; Jump to things in Emacs tree-style.
 (use-package avy
   :ensure t
-  :bind
-  (("C-c SPC" . avy-goto-char-timer)))
+  :bind (("C-c SPC" . avy-goto-char-timer)))
+
+;;------------------------------
+
+;; https://github.com/magit/magit
+;; A Git porcelain inside Emacs.
+(use-package magit
+  :ensure t
+  :config
+  (setq magit-completing-read-function 'ivy-completing-read)
+  :diminish auto-revert-mode
+  :bind (("C-x g" . magit-status)))
 
 ;;------------------------------
 
@@ -283,7 +284,7 @@
 ;; Use Marked app
 (defun markdown-preview-file ()
   "run Marked on the current file and revert the buffer"
-  (interactive)
+  (Interactive)
   (shell-command 
    (format "open -a '/Applications/Marked 2.app' %s" 
        (shell-quote-argument (buffer-file-name))))
