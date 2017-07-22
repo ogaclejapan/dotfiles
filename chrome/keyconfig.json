@@ -160,6 +160,26 @@
       "name": "lunch quickmark (open this tab)",
       "args": [],
       "and": false
+    },
+    "T": {
+      "name": "open new tab",
+      "args": [],
+      "and": false
+    },
+    "q": {
+      "name": "lunch quickmark (open background tab)",
+      "args": [],
+      "and": false
+    },
+    "w": {
+      "name": "close this tab",
+      "args": [],
+      "and": false
+    },
+    "W": {
+      "name": "close other tabs",
+      "args": [],
+      "and": false
     }
   },
   "useTabTitle": false,
@@ -219,4 +239,3 @@
     }
   }
 }
-
