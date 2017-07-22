@@ -21,7 +21,7 @@
     <keyboard-shortcut first-keystroke="alt c" second-keystroke="space" />
   </action>
   <action id="AceTargetAction">
-    <keyboard-shortcut first-keystroke="shift ctrl c" second-keystroke="space" />
+    <keyboard-shortcut first-keystroke="shift alt c" second-keystroke="space" />
   </action>
   <action id="AddToFavoritesPopup" />
   <action id="ChooseDebugConfiguration">
@@ -87,6 +87,10 @@
   <action id="EditorDelete">
     <keyboard-shortcut first-keystroke="delete" />
     <keyboard-shortcut first-keystroke="ctrl d" />
+  </action>
+  <action id="EditorDeleteLine">
+    <keyboard-shortcut first-keystroke="meta back_space" />
+    <keyboard-shortcut first-keystroke="shift ctrl back_space" />
   </action>
   <action id="EditorDownWithSelection">
     <keyboard-shortcut first-keystroke="shift down" />
@@ -161,6 +165,9 @@
     <keyboard-shortcut first-keystroke="shift right" />
     <keyboard-shortcut first-keystroke="shift ctrl f" />
   </action>
+  <action id="EditorScrollToCenter">
+    <keyboard-shortcut first-keystroke="ctrl l" />
+  </action>
   <action id="EditorSelectWord">
     <keyboard-shortcut first-keystroke="alt up" />
     <keyboard-shortcut first-keystroke="shift ctrl equals" />
@@ -194,6 +201,10 @@
     <keyboard-shortcut first-keystroke="shift ctrl p" />
   </action>
   <action id="ExpressionTypeInfo" />
+  <action id="Find">
+    <keyboard-shortcut first-keystroke="meta f" />
+    <keyboard-shortcut first-keystroke="ctrl s" />
+  </action>
   <action id="GotoTypeDeclaration">
     <keyboard-shortcut first-keystroke="shift meta b" />
     <mouse-shortcut keystroke="shift meta button1" />
@@ -240,6 +251,10 @@
   <action id="QuickJavaDoc">
     <keyboard-shortcut first-keystroke="f1" />
     <mouse-shortcut keystroke="control button2" />
+  </action>
+  <action id="Replace">
+    <keyboard-shortcut first-keystroke="meta r" />
+    <keyboard-shortcut first-keystroke="shift alt 5" />
   </action>
   <action id="Run">
     <keyboard-shortcut first-keystroke="shift f10" />
