@@ -134,11 +134,8 @@
       "and": false
     },
     "t": {
-      "name": "clone tab",
-      "args": [
-        "",
-        ""
-      ],
+      "name": "open new tab",
+      "args": [],
       "and": false
     },
     "C-o": {
@@ -162,7 +159,7 @@
       "and": false
     },
     "T": {
-      "name": "open new tab",
+      "name": "toggle pin tab",
       "args": [],
       "and": false
     },
