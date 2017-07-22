@@ -31,6 +31,8 @@
             "selected": true,
             "simple_modifications": {
                 "caps_lock": "left_control",
+                "left_command": "left_option",
+                "left_option": "left_command",
                 "right_command": "right_control"
             },
             "virtual_hid_keyboard": {
