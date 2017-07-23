@@ -306,12 +306,20 @@
 
 ;;------------------------------
 
+;; https://github.com/emacsfodder/pbcopy.el
+;; Emacs Interface to pbcopy
+(use-package pbcopy
+  :ensure t )
+
+;;------------------------------
+
 ;; https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode
 ;; Kotlin major mode
 (use-package kotlin-mode
   :commands (kotlin-mode)
   :mode (("\\.kt\\'" . kotlin-mode)))
 
+;;------------------------------
 
 ;; https://github.com/rranelli/auto-package-update.el
 ;; Automatically update Emacs packages.
