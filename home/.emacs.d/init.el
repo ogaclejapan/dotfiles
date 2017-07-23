@@ -113,6 +113,12 @@
 ;; Delete auto save files when editor finished
 ;; (setq delete-auto-save-files t)
 
+;; Save recent files as history
+(setq recentf-max-saved-items 25)
+(setq recentf-exclude '("/recentf" "COMMIT_EDITMSG" "/.?TAGS" "^/sudo:" "/\\.emacs\\.d/games/*-scores" "/\\.emacs\\.d/\\.cask/"))
+(setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
+(recentf-mode 1)
+
 ;; No beep sound
 (defun previous-line (arg)
   (interactive "p")
@@ -225,6 +231,7 @@
   :ensure t
   :bind (("C-s" . swiper)
          ("M-x" . counsel-M-x)
+         ("C-c r" . counsel-recentf)
          ("C-c g" . counsel-git)
          ("C-c k" . counsel-rg)))
 
