@@ -115,7 +115,7 @@
 
 ;; Save recent files as history
 (setq recentf-max-saved-items 25)
-(setq recentf-exclude '("/recentf" "COMMIT_EDITMSG" "/.?TAGS" "^/sudo:" "/\\.emacs\\.d/games/*-scores" "/\\.emacs\\.d/\\.cask/"))
+(setq recentf-exclude '("/recentf" "COMMIT_EDITMSG" "/.?TAGS" "^/sudo:" "/\\.emacs\\.d/games/*-scores" "/\\.emacs\\.d/\\.cask/" "/\\.emacs\\.d/bookmarks"))
 (setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
 (recentf-mode 1)
 
@@ -232,6 +232,7 @@
   :bind (("C-s" . swiper)
          ("M-x" . counsel-M-x)
          ("C-c r" . counsel-recentf)
+         ("C-c b" . counsel-bookmark)
          ("C-c g" . counsel-git)
          ("C-c k" . counsel-rg)))
 
