@@ -34,6 +34,8 @@ home/.config/fish/conf.d/*.*
 
 home/.config/fisherman
 
+home/.config/karabiner/assets
+
 home/.atom/*
 !home/.atom/*.cson
 
