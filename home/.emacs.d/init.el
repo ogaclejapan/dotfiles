@@ -180,6 +180,7 @@
 (define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "C-?") 'help-for-help)
 (global-set-key (kbd "M-h") 'backward-kill-word)
+(global-set-key (kbd "C-.") 'isearch-forward-symbol-at-point)
 
 ;; GoogleIME for Japanese Toggle Shortcuts
 (when (eq system-type 'darwin)
@@ -255,7 +256,8 @@
 ;; Jump to things in Emacs tree-style.
 (use-package avy
   :ensure t
-  :bind (("C-c SPC" . avy-goto-char-timer)))
+  :bind (("C-'" . avy-goto-char-timer)
+         ("C-;" . avy-goto-line)))
 
 ;;------------------------------
 

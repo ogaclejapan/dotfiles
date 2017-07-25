@@ -16,12 +16,13 @@
   </action>
   <action id="AceAction">
     <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="space" />
+    <keyboard-shortcut first-keystroke="ctrl quote" />
   </action>
   <action id="AceLineAction">
-    <keyboard-shortcut first-keystroke="alt c" second-keystroke="space" />
+    <keyboard-shortcut first-keystroke="ctrl semicolon" />
   </action>
   <action id="AceTargetAction">
-    <keyboard-shortcut first-keystroke="shift alt c" second-keystroke="space" />
+    <keyboard-shortcut first-keystroke="shift ctrl quote" />
   </action>
   <action id="AddToFavoritesPopup" />
   <action id="ChooseDebugConfiguration">
@@ -205,17 +206,8 @@
     <keyboard-shortcut first-keystroke="meta f" />
     <keyboard-shortcut first-keystroke="ctrl s" />
   </action>
-  <action id="GotoClass">
-    <keyboard-shortcut first-keystroke="meta o" />
-    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="c" />
-  </action>
-  <action id="GotoFile">
-    <keyboard-shortcut first-keystroke="shift meta o" />
-    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="f" />
-  </action>
-  <action id="GotoSymbol">
-    <keyboard-shortcut first-keystroke="meta alt o" />
-    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="s" />
+  <action id="FindWordAtCaret">
+    <keyboard-shortcut first-keystroke="ctrl period" />
   </action>
   <action id="GotoTypeDeclaration">
     <keyboard-shortcut first-keystroke="shift meta b" />
