@@ -25,6 +25,10 @@
     <keyboard-shortcut first-keystroke="shift ctrl quote" />
   </action>
   <action id="AddToFavoritesPopup" />
+  <action id="CallHierarchy">
+    <keyboard-shortcut first-keystroke="ctrl alt h" />
+    <keyboard-shortcut first-keystroke="shift ctrl slash" />
+  </action>
   <action id="ChooseDebugConfiguration">
     <keyboard-shortcut first-keystroke="shift alt f9" />
   </action>
@@ -43,6 +47,13 @@
   </action>
   <action id="CodeCompletion">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="ctrl space" />
+  </action>
+  <action id="CommentByBlockComment">
+    <keyboard-shortcut first-keystroke="meta alt slash" />
+    <keyboard-shortcut first-keystroke="meta alt divide" />
+    <keyboard-shortcut first-keystroke="shift ctrl divide" />
+    <keyboard-shortcut first-keystroke="shift meta slash" />
+    <keyboard-shortcut first-keystroke="shift meta divide" />
   </action>
   <action id="Debug">
     <keyboard-shortcut first-keystroke="shift f9" />
@@ -264,6 +275,10 @@
     <keyboard-shortcut first-keystroke="shift f10" />
   </action>
   <action id="SelectNextOccurrence" />
+  <action id="ShowUsages">
+    <keyboard-shortcut first-keystroke="meta alt f7" />
+    <keyboard-shortcut first-keystroke="ctrl comma" />
+  </action>
   <action id="SmartTypeCompletion">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="shift ctrl space" />
   </action>
