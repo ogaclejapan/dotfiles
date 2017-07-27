@@ -2,7 +2,7 @@
   "title": "My key bindings (rev 1)",
   "rules": [
     {
-      "description": "My key bindings [control+keys] (rev 1)",
+      "description": "Change control + [ to escape",
       "manipulators": [
         {
           "type": "basic",
@@ -22,7 +22,12 @@
               "key_code": "escape"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "description": "Change control + m to return",
+      "manipulators": [
         {
           "type": "basic",
           "from": {
