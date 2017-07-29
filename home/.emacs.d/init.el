@@ -182,6 +182,19 @@
 (global-set-key (kbd "M-h") 'backward-kill-word)
 (global-set-key (kbd "C-.") 'isearch-forward-symbol-at-point)
 
+;; Insert new line below current line
+(global-set-key (kbd "<S-return>") (lambda ()
+                   (interactive)
+                   (end-of-line)
+                   (newline-and-indent)))
+
+;; Insert new line above current line
+(global-set-key (kbd "<M-S-return>") (lambda ()
+                       (interactive)
+                       (beginning-of-line)
+                       (newline-and-indent)
+                       (backward-char)))
+
 ;; GoogleIME for Japanese Toggle Shortcuts
 (when (eq system-type 'darwin)
   (setq google-ime "/Applications/GoogleJapaneseInput.localized")
