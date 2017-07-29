@@ -50,6 +50,7 @@ brew 'python'
 brew 'kotlin'
 brew 'translate-shell'
 brew 'webp'
+brew 'cloc'
 
 ## Optional
 #brew 'docker'
