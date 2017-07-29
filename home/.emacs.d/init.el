@@ -245,10 +245,11 @@
   :ensure t
   :bind (("C-s" . swiper)
          ("M-x" . counsel-M-x)
-         ("C-c r" . counsel-recentf)
-         ("C-c b" . counsel-bookmark)
-         ("C-c g" . counsel-git)
-         ("C-c k" . counsel-rg)))
+         ("M-y" . counsel-yank-pop)
+         ("C-c e" . counsel-recentf)
+         ("C-c ," . counsel-bookmark)
+         ("C-c f" . counsel-git)
+         ("C-c s" . counsel-rg)))
 
 ;;------------------------------
 
@@ -262,6 +263,11 @@
         '(:eval (format " [%s]" (projectile-project-name))))
   (setq projectile-remember-window-configs t)
   (setq projectile-completion-system 'ivy))
+
+(use-package counsel-projectile
+  :ensure t
+  :config
+  (counsel-projectile-on))
 
 ;;------------------------------
 
