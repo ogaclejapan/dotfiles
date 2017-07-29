@@ -287,7 +287,7 @@
   :config
   (setq magit-completing-read-function 'ivy-completing-read)
   :diminish auto-revert-mode
-  :bind (("C-x g" . magit-status)))
+  :bind (("C-c m" . magit-status)))
 
 ;;------------------------------
 
@@ -320,7 +320,7 @@
   )
 
 (eval-after-load 'markdown-mode
-  '(define-key markdown-mode-map (kbd "C-x p") 'markdown-preview-file))
+  '(define-key markdown-mode-map (kbd "C-c p") 'markdown-preview-file))
 
 ;;------------------------------
 
