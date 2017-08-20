@@ -23,10 +23,13 @@ else
   cat ~/.config/fish/host.fish > $HOST_FISH
 end
 
-set PLATFORM_TMUX ~/.tmux/(uname -s).conf
+# e.g. ~/.tmux/2.4/Darwin.conf
+set PLATFORM_TMUX ~/.tmux/(tmux -V | cut -c 6-)/(uname -s).conf
 if not test -f $PLATFORM_TMUX
-  echo Creating platform tmux conf: $PLATFORM_TMUX
-  touch $PLATFORM_TMUX
+  set PLATFORM_TMUX ~/.tmux/(uname -s).conf
+  if not test -f $PLATFORM_TMUX
+    set PLATFORM_TMUX ~/.tmux/Default.conf
+  end
 end
 
 set PLATFORM_TMUX_SYMBOLIC ~/.tmux-platform.conf
@@ -44,4 +47,3 @@ if [ -n "$TMUX_AUTO_ATTACH" -a -z "$TMUX_PANE" ]
   end
   test -n "$AUTO_TMUX" ; and tmux new-session -A -s $AUTO_TMUX
 end
-
