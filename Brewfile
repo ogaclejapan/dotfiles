@@ -51,6 +51,7 @@ brew 'kotlin'
 brew 'translate-shell'
 brew 'webp'
 brew 'cloc'
+brew 'multimarkdown'
 
 ## Optional
 #brew 'docker'

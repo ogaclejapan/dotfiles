@@ -304,23 +304,14 @@
 ;; http://jblevins.org/projects/markdown-mode/
 (use-package markdown-mode
   :ensure t
-  :init (setq initial-major-mode 'markdown-mode) ; Use on scratch buffer
+  :init
+  (setq initial-major-mode 'markdown-mode) ; Use on scratch buffer
+  (setq markdown-command "multimarkdown") ; C-c C-c p
+  (setq markdown-open-command "~/.bin/mark") ; C-c C-c o
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)))
-
-;; Use Marked app
-(defun markdown-preview-file ()
-  "run Marked on the current file and revert the buffer"
-  (Interactive)
-  (shell-command 
-   (format "open -a '/Applications/Marked 2.app' %s" 
-       (shell-quote-argument (buffer-file-name))))
-  )
-
-(eval-after-load 'markdown-mode
-  '(define-key markdown-mode-map (kbd "C-c p") 'markdown-preview-file))
 
 ;;------------------------------
 
