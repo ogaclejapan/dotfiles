@@ -23,6 +23,16 @@ else
   cat ~/.config/fish/host.fish > $HOST_FISH
 end
 
+# path cleanup
+set NEW_PATH
+for i in $PATH
+  if not contains $i $NEW_PATH
+    set NEW_PATH $NEW_PATH $i
+  end
+end
+set -x PATH $NEW_PATH
+
+
 # e.g. ~/.tmux/2.4/Darwin.conf
 set PLATFORM_TMUX ~/.tmux/(tmux -V | cut -c 6-)/(uname -s).conf
 if not test -f $PLATFORM_TMUX
