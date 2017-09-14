@@ -80,6 +80,7 @@ cask 'gitup'
 cask 'gitbook-editor'
 cask 'bettertouchtool'
 cask 'karabiner-elements'
+cask '0xed'
 
 ## Optional
 
