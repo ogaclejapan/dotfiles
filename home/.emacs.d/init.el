@@ -362,6 +362,18 @@
 
 ;;------------------------------
 
+;; https://github.com/fxbois/web-mode
+;; web template editing mode for emacs
+(use-package web-mode
+  :ensure t
+  :mode ("\\.html?\\'" . web-mode)
+  :config
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-css-indent-offset 2))
+
+;;------------------------------
+
 ;; https://github.com/rranelli/auto-package-update.el
 ;; Automatically update Emacs packages.
 ;; (use-package auto-package-update
