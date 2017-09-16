@@ -350,6 +350,18 @@
 
 ;;------------------------------
 
+;; https://github.com/mooz/js2-mode
+;; Improved JavaScript editing mode for GNU Emacs
+(use-package js2-mode
+  :ensure t
+  :commands js2-mode
+  :interpreter ("node" . js2-mode)
+  :mode (("\\.js\\'" . js2-mode)
+         ("\\.jsx\\'" . js2-jsx-mode))
+  :config (setq-default js2-basic-offset 2))
+
+;;------------------------------
+
 ;; https://github.com/rranelli/auto-package-update.el
 ;; Automatically update Emacs packages.
 ;; (use-package auto-package-update
