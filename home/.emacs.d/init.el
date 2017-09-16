@@ -341,6 +341,15 @@
 
 ;;------------------------------
 
+;; https://github.com/joshwnj/json-mode
+;; JSON major mode
+(use-package json-mode
+  :ensure t
+  :mode (("\\.json\\'" . json-mode))
+  :config (setq-default js-indent-level 2))
+
+;;------------------------------
+
 ;; https://github.com/rranelli/auto-package-update.el
 ;; Automatically update Emacs packages.
 ;; (use-package auto-package-update
