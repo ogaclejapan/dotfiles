@@ -10,4 +10,4 @@ homesick link dotfiles
 
 ```
 
-Karabiner-Elements complex modifications [link](karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/ogaclejapan/dotfiles/master/keyremap/for_mac/personal_key_bindings.json)
+Karabiner-Elements complex modifications [link](karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/ogaclejapan/dotfiles/master/keyremap/for_mac/extra_key_bindings.json)
