@@ -2,7 +2,7 @@
   "title": "My key bindings (rev 2)",
   "rules": [
     {
-      "description": "Emacs key bindins extra [option+keys] (rev 1)",
+      "description": "Emacs key bindings extra [option+keys] (rev 1)",
       "manipulators": [
         {
           "conditions": [
