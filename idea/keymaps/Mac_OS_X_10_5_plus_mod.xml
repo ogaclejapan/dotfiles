@@ -9,6 +9,10 @@
     <keyboard-shortcut first-keystroke="meta v" />
     <keyboard-shortcut first-keystroke="ctrl y" />
   </action>
+  <action id="$SelectAll">
+    <keyboard-shortcut first-keystroke="meta a" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="h" />
+  </action>
   <action id="$Undo">
     <keyboard-shortcut first-keystroke="meta z" />
     <keyboard-shortcut first-keystroke="ctrl slash" />
@@ -22,6 +26,14 @@
   </action>
   <action id="AceTargetAction">
     <keyboard-shortcut first-keystroke="shift ctrl quote" />
+  </action>
+  <action id="ActivateFindToolWindow">
+    <keyboard-shortcut first-keystroke="meta 3" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="f" />
+  </action>
+  <action id="ActivateProjectToolWindow">
+    <keyboard-shortcut first-keystroke="meta 1" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="d" />
   </action>
   <action id="AddToFavoritesPopup" />
   <action id="CallHierarchy">
@@ -54,6 +66,11 @@
     <keyboard-shortcut first-keystroke="shift meta slash" />
     <keyboard-shortcut first-keystroke="shift meta divide" />
   </action>
+  <action id="CommentByLineComment">
+    <keyboard-shortcut first-keystroke="meta slash" />
+    <keyboard-shortcut first-keystroke="meta divide" />
+    <keyboard-shortcut first-keystroke="alt semicolon" />
+  </action>
   <action id="Debug">
     <keyboard-shortcut first-keystroke="shift f9" />
   </action>
@@ -62,6 +79,9 @@
   </action>
   <action id="Editor Paste">
     <keyboard-shortcut first-keystroke="ctrl y" />
+  </action>
+  <action id="Editor SelectAll">
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="h" />
   </action>
   <action id="Editor Undo">
     <keyboard-shortcut first-keystroke="ctrl slash" />
@@ -198,16 +218,16 @@
     <keyboard-shortcut first-keystroke="shift ctrl p" />
   </action>
   <action id="ExpressionTypeInfo" />
-  <action id="FindNext">
-    <keyboard-shortcut first-keystroke="meta g" />
+  <action id="Find">
+    <keyboard-shortcut first-keystroke="meta f" />
     <keyboard-shortcut first-keystroke="ctrl s" />
-  </action>
-  <action id="FindPrevious">
-    <keyboard-shortcut first-keystroke="shift meta g" />
-    <keyboard-shortcut first-keystroke="ctrl r" />
   </action>
   <action id="FindWordAtCaret">
     <keyboard-shortcut first-keystroke="ctrl period" />
+  </action>
+  <action id="GotoAction">
+    <keyboard-shortcut first-keystroke="shift meta a" />
+    <keyboard-shortcut first-keystroke="alt x" />
   </action>
   <action id="GotoTypeDeclaration">
     <keyboard-shortcut first-keystroke="shift meta b" />
@@ -263,6 +283,14 @@
   <action id="QuickJavaDoc">
     <keyboard-shortcut first-keystroke="f1" />
     <mouse-shortcut keystroke="control button2" />
+  </action>
+  <action id="RecentChangedFiles">
+    <keyboard-shortcut first-keystroke="shift meta e" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="b" />
+  </action>
+  <action id="Replace">
+    <keyboard-shortcut first-keystroke="meta r" />
+    <keyboard-shortcut first-keystroke="shift alt 5" />
   </action>
   <action id="Run">
     <keyboard-shortcut first-keystroke="shift f10" />
