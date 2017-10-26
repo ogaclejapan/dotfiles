@@ -67,15 +67,17 @@
 (when window-system
   ;; Transparent
   (set-frame-parameter nil 'alpha 87)
-  ;; Size and Position
-  (setq initial-frame-alist
-   (append (list
-      '(top . 0)
-      '(left . 0)
-      '(width . 95)
-      '(height . 40))
-     initial-frame-alist))
-  (setq default-frame-alist initial-frame-alist))
+  ;;Size and Position
+  ;;(setq initial-frame-alist
+  ;; (append (list
+  ;;    '(top . 0)
+  ;;    '(left . 0)
+  ;;    '(width . 95)
+  ;;    '(height . 40))
+  ;;         initial-frame-alist))
+  ;;(setq default-frame-alist initial-frame-alist)
+  (add-hook 'window-setup-hook 'toggle-frame-maximized t))
+  
 
 ;; No menu bar
 (menu-bar-mode 0)
