@@ -13,21 +13,6 @@
       "name": "normal mode",
       "args": []
     },
-    "e": {
-      "name": "scroll to bottom",
-      "args": [],
-      "and": false
-    },
-    "<": {
-      "name": "back",
-      "args": [],
-      "and": false
-    },
-    ">": {
-      "name": "forward",
-      "args": [],
-      "and": false
-    },
     "r": {
       "name": "reload",
       "args": [],
@@ -35,26 +20,6 @@
     },
     "R": {
       "name": "cacheless reload",
-      "args": [],
-      "and": false
-    },
-    "[": {
-      "name": "select left tab",
-      "args": [],
-      "and": false
-    },
-    "]": {
-      "name": "select right tab",
-      "args": [],
-      "and": false
-    },
-    "-": {
-      "name": "remove quickmark",
-      "args": [],
-      "and": false
-    },
-    "+": {
-      "name": "add quickmark",
       "args": [],
       "and": false
     },
@@ -78,28 +43,8 @@
       "args": [],
       "and": false
     },
-    "d": {
-      "name": "scroll down half page",
-      "args": [],
-      "and": false
-    },
-    "u": {
-      "name": "scroll up full page",
-      "args": [],
-      "and": false
-    },
     "y": {
       "name": "copy url",
-      "args": [],
-      "and": false
-    },
-    "D": {
-      "name": "scroll down full page",
-      "args": [],
-      "and": false
-    },
-    "U": {
-      "name": "scroll up full page",
       "args": [],
       "and": false
     },
@@ -113,28 +58,8 @@
       "args": [],
       "and": false
     },
-    "{": {
-      "name": "select first tab",
-      "args": [],
-      "and": false
-    },
-    "}": {
-      "name": "select last tab",
-      "args": [],
-      "and": false
-    },
-    "Space": {
-      "name": "hit a hint",
-      "args": [],
-      "and": false
-    },
     "Y": {
       "name": "copy url and title",
-      "args": [],
-      "and": false
-    },
-    "t": {
-      "name": "open new tab",
       "args": [],
       "and": false
     },
@@ -148,33 +73,113 @@
       "args": [],
       "and": false
     },
-    "a": {
+    "H": {
+      "name": "back",
+      "args": [],
+      "and": false
+    },
+    "L": {
+      "name": "forward",
+      "args": [],
+      "and": false
+    },
+    "J": {
+      "name": "select left tab",
+      "args": [],
+      "and": false
+    },
+    "K": {
+      "name": "select right tab",
+      "args": [],
+      "and": false
+    },
+    "f": {
+      "name": "hit a hint",
+      "args": [],
+      "and": false
+    },
+    "i": {
       "name": "focus first text input",
       "args": [],
       "and": false
     },
-    "/": {
+    "n": {
+      "name": "navigate form elements forward",
+      "args": [],
+      "and": false
+    },
+    "p": {
+      "name": "navigate form elements backward",
+      "args": [],
+      "and": false
+    },
+    "o": {
+      "name": "open new tab",
+      "args": [],
+      "and": false
+    },
+    "O": {
+      "name": "clone tab",
+      "args": [],
+      "and": false
+    },
+    "u": {
+      "name": "re-open closed tab",
+      "args": [],
+      "and": false
+    },
+    "m o": {
       "name": "lunch quickmark (open this tab)",
       "args": [],
       "and": false
     },
-    "T": {
-      "name": "toggle pin tab",
-      "args": [],
-      "and": false
-    },
-    "q": {
+    "m O": {
       "name": "lunch quickmark (open background tab)",
       "args": [],
       "and": false
     },
-    "w": {
+    "m m": {
+      "name": "lunch quickmark",
+      "args": [],
+      "and": false
+    },
+    "m +": {
+      "name": "add quickmark",
+      "args": [],
+      "and": false
+    },
+    "m -": {
+      "name": "remove quickmark",
+      "args": [],
+      "and": false
+    },
+    "q": {
+      "name": "blur focus",
+      "args": [],
+      "and": false
+    },
+    "d d": {
       "name": "close this tab",
       "args": [],
       "and": false
     },
-    "W": {
+    "d o": {
       "name": "close other tabs",
+      "args": [],
+      "and": false
+    },
+    "d l": {
+      "name": "close right tabs",
+      "args": [],
+      "and": false
+    },
+    "d h": {
+      "name": "close left tabs",
+      "args": [],
+      "and": false
+    },
+    "t": {
+      "name": "toggle pin tab",
       "args": [],
       "and": false
     }
@@ -236,3 +241,4 @@
     }
   }
 }
+
