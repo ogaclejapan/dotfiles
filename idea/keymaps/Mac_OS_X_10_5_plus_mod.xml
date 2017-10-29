@@ -189,6 +189,7 @@
     <keyboard-shortcut first-keystroke="alt up" />
     <keyboard-shortcut first-keystroke="shift ctrl equals" />
   </action>
+  <action id="EditorSplitLine" />
   <action id="EditorStartNewLineBefore">
     <keyboard-shortcut first-keystroke="shift alt enter" />
   </action>
@@ -222,12 +223,25 @@
     <keyboard-shortcut first-keystroke="meta f" />
     <keyboard-shortcut first-keystroke="ctrl s" />
   </action>
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="alt f7" />
+    <keyboard-shortcut first-keystroke="meta enter" />
+  </action>
   <action id="FindWordAtCaret">
     <keyboard-shortcut first-keystroke="ctrl period" />
+  </action>
+  <action id="Generate">
+    <keyboard-shortcut first-keystroke="meta n" />
   </action>
   <action id="GotoAction">
     <keyboard-shortcut first-keystroke="shift meta a" />
     <keyboard-shortcut first-keystroke="alt x" />
+  </action>
+  <action id="GotoDeclaration">
+    <keyboard-shortcut first-keystroke="meta b" />
+    <mouse-shortcut keystroke="meta button1" />
+    <mouse-shortcut keystroke="button2" />
+    <keyboard-shortcut first-keystroke="ctrl enter" />
   </action>
   <action id="GotoTypeDeclaration">
     <keyboard-shortcut first-keystroke="shift meta b" />
@@ -242,6 +256,7 @@
     <keyboard-shortcut first-keystroke="alt slash" />
     <keyboard-shortcut first-keystroke="ctrl close_bracket" />
   </action>
+  <action id="KotlinShellExecute" />
   <action id="MethodDown">
     <keyboard-shortcut first-keystroke="ctrl down" />
     <keyboard-shortcut first-keystroke="shift ctrl period" />
@@ -249,6 +264,9 @@
   <action id="MethodUp">
     <keyboard-shortcut first-keystroke="ctrl up" />
     <keyboard-shortcut first-keystroke="shift ctrl comma" />
+  </action>
+  <action id="NewElement">
+    <keyboard-shortcut first-keystroke="meta n" />
   </action>
   <action id="NextProjectWindow">
     <keyboard-shortcut first-keystroke="meta back_quote" />
@@ -277,6 +295,7 @@
     <keyboard-shortcut first-keystroke="ctrl left" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="p" />
   </action>
+  <action id="QuickActionPopup" />
   <action id="QuickImplementations">
     <keyboard-shortcut first-keystroke="meta y" />
   </action>
@@ -299,6 +318,10 @@
   <action id="ShowBookmarks">
     <keyboard-shortcut first-keystroke="meta f3" />
     <keyboard-shortcut first-keystroke="ctrl comma" />
+  </action>
+  <action id="ShowUsages">
+    <keyboard-shortcut first-keystroke="meta alt f7" />
+    <keyboard-shortcut first-keystroke="meta alt enter" />
   </action>
   <action id="SmartTypeCompletion">
     <keyboard-shortcut first-keystroke="shift ctrl back_slash" />
@@ -343,5 +366,6 @@
   <action id="Vcs.ShowMessageHistory">
     <keyboard-shortcut first-keystroke="meta e" />
   </action>
+  <action id="ViewSource" />
   <action id="tasks.open.in.browser" />
 </keymap>
