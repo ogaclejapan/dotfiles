@@ -151,6 +151,9 @@
 (setq-default truncate-partial-width-windows t)
 (setq-default truncate-lines t)
 
+;; Fontify code in code blocks
+(setq org-src-fontify-natively t)
+
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Server Settings
 ;;--+--+--+--+--+--+--+--+--+--+
