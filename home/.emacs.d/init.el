@@ -186,6 +186,8 @@
 (global-set-key (kbd "C-?") 'help-for-help)
 (global-set-key (kbd "M-h") 'backward-kill-word)
 (global-set-key (kbd "C-.") 'isearch-forward-symbol-at-point)
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
 
 ;; Insert new line below current line
 (global-set-key (kbd "<S-return>") (lambda ()

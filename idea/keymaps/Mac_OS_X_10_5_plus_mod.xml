@@ -94,6 +94,7 @@
   </action>
   <action id="EditorBackwardParagraph">
     <keyboard-shortcut first-keystroke="alt open_bracket" />
+    <keyboard-shortcut first-keystroke="alt p" />
   </action>
   <action id="EditorChooseLookupItem">
     <keyboard-shortcut first-keystroke="enter" />
@@ -125,6 +126,7 @@
   </action>
   <action id="EditorForwardParagraph">
     <keyboard-shortcut first-keystroke="alt close_bracket" />
+    <keyboard-shortcut first-keystroke="alt n" />
   </action>
   <action id="EditorJoinLines" />
   <action id="EditorKillRegion">
