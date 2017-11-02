@@ -154,6 +154,9 @@
 ;; Fontify code in code blocks
 (setq org-src-fontify-natively t)
 
+; Use on scratch buffer
+(setq initial-major-mode 'org-mode)
+
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Server Settings
 ;;--+--+--+--+--+--+--+--+--+--+
@@ -312,7 +315,6 @@
 (use-package markdown-mode
   :ensure t
   :init
-  (setq initial-major-mode 'markdown-mode) ; Use on scratch buffer
   (setq markdown-command "multimarkdown") ; C-c C-c p
   (setq markdown-open-command "~/.bin/mark") ; C-c C-c o
   :commands (markdown-mode gfm-mode)
@@ -330,6 +332,15 @@
   (setq unkillable-scratch-behavior 'do-nothing)
   (setq unkillable-buffers '("^\\*scratch\\*$"))
   (unkillable-scratch 1))
+
+;;------------------------------
+
+;; https://github.com/Fanael/persistent-scratch
+;; Preserve the scratch buffer across Emacs sessions
+(use-package persistent-scratch
+  :ensure t
+  :config
+  (persistent-scratch-setup-default))
 
 ;;------------------------------
 
