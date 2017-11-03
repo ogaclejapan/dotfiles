@@ -254,8 +254,8 @@
          ("M-x" . counsel-M-x)
          ("M-y" . counsel-yank-pop)
          ("C-c e" . counsel-recentf)
-         ("C-c ," . counsel-bookmark)
          ("C-c f" . counsel-git)
+         ("C-c g" . counsel-grep)
          ("C-c s" . counsel-rg)))
 
 ;;------------------------------
@@ -282,8 +282,8 @@
 ;; Jump to things in Emacs tree-style.
 (use-package avy
   :ensure t
-  :bind (("C-'" . avy-goto-char-timer)
-         ("C-;" . avy-goto-line)))
+  :bind (("C-;" . avy-goto-char-timer)
+         ("C-=" . avy-goto-line)))
 
 ;;------------------------------
 
@@ -294,7 +294,7 @@
   :config
   (setq magit-completing-read-function 'ivy-completing-read)
   :diminish auto-revert-mode
-  :bind (("C-c m" . magit-status)))
+  :bind (("C-x g" . magit-status)))
 
 ;;------------------------------
 
@@ -302,8 +302,8 @@
 ;; https://github.com/magnars/expand-region.el
 (use-package expand-region
   :ensure t
-  :bind (("C-+" . er/expand-region)
-         ("C-_" . er/contract-region)))
+  :bind (("C-'" . er/expand-region)
+         ("M-'" . er/contract-region)))
 
 ;;------------------------------
 
