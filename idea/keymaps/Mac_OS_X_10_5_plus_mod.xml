@@ -18,15 +18,10 @@
     <keyboard-shortcut first-keystroke="ctrl slash" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="u" />
   </action>
-  <action id="AceAction">
-    <keyboard-shortcut first-keystroke="ctrl quote" />
-  </action>
   <action id="AceLineAction">
-    <keyboard-shortcut first-keystroke="ctrl semicolon" />
+    <keyboard-shortcut first-keystroke="ctrl equals" />
   </action>
-  <action id="AceTargetAction">
-    <keyboard-shortcut first-keystroke="shift ctrl quote" />
-  </action>
+  <action id="AceTargetAction" />
   <action id="ActivateFindToolWindow">
     <keyboard-shortcut first-keystroke="meta 3" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="f" />
@@ -188,7 +183,7 @@
     <keyboard-shortcut first-keystroke="ctrl l" />
   </action>
   <action id="EditorSelectWord">
-    <keyboard-shortcut first-keystroke="shift ctrl equals" />
+    <keyboard-shortcut first-keystroke="ctrl quote" />
   </action>
   <action id="EditorSplitLine" />
   <action id="EditorStartNewLineBefore">
@@ -212,7 +207,7 @@
     <keyboard-shortcut first-keystroke="ctrl space" />
   </action>
   <action id="EditorUnSelectWord">
-    <keyboard-shortcut first-keystroke="shift ctrl minus" />
+    <keyboard-shortcut first-keystroke="alt quote" />
   </action>
   <action id="EditorUpWithSelection">
     <keyboard-shortcut first-keystroke="shift up" />
@@ -255,6 +250,9 @@
   <action id="HippieCompletion">
     <keyboard-shortcut first-keystroke="alt slash" />
     <keyboard-shortcut first-keystroke="ctrl close_bracket" />
+  </action>
+  <action id="JustOneSpace">
+    <keyboard-shortcut first-keystroke="ctrl semicolon" />
   </action>
   <action id="KotlinShellExecute" />
   <action id="MethodDown">
@@ -317,7 +315,7 @@
   <action id="SelectNextOccurrence" />
   <action id="ShowBookmarks">
     <keyboard-shortcut first-keystroke="meta f3" />
-    <keyboard-shortcut first-keystroke="ctrl comma" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="l" />
   </action>
   <action id="ShowUsages">
     <keyboard-shortcut first-keystroke="meta alt f7" />
@@ -347,6 +345,10 @@
   <action id="SwitchUp">
     <keyboard-shortcut first-keystroke="ctrl alt up" />
   </action>
+  <action id="ToggleBookmark">
+    <keyboard-shortcut first-keystroke="f3" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="m" />
+  </action>
   <action id="Tool_External Tools_Emacs">
     <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="e" />
   </action>
@@ -362,10 +364,15 @@
   <action id="UnsplitAll">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="1" />
   </action>
-  <action id="Vcs.QuickListPopupAction" />
+  <action id="Vcs.QuickListPopupAction">
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="g" />
+  </action>
   <action id="Vcs.ShowMessageHistory">
     <keyboard-shortcut first-keystroke="meta e" />
   </action>
   <action id="ViewSource" />
+  <action id="emacsIDEAs.AceJump">
+    <keyboard-shortcut first-keystroke="ctrl quote" />
+  </action>
   <action id="tasks.open.in.browser" />
 </keymap>
