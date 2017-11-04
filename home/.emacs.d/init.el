@@ -209,7 +209,7 @@
 (when (eq system-type 'darwin)
   (setq google-ime "/Applications/GoogleJapaneseInput.localized")
   (when (file-exists-p google-ime)
-    (global-set-key (kbd "C-J") (lambda ()
+    (global-set-key (kbd "C-S-j") (lambda ()
        (interactive)
        (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 104")))
     (global-set-key (kbd "C-:") (lambda ()
