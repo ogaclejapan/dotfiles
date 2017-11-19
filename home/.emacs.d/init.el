@@ -154,8 +154,14 @@
 ;; Fontify code in code blocks
 (setq org-src-fontify-natively t)
 
-; Use on scratch buffer
+;; Use on scratch buffer
 (setq initial-major-mode 'org-mode)
+
+;; Single frame to display files to be compared or merged
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+;; To be horizontally split
+(setq ediff-split-window-function 'split-window-horizontally)
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Server Settings
