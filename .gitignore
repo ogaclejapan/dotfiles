@@ -26,6 +26,7 @@ home/.config/fish/functions/*.*
 !home/.config/fish/functions/en_ja.fish
 !home/.config/fish/functions/ja_en.fish
 !home/.config/fish/functions/apk.fish
+!home/.config/fish/functions/adb_fzf.fish
 !home/.config/fish/functions/fisher.fish
 
 home/.config/fish/completions/*.*
