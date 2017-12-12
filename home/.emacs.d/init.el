@@ -197,6 +197,8 @@
 (global-set-key (kbd "C-.") 'isearch-forward-symbol-at-point)
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
+(global-set-key (kbd "C-<") 'previous-buffer)
+(global-set-key (kbd "C->") 'next-buffer)
 
 ;; Insert new line below current line
 (global-set-key (kbd "<S-return>") (lambda ()
