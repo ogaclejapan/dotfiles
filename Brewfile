@@ -53,6 +53,7 @@ brew 'webp'
 brew 'cloc'
 brew 'multimarkdown'
 brew 'ffmpeg', args: ['with-libvpx', 'with-fdk-aac', 'with-ffplay', 'with-freetype', 'with-libass', 'with-libquvi', 'with-libvorbis', 'with-libvpx', 'with-opus', 'with-x265', 'with-webp']
+brew 'youtube-dl'
 
 ## Optional
 #brew 'docker'
