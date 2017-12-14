@@ -15,3 +15,4 @@ set -x JIRA_URL ''
 # fzf
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
+set -x FZF_CD_WITH_HIDDEN_COMMAND 'rg --files --follow --glob "!.git/*"'
