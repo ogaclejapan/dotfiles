@@ -22,13 +22,59 @@
     <keyboard-shortcut first-keystroke="ctrl equals" />
   </action>
   <action id="AceTargetAction" />
+  <action id="ActivateBuildVariantsToolWindow">
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="b" />
+  </action>
+  <action id="ActivateDebugToolWindow">
+    <keyboard-shortcut first-keystroke="meta 5" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="5" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="d" />
+  </action>
+  <action id="ActivateEventLogToolWindow">
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="e" />
+  </action>
+  <action id="ActivateFavoritesToolWindow">
+    <keyboard-shortcut first-keystroke="meta 2" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="2" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="a" />
+  </action>
   <action id="ActivateFindToolWindow">
     <keyboard-shortcut first-keystroke="meta 3" />
-    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="f" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="3" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="f" />
+  </action>
+  <action id="ActivateGradleToolWindow">
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="g" />
+  </action>
+  <action id="ActivateLogcatToolWindow">
+    <keyboard-shortcut first-keystroke="meta 6" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="6" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="l" />
   </action>
   <action id="ActivateProjectToolWindow">
     <keyboard-shortcut first-keystroke="meta 1" />
-    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="d" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="1" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="p" />
+  </action>
+  <action id="ActivateRunToolWindow">
+    <keyboard-shortcut first-keystroke="meta 4" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="4" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="r" />
+  </action>
+  <action id="ActivateStructureToolWindow">
+    <keyboard-shortcut first-keystroke="meta 7" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="7" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="s" />
+  </action>
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="alt f12" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="t" />
+  </action>
+  <action id="ActivateVersionControlToolWindow">
+    <keyboard-shortcut first-keystroke="meta 9" />
+    <keyboard-shortcut first-keystroke="shift meta 9" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="9" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="v" />
   </action>
   <action id="AddToFavoritesPopup" />
   <action id="CallHierarchy">
@@ -38,14 +84,18 @@
   <action id="ChooseDebugConfiguration">
     <keyboard-shortcut first-keystroke="shift alt f9" />
   </action>
+  <action id="ChooseNextSubsequentPropertyValueEditorAction">
+    <keyboard-shortcut first-keystroke="ctrl down" />
+  </action>
   <action id="ChooseRunConfiguration">
     <keyboard-shortcut first-keystroke="shift alt f10" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="ctrl r" />
   </action>
   <action id="CloseAllEditors">
-    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="ctrl c" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="ctrl k" />
   </action>
   <action id="CloseAllEditorsButActive">
-    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="0" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="0" />
   </action>
   <action id="CloseContent">
     <keyboard-shortcut first-keystroke="meta w" />
@@ -65,6 +115,10 @@
     <keyboard-shortcut first-keystroke="meta slash" />
     <keyboard-shortcut first-keystroke="meta divide" />
     <keyboard-shortcut first-keystroke="alt semicolon" />
+  </action>
+  <action id="CompileDirty">
+    <keyboard-shortcut first-keystroke="meta f9" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="c" />
   </action>
   <action id="Debug">
     <keyboard-shortcut first-keystroke="shift f9" />
@@ -202,6 +256,7 @@
   </action>
   <action id="EditorToggleCase">
     <keyboard-shortcut first-keystroke="shift ctrl u" />
+    <keyboard-shortcut first-keystroke="alt u" />
   </action>
   <action id="EditorToggleStickySelection">
     <keyboard-shortcut first-keystroke="ctrl space" />
@@ -214,6 +269,10 @@
     <keyboard-shortcut first-keystroke="shift ctrl p" />
   </action>
   <action id="ExpressionTypeInfo" />
+  <action id="FileStructurePopup">
+    <keyboard-shortcut first-keystroke="meta f12" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="j" />
+  </action>
   <action id="Find">
     <keyboard-shortcut first-keystroke="meta f" />
     <keyboard-shortcut first-keystroke="ctrl s" />
@@ -238,6 +297,10 @@
     <mouse-shortcut keystroke="button2" />
     <keyboard-shortcut first-keystroke="ctrl enter" />
   </action>
+  <action id="GotoTest">
+    <keyboard-shortcut first-keystroke="shift meta t" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="t" />
+  </action>
   <action id="GotoTypeDeclaration">
     <keyboard-shortcut first-keystroke="shift meta b" />
     <mouse-shortcut keystroke="shift meta button1" />
@@ -251,18 +314,14 @@
     <keyboard-shortcut first-keystroke="alt slash" />
     <keyboard-shortcut first-keystroke="ctrl close_bracket" />
   </action>
+  <action id="JumpToLastWindow">
+    <keyboard-shortcut first-keystroke="f12" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="0" />
+  </action>
   <action id="JustOneSpace">
     <keyboard-shortcut first-keystroke="ctrl semicolon" />
   </action>
   <action id="KotlinShellExecute" />
-  <action id="MethodDown">
-    <keyboard-shortcut first-keystroke="ctrl down" />
-    <keyboard-shortcut first-keystroke="shift ctrl period" />
-  </action>
-  <action id="MethodUp">
-    <keyboard-shortcut first-keystroke="ctrl up" />
-    <keyboard-shortcut first-keystroke="shift ctrl comma" />
-  </action>
   <action id="NewElement">
     <keyboard-shortcut first-keystroke="meta n" />
   </action>
@@ -277,12 +336,16 @@
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="shift meta close_bracket" />
     <keyboard-shortcut first-keystroke="ctrl right" />
-    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="n" />
+    <keyboard-shortcut first-keystroke="shift ctrl comma" />
   </action>
   <action id="NextTemplateVariable">
     <keyboard-shortcut first-keystroke="tab" />
     <keyboard-shortcut first-keystroke="enter" />
     <keyboard-shortcut first-keystroke="ctrl m" />
+  </action>
+  <action id="OptimizeImports">
+    <keyboard-shortcut first-keystroke="ctrl alt o" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="i" />
   </action>
   <action id="PasteMultiple">
     <keyboard-shortcut first-keystroke="shift meta v" />
@@ -291,7 +354,7 @@
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="shift meta open_bracket" />
     <keyboard-shortcut first-keystroke="ctrl left" />
-    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="p" />
+    <keyboard-shortcut first-keystroke="shift ctrl period" />
   </action>
   <action id="QuickActionPopup" />
   <action id="QuickImplementations">
@@ -301,9 +364,16 @@
     <keyboard-shortcut first-keystroke="f1" />
     <mouse-shortcut keystroke="control button2" />
   </action>
+  <action id="QuickList.External Tools">
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="e" />
+  </action>
   <action id="RecentChangedFiles">
     <keyboard-shortcut first-keystroke="shift meta e" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="b" />
+  </action>
+  <action id="ReformatCode">
+    <keyboard-shortcut first-keystroke="meta alt l" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="f" />
   </action>
   <action id="Replace">
     <keyboard-shortcut first-keystroke="meta r" />
@@ -311,11 +381,17 @@
   </action>
   <action id="Run">
     <keyboard-shortcut first-keystroke="shift f10" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="r" />
   </action>
   <action id="SelectNextOccurrence" />
   <action id="ShowBookmarks">
     <keyboard-shortcut first-keystroke="meta f3" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="l" />
+  </action>
+  <action id="ShowNavBar">
+    <keyboard-shortcut first-keystroke="meta up" />
+    <keyboard-shortcut first-keystroke="alt home" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="d" />
   </action>
   <action id="ShowUsages">
     <keyboard-shortcut first-keystroke="meta alt f7" />
@@ -349,13 +425,7 @@
     <keyboard-shortcut first-keystroke="f3" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="m" />
   </action>
-  <action id="Tool_External Tools_Emacs">
-    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="e" />
-  </action>
   <action id="Tool_External Tools_Terminal">
-    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="t" />
-  </action>
-  <action id="Tool_External Tools_Tmux">
     <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="t" />
   </action>
   <action id="TypeHierarchy">
