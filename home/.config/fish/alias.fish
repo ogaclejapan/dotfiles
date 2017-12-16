@@ -8,4 +8,7 @@ end
 if type -q adb
   alias adb=adb_fzf
 end
+if type -q git
+  alias gs=git_list_fzf
+end
 

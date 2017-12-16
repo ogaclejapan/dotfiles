@@ -8,7 +8,6 @@
   autocrlf = input
 [alias]
   # log
-  ll = log --pretty=oneline
   tree = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
   # diff
   dm = diff master
