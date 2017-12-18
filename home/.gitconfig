@@ -29,3 +29,6 @@
 	keepBackup = false
 [fetch]
 	prune = true
+[rebase]
+	autosquash = true
+	autostash = true
