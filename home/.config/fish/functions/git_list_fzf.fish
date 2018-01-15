@@ -6,7 +6,9 @@ function git_list_fzf -d 'Execute git for-each-ref command to interactive when m
   end
 
   set origin (type -P git)
-  
+
+  set refs ''
+  set options ''
   for option in $argv
     switch "$option"
       case -l --local
@@ -16,10 +18,10 @@ function git_list_fzf -d 'Execute git for-each-ref command to interactive when m
       case -t --tag
         set refs 'refs/tags'
       case \*
-        set refs ''
+        set options $options $option
     end
   end
 
-  eval "$origin for-each-ref --format='%(refname:short)' $refs | fzf  --reverse --select-1"
+  eval "$origin for-each-ref --format='%(refname:short)%(if)%(authorname)%(then)%09by %(authorname)%(end)' $options $refs | fzf  --reverse --select-1 | cut -f 1"
 
 end
