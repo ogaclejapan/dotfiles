@@ -1,4 +1,4 @@
-function git_list_fzf -d 'Execute git for-each-ref command to interactive when multiple branches found'
+function git_branch_list_fzf -d 'Execute git for-each-ref command to interactive when multiple branches found'
 
   if not type -q git
     echo "git: command not found"

@@ -9,6 +9,7 @@ if type -q adb
   alias adb=adb_fzf
 end
 if type -q git
-  alias gs=git_list_fzf
+  alias gs=git_branch_list_fzf
+  alias gl=git_commit_hash_fzf
 end
 
