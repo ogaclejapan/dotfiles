@@ -401,6 +401,14 @@
 
 ;;------------------------------
 
+;; https://github.com/wwwjfy/emacs-fish
+;; fish-mode for emacs
+(use-package fish-mode
+  :ensure t
+  :mode ("\\.fish\\'" . fish-mode))
+
+;;------------------------------
+
 ;; https://github.com/rranelli/auto-package-update.el
 ;; Automatically update Emacs packages.
 ;; (use-package auto-package-update
