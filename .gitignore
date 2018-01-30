@@ -42,6 +42,8 @@ home/.config/fisherman
 
 home/.config/karabiner/assets
 
+home/.config/hub
+
 home/.atom/*
 !home/.atom/*.cson
 
