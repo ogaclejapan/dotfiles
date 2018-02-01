@@ -1,4 +1,4 @@
 function fish_right_prompt
-  echo -n ""
+    echo -n ""
 end
 
