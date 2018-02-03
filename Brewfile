@@ -59,6 +59,7 @@ brew 'youtube-dl'
 ## Optional
 #brew 'docker'
 #brew 'dvm'
+#brew 'dfu-programmer'
 
 #------------------------------#
 # Cask formula
