@@ -27,8 +27,6 @@ home/.config/fish/functions/*.*
 !home/.config/fish/functions/ja_en.fish
 !home/.config/fish/functions/apk.fish
 !home/.config/fish/functions/adb_fzf.fish
-!home/.config/fish/functions/git_branch_switcher_fzf.fish
-!home/.config/fish/functions/git_commit_hash_fzf.fish
 !home/.config/fish/functions/magit.fish
 !home/.config/fish/functions/fisher.fish
 
