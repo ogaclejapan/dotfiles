@@ -19,6 +19,12 @@
   d10 = diff HEAD~~~~~~~~~~
   # delete unused local branches
   diet = !git branch --merged master | grep -vE \"^\\*|master$\" | xargs -I % git branch -d %
+  # select commit hash 
+  hash = "!f() { git log --oneline --format='%h: %s' $@ | fzf --reverse --multi --no-sort | cut -d ':' -f 1 | xargs; }; f"
+  # select branch
+  ls = "!f() { git for-each-ref --format='%(refname:short)%(if)%(authorname)%(then)%09by %(authorname)%(end)' $@ | fzf --reverse --multi --no-sort | cut -f 1 | xargs; }; f"
+  # checkout branch
+  co = "!f() { git ls | xargs -I % git checkout $@ %; }; f"
 [gh]
   #host = your-github-enterprise
 [filter "lfs"]

@@ -8,8 +8,3 @@ end
 if type -q adb
   alias adb=adb_fzf
 end
-if type -q git
-  alias gs=git_branch_switcher_fzf
-  alias gl=git_commit_hash_fzf
-end
-
