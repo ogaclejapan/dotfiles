@@ -3,5 +3,5 @@ function magit -d 'Run magit-status on emacs'
         echo "emacsclient: not found" >&2
         return 1
     end
-    command emacsclient -n --eval "(magit-status \"$PWD\")"
+    emacsclient -n --eval "(magit-status \"$PWD\")"
 end

@@ -4,7 +4,7 @@ function apk -d 'Find apk from under the current directory'
         return 1
     end
 
-    command fd -I -E '.git' -e 'apk' | fzf --min-height=2 --height=25% --reverse --select-1 | read -l apk
+    fd -I -E '.git' -e 'apk' | fzf --min-height=2 --height=25% --reverse --select-1 | read -l apk
     if test -z $apk
         return 0
     end
