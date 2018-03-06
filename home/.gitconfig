@@ -38,3 +38,5 @@
 [rebase]
 	autosquash = true
 	autostash = true
+[giter]
+  root = ~/git
