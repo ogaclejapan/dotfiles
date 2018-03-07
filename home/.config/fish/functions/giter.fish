@@ -41,6 +41,8 @@ function giter -d 'Local git repository management'
             __giter_cd $rootpath $argv
         case ls
             __giter_list $rootpath $argv
+        case clone
+            __giter_clone $rootpath $argv
         case '*'
             __giter_exec $rootpath $subcommand $argv
     end
@@ -84,6 +86,13 @@ function __giter_cd
         return 0
     end
     cd $repopath
+end
+
+function __giter_clone
+    set -l rootpath $argv[1]
+    set -e argv[1]
+    git -C $rootpath clone $argv
+    return $status
 end
 
 function __giter_exec
