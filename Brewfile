@@ -71,7 +71,6 @@ tap 'caskroom/cask'
 cask 'alfred'
 cask 'iterm2'
 cask 'emacs'
-cask 'atom'
 cask 'coteditor'
 cask 'android-sdk'
 cask 'android-file-transfer'
@@ -87,9 +86,11 @@ cask 'bettertouchtool'
 cask 'karabiner-elements'
 cask '0xed'
 
+
 ## Optional
 
 #cask 'dash'
+#cask 'visual-studio-code'
 #cask 'dropbox'
 #cask 'virtualbox'
 #cask 'vagrant'

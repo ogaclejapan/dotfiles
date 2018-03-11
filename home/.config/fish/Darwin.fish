@@ -27,7 +27,6 @@ if test -d /usr/local/opt/go
   set -x PATH /usr/local/opt/go/libexec/bin $PATH
 end
 
-if test -d ~/Applications/Atom.app
-  set -x ATOM_PATH ~/Applications
+if test -d /Applications/Visual\ Studio\ Code.app
+  set -x PATH /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin $PATH
 end
-
