@@ -89,6 +89,7 @@ cask '0xed'
 
 ## Optional
 
+#cask 'dash'
 #cask 'dropbox'
 #cask 'virtualbox'
 #cask 'vagrant'
