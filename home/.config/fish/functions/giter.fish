@@ -40,7 +40,7 @@ function giter -d 'Local git repository management'
         case cd
             __giter_cd $rootpath $argv
         case ls
-            __giter_list $rootpath $argv
+            __giter_ls $rootpath $argv
         case clone
             __giter_clone $rootpath $argv
         case '*'
@@ -48,6 +48,11 @@ function giter -d 'Local git repository management'
     end
     
     return $status
+end
+
+function __giter_ls
+    set -l rootpath $argv[1]    
+    fd -t d -d 1 '.+' $rootpath | xargs -I '%' basename '%'
 end
 
 function __giter_path
@@ -70,7 +75,7 @@ function __giter_help
     printf "\n"
 end
 
-function __giter_list
+function __giter_repo
     set -l rootpath $argv[1]
     set -l repo (__giter_path $rootpath)
     if test -z $repo
@@ -81,7 +86,7 @@ end
 
 function __giter_cd
     set -l rootpath $argv[1]
-    set -l repopath (__giter_list $rootpath)
+    set -l repopath (__giter_repo $rootpath)
     if test -z $repopath
         return 0
     end
@@ -98,7 +103,7 @@ end
 function __giter_exec
     set -l rootpath $argv[1]
     set -e argv[1]
-    set -l repopath (__giter_list $rootpath)
+    set -l repopath (__giter_repo $rootpath)
     if test -z $repopath
         return 0
     end
