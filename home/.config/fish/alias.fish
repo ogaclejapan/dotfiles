@@ -8,4 +8,8 @@ if type -q hub
 end
 if type -q adb
     alias adb=adb_fzf
+    alias cap='adb screencap'
+    alias rec='adb screenrecord'
+    alias am='adb shell am'
+    alias pm='adb shell pm'
 end
