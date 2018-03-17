@@ -1,7 +1,12 @@
 function magit -d 'Run magit-status on emacs'
+    if not type -q git
+        echo "git: not found" >&2
+        return 1
+    end
     if not type -q emacsclient
         echo "emacsclient: not found" >&2
         return 1
     end
-    emacsclient -n --eval "(magit-status \"$PWD\")"
+    set rootdir (git rev-parse --show-toplevel)
+    emacsclient -n --eval "(magit-status \"$rootdir\")"
 end
