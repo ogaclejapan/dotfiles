@@ -97,6 +97,7 @@ cask '0xed'
 #cask 'genymotion'
 #cask 'trailer'
 #cask 'hammerspoon'
+#cask 'altiar'
 
 
 #------------------------------#
