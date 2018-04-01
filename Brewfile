@@ -16,6 +16,7 @@ brew 'aria2'
 brew 'wget'
 brew 'curl'
 brew 'httpie'
+brew 'watch'
 brew 'tree'
 brew 'rename'
 brew 'jq'
@@ -98,7 +99,7 @@ cask '0xed'
 #cask 'genymotion'
 #cask 'trailer'
 #cask 'hammerspoon'
-#cask 'altiar'
+#cask 'obs'
 
 
 #------------------------------#
