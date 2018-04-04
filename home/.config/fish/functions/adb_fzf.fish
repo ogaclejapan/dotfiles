@@ -79,10 +79,14 @@ function __adb_screenrecord
         return 0
     end
     set fpath (realpath ~/Desktop)
-    argparse -s 'p/path=' -- $argv
+    argparse -s 'p/path=' 'g/gif' -- $argv
+    if set -q _flag_gif and not type -q ffmpeg
+        echo "ffmpeg: command not found" >&2
+        return 1
+    end
     if set -q _flag_path
         set fpath (eval realpath $_flag_path)
-    end    
+    end
     set timestamp (date "+%Y%m%d%H%M%S")
     set fname (printf "screen_%s.mp4" $timestamp)
     set tmp (printf "/data/local/tmp/%s" $fname)
@@ -109,7 +113,16 @@ function __adb_screenrecord
     
     command adb -s $serial pull $tmp $dst > /dev/null
     and command adb -s $serial shell rm $tmp
-    and echo $dst
+
+    if not set -q _flag_gif
+        echo $dst
+        return 0
+    end
+
+    set fname (printf "screen_%s.gif" $timestamp) 
+    ffmpeg -i $dst -loglevel error -vf scale=360:-1 -r 10 (printf "%s/%s" $fpath $fname)
+    and rm $dst
+
 end
 
 function __adb_fzf_needs_command
