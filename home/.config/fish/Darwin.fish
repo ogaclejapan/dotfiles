@@ -1,6 +1,13 @@
 alias ll='ls -lahF'
 alias la='ls -a'
 
+# It looks like a zeit/hyper terminal
+if test $TERM != 'dumb'
+  echo -n -e "\033]6;1;bg;red;brightness;40\a"
+  echo -n -e "\033]6;1;bg;green;brightness;44\a"
+  echo -n -e "\033]6;1;bg;blue;brightness;52\a"
+end
+
 if test -d ~/.rbenv/shims
 	set -x PATH ~/.rbenv/shims $PATH
 end

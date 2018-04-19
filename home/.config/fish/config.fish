@@ -1,5 +1,6 @@
 set -x LANG ja_JP.UTF-8
 set -x PATH ./bin $HOME/.bin /usr/local/bin $PATH
+set fish_greeting
 
 set ALIAS_FISH ~/.config/fish/alias.fish
 if test -f $ALIAS_FISH
@@ -30,7 +31,7 @@ for i in $PATH
   end
 end
 set -x PATH $NEW_PATH
-
+set -e NEW_PATH
 
 # e.g. ~/.tmux/2.4/Darwin.conf
 set PLATFORM_TMUX ~/.tmux/(tmux -V | cut -c 6-)/(uname -s).conf
