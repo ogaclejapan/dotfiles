@@ -10,11 +10,6 @@ function giter -d 'Local git repository management'
         return 1
     end
     
-    if not type -q fd
-        echo "fd: command not found" >&2
-        return 1
-    end
-    
     git config giter.root | read -l dir
     if test $status -ne 0
       set dir ~/.giter
@@ -52,12 +47,12 @@ end
 
 function __giter_ls
     set -l rootpath $argv[1]    
-    fd -t d -d 1 '.+' $rootpath | xargs -I '%' basename '%'
+    ls -1F $rootpath | tr -d '/'
 end
 
 function __giter_path
     set -l rootpath $argv[1]
-    fd -t d -d 1 '.+' $rootpath | xargs -I '%' basename '%' | fzf --reverse --min-height=2 --height=25%
+    ls -1F $rootpath | tr -d '/' | fzf --reverse --min-height=2 --height=25% --bind=ctrl-v:page-down,alt-v:page-up,alt-n:half-page-down,alt-p:half-page-up
 end
 
 function __giter_help
