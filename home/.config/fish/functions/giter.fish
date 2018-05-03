@@ -106,7 +106,10 @@ end
 function __giter_exec
     set -l rootpath $argv[1]
     set -e argv[1]
-    set -l repopath (__giter_repo $rootpath)
+    set repopath (git rev-parse --show-toplevel 2> /dev/null)
+    if test -z $repopath
+        set repopath (__giter_repo $rootpath)    
+    end    
     if test -z $repopath
         return 0
     end
