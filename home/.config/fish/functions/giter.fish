@@ -32,6 +32,8 @@ function giter -d 'Local git repository management'
     switch $subcommand
         case help
             __giter_help $rootpath
+        case root
+            __giter_root $rootpath
         case cd
             __giter_cd $rootpath $argv
         case ls
@@ -59,6 +61,7 @@ function __giter_help
     set -l rootpath $argv[1]
     printf "Usage: giter <command>\n"
     printf "\n"
+    printf "   root     Change directory to giter.root\n"    
     printf "   cd       Change directory to selected git repository\n"
     printf "   ls       Show managed git repositories\n"
     printf "  <any>     Execute git command on selected git repository\n"
@@ -68,6 +71,11 @@ function __giter_help
     printf "\n"
     printf "   giter.root: $rootpath\n"
     printf "\n"
+end
+
+function __giter_root
+    set -l rootpath $argv[1]
+    cd $rootpath
 end
 
 function __giter_repo
@@ -116,6 +124,7 @@ function __giter_needs_command
 end
 
 complete -f -c giter -n '__giter_needs_command' -a help -d 'Display the manual of a giter command'
+complete -f -c giter -n '__giter_needs_command' -a root -d 'Change directory to giter.root'
 complete -f -c giter -n '__giter_needs_command' -a cd -d 'Change directory to selected git repository'
 complete -f -c giter -n '__giter_needs_command' -a ls -d 'Show managed git repositories'
 complete -c giter -w git
