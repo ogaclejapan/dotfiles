@@ -1,5 +1,6 @@
 alias ssh='env TERM=xterm ssh'
 alias emacs='emacsclient -nw'
+alias em='emacs'
 alias e='emacsclient -n'
 alias ekill='emacsclient -e "(kill-emacs)"'
 if type -q hub
