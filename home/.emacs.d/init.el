@@ -285,7 +285,7 @@
 (use-package counsel-projectile
   :ensure t
   :config
-  (counsel-projectile-on))
+  (counsel-projectile-mode))
 
 ;;------------------------------
 
@@ -307,6 +307,17 @@
   (setq magit-repository-directories '(("~/git/" . 1)))
   :diminish auto-revert-mode
   :bind (("C-x g" . magit-status)))
+
+;; https://github.com/vermiculus/magithub
+;; Magit-based interfaces to GitHub
+;; Note
+;;   - https://francoismichonneau.net/2018/01/setup-magithub-with-2FA/
+(use-package magithub
+  :after magit
+  :ensure t
+  :config
+  (magithub-feature-autoinject t)
+  (setq magithub-clone-default-directory "~/git"))
 
 ;;------------------------------
 
@@ -360,14 +371,6 @@
 
 ;;------------------------------
 
-;; https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode
-;; Kotlin major mode
-(use-package kotlin-mode
-  :commands (kotlin-mode)
-  :mode (("\\.kt\\'" . kotlin-mode)))
-
-;;------------------------------
-
 ;; https://github.com/joshwnj/json-mode
 ;; JSON major mode
 (use-package json-mode
@@ -377,27 +380,11 @@
 
 ;;------------------------------
 
-;; https://github.com/mooz/js2-mode
-;; Improved JavaScript editing mode for GNU Emacs
-(use-package js2-mode
+;; https://github.com/yoshiki/yaml-mode
+;; Simple major mode to edit YAML file for emacs
+(use-package yaml-mode
   :ensure t
-  :commands js2-mode
-  :interpreter ("node" . js2-mode)
-  :mode (("\\.js\\'" . js2-mode)
-         ("\\.jsx\\'" . js2-jsx-mode))
-  :config (setq-default js2-basic-offset 2))
-
-;;------------------------------
-
-;; https://github.com/fxbois/web-mode
-;; web template editing mode for emacs
-(use-package web-mode
-  :ensure t
-  :mode ("\\.html?\\'" . web-mode)
-  :config
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
-  (setq web-mode-css-indent-offset 2))
+  :mode ("\\.yml\\'" . yaml-mode))
 
 ;;------------------------------
 
@@ -411,11 +398,12 @@
 
 ;; https://github.com/rranelli/auto-package-update.el
 ;; Automatically update Emacs packages.
-;; (use-package auto-package-update
-;;   :ensure t
-;;   :config
-;;   (setq auto-package-update-delete-old-versions t)
-;;   (auto-package-update-maybe))
+(use-package auto-package-update
+  :ensure t
+  :config
+  (setq auto-package-update-delete-old-versions t
+        auto-package-update-interval 30)
+  (auto-package-update-maybe))
 
 ;;------------------------------
 
