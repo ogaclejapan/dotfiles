@@ -41,3 +41,5 @@
 	autostash = true
 [giter]
   root = ~/git
+[github]
+	user = ogaclejapan
