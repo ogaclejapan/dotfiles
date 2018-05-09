@@ -308,17 +308,6 @@
   :diminish auto-revert-mode
   :bind (("C-x g" . magit-status)))
 
-;; https://github.com/vermiculus/magithub
-;; Magit-based interfaces to GitHub
-;; Note
-;;   - https://francoismichonneau.net/2018/01/setup-magithub-with-2FA/
-(use-package magithub
-  :after magit
-  :ensure t
-  :config
-  (magithub-feature-autoinject t)
-  (setq magithub-clone-default-directory "~/git"))
-
 ;;------------------------------
 
 ;; expand-region
