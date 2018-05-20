@@ -253,7 +253,8 @@
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
-  (bind-key "C-c C-r" 'ivy-resume))
+  (bind-key "M-c" 'ivy-toggle-case-fold ivy-minibuffer-map)
+  :bind ("C-c C-r" . ivy-resume))
 
 ;;------------------------------
 
