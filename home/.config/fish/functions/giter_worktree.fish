@@ -31,10 +31,14 @@ function giter_worktree -d 'Local git worktree management'
             __giter_worktree_cd $repopath $argv
         case ls
             __giter_worktree_ls $repopath $argv
+        case dir
+            __giter_worktree_dir $repopath $argv
         case new
             __giter_worktree_new $repopath $argv
         case view
             __giter_worktree_view $repopath $argv
+        case diet
+            __giter_worktree_diet $repopath $argv
         case '*'
             __giter_worktree_exec $repopath $subcommand $argv
     end
@@ -51,6 +55,8 @@ function __giter_worktree_help
     printf "   view     Create working tree without new branch\n"
     printf "   cd       Change directory to selected git working trees\n"
     printf "   ls       Show managed git working trees\n"
+    printf "   dir      Show managed git working tree directories\n"
+    printf "   diet     Remove merged git working trees\n"
     printf "  <any>     Execute git worktree command on git repository\n"
     printf "   help     Print this help\n"
     printf "\n"
@@ -60,9 +66,14 @@ function __giter_worktree_help
     printf "\n"
 end
 
+function __giter_worktree_dir
+    set -l repopath $argv[1]
+    git -C $repopath worktree list | cut -f 1 -d ' '
+end
+
 function __giter_worktree_ls
     set -l repopath $argv[1]
-    git -C $repopath worktree list | fzf --reverse --exact --no-sort --multi --header-lines=1 | cut -f 1 -d ' '
+    git -C $repopath worktree list
 end
 
 function __giter_worktree_path
@@ -119,6 +130,20 @@ function __giter_worktree_select_branch
     git -C $repopath for-each-ref --format='%(refname:short)%(if)%(authorname)%(then)%09by %(authorname)%(end)' $argv | column -t -s \t | fzf --reverse --exact --no-sort --bind=ctrl-v:page-down,alt-v:page-up,alt-n:half-page-down,alt-p:half-page-up | cut -f 1 -d ' '
 end
 
+function __giter_worktree_diet
+    set -l repopath $argv[1]
+    set -l worklist (git -C $repopath worktree list | sed 1d) # without main working tree
+    for line in $worklist
+        set -l commit (echo $line | tr -s '[:blank:]' '\t' | cut -f 2)
+        set -l is_merged (git -C $repopath branch --contains $commit | grep -c 'master')
+        if test $is_merged -eq 1
+            set -l workpath (echo $line | tr -s '[:blank:]' '\t' | cut -f 1)
+            git -C $repopath worktree remove $workpath
+        end
+    end
+    git -C $repopath worktree prune
+end
+
 function __giter_worktree_exec
     set -l rootpath $argv[1]
     set -e argv[1]
@@ -147,3 +172,5 @@ complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a new -d 'Cre
 complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a view -d 'Create working tree without new branch'
 complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a cd -d 'Change directory to selected git working trees'
 complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a ls -d 'Show managed git working trees'
+complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a dir -d 'Show managed git working tree directories'
+complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a diet -d 'Remove merged git working trees'
