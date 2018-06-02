@@ -29,6 +29,7 @@ home/.config/fish/functions/*.*
 !home/.config/fish/functions/adb_fzf.fish
 !home/.config/fish/functions/magit.fish
 !home/.config/fish/functions/giter.fish
+!home/.config/fish/functions/giter_worktree.fish
 !home/.config/fish/functions/fisher.fish
 
 home/.config/fish/completions/*.*
