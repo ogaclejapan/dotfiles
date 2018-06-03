@@ -15,3 +15,7 @@ if type -q adb
     alias am='adb shell am'
     alias pm='adb shell pm'
 end
+if type -q emulator
+    alias emulator=emulator_fzf
+end
+
