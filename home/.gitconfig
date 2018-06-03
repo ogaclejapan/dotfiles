@@ -27,8 +27,17 @@
   ca = commit -am
   s = status -s
   br = branch
+  m = merge
+  mm = merge master
   master = checkout master
   diet = !git branch --merged master | grep -vE \"^\\*|master$\" | xargs -I % git branch -d %
+  # Magit-style
+  f = fetch -p
+  F = pull
+  Fr = pull --rebase
+  P = push
+  zz = stash save
+  zp = stash pop
 [gh]
   #host = your-github-enterprise
 [filter "lfs"]
