@@ -4,15 +4,15 @@ function giter -d 'Local git repository management'
         echo "git: command not found" >&2
         return 1
     end
-    
+
     if not type -q fzf
         echo "fzf: command not found" >&2
         return 1
     end
-    
+
     git config giter.root | read -l dir
     if test $status -ne 0
-      set dir ~/.giter
+        set dir ~/.giter
     end
 
     eval mkdir -p $dir
@@ -28,7 +28,7 @@ function giter -d 'Local git repository management'
 
     set -l subcommand $argv[1]
     set -e argv[1]
-    
+
     switch $subcommand
         case help
             __giter_help $rootpath
@@ -43,27 +43,18 @@ function giter -d 'Local git repository management'
         case '*'
             __giter_exec $rootpath $subcommand $argv
     end
-    
+
     return $status
-end
-
-function __giter_ls
-    set -l rootpath $argv[1]    
-    ls -1F $rootpath | tr -d '/'
-end
-
-function __giter_path
-    set -l rootpath $argv[1]
-    ls -1F $rootpath | tr -d '/' | fzf --reverse --min-height=2 --height=25% --bind=ctrl-v:page-down,alt-v:page-up,alt-n:half-page-down,alt-p:half-page-up
 end
 
 function __giter_help
     set -l rootpath $argv[1]
     printf "Usage: giter <command>\n"
     printf "\n"
-    printf "   root     Change directory to giter.root\n"    
+    printf "   root     Change directory to giter.root\n"
     printf "   cd       Change directory to selected git repository\n"
     printf "   ls       Show managed git repositories\n"
+    printf "   clone    Clone git repository to managed directory\n"
     printf "  <any>     Execute git command on selected git repository\n"
     printf "   help     Print this help\n"
     printf "\n"
@@ -71,6 +62,16 @@ function __giter_help
     printf "\n"
     printf "   giter.root: $rootpath\n"
     printf "\n"
+end
+
+function __giter_ls
+    set -l rootpath $argv[1]
+    ls -1F $rootpath | tr -d '/'
+end
+
+function __giter_path
+    set -l rootpath $argv[1]
+    ls -1F $rootpath | tr -d '/' | fzf --reverse --min-height=2 --height=50% --bind=ctrl-v:page-down,alt-v:page-up,alt-n:half-page-down,alt-p:half-page-up
 end
 
 function __giter_root
@@ -108,8 +109,8 @@ function __giter_exec
     set -e argv[1]
     set repopath (git rev-parse --show-toplevel 2> /dev/null)
     if test -z $repopath
-        set repopath (__giter_repo $rootpath)    
-    end    
+        set repopath (__giter_repo $rootpath)
+    end
     if test -z $repopath
         return 0
     end
@@ -118,16 +119,17 @@ function __giter_exec
 end
 
 function __giter_needs_command
-  set cmd (commandline -opc)
-  if [ (count $cmd) -eq 1 ]
-    return 0
-  else
-    return 1
-  end
+    set cmd (commandline -opc)
+    if [ (count $cmd) -eq 1 ]
+        return 0
+    else
+        return 1
+    end
 end
 
 complete -f -c giter -n '__giter_needs_command' -a help -d 'Display the manual of a giter command'
 complete -f -c giter -n '__giter_needs_command' -a root -d 'Change directory to giter.root'
 complete -f -c giter -n '__giter_needs_command' -a cd -d 'Change directory to selected git repository'
 complete -f -c giter -n '__giter_needs_command' -a ls -d 'Show managed git repositories'
+complete -f -c giter -n '__giter_needs_command' -a clone -d 'Clone git repository to managed directory'
 complete -c giter -w git
