@@ -7,37 +7,31 @@
   excludesfile = ~/.gitignore
   autocrlf = input
 [alias]
-  l = log --oneline
-  ll = log --stat
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   a = add
   ap = add -p
-  co = checkout
+  br = branch  
+  ci = commit  
   d = diff
-  dc = diff --cached
-  dm = diff master
   d1 = diff HEAD~
   d2 = diff HEAD~~
   d3 = diff HEAD~~~
   d4 = diff HEAD~~~~
-  d5 = diff HEAD~~~~~
-  pr = pull --rebase
-  cv = commit --verbose
-  ci = commit
-  ca = commit -am
+  d5 = diff HEAD~~~~~  
+  dc = diff --cached
+  dm = diff master
+  l = log --oneline
+  ll = log --stat
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   s = status -s
-  br = branch
-  m = merge
-  mm = merge master
-  master = checkout master
-  diet = !git branch --merged master | grep -vE \"^\\*|master$\" | xargs -I % git branch -d %
+  st = status
   # Magit-style
-  f = fetch -p
-  F = pull
-  Fr = pull --rebase
-  P = push
+  bb = checkout
+  bc = checkout -b
   zz = stash save
   zp = stash pop
+  # Other Command
+  master = checkout master
+  diet = !git branch --merged master | grep -vE \"^\\*|master$\" | xargs -I % git branch -d %
 [gh]
   #host = your-github-enterprise
 [filter "lfs"]
