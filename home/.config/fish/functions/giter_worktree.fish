@@ -102,10 +102,13 @@ function __giter_worktree_new
         return 0
     end
 
+    set -l color_normal (set_color normal)
+    set -l color_default (set_color EEEEEE)
+
     set -l branchname (basename $workbranch)
-    read --prompt "echo 'Name for new branch: '" --command "$branchname" -l newbranch
-    if test -z $branchname
-        return 0
+    read --prompt "echo -n 'Name for new branch? '; set_color green; echo -n '($branchname)'; set_color normal; echo -n ': '" -l newbranch
+    if test -z $newbranch
+        set newbranch $branchname
     end
 
     set -l path (printf "%s/%s" $workpath $newbranch)
