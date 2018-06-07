@@ -102,9 +102,6 @@ function __giter_worktree_new
         return 0
     end
 
-    set -l color_normal (set_color normal)
-    set -l color_default (set_color EEEEEE)
-
     set -l branchname (basename $workbranch)
     read --prompt "echo -n 'Name for new branch? '; set_color green; echo -n '($branchname)'; set_color normal; echo -n ': '" -l newbranch
     if test -z $newbranch
@@ -144,6 +141,8 @@ function __giter_worktree_diet
             git -C $repopath worktree remove $workpath
         end
     end
+    set -l workpath (__giter_worktree_path $repopath)
+    rm -rf (printf "%s/%s" $workpath 'view')
     git -C $repopath worktree prune
 end
 
