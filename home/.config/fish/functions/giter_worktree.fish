@@ -110,6 +110,7 @@ function __giter_worktree_new
 
     set -l path (printf "%s/%s" $workpath $newbranch)
     git -C $repopath worktree add -b $newbranch $path $workbranch
+    and cd $path
 end
 
 function __giter_worktree_view
@@ -122,6 +123,7 @@ function __giter_worktree_view
     set -l branchname (basename $workbranch)
     set -l path (printf "%s/%s/%s" $workpath 'view' $branchname)
     git -C $repopath worktree add $path $workbranch
+    and cd $path
 end
 
 function __giter_worktree_select_branch
