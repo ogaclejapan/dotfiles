@@ -40,6 +40,8 @@ function giter -d 'Local git repository management'
             __giter_ls $rootpath $argv
         case clone
             __giter_clone $rootpath $argv
+        case push
+            __giter_push $rootpath $argv
         case '*'
             __giter_exec $rootpath $subcommand $argv
     end
@@ -104,6 +106,35 @@ function __giter_clone
     return $status
 end
 
+function __giter_push
+    set -l rootpath $argv[1]
+    set -e argv[1]
+    if test (count $argv) -ne 0
+        __giter_exce $rootpath 'push' $argv
+        return $status
+    end
+    set repopath (git rev-parse --show-toplevel 2> /dev/null)
+    if test -z $repopath
+        set repopath (__giter_repo $rootpath)
+    end
+    if test -z $repopath
+        return 0
+    end
+    set -l remote (__giter_remote $repopath)
+    if test -z $remote
+        return 0
+    end
+
+    set -l branchname (__giter_current_branch $repopath)
+    read --prompt "echo -n 'Name for push branch? '; set_color green; echo -n '($branchname)'; set_color normal; echo -n ': '" -l pushbranch
+    if test -z $pushbranch
+        set pushbranch $branchname
+    end
+
+    git -C $repopath push $remote $branchname:$pushbranch
+    return $status
+end
+
 function __giter_exec
     set -l rootpath $argv[1]
     set -e argv[1]
@@ -116,6 +147,16 @@ function __giter_exec
     end
     git -C $repopath $argv
     return $status
+end
+
+function __giter_remote
+    set -l repopath $argv[1]
+    git -C $repopath remote | fzf --reverse --exact --height=25% --select-1 --exit-0
+end
+
+function __giter_current_branch
+    set -l repopath $argv[1]
+    git -C $repopath symbolic-ref --short HEAD
 end
 
 function __giter_needs_command
