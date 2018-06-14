@@ -109,10 +109,6 @@ end
 function __giter_push
     set -l rootpath $argv[1]
     set -e argv[1]
-    if test (count $argv) -ne 0
-        __giter_exce $rootpath 'push' $argv
-        return $status
-    end
     set repopath (git rev-parse --show-toplevel 2> /dev/null)
     if test -z $repopath
         set repopath (__giter_repo $rootpath)
@@ -120,17 +116,19 @@ function __giter_push
     if test -z $repopath
         return 0
     end
+    if test (count $argv) -ne 0
+        git -C $repopath push $argv
+        return $status
+    end
     set -l remote (__giter_remote $repopath)
     if test -z $remote
         return 0
     end
-
     set -l branchname (__giter_current_branch $repopath)
     read --prompt "echo -n 'Name for push branch? '; set_color green; echo -n '($branchname)'; set_color normal; echo -n ': '" -l pushbranch
     if test -z $pushbranch
         set pushbranch $branchname
     end
-
     git -C $repopath push $remote $branchname:$pushbranch
     return $status
 end
