@@ -109,7 +109,7 @@ function __giter_worktree_new
     end
 
     set -l path (printf "%s/%s" $workpath $newbranch)
-    git -C $repopath worktree add -b $newbranch $path $workbranch
+    git -C $repopath worktree add --no-track -b $newbranch $path $workbranch
     and cd $path
 end
 
@@ -121,7 +121,12 @@ function __giter_worktree_view
         return 0
     end
     set -l branchname (basename $workbranch)
-    set -l path (printf "%s/%s/%s" $workpath 'view' $branchname)
+    read --prompt "echo -n 'Name for view? '; set_color green; echo -n '($branchname)'; set_color normal; echo -n ': '" -l viewname
+    if test -z $viewname
+        set viewname $branchname
+    end
+    
+    set -l path (printf "%s/%s/%s" $workpath 'view' $viewname)
     git -C $repopath worktree add $path $workbranch
     and cd $path
 end
