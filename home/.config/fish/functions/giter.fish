@@ -42,6 +42,10 @@ function giter -d 'Local git repository management'
             __giter_clone $rootpath $argv
         case push
             __giter_push $rootpath $argv
+        case pull
+            __giter_pull $rootpath $argv
+        case fetch
+            __giter_fetch $rootpath $argv
         case '*'
             __giter_exec $rootpath $subcommand $argv
     end
@@ -130,6 +134,64 @@ function __giter_push
         set pushbranch $branchname
     end
     git -C $repopath push $remote $branchname:$pushbranch
+    return $status
+end
+
+function __giter_pull
+    set -l rootpath $argv[1]
+    set -e argv[1]
+    set repopath (git rev-parse --show-toplevel 2> /dev/null)
+    if test -z $repopath
+        set repopath (__giter_repo $rootpath)
+    end
+    if test -z $repopath
+        return 0
+    end
+    if test (count $argv) -ne 0
+        git -C $repopath pull $argv
+        return $status
+    end
+    
+    set -l remote (__giter_remote $repopath)
+    if test -z $remote
+        return 0
+    end
+    set -l branchname (__giter_current_branch $repopath)
+    set -l remotename (printf "%s/%s" $remote $branchname)
+    set -l is_ff (git -C $repopath branch -r --contains $branchname | grep -c "$remotename")
+    if test $is_ff -ge 1
+        git -C $repopath pull $remote $branchname
+        return $status
+    end
+
+    read --prompt "echo 'Cannot be fast-forward.'; echo -n 'Rewrite for new commits? '; set_color green; echo -n '(--rebase=true)'; set_color normal; echo -n ': '" -l options
+    if test -z $options
+        set options '--rebase=true'
+    end
+    git -C $repopath pull $options $remote $branchname
+    return $status
+end
+
+function __giter_fetch
+    set -l rootpath $argv[1]
+    set -e argv[1]
+    set repopath (git rev-parse --show-toplevel 2> /dev/null)
+    if test -z $repopath
+        set repopath (__giter_repo $rootpath)
+    end
+    if test -z $repopath
+        return 0
+    end
+    if test (count $argv) -ne 0
+        git -C $repopath fetch $argv
+        return $status
+    end
+    
+    set -l remote (__giter_remote $repopath)
+    if test -z $remote
+        return 0
+    end
+    git -C $repopath fetch $remote
     return $status
 end
 
