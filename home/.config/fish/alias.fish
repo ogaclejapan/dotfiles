@@ -6,7 +6,7 @@ alias ekill='emacsclient -e "(kill-emacs)"'
 if type -q hub
     alias git=hub
     alias g=giter
-    alias gw=giter_worktree
+    alias t=giter_worktree
 end
 if type -q adb
     alias adb=adb_fzf
