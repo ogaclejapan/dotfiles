@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+module OS
+  def self.mac?() (/darwin/ =~ RUBY_PLATFORM) != nil end
+  def self.linux?() (/linux/ =~ RUBY_PLATFORM) != nil end
+end
+
+def self.homebrew() system("./bootstrap/homebrew") end
+def self.nodejs() system("./bootstrap/nodejs") end
+
+if OS.mac?
+  homebrew
+  nodejs
+elsif OS.linux?
+  #todo
+end
