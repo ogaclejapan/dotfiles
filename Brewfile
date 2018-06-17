@@ -34,8 +34,8 @@ brew 'fd'
 brew 'vim', args: ['with-lua']
 brew 'vimpager'
 brew 'maven'
-brew 'node'
-brew 'yarn'
+brew 'n'
+brew 'yarn', args: ['without-node'] 
 brew 'gradle'
 brew 'pidcat'
 brew 'groovy'

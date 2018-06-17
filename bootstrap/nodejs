@@ -4,6 +4,7 @@
 
 echo "========== node.js =========="
 
-if ! type -p n > /dev/null 2>&1; then
-    curl -L https://git.io/n-install | N_PREFIX="$HOME/.n" bash -s -- -y
+if type -p n > /dev/null 2>&1; then
+    set N_PREFIX="$HOME/.n"
+    n stable && n stable
 fi

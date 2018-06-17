@@ -18,7 +18,7 @@ if type -q plenv
     and source (plenv init - | psub)
 end
 
-if type -q n
+if test -d $HOME/.n
     set -x N_PREFIX $HOME/.n
     set -x PATH $N_PREFIX/bin $PATH
 end
