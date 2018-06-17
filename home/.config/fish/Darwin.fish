@@ -9,7 +9,11 @@ if test $TERM != 'dumb'
 end
 
 if type -q rbenv
-    set -x PATH ~/.rbenv/shims $PATH
+    status --is-interactive; and source (rbenv init -|psub)
+end
+
+if type -q plenv
+    plenv init - | source
 end
 
 if type -q n
@@ -25,8 +29,12 @@ if test -d /usr/local/share/android-sdk
     set -x ANDROID_HOME /usr/local/share/android-sdk
     set -x ANDROID_HVPROTO ddm
     set -x ANDROID_ROOT_SDK $ANDROID_HOME
-    set -x PATH $PATH $ANDROID_HOME/platform-tools
-    set -x PATH $PATH $ANDROID_HOME/emulator
+    if test -d $ANDROID_HOME/platform-tools
+        set -x PATH $PATH $ANDROID_HOME/platform-tools
+    end
+    if test -d $ANDROID_HOME/emulator
+        set -x PATH $PATH $ANDROID_HOME/emulator
+    end
 end
 
 if test -d /usr/local/opt/groovy/libexec
