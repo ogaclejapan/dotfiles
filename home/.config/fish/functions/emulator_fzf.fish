@@ -17,7 +17,7 @@ function emulator_fzf -d 'Execute android emulator command'
 
     set -l subcommand $argv[1]
     set -e argv[1]
-    
+
     switch $subcommand
         case run
             __emulator_run $argv
@@ -40,12 +40,12 @@ function __emulator_run
 end
 
 function __emulator_fzf_needs_command
-  set cmd (commandline -opc)
-  if [ (count $cmd) -eq 1 ]
-    return 0
-  else
-    return 1
-  end
+    set cmd (commandline -opc)
+    if [ (count $cmd) -eq 1 ]
+        return 0
+    else
+        return 1
+    end
 end
 
 complete -f -c emulator_fzf -n '__emulator_fzf_needs_command' -a run -d 'Run selected emulator'

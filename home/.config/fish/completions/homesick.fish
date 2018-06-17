@@ -1,24 +1,24 @@
 
 function __fish_homesick_needs_command
-  set cmd (commandline -opc)
-  if test (count $cmd) -eq 1 -a $cmd[1] = 'homesick'
-    return 0
-  end
-  return 1
+    set cmd (commandline -opc)
+    if test (count $cmd) -eq 1 -a $cmd[1] = 'homesick'
+        return 0
+    end
+    return 1
 end
 
 function __fish_homesick_using_command
-  set cmd (commandline -opc)
-  if test (count $cmd) -gt 1
-    if test $argv[1] = $cmd[2]
-      return 0
+    set cmd (commandline -opc)
+    if test (count $cmd) -gt 1
+        if test $argv[1] = $cmd[2]
+            return 0
+        end
     end
-  end
-  return 1
+    return 1
 end
 
 function __fish_homesick_castles
-  command ls ~/.homesick/repos/ ^/dev/null
+    command ls ~/.homesick/repos/ ^/dev/null
 end
 
 
