@@ -1,5 +1,5 @@
 alias ssh='env TERM=xterm ssh'
-alias emacs='emacsclient -nw'
+alias emacs='emacsclient -nw --alternate-editor=mg'
 alias em='emacs'
 alias e='emacsclient -n'
 alias ekill='emacsclient -e "(kill-emacs)"'
@@ -18,4 +18,3 @@ end
 if type -q emulator
     alias emulator=emulator_fzf
 end
-

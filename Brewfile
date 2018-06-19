@@ -31,11 +31,12 @@ brew 'perl-build'
 brew 'the_silver_searcher'
 brew 'ripgrep'
 brew 'fd'
+brew 'mg'
 brew 'vim', args: ['with-lua']
 brew 'vimpager'
 brew 'maven'
 brew 'n'
-brew 'yarn', args: ['without-node'] 
+brew 'yarn', args: ['without-node']
 brew 'gradle'
 brew 'pidcat'
 brew 'groovy'
@@ -109,4 +110,3 @@ cask '0xed'
 #------------------------------#
 # vim: ft=sh
 #------------------------------#
-
