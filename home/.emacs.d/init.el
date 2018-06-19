@@ -77,7 +77,7 @@
   ;;         initial-frame-alist))
   ;;(setq default-frame-alist initial-frame-alist)
   (add-hook 'window-setup-hook 'toggle-frame-maximized t))
-  
+
 
 ;; No menu bar
 (menu-bar-mode 0)
@@ -370,6 +370,14 @@
 
 ;;------------------------------
 
+;; https://github.com/flycheck/flycheck
+;; On the fly syntax checking for GNU Emacs
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
+;;------------------------------
+
 ;; https://github.com/joshwnj/json-mode
 ;; JSON major mode
 (use-package json-mode
@@ -411,9 +419,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (color-theme-sanityinc-tomorrow-theme use-package markdown-mode ace-jump-mode))))
+  '(package-selected-packages
+     (quote
+       (color-theme-sanityinc-tomorrow-theme use-package markdown-mode ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
