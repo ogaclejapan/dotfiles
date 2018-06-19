@@ -244,6 +244,15 @@
 
 ;;------------------------------
 
+;; https://github.com/editorconfig/editorconfig-emacs
+;; EditorConfig plugin for emacs
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
+;;------------------------------
+
 ;; https://github.com/abo-abo/swiper
 ;; A generic completion mechanism for Emacs.
 (use-package ivy
