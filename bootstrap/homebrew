@@ -1,12 +1,29 @@
 #!/bin/bash
 #
 # Configure homebrew
+set -u
 
 echo "========== homebrew =========="
 
-if ! type -p brew > /dev/null 2>&1; then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+readonly DOTFILES_DIR=$(homesick show_path dotfiles)
 
-echo $(homesick show_path dotfiles)
-#brew bundle --file=../Brewfile
+function brew_init() {
+  if ! type -p brew > /dev/null 2>&1; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+}
+
+function brew_bundle() {
+  if type -p brew > /dev/null 2>&1; then
+    brew bundle --file="${DOTFILES_DIR}/Brewfile"
+  fi
+}
+
+function main() {
+  brew_init
+  brew_bundle
+}
+
+main "$@"
+
+echo "done."

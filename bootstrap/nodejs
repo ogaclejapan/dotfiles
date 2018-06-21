@@ -1,10 +1,36 @@
 #!/bin/bash
 #
 # Configure nodejs
+set -u
 
 echo "========== node.js =========="
 
-if type -p n > /dev/null 2>&1; then
-  export N_PREFIX="${HOME}/.n"
-  n stable && n stable
-fi
+declare -xr N_PREFIX="${HOME}/.n"
+
+function node_stable() {
+  if type -p n > /dev/null 2>&1; then
+    n stable && n stable
+  fi
+}
+
+function node_lts() {
+  if type -p n > /dev/null 2>&1; then
+    n lts
+  fi
+}
+
+function npm_update() {
+  if type -p npm > /dev/null 2>&1; then
+    npm update -g npm
+  fi
+}
+
+function main() {
+  node_stable
+  node_lts
+  npm_update
+}
+
+main "$@"
+
+echo "done."

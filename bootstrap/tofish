@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# Configure tofish
+set -u
+
+echo "========== to.fish =========="
+
+readonly BOOKMARK_DIR=${HOME}/.tofish
+readonly DOTFILES_DIR=$(homesick show_path dotfiles)
+readonly DOWNLOAD_DIR=${HOME}/Downloads
+
+function bookmark() {
+  local source="$1"
+  local target="$2"
+  if [[ -d ${source} ]] && [[ ! -e ${target} ]]; then
+    ln -s "${source}" "${target}"
+  fi
+}
+
+function main() {
+  if ! mkdir -p "${BOOKMARK_DIR}"; then
+    exit 1
+  fi
+  bookmark "${DOTFILES_DIR}" "${BOOKMARK_DIR}/dotfiles"
+  bookmark "${DOTFILES_DIR}/home/.config/fish" "${BOOKMARK_DIR}/fish"
+  bookmark "${DOWNLOAD_DIR}" "${BOOKMARK_DIR}/dl"
+}
+
+main "$@"
+
+echo "done."

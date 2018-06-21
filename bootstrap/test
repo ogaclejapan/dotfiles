@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Configure (test)
+set -u
+
+echo "========== (test) =========="
+
+function main() {
+  echo 'test'
+}
+
+main "$@"
+
+echo "done."
