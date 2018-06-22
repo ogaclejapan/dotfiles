@@ -6,6 +6,7 @@ set -u
 echo "========== node.js =========="
 
 declare -xr N_PREFIX="${HOME}/.n"
+declare -xr PATH=$N_PREFIX/bin:$PATH
 
 function node_stable() {
   if type -p n > /dev/null 2>&1; then
