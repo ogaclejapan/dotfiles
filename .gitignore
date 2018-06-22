@@ -28,6 +28,7 @@ home/.config/fish/functions/*.*
 !home/.config/fish/functions/apk.fish
 !home/.config/fish/functions/adb_fzf.fish
 !home/.config/fish/functions/emulator_fzf.fish
+!home/.config/fish/functions/sdkmanager_fzf.fish
 !home/.config/fish/functions/magit.fish
 !home/.config/fish/functions/giter.fish
 !home/.config/fish/functions/giter_worktree.fish
@@ -52,5 +53,3 @@ home/.tmux/plugins/tmux-*
 
 home/.emacs.d/*
 !home/.emacs.d/init.el
-
-

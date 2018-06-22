@@ -18,3 +18,6 @@ end
 if type -q emulator
     alias emulator=emulator_fzf
 end
+if type -q sdkmanager
+    alias sdkmanager=sdkmanager_fzf
+end
