@@ -53,3 +53,7 @@ home/.tmux/plugins/tmux-*
 
 home/.emacs.d/*
 !home/.emacs.d/init.el
+
+home/.android/*
+!home/.android/packages.txt
+!home/.android/repositories.cfg

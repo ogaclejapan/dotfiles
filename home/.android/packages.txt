@@ -1,0 +1,15 @@
+build-tools;27.0.3
+build-tools;28.0.0
+emulator
+extras;android;m2repository
+extras;google;google_play_services
+extras;google;m2repository
+extras;intel;Hardware_Accelerated_Execution_Manager
+patcher;v4
+platform-tools
+platforms;android-27
+platforms;android-28
+sources;android-27
+system-images;android-27;google_apis_playstore;x86
+system-images;android-28;google_apis_playstore;x86_64
+tools
