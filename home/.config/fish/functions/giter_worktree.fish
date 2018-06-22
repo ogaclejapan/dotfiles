@@ -47,8 +47,7 @@ function giter_worktree -d 'Local git worktree management'
 end
 
 function __giter_worktree_help
-    set -l repopath $argv[1]
-    set -l workpath (__giter_worktree_path $repopath)
+    set -l workpath (__giter_worktree_path)
     printf "Usage: giter_worktree <command>\n"
     printf "\n"
     printf "   new      Create working tree with new branch\n"
@@ -77,12 +76,13 @@ function __giter_worktree_ls
 end
 
 function __giter_worktree_path
-    set -l repopath $argv[1]
     git config giter.worktree | read -l dir
     if test $status -ne 0
-        set dir .giter
+        set dir ~/.giter_worktree
     end
-    printf "%s/%s" $repopath $dir
+    set workpath (eval realpath $dir)
+    mkdir -p $workpath
+    and echo $workpath
 end
 
 function __giter_worktree_cd
@@ -94,9 +94,16 @@ function __giter_worktree_cd
     cd $dir
 end
 
-function __giter_worktree_new
+function __giter_worktree_origin_repo
     set -l repopath $argv[1]
-    set -l workpath (__giter_worktree_path $repopath)
+    set -l origin_gitpath (git -C $repopath rev-parse --git-common-dir)
+    dirname $origin_gitpath
+end
+
+function __giter_worktree_new
+    set -l repopath (__giter_worktree_origin_repo $argv[1])
+    set -l reponame (basename $repopath)
+    set -l workpath (__giter_worktree_path)
     set -l workbranch (__giter_worktree_select_branch $repopath)
     if test -z $workbranch
         return 0
@@ -108,14 +115,15 @@ function __giter_worktree_new
         set newbranch $branchname
     end
 
-    set -l path (printf "%s/%s" $workpath $newbranch)
+    set -l path (printf "%s/%s/%s" $workpath $reponame $newbranch)
     git -C $repopath worktree add --no-track -b $newbranch $path $workbranch
     and cd $path
 end
 
 function __giter_worktree_view
-    set -l repopath $argv[1]
-    set -l workpath (__giter_worktree_path $repopath)
+    set -l repopath (__giter_worktree_origin_repo $argv[1])
+    set -l reponame (basename $repopath)
+    set -l workpath (__giter_worktree_path)
     set -l workbranch (__giter_worktree_select_branch $repopath)
     if test -z $workbranch
         return 0
@@ -125,8 +133,8 @@ function __giter_worktree_view
     if test -z $viewname
         set viewname $branchname
     end
-    
-    set -l path (printf "%s/%s/%s" $workpath 'view' $viewname)
+
+    set -l path (printf "%s/%s/%s/%s" $workpath $reponame 'view' $viewname)
     git -C $repopath worktree add $path $workbranch
     and cd $path
 end
