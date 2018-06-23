@@ -3,6 +3,8 @@ alias emacs='emacsclient -nw --alternate-editor=mg'
 alias em='emacs'
 alias e='emacsclient -n'
 alias ekill='emacsclient -e "(kill-emacs)"'
+alias f='fuzzy_file_commander'
+alias d='fuzzy_directory_commander'
 if type -q hub
     alias git=hub
     alias g=giter

@@ -32,6 +32,8 @@ home/.config/fish/functions/*.*
 !home/.config/fish/functions/magit.fish
 !home/.config/fish/functions/giter.fish
 !home/.config/fish/functions/giter_worktree.fish
+!home/.config/fish/functions/fuzzy_file_commander.fish
+!home/.config/fish/functions/fuzzy_directory_commander.fish
 !home/.config/fish/functions/fisher.fish
 
 home/.config/fish/completions/*.*
