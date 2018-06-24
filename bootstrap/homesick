@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Configure (homesick)
+set -u
+
+echo "========== (homesick) =========="
+
+function link() {
+  homesick link dotfiles
+}
+
+function main() {
+  link
+}
+
+main "$@"
+
+echo "done."
