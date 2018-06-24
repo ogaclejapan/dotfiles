@@ -5,11 +5,15 @@ module OS
   def self.linux?() (/linux/ =~ RUBY_PLATFORM) != nil end
 end
 
+def self.homesick() system("./bootstrap/homesick") end
 def self.homebrew() system("./bootstrap/homebrew") end
+def self.fishshell() system("./bootstrap/fishshell") end
 def self.nodejs() system("./bootstrap/nodejs") end
 
 if OS.mac?
+  homesick
   homebrew
+  fishshell
   nodejs
 elsif OS.linux?
   #todo
