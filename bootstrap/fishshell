@@ -27,6 +27,9 @@ function fisher() {
     return 0
   fi
   curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+  if [[ "$?" -eq 0 ]]; then
+    fish -c 'fisher'
+  fi
 }
 
 function main() {

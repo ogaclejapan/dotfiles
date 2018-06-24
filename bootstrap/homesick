@@ -5,12 +5,12 @@ set -u
 
 echo "========== (homesick) =========="
 
-function link() {
+function link_dotfiles() {
   homesick link dotfiles
 }
 
 function main() {
-  link
+  link_dotfiles
 }
 
 main "$@"
