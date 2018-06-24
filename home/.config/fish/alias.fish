@@ -23,3 +23,6 @@ end
 if type -q sdkmanager
     alias sdkmanager=sdkmanager_fzf
 end
+if type -q aria2c
+    alias dl=aria2c
+end
