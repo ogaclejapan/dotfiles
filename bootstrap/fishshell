@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+# Configure (fishshell)
+set -u
+
+echo "========== (fishshell) =========="
+
+function fishshell() {
+  if ! type -p fish > /dev/null 2>&1; then
+    return 0
+  fi
+  read -p "Change login shell to fish? (y/N): " -r yn
+  if [[ "${yn}" != 'y' ]]; then
+    return 0
+  fi
+  local -r fish_path=$(type -p fish)
+  local -r is_exists=$(sudo cat /etc/shells | grep -c "$fish_path")
+  if [[ $is_exists -eq 0 ]]; then
+    sudo bash -c "echo ${fish_path} >> /etc/shells"
+  fi
+  sudo chsh -s "${fish_path}"
+}
+
+function fisher() {
+  read -p "Install fish-shell plugin manager? (y/N): " -r yn
+  if [[ "${yn}" != 'y' ]]; then
+    return 0
+  fi
+  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+}
+
+function main() {
+  fishshell
+  fisher
+}
+
+main "$@"
+
+echo "done."
