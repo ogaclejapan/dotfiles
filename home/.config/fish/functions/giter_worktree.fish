@@ -96,8 +96,7 @@ end
 
 function __giter_worktree_origin_repo
     set -l repopath $argv[1]
-    set -l origin_gitpath (git -C $repopath rev-parse --git-common-dir)
-    dirname $origin_gitpath
+    git -C $repopath worktree list | head -n 1 | cut -f 1 -d ' '
 end
 
 function __giter_worktree_new
