@@ -59,3 +59,4 @@ home/.emacs.d/*
 home/.android/*
 !home/.android/packages.txt
 !home/.android/repositories.cfg
+!home/.android/studio.vmoptions

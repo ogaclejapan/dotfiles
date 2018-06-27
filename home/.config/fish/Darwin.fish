@@ -28,15 +28,15 @@ if test -e /usr/libexec/java_home
 end
 
 if test -d /usr/local/share/android-sdk
-    set -x ANDROID_HOME /usr/local/share/android-sdk
+    set -x ANDROID_ROOT_SDK /usr/local/share/android-sdk
     set -x ANDROID_HVPROTO ddm
-    set -x ANDROID_ROOT_SDK $ANDROID_HOME
-    if test -d $ANDROID_HOME/platform-tools
-        set -x PATH $PATH $ANDROID_HOME/platform-tools
+    if test -d $ANDROID_ROOT_SDK/platform-tools
+        set -x PATH $PATH $ANDROID_ROOT_SDK/platform-tools
     end
-    if test -d $ANDROID_HOME/emulator
-        set -x PATH $PATH $ANDROID_HOME/emulator
+    if test -d $ANDROID_ROOT_SDK/emulator
+        set -x PATH $PATH $ANDROID_ROOT_SDK/emulator
     end
+    set -x STUDIO_VM_OPTIONS $HOME/.android/studio.vmoptions
 end
 
 if test -d /usr/local/opt/groovy/libexec
@@ -48,6 +48,3 @@ if test -d /usr/local/opt/go
     set -x PATH $GOPATH/bin $PATH
     set -x PATH /usr/local/opt/go/libexec/bin $PATH
 end
-
-
-
