@@ -36,7 +36,7 @@ function __emulator_run
     if test -z $target
         return 0
     end
-    command emulator "@$target"
+    command emulator "@$target" (string escape -- $argv)
 end
 
 function __emulator_fzf_needs_command
