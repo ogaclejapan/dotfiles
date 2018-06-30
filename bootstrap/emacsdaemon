@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Configure (emacs)
+set -u
+
+echo "========== (emacs) =========="
+
+readonly LAUNCHD_AGENT_DIR=$HOME/Library/LaunchAgents
+readonly DOTFILES_DIR=$(homesick show_path dotfiles)
+readonly PLIST_LABEL="gnu.emacs.daemon"
+readonly PLIST_FILE="${PLIST_LABEL}.plist"
+
+function load_plist() {
+  if [[ ! -e "${LAUNCHD_AGENT_DIR}/${PLIST_FILE}" ]]; then
+    cp -f "${DOTFILES_DIR}/launchd/${PLIST_FILE}" "${LAUNCHD_AGENT_DIR}/"
+  fi
+  local -r is_loaded=$(launchctl list | grep -c "${PLIST_LABEL}")
+  if [[ $is_loaded -eq 0 ]]; then
+    launchctl load -w "${LAUNCHD_AGENT_DIR}/${PLIST_FILE}"
+  fi
+}
+
+function main() {
+  load_plist
+}
+
+main "$@"
+
+echo "done."
