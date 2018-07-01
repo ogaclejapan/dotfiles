@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+# Configure (ruby)
+set -u
+
+echo "========== (ruby) =========="
+
+readonly RUBY_VERSION="2.5.1"
+
+function rbenv_install() {
+  if ! type -p rbenv > /dev/null 2>&1; then
+    return 0
+  fi
+  eval "$(rbenv init -)"
+  rbenv install $RUBY_VERSION
+  rbenv global $RUBY_VERSION
+  rbenv rehash
+}
+
+function gem_install() {
+  if ! type -p gem > /dev/null 2>&1; then
+    return 0
+  fi
+  gem update --system
+  gem install homesick
+  gem install tmuxinator
+}
+
+function main() {
+  rbenv_install
+  gem_install
+}
+
+main "$@"
+
+echo "done."

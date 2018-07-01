@@ -10,6 +10,7 @@ def self.homebrew() system("./bootstrap/homebrew") end
 def self.fishshell() system("./bootstrap/fishshell") end
 def self.tofish() system("./bootstrap/tofish") end
 def self.nodejs() system("./bootstrap/nodejs") end
+def self.rubyenv() system("./bootstrap/rubyenv") end
 def self.emacsdaemon() system("./bootstrap/emacsdaemon") end
 
 if OS.mac?
@@ -18,6 +19,7 @@ if OS.mac?
   fishshell
   tofish
   nodejs
+  rubyenv
   emacsdaemon
 elsif OS.linux?
   #todo
