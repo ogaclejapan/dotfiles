@@ -8,5 +8,5 @@ function magit -d 'Run magit-status on emacs'
         return 1
     end
     set rootdir (git rev-parse --show-toplevel)
-    emacsclient -n --eval "(magit-status \"$rootdir\")"
+    emacsclient -t -u --eval "(magit-status \"$rootdir\")"
 end
