@@ -1,3 +1,7 @@
+;;; init.el --- Init file
+;;; Commentary:
+;;; Code:
+
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Package Management
 ;;--+--+--+--+--+--+--+--+--+--+
@@ -63,22 +67,6 @@
         (set-fontset-font name character font-spec))
       (add-to-list 'face-font-rescale-alist (cons jp-font-family 1.2)))))
 
-;; Frame
-(when window-system
-  ;; Transparent
-  (set-frame-parameter nil 'alpha 87)
-  ;;Size and Position
-  ;;(setq initial-frame-alist
-  ;; (append (list
-  ;;    '(top . 0)
-  ;;    '(left . 0)
-  ;;    '(width . 95)
-  ;;    '(height . 40))
-  ;;         initial-frame-alist))
-  ;;(setq default-frame-alist initial-frame-alist)
-  (add-hook 'window-setup-hook 'toggle-frame-maximized t))
-
-
 ;; No menu bar
 (menu-bar-mode 0)
 
@@ -122,18 +110,6 @@
 (recentf-mode 1)
 
 ;; No beep sound
-(defun previous-line (arg)
-  (interactive "p")
-  (condition-case nil
-      (line-move (- arg))
-    (beginning-of-buffer)))
-
-(defun next-line (arg)
-  (interactive "p")
-  (condition-case nil
-      (line-move arg)
-    (end-of-buffer)))
-
 (setq ring-bell-function 'ignore)
 
 ;; Share copied text to clipboard
@@ -168,22 +144,22 @@
 ;;--+--+--+--+--+--+--+--+--+--+
 
 ;; Start server for emacs-client
-(when window-system
-  (require 'server)
-  (unless (eq (server-running-p) 't)
-    (server-start)
-
-    ;; Minimize window when start app
-    ;;(defun iconify-emacs-when-server-is-done ()
-    ;;  (unless server-clients (iconify-frame)))
-    ;;(add-hook 'after-init-hook 'iconify-emacs-when-server-is-done)
-
-    ;; Don't finish app
-    (global-set-key (kbd "C-x C-c") 'server-edit)
-    (defalias 'exit 'save-buffers-kill-emacs)
-
-    ;; Show confirm message when exit app
-    (setq confirm-kill-emacs 'yes-or-no-p)))
+;;(when window-system
+;;  (require 'server)
+;;  (unless (eq (server-running-p) 't)
+;;    (server-start)
+;;
+;;    ;; Minimize window when start app
+;;    ;;(defun iconify-emacs-when-server-is-done ()
+;;    ;;  (unless server-clients (iconify-frame)))
+;;    ;;(add-hook 'after-init-hook 'iconify-emacs-when-server-is-done)
+;;
+;;    ;; Don't finish app
+;;    (global-set-key (kbd "C-x C-c") 'server-edit)
+;;    (defalias 'exit 'save-buffers-kill-emacs)
+;;
+;;    ;; Show confirm message when exit app
+;;    (setq confirm-kill-emacs 'yes-or-no-p)))
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Key Settings
@@ -427,4 +403,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+  )
+
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
+
+;;; init.el ends here
