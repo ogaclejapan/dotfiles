@@ -3,7 +3,7 @@
 set -x TMUX_AUTO_ATTACH ''
 
 # デフォルトで起動するエディタ
-#set -x EDITOR 'emacs'
+#set -x EDITOR 'emacsclient -t --alternate-editor=mg'
 #set -x EDITOR 'vim'
 
 # JIRAコマンドのベースURL
