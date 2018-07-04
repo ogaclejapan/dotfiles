@@ -6,10 +6,16 @@ set -u
 echo "========== homebrew =========="
 
 readonly DOTFILES_DIR=$(homesick show_path dotfiles)
+readonly BREW_SBIN_DIR=/usr/local/sbin
 
 function brew_init() {
   if ! type -p brew > /dev/null 2>&1; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+  if [[ ! -d "${BREW_SBIN_DIR}" ]]; then
+    echo "Create ${BREW_SBIN_DIR}"
+    sudo mkdir -p "${BREW_SBIN_DIR}"
+    sudo chown -R "$(whoami):admin" "${BREW_SBIN_DIR}"
   fi
 }
 
