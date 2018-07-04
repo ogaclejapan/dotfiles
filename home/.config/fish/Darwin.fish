@@ -9,13 +9,11 @@ if test $TERM != 'dumb'
 end
 
 if type -q rbenv
-    status --is-interactive
-    and source (rbenv init - | psub)
+    status --is-interactive; and source (rbenv init - | psub)
 end
 
 if type -q plenv
-    status --is-interactive
-    and source (plenv init - | psub)
+    status --is-interactive; and source (plenv init - | psub)
 end
 
 if type -q n

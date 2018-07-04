@@ -16,9 +16,9 @@ function fishshell() {
   local -r fish_path=$(type -p fish)
   local -r is_exists=$(sudo cat /etc/shells | grep -c "$fish_path")
   if [[ $is_exists -eq 0 ]]; then
-    sudo bash -c "echo ${fish_path} >> /etc/shells"
+    echo "${fish_path}" | sudo tee -a /etc/shells
   fi
-  sudo chsh -s "${fish_path}"
+  chsh -s "${fish_path}"
 }
 
 function fisher() {
