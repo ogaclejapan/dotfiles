@@ -54,13 +54,18 @@ if not test -e $PLATFORM_TMUX_SYMBOLIC
     ln -s $PLATFORM_TMUX $PLATFORM_TMUX_SYMBOLIC
 end
 
-if [ -n "$TMUX_AUTO_ATTACH" -a -z "$TMUX_PANE" ]
+if type -q tmux; and test -n "$TMUX_AUTO_ATTACH" -a -z "$TMUX_PANE"
     set AUTO_TMUX $TMUX_AUTO_ATTACH
     if tmux has-session -t $AUTO_TMUX ^/dev/null
         if tmux list-sessions -F '#S:#{session_attached}' | grep -q "^$AUTO_TMUX:[1-9][0-9]*"
             set AUTO_TMUX ''
         end
     end
-    test -n "$AUTO_TMUX"
-    and tmux new-session -A -s $AUTO_TMUX
+    if test -n "$AUTO_TMUX"
+        if type -q tmuxinator; and tmuxinator list | grep -q "$AUTO_TMUX"
+            tmuxinator start $AUTO_TMUX
+        else
+            tmux new-session -A -s $AUTO_TMUX
+        end
+    end
 end

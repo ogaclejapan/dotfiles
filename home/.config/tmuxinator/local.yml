@@ -1,0 +1,12 @@
+name: local
+root: ~/
+
+windows:
+  - editor: emacs
+  - workspace:
+      layout: tiled
+      panes:
+        -
+        -
+        -
+        -
