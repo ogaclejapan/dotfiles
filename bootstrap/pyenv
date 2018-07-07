@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# Configure (python)
+set -u
+
+echo "========== (python) =========="
+
+readonly PYTHON_VERSION="3.6.5"
+
+function pyenv_install() {
+  if ! type -p pyenv > /dev/null 2>&1; then
+    return 0
+  fi
+  eval "$(pyenv init -)"
+  pyenv install $PYTHON_VERSION
+  pyenv global $PYTHON_VERSION
+  pyenv rehash
+}
+
+function pip_install() {
+  if ! type -p pip > /dev/null 2>&1; then
+    return 0
+  fi
+  pip install -U pip
+  pip install pipenv
+}
+
+function main() {
+  pyenv_install
+  pip_install
+}
+
+main "$@"
+
+echo "done."
