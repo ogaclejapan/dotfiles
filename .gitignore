@@ -60,3 +60,7 @@ home/.android/*
 !home/.android/packages.txt
 !home/.android/repositories.cfg
 !home/.android/studio.vmoptions
+
+home/.newsboat/*
+!home/.newsboat/urls
+!home/.newsboat/config

@@ -9,4 +9,4 @@ windows:
         -
         -
         -
-        -
+        - newsboat -r

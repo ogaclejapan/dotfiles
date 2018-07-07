@@ -66,6 +66,7 @@ brew 'imagemagick', args: ['with-fontconfig']
 brew 'youtube-dl'
 brew 'giflossy'
 brew 'ttygif'
+brew 'newsboat'
 
 ## Optional
 #brew 'docker'

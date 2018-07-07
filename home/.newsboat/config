@@ -1,0 +1,4 @@
+#auto-reload yes
+color info white black
+color listfocus white black underline
+color listfocus_unread magenta black bold
