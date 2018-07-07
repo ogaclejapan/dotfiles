@@ -9,13 +9,15 @@ function fuzzy_directory_commander -d 'Open the selected directory with the comm
         return 1
     end
 
-    argparse -s 'c/command=' -- $argv
-    set -l open_cmd 'cd'
-    if set -q _flag_command
-        set open_cmd $_flag_command
-    end
+    argparse -s 'c/command=' 'd/depth=' -- $argv
 
-    fd -t d | fzf --reverse --exact --prompt="$open_cmd> " | read -l path
+    set -l open_cmd 'cd'
+    set -q _flag_command; and set -l open_cmd $_flag_command
+
+    set -l fd_cmd 'fd -H -L -E "**/.git" -t d'
+    set -q _flag_depth; and set -l fd_cmd "$fd_cmd -d $_flag_depth"
+
+    eval $fd_cmd | fzf --reverse --exact --prompt="$open_cmd> " | read -l path
     if test -z "$path"
         return 0
     end

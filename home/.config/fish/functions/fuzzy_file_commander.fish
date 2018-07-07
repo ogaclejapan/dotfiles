@@ -9,15 +9,16 @@ function fuzzy_file_commander -d 'Open the selected file with the command using 
         return 1
     end
 
-    argparse -s 'c/command=' -- $argv
-    set -l open_cmd 'open'
-    if set -q _flag_command
-        set open_cmd $_flag_command
-    else if set -q EDITOR
-        set open_cmd $EDITOR
-    end
+    argparse -s 'c/command=' 'd/depth=' -- $argv
 
-    fd -t f | fzf --reverse --exact --prompt="$open_cmd> " | read -l file
+    set -l open_cmd 'open'
+    set -q EDITOR; and set -l open_cmd $EDITOR
+    set -q _flag_command; and set -l open_cmd $_flag_command
+
+    set -l fd_cmd 'fd -H -L -E "**/.git" -t f'
+    set -q _flag_depth; and set -l fd_cmd "$fd_cmd -d $_flag_depth"
+
+    eval $fd_cmd | fzf --reverse --exact --prompt="$open_cmd> " | read -l file
     if test -z "$file"
         return 0
     end
