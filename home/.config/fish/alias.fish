@@ -25,3 +25,6 @@ end
 if type -q aria2c
     alias dl=aria2c
 end
+if type -q glances
+    alias top=glances
+end
