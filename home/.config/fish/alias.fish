@@ -23,8 +23,8 @@ if type -q sdkmanager
     alias sdkmanager=sdkmanager_fzf
 end
 if type -q aria2c
-    alias dl=aria2c
+    abbr --add aget 'aria2c'
 end
 if type -q glances
-    alias top=glances
+    abbr --add htop 'glances'
 end
