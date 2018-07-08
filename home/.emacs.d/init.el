@@ -170,11 +170,8 @@
 (define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "C-?") 'help-for-help)
 (global-set-key (kbd "M-h") 'backward-kill-word)
-(global-set-key (kbd "C-.") 'isearch-forward-symbol-at-point)
-(global-set-key (kbd "M-p") 'backward-paragraph)
-(global-set-key (kbd "M-n") 'forward-paragraph)
-(global-set-key (kbd "C-<") 'previous-buffer)
-(global-set-key (kbd "C->") 'next-buffer)
+(global-set-key (kbd "C-x p") 'previous-buffer)
+(global-set-key (kbd "C-x n") 'next-buffer)
 
 ;; Insert new line below current line
 (global-set-key (kbd "<S-return>") (lambda ()
@@ -190,15 +187,15 @@
    (backward-char)))
 
 ;; GoogleIME for Japanese Toggle Shortcuts
-(when (eq system-type 'darwin)
-  (setq google-ime "/Applications/GoogleJapaneseInput.localized")
-  (when (file-exists-p google-ime)
-    (global-set-key (kbd "C-S-j") (lambda ()
-       (interactive)
-       (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 104")))
-    (global-set-key (kbd "C-:") (lambda ()
-       (interactive)
-       (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 102")))))
+;;(when (eq system-type 'darwin)
+;;  (setq google-ime "/Applications/GoogleJapaneseInput.localized")
+;;  (when (file-exists-p google-ime)
+;;    (global-set-key (kbd "C-S-j") (lambda ()
+;;       (interactive)
+;;       (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 104")))
+;;    (global-set-key (kbd "C-:") (lambda ()
+;;       (interactive)
+;;       (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 102")))))
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Package Settings
@@ -279,8 +276,8 @@
 ;; Jump to things in Emacs tree-style.
 (use-package avy
   :ensure t
-  :bind (("C-;" . avy-goto-char-timer)
-         ("C-=" . avy-goto-line)))
+  :bind (("C-j" . avy-goto-char-timer)
+         ("C-l" . avy-goto-line)))
 
 ;;------------------------------
 
@@ -300,8 +297,8 @@
 ;; https://github.com/magnars/expand-region.el
 (use-package expand-region
   :ensure t
-  :bind (("C-'" . er/expand-region)
-         ("M-'" . er/contract-region)))
+  :bind (("C-t" . er/expand-region)
+         ("M-t" . er/contract-region)))
 
 ;;------------------------------
 
