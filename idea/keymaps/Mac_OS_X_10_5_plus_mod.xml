@@ -18,8 +18,11 @@
     <keyboard-shortcut first-keystroke="ctrl slash" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="u" />
   </action>
+  <action id="AceAction">
+    <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
   <action id="AceLineAction">
-    <keyboard-shortcut first-keystroke="ctrl equals" />
+    <keyboard-shortcut first-keystroke="ctrl l" />
   </action>
   <action id="AceTargetAction" />
   <action id="ActivateBuildVariantsToolWindow">
@@ -250,11 +253,8 @@
     <keyboard-shortcut first-keystroke="shift right" />
     <keyboard-shortcut first-keystroke="shift ctrl f" />
   </action>
-  <action id="EditorScrollToCenter">
-    <keyboard-shortcut first-keystroke="ctrl l" />
-  </action>
   <action id="EditorSelectWord">
-    <keyboard-shortcut first-keystroke="ctrl quote" />
+    <keyboard-shortcut first-keystroke="ctrl t" />
   </action>
   <action id="EditorSplitLine" />
   <action id="EditorStartNewLineBefore">
@@ -279,7 +279,7 @@
     <keyboard-shortcut first-keystroke="ctrl space" />
   </action>
   <action id="EditorUnSelectWord">
-    <keyboard-shortcut first-keystroke="alt quote" />
+    <keyboard-shortcut first-keystroke="alt t" />
   </action>
   <action id="EditorUpWithSelection">
     <keyboard-shortcut first-keystroke="shift up" />
@@ -394,6 +394,9 @@
   </action>
   <action id="QuickList.External Tools">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="e" />
+  </action>
+  <action id="Refactorings.QuickListPopupAction">
+    <keyboard-shortcut first-keystroke="ctrl r" />
   </action>
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="meta alt l" />
