@@ -287,6 +287,7 @@
   :ensure t
   :config
   (setq magit-completing-read-function 'ivy-completing-read)
+  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
   (setq magit-repository-directories '(("~/git/" . 1)))
   :diminish auto-revert-mode
   :bind (("C-x g" . magit-status)))
