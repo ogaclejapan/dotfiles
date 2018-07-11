@@ -67,14 +67,14 @@
         (set-fontset-font name character font-spec))
       (add-to-list 'face-font-rescale-alist (cons jp-font-family 1.2)))))
 
-;; No menu bar
-(menu-bar-mode 0)
 
-;; No tool bar
-(tool-bar-mode 0)
-
-;; No scroll bar
-(scroll-bar-mode 0)
+;; No bar
+(add-hook 'before-make-frame-hook
+  (lambda ()
+    (interactive)
+    (menu-bar-mode 0)      ; No menu bar
+    (tool-bar-mode 0)      ; No tool bar
+    (scroll-bar-mode 0)))  ; No scroll bar
 
 ;; No startup message
 (setq inhibit-startup-message 1)
@@ -87,6 +87,7 @@
 
 ;; Show pairs of parentheses
 (show-paren-mode 1)
+
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Editor Settings
