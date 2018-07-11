@@ -1,6 +1,6 @@
 alias ssh='env TERM=xterm ssh'
 alias emacs='emacsclient -t --alternate-editor=mg'
-alias e='emacsclient -c -F "\'(fullscreen . maximized)"'
+alias e='emacsclient -c -u -F "\'(fullscreen . maximized)"'
 alias ekill='emacsclient -e "(kill-emacs)"'
 alias f='fuzzy_file_commander'
 alias f0='f --depth 1'
