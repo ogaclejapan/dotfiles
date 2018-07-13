@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Configure (iTerm)
+set -u
+
+readonly DOTFILES_DIR=$(homesick show_path dotfiles)
+readonly TERMINFO_SRC="${DOTFILES_DIR}/iterm/terminfo-24bit.src"
+readonly TERMINFO_DST="${HOME}/.terminfo"
+
+echo "========== (iTerm) =========="
+
+function terminfo_24bit() {
+  if [[ -d "${TERMINFO_DST}" ]]; then
+    echo "~/.terminfo already exists!"
+    return 0
+  fi
+  if type -p tic > /dev/null 2>&1; then
+    tic -x -o "${TERMINFO_DST}" "${TERMINFO_SRC}"
+  fi
+}
+
+function main() {
+  terminfo_24bit
+}
+
+main "$@"
+
+echo "done."

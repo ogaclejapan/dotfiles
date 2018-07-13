@@ -1,0 +1,15 @@
+# True Color (24-bit color) support in terminal
+# https://fossies.org/linux/emacs/doc/misc/efaq.texi#Colors-on-a-TTY
+# https://qiita.com/__hage/items/4d8ad65b70e4d6142599
+# https://gist.github.com/XVilka/8346728
+
+# Use colon separators.
+screen-24bit|screen with 24-bit direct color mode,
+  use=screen-256color,
+  setb24=\E[48:2:%p1%{65536}%/%d:%p1%{256}%/%{255}%&%d:%p1%{255}%&%dm,
+  setf24=\E[38:2:%p1%{65536}%/%d:%p1%{256}%/%{255}%&%d:%p1%{255}%&%dm,
+# Use semicolon separators.
+screen-24bits|screen with 24-bit direct color mode,
+  use=screen-256color,
+  setb24=\E[48;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&%d;%p1%{255}%&%dm,
+  setf24=\E[38;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&%d;%p1%{255}%&%dm,
