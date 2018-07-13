@@ -31,6 +31,7 @@ end
 
 if test -d /usr/local/share/android-sdk
     set -x ANDROID_ROOT_SDK /usr/local/share/android-sdk
+    set -x ANDROID_HOME $ANDROID_ROOT_SDK
     set -x ANDROID_HVPROTO ddm
     if test -d $ANDROID_ROOT_SDK/platform-tools
         set -x PATH $PATH $ANDROID_ROOT_SDK/platform-tools
