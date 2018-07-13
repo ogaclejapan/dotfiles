@@ -11,6 +11,7 @@ def self.fishshell() system("./bootstrap/fishshell") end
 def self.tofish() system("./bootstrap/tofish") end
 def self.nodejs() system("./bootstrap/nodejs") end
 def self.rubyenv() system("./bootstrap/rubyenv") end
+def self.pyenv() system("./bootstrap/pyenv") end
 def self.emacsdaemon() system("./bootstrap/emacsdaemon") end
 
 if OS.mac?
@@ -20,6 +21,7 @@ if OS.mac?
   tofish
   nodejs
   rubyenv
+  pyenv
   emacsdaemon
 elsif OS.linux?
   #todo
