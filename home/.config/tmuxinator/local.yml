@@ -1,9 +1,8 @@
 name: local
-root: ~/
 
 windows:
-  - editor: emacs
-  - workspace:
+  - workspace1:
+  - workspace2:
       layout: tiled
       panes:
         -
