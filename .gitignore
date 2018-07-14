@@ -39,6 +39,7 @@ home/.config/fish/functions/*.*
 home/.config/fish/completions/*.*
 !home/.config/fish/completions/homesick.fish
 !home/.config/fish/completions/docker.fish
+!home/.config/fish/completions/rustup.fish
 
 home/.config/fish/conf.d/*.*
 

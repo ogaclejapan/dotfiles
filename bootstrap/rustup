@@ -1,0 +1,32 @@
+#!/bin/bash
+#
+# Configure (rustup)
+set -u
+
+echo "========== (rustup) =========="
+
+declare -xr CARGO_HOME="${HOME}/.cargo"
+declare -xr PATH=$CARGO_HOME/bin:$PATH
+
+function rustup_init() {
+  if ! type -p rustup > /dev/null 2>&1; then
+    curl https://sh.rustup.rs -sSf | sh
+  fi
+  rustup self update
+}
+
+function rustup_update() {
+  if ! type -p rustup > /dev/null 2>&1; then
+    return 0
+  fi
+  rustup update
+}
+
+function main() {
+  rustup_init
+  rustup_update
+}
+
+main "$@"
+
+echo "done."

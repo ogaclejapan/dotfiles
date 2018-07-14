@@ -51,3 +51,8 @@ if test -d /usr/local/opt/go
     set -x PATH $GOPATH/bin $PATH
     set -x PATH /usr/local/opt/go/libexec/bin $PATH
 end
+
+if test -d "$HOME/.cargo"
+    set -x CARGO_HOME $HOME/.cargo
+    set -x PATH $CARGO_HOME/bin $PATH
+end

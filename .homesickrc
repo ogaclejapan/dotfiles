@@ -12,6 +12,7 @@ def self.tofish() system("./bootstrap/tofish") end
 def self.nodejs() system("./bootstrap/nodejs") end
 def self.rubyenv() system("./bootstrap/rubyenv") end
 def self.pyenv() system("./bootstrap/pyenv") end
+def self.rustup() system("./bootstrap/rustup") end
 def self.iterm() system("./bootstrap/iterm") end
 def self.emacsdaemon() system("./bootstrap/emacsdaemon") end
 
@@ -23,6 +24,7 @@ if OS.mac?
   nodejs
   rubyenv
   pyenv
+  rustup
   iterm
   emacsdaemon
 elsif OS.linux?
