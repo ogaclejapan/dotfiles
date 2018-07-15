@@ -24,6 +24,7 @@ function pip_install() {
   pip install -U pip
   pip install pipenv
   pip install glances
+  pip install termtosvg
 }
 
 function main() {

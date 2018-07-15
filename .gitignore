@@ -49,6 +49,8 @@ home/.config/karabiner/assets
 
 home/.config/hub
 
+home/.config/termtosvg
+
 home/.atom/*
 !home/.atom/*.cson
 
