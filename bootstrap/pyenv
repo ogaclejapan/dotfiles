@@ -25,6 +25,7 @@ function pip_install() {
   pip install pipenv
   pip install glances
   pip install termtosvg
+  pip install adb-enhanced
 }
 
 function main() {
