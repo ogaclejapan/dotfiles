@@ -7,6 +7,11 @@ alias f0='f --depth 1'
 alias d='fuzzy_directory_commander'
 alias d0='d --depth 1'
 
+if type -q brew
+    # WORKAROUND https://qiita.com/takuya0301/items/695f42f6904e979f0152
+    alias brew='env PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew'
+end
+
 if type -q hub
     alias git=hub
     alias g=giter
