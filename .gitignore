@@ -42,6 +42,7 @@ home/.config/fish/completions/*.*
 !home/.config/fish/completions/rustup.fish
 
 home/.config/fish/conf.d/*.*
+!home/.config/fish/conf.d/n.fish
 
 home/.config/fisherman
 
