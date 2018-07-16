@@ -1,6 +1,8 @@
 alias ll='ls -lahF'
 alias la='ls -a'
 
+abbr --add brave 'open -a \'Brave\''
+
 # It looks like a zeit/hyper terminal
 if test $TERM != 'dumb'
     echo -n -e "\033]6;1;bg;red;brightness;40\a"
