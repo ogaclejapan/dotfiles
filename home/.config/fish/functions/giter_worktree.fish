@@ -145,18 +145,19 @@ function __giter_worktree_select_branch
 end
 
 function __giter_worktree_diet
-    set -l repopath $argv[1]
+    set -l repopath (__giter_worktree_origin_repo $argv[1])
+    set -l reponame (basename $repopath)
     set -l worklist (git -C $repopath worktree list | sed 1d) # without main working tree
     for line in $worklist
         set -l commit (echo $line | tr -s '[:blank:]' '\t' | cut -f 2)
         set -l is_merged (git -C $repopath branch --contains $commit | grep -c 'master')
         if test $is_merged -eq 1
             set -l workpath (echo $line | tr -s '[:blank:]' '\t' | cut -f 1)
-            git -C $repopath worktree remove $workpath
+            git -C $repopath worktree remove -f $workpath
         end
     end
     set -l workpath (__giter_worktree_path $repopath)
-    rm -rf (printf "%s/%s" $workpath 'view')
+    rm -rf (printf "%s/%s/%s" $workpath $reponame 'view')
     git -C $repopath worktree prune
 end
 
