@@ -52,6 +52,9 @@ home/.config/hub
 
 home/.config/termtosvg
 
+home/.mitmproxy
+!home/.mitmproxy/config.yaml
+
 home/.atom/*
 !home/.atom/*.cson
 
