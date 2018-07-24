@@ -98,6 +98,7 @@ cask '0xed'
 
 ## Optional
 
+#cask 'google-cloud-sdk'
 #cask 'dash'
 #cask 'dropbox'
 #cask 'virtualbox'

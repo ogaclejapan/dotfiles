@@ -52,6 +52,8 @@ home/.config/hub
 
 home/.config/termtosvg
 
+home/.config/gcloud
+
 home/.mitmproxy
 !home/.mitmproxy/config.yaml
 
