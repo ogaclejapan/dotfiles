@@ -46,6 +46,7 @@ brew 'pidcat'
 brew 'groovy'
 brew 'dex2jar'
 brew 'apktool'
+brew 'scrcpy'
 brew 'go', args: ['with-cc-all']
 brew 'peco'
 brew 'fzf'
