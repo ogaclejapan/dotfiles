@@ -75,7 +75,7 @@ brew 'newsboat'
 #brew 'dfu-programmer'
 
 #------------------------------#
-# Cask formula
+# Cask
 #------------------------------#
 
 tap 'caskroom/cask'
@@ -110,6 +110,17 @@ cask '0xed'
 #cask 'obs'
 #cask 'gitup'
 
+
+#------------------------------#
+# Third-party taps
+#------------------------------#
+
+tap 'ogaclejapan/ext'
+
+brew 'ogaclejapan/ext/drive'
+brew 'ogaclejapan/ext/jd-cmd'
+
+#cask 'flutter-sdk'
 
 #------------------------------#
 # vim: ft=sh
