@@ -45,14 +45,11 @@ home/.config/fish/conf.d/*.*
 !home/.config/fish/conf.d/n.fish
 
 home/.config/fisherman
-
 home/.config/karabiner/assets
-
 home/.config/hub
-
 home/.config/termtosvg
-
 home/.config/gcloud
+home/.config/yarn
 
 home/.mitmproxy
 !home/.mitmproxy/config.yaml
