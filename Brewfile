@@ -95,7 +95,7 @@ cask 'kap'
 cask 'bettertouchtool'
 cask 'karabiner-elements'
 cask '0xed'
-
+cask 'ngrok'
 
 ## Optional
 
