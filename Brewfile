@@ -34,6 +34,7 @@ brew 'perl-build'
 brew 'pyenv'
 brew 'the_silver_searcher'
 brew 'ripgrep'
+brew 'bat'
 brew 'fd'
 brew 'mg'
 brew 'vim', args: ['with-lua']
