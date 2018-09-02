@@ -1,4 +1,5 @@
 alias ll='ls -lahF'
+alias lr='ll -rt'
 alias la='ls -a'
 
 abbr --add brave 'open -a \'Brave\''
