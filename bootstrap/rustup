@@ -22,9 +22,17 @@ function rustup_update() {
   rustup update
 }
 
+function cargo_install() {
+  if ! type -p cargo > /dev/null 2>&1; then
+    return 0
+  fi
+  cargo install rogcat
+}
+
 function main() {
   rustup_init
   rustup_update
+  cargo_install
 }
 
 main "$@"
