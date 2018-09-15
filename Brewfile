@@ -109,6 +109,7 @@ cask 'ngrok'
 #cask 'hammerspoon'
 #cask 'obs'
 #cask 'gitup'
+#cask 'avidemux'
 
 
 #------------------------------#
