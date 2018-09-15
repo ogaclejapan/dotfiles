@@ -24,6 +24,7 @@ if type -q adb
     alias rec='adb screenrecord'
     alias am='adb shell am'
     alias pm='adb shell pm'
+    alias dumpsys='adb shell dumpsys'
 end
 
 if type -q emulator
