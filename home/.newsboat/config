@@ -1,5 +1,5 @@
 #auto-reload yes
-browser "open -a 'Brave' %u"
+browser "open %u"
 color info white black
 color listnormal color245 black
 color listnormal_unread white black
