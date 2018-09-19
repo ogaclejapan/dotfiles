@@ -42,3 +42,7 @@ end
 if type -q glances
     abbr --add htop 'glances'
 end
+
+if type -q bat
+    abbr --add catp 'bat'
+end
