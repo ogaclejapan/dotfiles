@@ -35,14 +35,14 @@ if type -q sdkmanager
     alias sdkmanager=sdkmanager_fzf
 end
 
+if type -q bat
+    alias catp=bat
+end
+
 if type -q aria2c
     abbr --add aget 'aria2c'
 end
 
 if type -q glances
     abbr --add htop 'glances'
-end
-
-if type -q bat
-    abbr --add catp 'bat'
 end
