@@ -96,7 +96,7 @@ cask 'jadengeller-helium'
 cask 'kap'
 cask 'bettertouchtool'
 cask 'karabiner-elements'
-cask '0xed'
+cask 'hex-fiend'
 cask 'ngrok'
 
 ## Optional
