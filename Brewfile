@@ -61,10 +61,11 @@ brew 'urlview'
 brew 'extract_url'
 brew 'kotlin'
 brew 'translate-shell'
+brew 'm-cli'
 brew 'terminal-notifier'
 brew 'bcal'
 brew 'webp'
-brew 'cloc'
+brew 'loc'
 brew 'multimarkdown'
 brew 'ffmpeg', args: ['with-libvpx', 'with-fdk-aacf', 'with-sdl2', 'with-freetype', 'with-libass', 'with-libquvi', 'with-libvorbis', 'with-libvpx', 'with-opus', 'with-x265', 'with-webp', 'with-fontconfig']
 brew 'imagemagick', args: ['with-fontconfig']
@@ -112,6 +113,7 @@ cask 'ngrok'
 #cask 'obs'
 #cask 'gitup'
 #cask 'avidemux'
+#cask 'iina'
 
 
 #------------------------------#
@@ -124,6 +126,11 @@ brew 'ogaclejapan/ext/drive'
 brew 'ogaclejapan/ext/jd-cmd'
 
 #cask 'flutter-sdk'
+
+
+tap 'cjbassi/gotop'
+
+brew 'gotop'
 
 #------------------------------#
 # vim: ft=sh
