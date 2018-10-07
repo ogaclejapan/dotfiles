@@ -121,16 +121,15 @@ cask 'ngrok'
 #------------------------------#
 
 tap 'ogaclejapan/ext'
-
 brew 'ogaclejapan/ext/drive'
 brew 'ogaclejapan/ext/jd-cmd'
-
 #cask 'flutter-sdk'
 
-
 tap 'cjbassi/gotop'
-
 brew 'gotop'
+
+tap 'tsduck/tsduck'
+brew 'tsduck'
 
 #------------------------------#
 # vim: ft=sh
