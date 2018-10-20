@@ -68,6 +68,7 @@ brew 'bcal'
 brew 'webp'
 brew 'loc'
 brew 'multimarkdown'
+brew 'ssh-copy-id'
 brew 'ffmpeg', args: ['with-libvpx', 'with-fdk-aacf', 'with-sdl2', 'with-freetype', 'with-libass', 'with-libquvi', 'with-libvorbis', 'with-libvpx', 'with-opus', 'with-x265', 'with-webp', 'with-fontconfig']
 brew 'bento4'
 brew 'imagemagick', args: ['with-fontconfig']
