@@ -21,6 +21,9 @@ function load_plist() {
 }
 
 function main() {
+  if ! mkdir -p "${LAUNCHD_AGENT_DIR}"; then
+    exit
+  fi
   load_plist
 }
 

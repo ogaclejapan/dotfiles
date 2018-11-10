@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Configure (golang)
+set -u
+
+echo "========== (golang) =========="
+
+declare -xr GOPATH="${HOME}/.go"
+declare -xr PATH=$GOPATH/bin:$PATH
+
+function main() {
+  if ! mkdir -p "${GOPATH}/bin"; then
+    exit
+  fi
+}
+
+main "$@"
+
+echo "done."
