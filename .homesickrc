@@ -13,6 +13,7 @@ def self.nodejs() system("./bootstrap/nodejs") end
 def self.rubyenv() system("./bootstrap/rubyenv") end
 def self.pyenv() system("./bootstrap/pyenv") end
 def self.rustup() system("./bootstrap/rustup") end
+def self.golang() system("./bootstrap/golang") end
 def self.iterm() system("./bootstrap/iterm") end
 def self.emacsdaemon() system("./bootstrap/emacsdaemon") end
 
@@ -25,6 +26,7 @@ if OS.mac?
   rubyenv
   pyenv
   rustup
+  golang
   iterm
   emacsdaemon
 elsif OS.linux?
