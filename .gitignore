@@ -45,7 +45,7 @@ home/.config/fish/completions/*.*
 home/.config/fish/conf.d/*.*
 !home/.config/fish/conf.d/n.fish
 
-home/.config/fisherman
+home/.config/fisher
 home/.config/karabiner/assets
 home/.config/hub
 home/.config/termtosvg
