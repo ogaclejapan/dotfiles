@@ -4,6 +4,3 @@
 [submodule "home/.bin/adb-peco"]
 	path = home/.bin/adb-peco
 	url = https://github.com/tomorrowkey/adb-peco.git
-[submodule "home/.vim/dein.vim"]
-	path = home/.vim/dein.vim
-	url = https://github.com/Shougo/dein.vim.git
