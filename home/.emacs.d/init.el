@@ -70,8 +70,8 @@
   (lambda ()
     (interactive)
     (menu-bar-mode 0)      ; No menu bar
-    (tool-bar-mode 0)      ; No tool bar
-    (scroll-bar-mode 0)))  ; No scroll bar
+    (tool-bar-mode 0)))      ; No tool bar
+;;   (scroll-bar-mode 0)))  ; No scroll bar
 
 ;; No startup message
 (setq inhibit-startup-message 1)
