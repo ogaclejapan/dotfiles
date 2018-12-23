@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Configure (vim-bundles)
+set -u
+
+echo "========== (vim-bundles) =========="
+
+readonly DOTFILES_DIR=$(homesick show_path dotfiles)
+readonly BUNDLES_DIR=$DOTFILES_DIR/home/.vim/bundles
+
+function dein_init() {
+  curl 'https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh' > /tmp/dein_installer.sh
+  if [[ "$?" -eq 0 ]]; then
+    sh /tmp/dein_installer.sh "${BUNDLES_DIR}"
+  fi
+}
+
+function main() {
+  if ! mkdir -p "${BUNDLES_DIR}"; then
+    exit 1
+  fi
+  dein_init
+}
+
+main "$@"
+
+echo "done."

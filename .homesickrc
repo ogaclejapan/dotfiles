@@ -15,6 +15,7 @@ def self.pyenv() system("./bootstrap/pyenv") end
 def self.rustup() system("./bootstrap/rustup") end
 def self.golang() system("./bootstrap/golang") end
 def self.iterm() system("./bootstrap/iterm") end
+def self.vimbundles() system("./bootstrap/vim-bundles") end
 def self.emacsdaemon() system("./bootstrap/emacsdaemon") end
 
 if OS.mac?
@@ -28,6 +29,7 @@ if OS.mac?
   rustup
   golang
   iterm
+  vimbundles
   emacsdaemon
 elsif OS.linux?
   #todo

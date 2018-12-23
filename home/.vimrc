@@ -5,16 +5,15 @@
 if &compatible
   set nocompatible
 endif
-set runtimepath+=~/.vim/dein.vim
 
-let s:dein_path = expand('~/.vim/dein')
-if dein#load_state(s:dein_path)
-  call dein#begin(s:dein_path)
+set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
 
-  " Let dein manage dein
-  call dein#add('Shougo/dein.vim')
+if dein#load_state('~/.vim/bundles')
+  call dein#begin('~/.vim/bundles')
 
-  " Add or remove your plugins here:
+  call dein#add('~/.vim/bundles/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here like this:
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/vimfiler.vim')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
@@ -40,6 +39,7 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
+
 
 "__/__/__/__/__/__/__/__/__/__/
 "__/ Display Settings
@@ -208,10 +208,10 @@ nnoremap <Leader>e :<C-u>VimFilerExplorer<CR>
 nnoremap <Leader>E :<C-u>VimFiler<CR>
 
 "カレントディレクトリ配下をagでgrep検索する
-nnoremap <Leader>g :<C-u>Ag 
+nnoremap <Leader>g :<C-u>Ag
 
 "カレントディレクトリ配下をagでファイル検索する
-nnoremap <Leader>f :<C-u>AgFile 
+nnoremap <Leader>f :<C-u>AgFile
 
 "全範囲を対象に任意の文字列を置換する
 nnoremap <Leader>r :<C-u>OverCommandLine s/<CR>
@@ -276,6 +276,3 @@ let g:EasyMotion_smartcase = 1
 
 "Vimfilerの移動と連動してカレントディレクトリを変更する
 let g:vimfiler_enable_auto_cd = 1
-
-
-
