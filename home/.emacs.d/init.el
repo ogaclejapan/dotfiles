@@ -29,11 +29,11 @@
 ;;--+--+--+--+--+--+--+--+--+--+
 
 ;; Character Sets
-(set-language-environment 'Japanese)
-(prefer-coding-system 'utf-8)
-(set-file-name-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(set-terminal-coding-system 'utf-8)
+;;(set-language-environment 'Japanese)
+;;(prefer-coding-system 'utf-8)
+;;(set-file-name-coding-system 'utf-8)
+;;(set-keyboard-coding-system 'utf-8)
+;;(set-terminal-coding-system 'utf-8)
 
 ;; WORKAROUND: multi-byte character input
 ;; https://debbugs.gnu.org/cgi/bugreport.cgi?bug=23412
