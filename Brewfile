@@ -118,6 +118,7 @@ cask 'ngrok'
 #cask 'gitup'
 #cask 'avidemux'
 #cask 'iina'
+#cask 'balenaetcher'
 
 
 #------------------------------#
