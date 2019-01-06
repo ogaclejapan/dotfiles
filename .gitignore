@@ -12,6 +12,7 @@ home/.config/gh-update
 home/.config/gh
 
 home/.config/fish/fish_history
+home/.config/fish/fish_variables
 home/.config/fish/*.*
 !home/.config/fish/config.fish
 !home/.config/fish/Darwin.fish
@@ -35,7 +36,6 @@ home/.config/fish/functions/*.*
 !home/.config/fish/functions/giter_worktree.fish
 !home/.config/fish/functions/fuzzy_file_commander.fish
 !home/.config/fish/functions/fuzzy_directory_commander.fish
-!home/.config/fish/functions/fisher.fish
 
 home/.config/fish/completions/*.*
 !home/.config/fish/completions/homesick.fish
