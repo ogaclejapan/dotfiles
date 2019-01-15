@@ -36,7 +36,7 @@ if type -q sdkmanager
 end
 
 if type -q bat
-    alias catp=bat
+    abbr --add p 'bat'
 end
 
 if type -q aria2c
