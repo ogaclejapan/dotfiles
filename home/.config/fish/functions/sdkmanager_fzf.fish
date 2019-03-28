@@ -32,7 +32,7 @@ function sdkmanager_fzf -d 'Extend a sdkmanager command'
 end
 
 function __sdkmanager_exec
-    command sdkmanager (string escape -- $argv)
+    command sdkmanager $argv
 end
 
 function __sdkmanager_multi

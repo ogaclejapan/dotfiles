@@ -28,7 +28,7 @@ function emulator_fzf -d 'Execute android emulator command'
 end
 
 function __emulator_exec
-    command emulator (string escape -- $argv)
+    command emulator $argv
 end
 
 function __emulator_run
@@ -36,7 +36,7 @@ function __emulator_run
     if test -z $target
         return 0
     end
-    command emulator "@$target" (string escape -- $argv)
+    command emulator "@$target" $argv
 end
 
 function __emulator_fzf_needs_command
