@@ -41,7 +41,7 @@ function __adb_device
 end
 
 function __adb_exec
-    command adb (string escape -- $argv)
+    command adb $argv
 end
 
 function __adb_exec_with_serial
@@ -49,7 +49,7 @@ function __adb_exec_with_serial
     if test -z $serial
         return 0
     end
-    command adb -s $serial (string escape -- $argv)
+    command adb -s $serial $argv
 end
 
 function __adb_screencapture
