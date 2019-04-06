@@ -308,7 +308,7 @@
   :ensure t
   :init
   (setq markdown-command "multimarkdown") ; C-c C-c p
-  (setq markdown-open-command "~/.bin/mark") ; C-c C-c o
+  (setq markdown-open-command "~/.bin/typora") ; C-c C-c o
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)

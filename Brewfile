@@ -106,6 +106,7 @@ cask 'imageoptim'
 cask 'karabiner-elements'
 cask 'hex-fiend'
 cask 'ngrok'
+cask 'typora'
 
 ## Optional
 
