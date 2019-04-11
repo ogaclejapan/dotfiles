@@ -88,6 +88,7 @@
   <action id="Android.SyncProject">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="z" />
   </action>
+  <action id="CIDR.Lang.ObjC.IntroduceProperty" />
   <action id="CallHierarchy">
     <keyboard-shortcut first-keystroke="ctrl alt h" />
     <keyboard-shortcut first-keystroke="shift ctrl slash" />
@@ -131,10 +132,9 @@
     <keyboard-shortcut first-keystroke="meta f9" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="c" />
   </action>
+  <action id="Console.History.Browse" />
   <action id="Debug">
     <keyboard-shortcut first-keystroke="shift f9" />
-  </action>
-  <action id="DecompileKotlinToJava">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="d" />
   </action>
   <action id="Editor Delete">
@@ -285,6 +285,10 @@
     <keyboard-shortcut first-keystroke="shift up" />
     <keyboard-shortcut first-keystroke="shift ctrl p" />
   </action>
+  <action id="EvaluateExpression">
+    <keyboard-shortcut first-keystroke="alt f8" />
+    <keyboard-shortcut first-keystroke="meta alt e" />
+  </action>
   <action id="ExpressionTypeInfo" />
   <action id="FileStructurePopup">
     <keyboard-shortcut first-keystroke="meta f12" />
@@ -318,6 +322,9 @@
     <mouse-shortcut keystroke="button2" />
     <keyboard-shortcut first-keystroke="ctrl enter" />
   </action>
+  <action id="GotoImplementation">
+    <mouse-shortcut keystroke="meta alt button1" />
+  </action>
   <action id="GotoRelated">
     <keyboard-shortcut first-keystroke="ctrl meta up" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="l" />
@@ -343,6 +350,9 @@
     <keyboard-shortcut first-keystroke="alt slash" />
     <keyboard-shortcut first-keystroke="ctrl close_bracket" />
   </action>
+  <action id="Inline" />
+  <action id="IntroduceField" />
+  <action id="IntroduceProperty" />
   <action id="JumpToLastWindow">
     <keyboard-shortcut first-keystroke="f12" />
     <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="0" />
@@ -429,6 +439,23 @@
   <action id="SplitVertically">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="3" />
   </action>
+  <action id="StepInto">
+    <keyboard-shortcut first-keystroke="f7" />
+    <keyboard-shortcut first-keystroke="meta alt f" />
+  </action>
+  <action id="StepOut">
+    <keyboard-shortcut first-keystroke="shift f8" />
+    <keyboard-shortcut first-keystroke="meta alt b" />
+  </action>
+  <action id="StepOver">
+    <keyboard-shortcut first-keystroke="f8" />
+    <keyboard-shortcut first-keystroke="meta alt n" />
+  </action>
+  <action id="Stop">
+    <keyboard-shortcut first-keystroke="meta f2" />
+    <keyboard-shortcut first-keystroke="meta alt s" />
+  </action>
+  <action id="SurroundWith" />
   <action id="SwitchApply">
     <keyboard-shortcut first-keystroke="ctrl alt enter" />
   </action>
@@ -452,6 +479,10 @@
   <action id="ToggleBookmark">
     <keyboard-shortcut first-keystroke="f3" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="m" />
+  </action>
+  <action id="ToggleLineBreakpoint">
+    <keyboard-shortcut first-keystroke="meta f8" />
+    <keyboard-shortcut first-keystroke="meta alt t" />
   </action>
   <action id="Tool_External Tools_Magit">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="g" />
