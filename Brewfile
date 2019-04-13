@@ -83,6 +83,7 @@ brew 'imagemagick', args: ['with-fontconfig']
 brew 'giflossy'
 brew 'youtube-dl'
 brew 'newsboat'
+brew 'ddgr'
 
 ## Optional
 #brew 'docker'
