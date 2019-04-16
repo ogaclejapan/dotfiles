@@ -99,7 +99,6 @@ tap 'caskroom/cask'
 cask 'alfred'
 cask 'iterm2'
 cask 'visual-studio-code'
-cask 'coteditor'
 cask 'android-sdk'
 cask 'android-file-transfer'
 cask 'androidtool'
@@ -108,6 +107,8 @@ cask 'karabiner-elements'
 cask 'hex-fiend'
 cask 'ngrok'
 cask 'typora'
+cask 'mi'
+
 
 ## Optional
 
