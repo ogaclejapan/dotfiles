@@ -1,0 +1,4 @@
+buffer = ["main", "system", "crash"]
+terminal_tag_width = 23
+terminal_show_date = false
+terminal_hide_timestamp = false

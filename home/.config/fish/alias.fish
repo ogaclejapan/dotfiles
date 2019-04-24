@@ -19,12 +19,16 @@ if type -q hub
 end
 
 if type -q adb
-    alias adb=adb_fzf
-    alias cap='adb screencap'
-    alias rec='adb screenrecord'
+    alias a=adb_fzf
+    alias cap='a screencap'
+    alias rec='a screenrecord'
     alias am='adb shell am'
     alias pm='adb shell pm'
     alias dumpsys='adb shell dumpsys'
+    if type -q rogcat
+        alias logcat='rogcat'
+        abbr --add l 'logcat'
+    end
 end
 
 if type -q emulator
@@ -34,6 +38,7 @@ end
 if type -q sdkmanager
     alias sdkmanager=sdkmanager_fzf
 end
+
 
 if type -q bat
     abbr --add p 'bat'

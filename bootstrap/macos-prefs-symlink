@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# Configure (macos-prefs-symlink)
+set -u
+
+echo "========== (macos-prefs-symlink) =========="
+
+readonly MACOS_PREFS_DIR=$HOME/Library/Preferences
+readonly DOTFILES_DIR=$(homesick show_path dotfiles)
+readonly CONFIG_DIR="${DOTFILES_DIR}/home/.config"
+
+function symlink() {
+  local source="$1"
+  local target="$2"
+  if [[ -L "${target}" ]]; then
+    echo "[skip] ${target} already exits"
+    return 0
+  fi
+  if [[ ! -d "${source}" ]]; then
+    echo "[skip] ${source} is not found"
+    return 0
+  fi
+  ln -s "${source}" "${target}"
+}
+
+function main() {
+  if ! mkdir -p "${MACOS_PREFS_DIR}"; then
+    exit
+  fi
+  symlink "${CONFIG_DIR}/rogcat" "${MACOS_PREFS_DIR}/rogcat"
+}
+
+main "$@"
+
+echo "done."
