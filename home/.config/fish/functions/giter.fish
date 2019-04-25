@@ -56,6 +56,10 @@ function giter -d 'Local git repository management'
             __giter_checkout $rootpath $argv
         case new
             __giter_new $rootpath $argv
+        case diet
+            __giter_diet $rootpath $argv
+        case done
+            __giter_done $rootpath $argv
         case '*'
             __giter_exec $rootpath $subcommand $argv
     end
@@ -72,6 +76,8 @@ function __giter_help
     printf "   ls       Show managed git repositories\n"
     printf "   clone    Clone git repository to managed directory\n"
     printf "   new      Create new branch\n"
+    printf "   diet     Remove merged git branches\n"
+    printf "   done     Remove selected git branches\n"
     printf "  <any>     Execute git command on selected git repository\n"
     printf "   help     Print this help\n"
     printf "\n"
@@ -316,6 +322,38 @@ function __giter_new
     git -C $repopath checkout -b $newbranch $branch
 end
 
+function __giter_diet
+    set -l rootpath $argv[1]
+    set -e argv[1]
+    set repopath (git rev-parse --show-toplevel 2> /dev/null)
+    if test -z $repopath
+        set repopath (__giter_repo $rootpath)
+    end
+    if test -z $repopath
+        return 0
+    end
+    set -l merged_branches (git -C $repopath branch --merged master | grep -vE '^\*|^master$' | tr -d '[:blank:]')
+    for target in $merged_branches
+        git -C $repopath branch -d $target
+    end
+end
+
+function __giter_done
+    set -l rootpath $argv[1]
+    set -e argv[1]
+    set repopath (git rev-parse --show-toplevel 2> /dev/null)
+    if test -z $repopath
+        set repopath (__giter_repo $rootpath)
+    end
+    if test -z $repopath
+        return 0
+    end
+    set -l selected_branches (git -C $repopath branch | grep -vE '^\*|^master$' | tr -d '[:blank:]' | fzf --multi --reverse)
+    for target in $selected_branches
+        git -C $repopath branch -D $target
+    end
+end
+
 function __giter_select_branch
     set -l repopath $argv[1]
     set -e argv[1]
@@ -361,4 +399,6 @@ complete -f -c giter -n '__giter_needs_command' -a cd -d 'Change directory to se
 complete -f -c giter -n '__giter_needs_command' -a ls -d 'Show managed git repositories'
 complete -f -c giter -n '__giter_needs_command' -a clone -d 'Clone git repository to managed directory'
 complete -f -c giter -n '__giter_needs_command' -a new -d 'Create new branch'
+complete -f -c giter -n '__giter_needs_command' -a diet -d 'Remove merged git branches'
+complete -f -c giter -n '__giter_needs_command' -a done -d 'Remove selected git branches'
 complete -c giter -w git

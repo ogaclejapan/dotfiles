@@ -31,7 +31,6 @@
   zp = stash pop
   # Other Command
   master = checkout master
-  diet = !git branch --merged master | grep -vE \"^\\*|master$\" | xargs -I % git branch -d %
 [gh]
   #host = your-github-enterprise
 [filter "lfs"]
