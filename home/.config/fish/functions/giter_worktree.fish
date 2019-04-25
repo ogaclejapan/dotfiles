@@ -39,6 +39,8 @@ function giter_worktree -d 'Local git worktree management'
             __giter_worktree_view $repopath $argv
         case diet
             __giter_worktree_diet $repopath $argv
+        case done
+            __giter_worktree_done $repopath $argv
         case '*'
             __giter_worktree_exec $repopath $subcommand $argv
     end
@@ -56,6 +58,7 @@ function __giter_worktree_help
     printf "   ls       Show managed git working trees\n"
     printf "   dir      Show managed git working tree directories\n"
     printf "   diet     Remove merged git working trees\n"
+    printf "   done     Remove selected git working trees\n"
     printf "  <any>     Execute git worktree command on git repository\n"
     printf "   help     Print this help\n"
     printf "\n"
@@ -153,11 +156,24 @@ function __giter_worktree_diet
         set -l is_merged (git -C $repopath branch --contains $commit | grep -c -e '^[\* ].master$')
         if test $is_merged -eq 1
             set -l workpath (echo $line | tr -s '[:blank:]' '\t' | cut -f 1)
+            echo "[Removed] $workpath"
             git -C $repopath worktree remove -f $workpath
         end
     end
     set -l workpath (__giter_worktree_path $repopath)
     rm -rf (printf "%s/%s/%s" $workpath $reponame 'view')
+    git -C $repopath worktree prune
+end
+
+function __giter_worktree_done
+    set -l repopath (__giter_worktree_origin_repo $argv[1])
+    set -l reponame (basename $repopath)
+    set -l worklist (git -C $repopath worktree list | sed 1d | fzf --multi --reverse)
+    for line in $worklist
+        set -l workpath (echo $line | tr -s '[:blank:]' '\t' | cut -f 1)
+        echo "[Remove] $workpath"
+        git -C $repopath worktree remove -f $workpath
+    end
     git -C $repopath worktree prune
 end
 
@@ -191,3 +207,4 @@ complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a cd -d 'Chan
 complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a ls -d 'Show managed git working trees'
 complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a dir -d 'Show managed git working tree directories'
 complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a diet -d 'Remove merged git working trees'
+complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a done -d 'Remove selected git working trees'
