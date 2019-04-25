@@ -150,7 +150,7 @@ function __giter_worktree_diet
     set -l worklist (git -C $repopath worktree list | sed 1d) # without main working tree
     for line in $worklist
         set -l commit (echo $line | tr -s '[:blank:]' '\t' | cut -f 2)
-        set -l is_merged (git -C $repopath branch --contains $commit | grep -c 'master')
+        set -l is_merged (git -C $repopath branch --contains $commit | grep -c -e '^[\* ].master$')
         if test $is_merged -eq 1
             set -l workpath (echo $line | tr -s '[:blank:]' '\t' | cut -f 1)
             git -C $repopath worktree remove -f $workpath
