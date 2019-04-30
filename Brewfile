@@ -54,6 +54,7 @@ brew 'dex2jar'
 brew 'apktool'
 brew 'scrcpy'
 brew 'go', args: ['with-cc-all']
+brew 'dep'
 brew 'peco'
 brew 'fzf'
 brew 'plantuml'
