@@ -88,11 +88,19 @@
   <action id="Android.SyncProject">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="z" />
   </action>
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="meta open_bracket" />
+    <keyboard-shortcut first-keystroke="meta alt left" />
+    <mouse-shortcut keystroke="button4" />
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
   <action id="CIDR.Lang.ObjC.IntroduceProperty" />
   <action id="CallHierarchy">
     <keyboard-shortcut first-keystroke="ctrl alt h" />
     <keyboard-shortcut first-keystroke="shift ctrl slash" />
   </action>
+  <action id="ChangesView.ShelveSilently" />
+  <action id="ChangesView.UnshelveSilently" />
   <action id="ChooseDebugConfiguration">
     <keyboard-shortcut first-keystroke="shift alt f9" />
   </action>
@@ -105,9 +113,6 @@
   </action>
   <action id="CloseAllEditors">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="ctrl k" />
-  </action>
-  <action id="CloseAllEditorsButActive">
-    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="0" />
   </action>
   <action id="CloseContent">
     <keyboard-shortcut first-keystroke="meta w" />
@@ -287,9 +292,11 @@
   </action>
   <action id="EvaluateExpression">
     <keyboard-shortcut first-keystroke="alt f8" />
-    <keyboard-shortcut first-keystroke="meta alt e" />
+    <keyboard-shortcut first-keystroke="meta alt i" />
   </action>
   <action id="ExpressionTypeInfo" />
+  <action id="ExtractFunction" />
+  <action id="ExtractMethod" />
   <action id="FileStructurePopup">
     <keyboard-shortcut first-keystroke="meta f12" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="j" />
@@ -308,6 +315,12 @@
   </action>
   <action id="FindWordAtCaret">
     <keyboard-shortcut first-keystroke="ctrl period" />
+  </action>
+  <action id="Forward">
+    <keyboard-shortcut first-keystroke="meta close_bracket" />
+    <keyboard-shortcut first-keystroke="meta alt right" />
+    <mouse-shortcut keystroke="button5" />
+    <keyboard-shortcut first-keystroke="shift ctrl minus" />
   </action>
   <action id="Generate">
     <keyboard-shortcut first-keystroke="meta n" />
@@ -341,6 +354,10 @@
   <action id="HideActiveWindow">
     <keyboard-shortcut first-keystroke="shift escape" />
     <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="ctrl c" />
+  </action>
+  <action id="HideAllWindows">
+    <keyboard-shortcut first-keystroke="shift meta f12" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="0" />
   </action>
   <action id="HippieBackwardCompletion">
     <keyboard-shortcut first-keystroke="shift alt slash" />
@@ -416,6 +433,10 @@
     <keyboard-shortcut first-keystroke="meta r" />
     <keyboard-shortcut first-keystroke="shift alt 5" />
   </action>
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="f9" />
+    <keyboard-shortcut first-keystroke="meta alt u" />
+  </action>
   <action id="Run">
     <keyboard-shortcut first-keystroke="shift f10" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="r" />
@@ -441,11 +462,12 @@
   </action>
   <action id="StepInto">
     <keyboard-shortcut first-keystroke="f7" />
-    <keyboard-shortcut first-keystroke="meta alt f" />
+    <keyboard-shortcut first-keystroke="meta alt j" />
   </action>
   <action id="StepOut">
     <keyboard-shortcut first-keystroke="shift f8" />
     <keyboard-shortcut first-keystroke="meta alt b" />
+    <keyboard-shortcut first-keystroke="meta alt h" />
   </action>
   <action id="StepOver">
     <keyboard-shortcut first-keystroke="f8" />
@@ -456,6 +478,7 @@
     <keyboard-shortcut first-keystroke="meta alt s" />
   </action>
   <action id="SurroundWith" />
+  <action id="SurroundWithLiveTemplate" />
   <action id="SwitchApply">
     <keyboard-shortcut first-keystroke="ctrl alt enter" />
   </action>
@@ -482,7 +505,7 @@
   </action>
   <action id="ToggleLineBreakpoint">
     <keyboard-shortcut first-keystroke="meta f8" />
-    <keyboard-shortcut first-keystroke="meta alt t" />
+    <keyboard-shortcut first-keystroke="meta alt m" />
   </action>
   <action id="Tool_External Tools_Magit">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="g" />

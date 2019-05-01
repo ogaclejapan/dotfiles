@@ -18,6 +18,7 @@ def self.iterm() system("./bootstrap/iterm") end
 def self.vim_bundles() system("./bootstrap/vim-bundles") end
 def self.emacsdaemon() system("./bootstrap/emacsdaemon") end
 def self.macos_prefs_symlink() system("./bootstrap/macos-prefs-symlink") end
+def self.macos_vscode() system("./bootstrap/macos-vscode") end
 
 if OS.mac?
   homesick
@@ -33,6 +34,7 @@ if OS.mac?
   vim_bundles
   emacsdaemon
   macos_prefs_symlink
+  macos_vscode
 elsif OS.linux?
   #todo
 end

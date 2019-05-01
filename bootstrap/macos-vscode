@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# Configure (macos-vscode)
+set -u
+
+echo "========== (macos-vscode) =========="
+
+readonly MACOS_VSCODE_DIR="${HOME}/Library/Application Support/Code"
+readonly DOTFILES_DIR=$(homesick show_path dotfiles)
+readonly CONFIG_DIR="${DOTFILES_DIR}/home/.config/Code"
+
+function symlink() {
+  local source="$1"
+  local target="$2"
+  if [[ -L "${target}" ]]; then
+    echo "[skip] ${target} already exits"
+    return 0
+  fi
+  if [[ ! -d "${source}" ]]; then
+    echo "[skip] ${source} is not found"
+    return 0
+  fi
+  ln -s "${source}" "${target}"
+}
+
+function main() {
+  if ! mkdir -p "${MACOS_VSCODE_DIR}"; then
+    exit
+  fi
+  symlink "${CONFIG_DIR}/User" "${MACOS_VSCODE_DIR}/User"
+}
+
+main "$@"
+
+echo "done."

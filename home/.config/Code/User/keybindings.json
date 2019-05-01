@@ -1,0 +1,278 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "alt+\\",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+p",
+        "command": "editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+space",
+        "command": "-editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+o",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "shift+cmd+o",
+        "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+x j",
+        "command": "workbench.action.gotoSymbol"
+    },
+    {
+        "key": "shift+cmd+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-editor.action.transposeLetters",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+cmd+right",
+        "command": "-editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+t",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+cmd+left",
+        "command": "-editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "cmd+y",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+i",
+        "command": "-editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+enter",
+        "command": "-debug.openBreakpointToSide",
+        "when": "breakpointsFocused"
+    },
+    {
+        "key": "alt+enter",
+        "command": "-editor.action.selectAllMatches",
+        "when": "editorFocus && findWidgetVisible"
+    },
+    {
+        "key": "alt+enter",
+        "command": "editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+.",
+        "command": "-editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+enter",
+        "command": "problems.action.showQuickFixes",
+        "when": "problemFocus"
+    },
+    {
+        "key": "cmd+.",
+        "command": "-problems.action.showQuickFixes",
+        "when": "problemFocus"
+    },
+    {
+        "key": "alt+cmd+o",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "cmd+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+c e",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "shift+cmd+e",
+        "command": "-workbench.view.explorer"
+    },
+    {
+        "key": "ctrl+c f",
+        "command": "workbench.view.search",
+        "when": "!searchViewletVisible"
+    },
+    {
+        "key": "shift+cmd+f",
+        "command": "-workbench.view.search",
+        "when": "!searchViewletVisible"
+    },
+    {
+        "key": "ctrl+c g",
+        "command": "workbench.view.scm"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm"
+    },
+    {
+        "key": "cmd+e",
+        "command": "-actions.findWithSelection"
+    },
+    {
+        "key": "cmd+e",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "cmd+e",
+        "command": "workbench.action.quickOpenNavigateNextInRecentFilesPicker",
+        "when": "inQuickOpen && inRecentFilesPicker"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.quickOpenNavigateNextInRecentFilesPicker",
+        "when": "inQuickOpen && inRecentFilesPicker"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "editor.action.showContextMenu",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+f10",
+        "command": "-editor.action.showContextMenu",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+c d",
+        "command": "workbench.view.debug"
+    },
+    {
+        "key": "shift+cmd+d",
+        "command": "-workbench.view.debug"
+    },
+    {
+        "key": "ctrl+c x",
+        "command": "workbench.view.extensions"
+    },
+    {
+        "key": "shift+cmd+x",
+        "command": "-workbench.view.extensions"
+    },
+    {
+        "key": "ctrl+c u",
+        "command": "workbench.action.output.toggleOutput"
+    },
+    {
+        "key": "shift+cmd+u",
+        "command": "-workbench.action.output.toggleOutput"
+    },
+    {
+        "key": "alt+cmd+m",
+        "command": "editor.debug.action.toggleBreakpoint",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "f9",
+        "command": "-editor.debug.action.toggleBreakpoint",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+cmd+n",
+        "command": "workbench.action.debug.stepOver",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "f10",
+        "command": "-workbench.action.debug.stepOver",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "alt+cmd+j",
+        "command": "workbench.action.debug.stepInto",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "f11",
+        "command": "-workbench.action.debug.stepInto",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "alt+cmd+h",
+        "command": "workbench.action.debug.stepOut",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "shift+f11",
+        "command": "-workbench.action.debug.stepOut",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "alt+cmd+u",
+        "command": "workbench.action.debug.continue",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.continue",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "ctrl+x d",
+        "command": "workbench.action.debug.start",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.start",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "ctrl+x r",
+        "command": "workbench.action.tasks.runTask"
+    }
+]

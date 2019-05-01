@@ -52,6 +52,9 @@ home/.config/termtosvg
 home/.config/gcloud
 home/.config/yarn
 
+home/.config/Code/User/*
+!home/.config/Code/User/keybindings.json
+
 home/.mitmproxy
 !home/.mitmproxy/config.yaml
 
