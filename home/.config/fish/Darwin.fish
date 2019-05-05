@@ -26,6 +26,10 @@ if type -q n
     set -x PATH $N_PREFIX/bin $PATH
 end
 
+if type -q nnn
+    set -x NNN_USE_EDITOR 1
+end
+
 if test -e /usr/libexec/java_home
     set -x JAVA_HOME (command /usr/libexec/java_home)
 end
