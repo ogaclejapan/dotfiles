@@ -1,9 +1,9 @@
 #!/bin/bash
 #
-# Configure (vim-bundles)
+# Configure (vim)
 set -u
 
-echo "========== (vim-bundles) =========="
+echo "========== (vim) =========="
 
 readonly DOTFILES_DIR=$(homesick show_path dotfiles)
 readonly BUNDLES_DIR=$DOTFILES_DIR/home/.vim/bundles

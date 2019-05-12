@@ -5,34 +5,34 @@ module OS
   def self.linux?() (/linux/ =~ RUBY_PLATFORM) != nil end
 end
 
-def self.homesick() system("./bootstrap/homesick") end
-def self.homebrew() system("./bootstrap/homebrew") end
-def self.fishshell() system("./bootstrap/fishshell") end
-def self.tofish() system("./bootstrap/tofish") end
-def self.nodejs() system("./bootstrap/nodejs") end
-def self.rubyenv() system("./bootstrap/rubyenv") end
-def self.pyenv() system("./bootstrap/pyenv") end
-def self.rustup() system("./bootstrap/rustup") end
-def self.golang() system("./bootstrap/golang") end
-def self.iterm() system("./bootstrap/iterm") end
-def self.vim_bundles() system("./bootstrap/vim-bundles") end
-def self.emacsdaemon() system("./bootstrap/emacsdaemon") end
-def self.macos_prefs_symlink() system("./bootstrap/macos-prefs-symlink") end
-def self.macos_vscode() system("./bootstrap/macos-vscode") end
+def self.homesick() system("./bootstrap/for_homesick") end
+def self.homebrew() system("./bootstrap/for_homebrew") end
+def self.fishshell() system("./bootstrap/for_fishshell") end
+def self.fishplugins() system("./bootstrap/for_fish_plugins") end
+def self.nodejs() system("./bootstrap/for_nodejs") end
+def self.ruby() system("./bootstrap/for_ruby") end
+def self.python() system("./bootstrap/for_python") end
+def self.rust() system("./bootstrap/for_rust") end
+def self.golang() system("./bootstrap/for_golang") end
+def self.iterm() system("./bootstrap/for_iterm") end
+def self.vim() system("./bootstrap/for_vim") end
+def self.emacs() system("./bootstrap/for_emacs") end
+def self.macos_prefs_symlink() system("./bootstrap/for_macos_prefs_symlink") end
+def self.macos_vscode() system("./bootstrap/for_macos_vscode") end
 
 if OS.mac?
   homesick
   homebrew
   fishshell
-  tofish
+  fishplugins
   nodejs
-  rubyenv
-  pyenv
-  rustup
+  ruby
+  python
+  rust
   golang
   iterm
-  vim_bundles
-  emacsdaemon
+  vim
+  emacs
   macos_prefs_symlink
   macos_vscode
 elsif OS.linux?

@@ -5,24 +5,30 @@ set -u
 
 echo "========== (python) =========="
 
-readonly PYTHON_VERSION="3.6.5"
+readonly PYTHON_VERSION="3.7.2"
 
 function pyenv_install() {
   if ! type -p pyenv > /dev/null 2>&1; then
     return 0
   fi
   eval "$(pyenv init -)"
+  # TODO: zipimport.ZipImportError: can't decompress data; zlib not available
+  # WORKAROUND: https://qiita.com/zreactor/items/c3fd04417e0d61af0afe
   pyenv install $PYTHON_VERSION
   pyenv global $PYTHON_VERSION
   pyenv rehash
 }
 
 function pip_install() {
+  local -r is_valid=$(python -V | grep -c "${PYTHON_VERSION}")
+  if [[ $is_valid -eq 0 ]]; then
+    echo "[skip] ${PYTHON_VERSION} not installed."
+    return 0
+  fi
   if ! type -p pip > /dev/null 2>&1; then
     return 0
   fi
   pip install -U pip
-  pip install pipenv
   pip install glances
   pip install termtosvg
   pip install adb-enhanced
