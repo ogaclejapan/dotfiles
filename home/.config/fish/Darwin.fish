@@ -21,6 +21,10 @@ if type -q pyenv
     status --is-interactive; and source (pyenv init - | psub)
 end
 
+if type -q direnv
+    status --is-interactive; and source (direnv hook fish - | psub)
+end
+
 if type -q n
     set -x N_PREFIX $HOME/.n
     set -x PATH $N_PREFIX/bin $PATH
