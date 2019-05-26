@@ -59,6 +59,8 @@ brew 'go', args: ['with-cc-all']
 brew 'dep'
 brew 'peco'
 brew 'fzf'
+brew 'mkcert'
+brew 'nss'
 brew 'plantuml'
 brew 'graphviz'
 brew 'gpg2'
