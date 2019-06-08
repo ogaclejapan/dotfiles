@@ -48,7 +48,6 @@ if test -d /usr/local/share/android-sdk
     if test -d $ANDROID_ROOT_SDK/emulator
         set -x PATH $PATH $ANDROID_ROOT_SDK/emulator
     end
-    set -x STUDIO_VM_OPTIONS $HOME/.android/studio.vmoptions
 end
 
 if test -d /usr/local/opt/groovy/libexec
