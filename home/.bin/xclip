@@ -1,0 +1,7 @@
+#!/bin/bash
+# https://gist.github.com/coderofsalvation/7ff980326e9f75261eee8f8e0896ac3b
+if [[ "$(uname)" =~ Darwin ]]; then
+  cat - | pbcopy
+else
+  cat - | xclip
+fi

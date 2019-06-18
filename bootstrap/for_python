@@ -32,6 +32,7 @@ function pip_install() {
   pip install glances
   pip install termtosvg
   pip install adb-enhanced
+  pip install urlscan
 }
 
 function main() {
