@@ -26,7 +26,7 @@ if type -q adb
     alias pm='adb shell pm'
     alias dumpsys='adb shell dumpsys'
     if type -q rogcat
-        alias logcat='rogcat'
+        alias rc='rogcat'
     end
 end
 
