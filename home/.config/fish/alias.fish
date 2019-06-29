@@ -27,7 +27,6 @@ if type -q adb
     alias dumpsys='adb shell dumpsys'
     if type -q rogcat
         alias logcat='rogcat'
-        abbr --add l 'logcat'
     end
 end
 
