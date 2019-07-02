@@ -441,6 +441,9 @@
     <keyboard-shortcut first-keystroke="shift f10" />
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="r" />
   </action>
+  <action id="RunAnything">
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="a" />
+  </action>
   <action id="SelectNextOccurrence" />
   <action id="ShowNavBar">
     <keyboard-shortcut first-keystroke="meta up" />
