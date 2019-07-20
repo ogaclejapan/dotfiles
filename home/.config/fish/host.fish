@@ -6,8 +6,9 @@ set -x TMUX_AUTO_ATTACH ''
 #set -x EDITOR 'emacsclient -t --alternate-editor=mg'
 #set -x EDITOR 'vim'
 
-# JIRAコマンドのベースURL
-set -x JIRA_URL ''
+# JIRA api token for go-jira
+# https://id.atlassian.com/manage/api-tokens
+#set -x JIRA_API_TOKEN 'your personal access token'
 
 # GitHub personal access token for Homebrew
 #set -x HOMEBREW_GITHUB_API_TOKEN 'your personal access token'

@@ -97,6 +97,7 @@ brew 'ddgr'
 #brew 'docker'
 #brew 'dvm'
 #brew 'dfu-programmer'
+#brew 'go-jira'
 
 #------------------------------#
 # Cask
