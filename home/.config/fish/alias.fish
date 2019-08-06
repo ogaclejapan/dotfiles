@@ -22,9 +22,9 @@ if type -q adb
     alias a=adb_fzf
     alias cap='a screencap'
     alias rec='a screenrecord'
-    alias am='adb shell am'
-    alias pm='adb shell pm'
-    alias dumpsys='adb shell dumpsys'
+    alias am='a shell am'
+    alias pm='a shell pm'
+    alias dumpsys='a shell dumpsys'
     if type -q rogcat
         alias rc='rogcat'
     end
