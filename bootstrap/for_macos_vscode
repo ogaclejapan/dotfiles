@@ -13,7 +13,7 @@ function symlink() {
   local source="$1"
   local target="$2"
   if [[ -L "${target}" ]]; then
-    echo "[skip] ${target} already exits"
+    echo "[skip] ${target} already exists"
     return 0
   fi
   if [[ ! -d "${source}" ]]; then
