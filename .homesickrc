@@ -17,8 +17,10 @@ def self.golang() system("./bootstrap/for_golang") end
 def self.iterm() system("./bootstrap/for_iterm") end
 def self.vim() system("./bootstrap/for_vim") end
 def self.emacs() system("./bootstrap/for_emacs") end
+def self.cloud_sdk() system("./bootstrap/for_cloud_sdk") end
 def self.macos_prefs_symlink() system("./bootstrap/for_macos_prefs_symlink") end
 def self.macos_vscode() system("./bootstrap/for_macos_vscode") end
+
 
 if OS.mac?
   homesick
@@ -33,6 +35,7 @@ if OS.mac?
   iterm
   vim
   emacs
+  cloud_sdk
   macos_prefs_symlink
   macos_vscode
 elsif OS.linux?

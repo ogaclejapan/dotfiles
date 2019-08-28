@@ -50,6 +50,11 @@ if test -d /usr/local/share/android-sdk
     end
 end
 
+if test -d /usr/local/share/google-cloud-sdk
+    set -x CLOUD_ROOT_SDK /usr/local/share/google-cloud-sdk
+    source $CLOUD_ROOT_SDK/path.fish.inc
+end
+
 if test -d /usr/local/opt/groovy/libexec
     set -x GROOVY_HOME /usr/local/opt/groovy/libexec
 end

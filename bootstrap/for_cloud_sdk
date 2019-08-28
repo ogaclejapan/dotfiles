@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Configure (google cloud sdk)
+set -u
+
+echo "========== (google cloud sdk) =========="
+
+declare -xr CLOUDSDK_INSTALL_DIR="/usr/local/share"
+declare -xr CLOUDSDK_CORE_DISABLE_PROMPTS=1
+
+function cloud_sdk_install() {
+  if [[ -d "${CLOUDSDK_INSTALL_DIR}/google-cloud-sdk" ]]; then
+    echo "[skip] ${CLOUDSDK_INSTALL_DIR}/google-cloud-sdk already exists"
+    return 0
+  fi
+  # Slient Install
+  curl https://sdk.cloud.google.com | bash
+}
+
+function main() {
+  cloud_sdk_install
+}
+
+main "$@"
+
+echo "done."

@@ -122,7 +122,6 @@ cask 'mi'
 
 ## Optional
 
-#cask 'google-cloud-sdk'
 #cask 'dash'
 #cask 'dropbox'
 #cask 'virtualbox'
