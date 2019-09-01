@@ -1,5 +1,5 @@
 set -x LANG ja_JP.UTF-8
-set -x PATH /usr/local/bin /usr/local/sbin $PATH $HOME/.bin
+set -x PATH /usr/local/bin /usr/local/sbin $PATH $HOME/.local/bin $HOME/.bin
 set fish_greeting
 
 set ALIAS_FISH ~/.config/fish/alias.fish

@@ -29,15 +29,23 @@ function pip_install() {
     return 0
   fi
   pip install -U pip
-  pip install glances
-  pip install termtosvg
-  pip install adb-enhanced
-  pip install urlscan
+  pip install pipx
+}
+
+function pipx_install() {
+  if ! type -p pipx > /dev/null 2>&1; then
+    return 0
+  fi
+  pipx install glances
+  pipx install termtosvg
+  pipx install adb-enhanced
+  pipx install urlscan
 }
 
 function main() {
   pyenv_install
   pip_install
+  pipx_install
 }
 
 main "$@"
