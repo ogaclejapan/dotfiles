@@ -50,3 +50,11 @@ end
 if type -q glances
     abbr --add htop 'glances'
 end
+
+if type -q kubectl
+    abbr --add k 'kubectl'
+end
+
+if type -q gcloud
+    abbr --add c 'gcloud'
+end
