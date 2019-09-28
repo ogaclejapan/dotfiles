@@ -58,6 +58,7 @@ brew 'apktool'
 brew 'scrcpy'
 brew 'go', args: ['with-cc-all']
 brew 'dep'
+brew 'prototool'
 brew 'peco'
 brew 'fzf'
 brew 'mkcert'
