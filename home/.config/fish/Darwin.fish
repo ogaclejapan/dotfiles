@@ -69,3 +69,8 @@ if test -d "$HOME/.cargo"
     set -x CARGO_HOME $HOME/.cargo
     set -x PATH $CARGO_HOME/bin $PATH
 end
+
+if test -d "$HOME/.poetry"
+    set -x POETRY_HOME $HOME/.poetry
+    set -x PATH $POETRY_HOME/bin $PATH
+end

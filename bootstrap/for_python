@@ -42,10 +42,21 @@ function pipx_install() {
   pipx install urlscan
 }
 
+function poetry_install() {
+  if ! type -p poetry > /dev/null 2>&1; then
+    curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+  fi
+
+  # shellcheck disable=SC1090
+  source "$HOME"/.poetry/env
+  poetry completions fish > "$HOME"/.config/fish/completions/poetry.fish
+}
+
 function main() {
   pyenv_install
   pip_install
   pipx_install
+  poetry_install
 }
 
 main "$@"
