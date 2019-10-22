@@ -146,7 +146,7 @@ function __giter_push
         return 0
     end
     set -l branchname (__giter_current_branch $repopath)
-    read --prompt "echo -n 'Name for push branch? '; set_color green; echo -n '($branchname)'; set_color normal; echo -n ': '" -l pushbranch
+    read --prompt "echo -n 'Rename your branch? '; set_color green; echo -n '($branchname)'; set_color normal; echo -n ': '" -l pushbranch
     if test -z $pushbranch
         set pushbranch $branchname
     end
@@ -181,7 +181,7 @@ function __giter_pull
         return $status
     end
 
-    read --prompt "echo 'Cannot be fast-forward.'; echo -n 'Rewrite for new commits? '; set_color green; echo -n '(--rebase=true)'; set_color normal; echo -n ': '" -l options
+    read --prompt "echo 'Cannot be fast-forward.'; echo -n 'Rewrite your commits? '; set_color green; echo -n '(--rebase=true)'; set_color normal; echo -n ': '" -l options
     if test -z $options
         set options '--rebase=true'
     end
