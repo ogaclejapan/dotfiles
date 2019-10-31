@@ -21,6 +21,10 @@ if type -q pyenv
     status --is-interactive; and source (pyenv init - | psub)
 end
 
+if type -q goenv
+    status --is-interactive; and source (goenv init - | psub)
+end
+
 if type -q direnv
     status --is-interactive; and source (direnv hook fish - | psub)
 end
@@ -32,6 +36,12 @@ end
 
 if type -q nnn
     set -x NNN_USE_EDITOR 1
+end
+
+if type -q goenv
+    set -x GOENV_DISABLE_GOPATH 1
+    set -x GOPATH ~/.go
+    set -x PATH $GOPATH/bin $PATH
 end
 
 if test -e /usr/libexec/java_home
@@ -57,12 +67,6 @@ end
 
 if test -d /usr/local/opt/groovy/libexec
     set -x GROOVY_HOME /usr/local/opt/groovy/libexec
-end
-
-if test -d /usr/local/opt/go
-    set -x GOPATH ~/.go
-    set -x PATH $GOPATH/bin $PATH
-    set -x PATH /usr/local/opt/go/libexec/bin $PATH
 end
 
 if test -d "$HOME/.cargo"
