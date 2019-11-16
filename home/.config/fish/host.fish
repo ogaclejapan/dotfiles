@@ -21,3 +21,6 @@ set -x FZF_CD_WITH_HIDDEN_COMMAND 'fd -H -E '.git' -t d .'
 
 # Android Studio for low memory
 #set -x STUDIO_VM_OPTIONS $HOME/.android/studio.vmoptions
+
+# Build Enhancements for Docker
+#set -x DOCKER_BUILDKIT 1
