@@ -101,6 +101,9 @@ brew 'ddgr'
 #brew 'dvm'
 #brew 'dfu-programmer'
 #brew 'go-jira'
+#brew 'poppler'
+#brew 'pdfgrep'
+
 
 #------------------------------#
 # Cask
