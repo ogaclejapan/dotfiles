@@ -123,6 +123,7 @@ cask 'hex-fiend'
 cask 'ngrok'
 cask 'typora'
 cask 'mi'
+cask 'pixel-picker'
 
 
 ## Optional
