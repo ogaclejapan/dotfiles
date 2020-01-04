@@ -151,7 +151,6 @@ tap 'ogaclejapan/ext'
 brew 'ogaclejapan/ext/drive'
 brew 'ogaclejapan/ext/markdown-renderer'
 brew 'ogaclejapan/ext/jd-cmd'
-#cask 'flutter-sdk'
 
 tap 'cjbassi/gotop'
 brew 'gotop'
