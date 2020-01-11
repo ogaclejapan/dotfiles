@@ -97,7 +97,7 @@ brew 'ddgr'
 ## Optional
 #brew 'kubectx'
 #brew 'kustomize'
-#brew 'terraform'
+#brew 'tfenv'
 #brew 'docker'
 #brew 'dvm'
 #brew 'dfu-programmer'
