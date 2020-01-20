@@ -2,13 +2,6 @@ alias ll='ls -lahF'
 alias lr='ll -rt'
 alias la='ls -a'
 
-# It looks like a zeit/hyper terminal
-if test $TERM != 'dumb'
-    echo -n -e "\033]6;1;bg;red;brightness;40\a"
-    echo -n -e "\033]6;1;bg;green;brightness;44\a"
-    echo -n -e "\033]6;1;bg;blue;brightness;52\a"
-end
-
 if type -q rbenv
     status --is-interactive; and source (rbenv init - | psub)
 end
