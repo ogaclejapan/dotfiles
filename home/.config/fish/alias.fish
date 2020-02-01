@@ -12,8 +12,7 @@ if type -q brew
     alias brew='env PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew'
 end
 
-if type -q hub
-    alias git=hub
+if type -q git
     alias g=giter
     alias t=giter_worktree
 end

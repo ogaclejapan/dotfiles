@@ -4,7 +4,6 @@
 
 brew 'git'
 brew 'git-lfs'
-brew 'hub'
 brew 'gibo'
 brew 'repo'
 brew 'tig'
@@ -159,6 +158,9 @@ brew 'gotop'
 
 tap 'tsduck/tsduck'
 brew 'tsduck'
+
+tap 'github/gh'
+brew 'github/gh/gh'
 
 #------------------------------#
 # vim: ft=sh
