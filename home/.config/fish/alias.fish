@@ -46,10 +46,6 @@ if type -q aria2c
     abbr --add aget 'aria2c'
 end
 
-if type -q glances
-    abbr --add htop 'glances'
-end
-
 if type -q kubectl
     abbr --add k 'kubectl'
 end

@@ -36,7 +36,6 @@ function pipx_install() {
   if ! type -p pipx > /dev/null 2>&1; then
     return 0
   fi
-  pipx install glances
   pipx install termtosvg
   pipx install adb-enhanced
   pipx install urlscan
