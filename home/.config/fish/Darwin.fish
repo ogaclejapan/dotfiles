@@ -14,10 +14,6 @@ if type -q pyenv
     status --is-interactive; and source (pyenv init - | psub)
 end
 
-if type -q goenv
-    status --is-interactive; and source (goenv init - | psub)
-end
-
 if type -q direnv
     status --is-interactive; and source (direnv hook fish - | psub)
 end
@@ -31,9 +27,9 @@ if type -q nnn
     set -x NNN_USE_EDITOR 1
 end
 
-if type -q goenv
-    set -x GOENV_DISABLE_GOPATH 1
-    set -x GOPATH ~/.go
+if type -q go
+    set -x GO111MODULE on
+    set -x GOPATH (go env GOPATH)
     set -x PATH $GOPATH/bin $PATH
 end
 
