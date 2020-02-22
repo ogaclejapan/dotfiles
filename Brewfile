@@ -2,6 +2,8 @@
 # Brew formula
 #------------------------------#
 
+brew 'emacs'
+brew 'mg'
 brew 'git'
 brew 'git-lfs'
 brew 'gibo'
@@ -12,13 +14,11 @@ brew 'tmux'
 brew 'tmuxinator-completion'
 brew 'reattach-to-user-namespace'
 brew 'shellcheck'
-brew 'z'
 brew 'aria2'
 brew 'wget'
 brew 'curl'
 brew 'httpie'
 brew 'mitmproxy'
-brew 'colordiff'
 brew 'watch'
 brew 'tree'
 brew 'pstree'
@@ -28,8 +28,6 @@ brew 'rename'
 brew 'osquery'
 brew 'jq'
 brew 'python-yq'
-brew 'jid'
-brew 'jsonpp'
 brew 'mtr'
 brew 'vegeta'
 brew 'nnn'
@@ -40,24 +38,18 @@ brew 'plenv'
 brew 'perl-build'
 brew 'pyenv'
 brew 'pipenv'
+brew 'tfenv'
 brew 'go'
+brew 'n'
+brew 'yarn', args: ['without-node']
+brew 'kotlin'
+brew 'gradle'
+brew 'maven'
+brew 'dive'
 brew 'the_silver_searcher'
 brew 'ripgrep'
 brew 'bat'
 brew 'fd'
-brew 'emacs'
-brew 'mg'
-brew 'vim', args: ['with-lua']
-brew 'vimpager'
-brew 'maven'
-brew 'n'
-brew 'yarn', args: ['without-node']
-brew 'gradle'
-brew 'pidcat'
-brew 'groovy'
-brew 'dex2jar'
-brew 'apktool'
-brew 'scrcpy'
 brew 'prototool'
 brew 'peco'
 brew 'fzf'
@@ -71,12 +63,11 @@ brew 'gpg2'
 brew 'highlight'
 brew 'urlview'
 brew 'extract_url'
-brew 'kotlin'
 brew 'translate-shell'
 brew 'm-cli'
 brew 'terminal-notifier'
-brew 'tldr'
-brew 'bcal'
+brew 'gifsicle'
+brew 'jpeg'
 brew 'webp'
 brew 'pngquant'
 brew 'optipng'
@@ -87,25 +78,23 @@ brew 'loc'
 brew 'multimarkdown'
 brew 'ssh-copy-id'
 brew 'mupdf-tools'
-brew 'ffmpeg', args: ['with-libvpx', 'with-fdk-aacf', 'with-sdl2', 'with-freetype', 'with-libass', 'with-libquvi', 'with-libvorbis', 'with-libvpx', 'with-opus', 'with-x265', 'with-webp', 'with-fontconfig']
-brew 'bento4'
-brew 'imagemagick', args: ['with-fontconfig']
-brew 'giflossy'
 brew 'youtube-dl'
-brew 'newsboat'
-brew 'ddgr'
 
-## Optional
-#brew 'kubectx'
-#brew 'kustomize'
-#brew 'tfenv'
-#brew 'docker'
-#brew 'dive'
-#brew 'dvm'
+
+## Optional ##
+
+#brew 'vim', args: ['with-lua']
+#brew 'vimpager'
 #brew 'dfu-programmer'
 #brew 'go-jira'
-#brew 'poppler'
-#brew 'pdfgrep'
+#brew 'qpdf'
+#brew 'ffmpeg', args: ['with-libvpx', 'with-fdk-aacf', 'with-sdl2', 'with-freetype', 'with-libass', 'with-libquvi', 'with-libvorbis', 'with-libvpx', 'with-opus', 'with-x265', 'with-webp', 'with-fontconfig']
+#brew 'bento4'
+#brew 'imagemagick', args: ['with-fontconfig']
+#brew 'dex2jar'
+#brew 'apktool'
+#brew 'scrcpy'
+#brew 'pidcat'
 
 
 #------------------------------#
@@ -129,7 +118,7 @@ cask 'mi'
 cask 'pixel-picker'
 
 
-## Optional
+## Optional ##
 
 #cask 'dash'
 #cask 'dropbox'
@@ -158,11 +147,15 @@ brew 'ogaclejapan/ext/jd-cmd'
 tap 'cjbassi/gotop'
 brew 'gotop'
 
-tap 'tsduck/tsduck'
-brew 'tsduck'
-
 tap 'github/gh'
 brew 'github/gh/gh'
+
+
+## Optional ##
+
+#tap 'tsduck/tsduck'
+#brew 'tsduck'
+
 
 #------------------------------#
 # vim: ft=sh

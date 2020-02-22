@@ -54,10 +54,6 @@ if test -d /usr/local/share/google-cloud-sdk
     source $CLOUD_ROOT_SDK/path.fish.inc
 end
 
-if test -d /usr/local/opt/groovy/libexec
-    set -x GROOVY_HOME /usr/local/opt/groovy/libexec
-end
-
 if test -d "$HOME/.cargo"
     set -x CARGO_HOME $HOME/.cargo
     set -x PATH $CARGO_HOME/bin $PATH
