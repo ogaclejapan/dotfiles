@@ -13,7 +13,6 @@ def self.nodejs() system("./bootstrap/for_nodejs") end
 def self.ruby() system("./bootstrap/for_ruby") end
 def self.python() system("./bootstrap/for_python") end
 def self.rust() system("./bootstrap/for_rust") end
-def self.golang() system("./bootstrap/for_golang") end
 def self.iterm() system("./bootstrap/for_iterm") end
 def self.vim() system("./bootstrap/for_vim") end
 def self.emacs() system("./bootstrap/for_emacs") end
@@ -31,7 +30,6 @@ if OS.mac?
   ruby
   python
   rust
-  golang
   iterm
   vim
   emacs
