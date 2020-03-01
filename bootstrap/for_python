@@ -39,6 +39,7 @@ function pipx_install() {
   pipx install termtosvg
   pipx install adb-enhanced
   pipx install urlscan
+  pipx install jc
 }
 
 function poetry_install() {
