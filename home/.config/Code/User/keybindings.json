@@ -130,26 +130,13 @@
         "command": "-workbench.action.showAllSymbols"
     },
     {
-        "key": "ctrl+c e",
-        "command": "workbench.view.explorer"
-    },
-    {
         "key": "shift+cmd+e",
         "command": "-workbench.view.explorer"
-    },
-    {
-        "key": "ctrl+c f",
-        "command": "workbench.view.search",
-        "when": "!searchViewletVisible"
     },
     {
         "key": "shift+cmd+f",
         "command": "-workbench.view.search",
         "when": "!searchViewletVisible"
-    },
-    {
-        "key": "ctrl+c g",
-        "command": "workbench.view.scm"
     },
     {
         "key": "ctrl+shift+g",
@@ -188,24 +175,12 @@
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+c d",
-        "command": "workbench.view.debug"
-    },
-    {
         "key": "shift+cmd+d",
         "command": "-workbench.view.debug"
     },
     {
-        "key": "ctrl+c x",
-        "command": "workbench.view.extensions"
-    },
-    {
         "key": "shift+cmd+x",
         "command": "-workbench.view.extensions"
-    },
-    {
-        "key": "ctrl+c u",
-        "command": "workbench.action.output.toggleOutput"
     },
     {
         "key": "shift+cmd+u",
