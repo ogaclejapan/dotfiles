@@ -120,6 +120,7 @@ cask 'pixel-picker'
 
 ## Optional ##
 
+#cask 'multipass'
 #cask 'dash'
 #cask 'dropbox'
 #cask 'virtualbox'
