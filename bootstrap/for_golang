@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# Configure (golang)
+set -u
+
+echo "========== (golang) =========="
+
+declare -xr GO111MODULE=on
+
+function go_get() {
+  if ! type -p go > /dev/null 2>&1; then
+    return 0
+  fi
+  go get -u github.com/guumaster/hostctl
+}
+
+function main() {
+  go_get
+}
+
+main "$@"
+
+echo "done."
