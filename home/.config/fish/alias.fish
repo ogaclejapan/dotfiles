@@ -53,3 +53,7 @@ end
 if type -q gcloud
     abbr --add c 'gcloud'
 end
+
+if type -q multipass
+    abbr --add mp 'multipass'
+end
