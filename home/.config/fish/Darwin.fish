@@ -49,11 +49,6 @@ if test -d /usr/local/share/android-sdk
     end
 end
 
-if test -d /usr/local/share/google-cloud-sdk
-    set -x CLOUD_ROOT_SDK /usr/local/share/google-cloud-sdk
-    source $CLOUD_ROOT_SDK/path.fish.inc
-end
-
 if test -d "$HOME/.cargo"
     set -x CARGO_HOME $HOME/.cargo
     set -x PATH $CARGO_HOME/bin $PATH
@@ -62,4 +57,9 @@ end
 if test -d "$HOME/.poetry"
     set -x POETRY_HOME $HOME/.poetry
     set -x PATH $POETRY_HOME/bin $PATH
+end
+
+if test -d /usr/local/share/google-cloud-sdk
+    set -x CLOUD_ROOT_SDK /usr/local/share/google-cloud-sdk
+    source $CLOUD_ROOT_SDK/path.fish.inc
 end

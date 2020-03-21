@@ -1,6 +1,8 @@
 set -x LANG ja_JP.UTF-8
-set -x PATH /usr/local/bin /usr/local/sbin $PATH $HOME/.local/bin $HOME/.bin
 set fish_greeting
+
+set -l PARENTS_PATH $PATH
+set -x PATH /usr/local/bin /usr/bin /bin $HOME/.local/bin $HOME/.bin /usr/local/sbin /usr/sbin /sbin
 
 set ALIAS_FISH ~/.config/fish/alias.fish
 if test -f $ALIAS_FISH
@@ -24,6 +26,7 @@ else
 end
 
 # path cleanup
+set -x PATH $PATH $PARENTS_PATH
 set NEW_PATH
 for i in $PATH
     if not contains $i $NEW_PATH
