@@ -23,7 +23,6 @@ function gem_install() {
   fi
   gem update --system
   gem install homesick
-  gem install tmuxinator
 }
 
 function main() {

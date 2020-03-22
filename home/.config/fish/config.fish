@@ -25,6 +25,11 @@ else
     cat ~/.config/fish/host.fish >$HOST_FISH
 end
 
+set TMUX_FISH ~/.config/fish/tmux.fish
+if type -q tmux; and test -f $TMUX_FISH
+    source $TMUX_FISH
+end
+
 # path cleanup
 set -x PATH $PATH $PARENTS_PATH
 set NEW_PATH
@@ -35,40 +40,3 @@ for i in $PATH
 end
 set -x PATH $NEW_PATH
 set -e NEW_PATH
-
-# e.g. ~/.tmux/2.4/Darwin.conf
-set PLATFORM_TMUX ~/.tmux/(tmux -V | cut -c 6-)/(uname -s).conf
-if not test -f $PLATFORM_TMUX
-    # e.g. ~/.tmux/2.4/Default.conf
-    set PLATFORM_TMUX ~/.tmux/(tmux -V | cut -c 6-)/Default.conf
-    if not test -f $PLATFORM_TMUX
-        # e.g. ~/.tmux/Darwin.conf
-        set PLATFORM_TMUX ~/.tmux/(uname -s).conf
-        if not test -f $PLATFORM_TMUX
-            # e.g. ~/.tmux/Default.conf
-            set PLATFORM_TMUX ~/.tmux/Default.conf
-        end
-    end
-end
-
-set PLATFORM_TMUX_SYMBOLIC ~/.tmux-platform.conf
-if not test -e $PLATFORM_TMUX_SYMBOLIC
-    echo Creating symbolic link: $PLATFORM_TMUX_SYMBOLIC
-    ln -s $PLATFORM_TMUX $PLATFORM_TMUX_SYMBOLIC
-end
-
-if type -q tmux; and test -n "$TMUX_AUTO_ATTACH" -a -z "$TMUX_PANE"
-    set AUTO_TMUX $TMUX_AUTO_ATTACH
-    if tmux has-session -t $AUTO_TMUX ^/dev/null
-        if tmux list-sessions -F '#S:#{session_attached}' | grep -q "^$AUTO_TMUX:[1-9][0-9]*"
-            set AUTO_TMUX ''
-        end
-    end
-    if test -n "$AUTO_TMUX"
-        if type -q tmuxinator; and tmuxinator list | grep -q "$AUTO_TMUX"
-            tmuxinator start $AUTO_TMUX
-        else
-            tmux new-session -A -s $AUTO_TMUX
-        end
-    end
-end
