@@ -13,14 +13,14 @@ home/.config/gh
 
 home/.config/fish/fish_history
 home/.config/fish/fish_variables
-home/.config/fish/*.*
+home/.config/fish/*.fish
 !home/.config/fish/config.fish
 !home/.config/fish/Darwin.fish
 !home/.config/fish/Linux.fish
 !home/.config/fish/alias.fish
 !home/.config/fish/host.fish
 
-home/.config/fish/functions/*.*
+home/.config/fish/functions/*.fish
 !home/.config/fish/functions/fish_prompt.fish
 !home/.config/fish/functions/fish_right_prompt.fish
 !home/.config/fish/functions/fish_user_key_bindings.fish
@@ -40,12 +40,13 @@ home/.config/fish/functions/*.*
 !home/.config/fish/functions/dockertags.fish
 !home/.config/fish/functions/rehosts.fish
 
-home/.config/fish/completions/*.*
+home/.config/fish/completions/*.fish
 !home/.config/fish/completions/homesick.fish
 !home/.config/fish/completions/docker.fish
 !home/.config/fish/completions/rustup.fish
 
-home/.config/fish/conf.d/*.*
+home/.config/fish/conf.d/*.fish
+!home/.config/fish/conf.d/theme.fish
 !home/.config/fish/conf.d/n.fish
 
 home/.config/fisher
