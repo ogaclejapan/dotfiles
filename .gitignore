@@ -13,6 +13,8 @@ home/.config/gh
 
 home/.config/fish/fish_history
 home/.config/fish/fish_variables
+home/.config/fish/fishd*
+home/.config/fish/*.log
 home/.config/fish/*.fish
 !home/.config/fish/config.fish
 !home/.config/fish/Darwin.fish
