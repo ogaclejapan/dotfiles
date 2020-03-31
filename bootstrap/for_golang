@@ -12,6 +12,7 @@ function go_get() {
     return 0
   fi
   go get -u github.com/guumaster/hostctl
+  go get -u github.com/bazelbuild/bazelisk
 }
 
 function main() {
