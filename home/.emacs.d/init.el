@@ -29,8 +29,9 @@
 ;;--+--+--+--+--+--+--+--+--+--+
 
 ;; Character Sets
-(set-language-environment 'Japanese)
-(set-default-coding-systems 'utf-8)
+;; Do not use. Use locale instead. (e.g. LANG=ja_JP.UTF-8)
+;;(set-language-environment 'Japanese)
+;;(set-default-coding-systems 'utf-8)
 ;;(prefer-coding-system 'utf-8)
 ;;(set-file-name-coding-system 'utf-8)
 ;;(set-keyboard-coding-system 'utf-8)
