@@ -15,3 +15,4 @@ set fish_color_escape 66d9ef
 set fish_color_cwd a6e22e
 set fish_color_cwd_root e6db74
 set fish_color_vcs 66d9ef
+set fish_color_autosuggestion 636360
