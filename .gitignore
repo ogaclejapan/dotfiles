@@ -41,6 +41,7 @@ home/.config/fish/functions/*.fish
 !home/.config/fish/functions/fuzzy_directory_commander.fish
 !home/.config/fish/functions/dockertags.fish
 !home/.config/fish/functions/rehosts.fish
+!home/.config/fish/functions/raspi_tty.fish
 
 home/.config/fish/completions/*.fish
 !home/.config/fish/completions/homesick.fish
