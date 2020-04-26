@@ -5,6 +5,9 @@
 # ANSI "color" escape sequences are output in "raw" form
 set -x LESS '-R'
 
+# Colorized format for ls command
+set -x LSCOLORS exfxcxdxbxxggxabagacad
+
 # JIRA api token for go-jira
 # https://id.atlassian.com/manage/api-tokens
 #set -x JIRA_API_TOKEN 'your personal access token'
