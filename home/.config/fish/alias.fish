@@ -21,6 +21,10 @@ if type -q brew
     alias brew='env PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew'
 end
 
+if type -q gpg
+    alias gpg='env LANG=C gpg'
+end
+
 if type -q git
     alias g=giter
     alias t=giter_worktree
