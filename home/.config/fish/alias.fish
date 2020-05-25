@@ -22,7 +22,7 @@ if type -q brew
 end
 
 if type -q gpg
-    alias gpg='env LANG=C gpg'
+    alias gpg='env LANG=en_US.UTF-8 gpg'
 end
 
 if type -q git
