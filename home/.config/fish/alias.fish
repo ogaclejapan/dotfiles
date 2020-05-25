@@ -16,15 +16,6 @@ else
     alias aes256='echo "unavailable :(" 1>&2'
 end
 
-if type -q brew
-    # WORKAROUND https://qiita.com/takuya0301/items/695f42f6904e979f0152
-    alias brew='env PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew'
-end
-
-if type -q gpg
-    alias gpg='env LANG=en_US.UTF-8 gpg'
-end
-
 if type -q git
     alias g=giter
     alias t=giter_worktree
