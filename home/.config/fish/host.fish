@@ -8,6 +8,13 @@ set -x LESS '-R'
 # Colorized format for ls command
 set -x LSCOLORS exfxcxdxbxxggxabagacad
 
+# Pass
+#set -x PASSWORD_STORE_DIR <path>
+#set -x PASSWORD_STORE_GIT <path>
+
+# Sops
+#set -x SOPS_PGP_FP <fingerprint>
+
 # JIRA api token for go-jira
 # https://id.atlassian.com/manage/api-tokens
 #set -x JIRA_API_TOKEN 'your personal access token'
