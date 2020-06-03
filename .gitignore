@@ -1,5 +1,7 @@
 # git config --global core.excludesfile ~/.gitignore
 
+Brewfile.lock.json
+
 .DS_Store
 home/.vim/bundles
 
