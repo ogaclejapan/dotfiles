@@ -50,3 +50,6 @@
   worktree = ~/git/worktree
 [github]
 	user = ogaclejapan
+[commit]
+  verbose = true
+  template = ~/.gittemplates/commit
