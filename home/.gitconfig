@@ -53,3 +53,5 @@
 [commit]
   verbose = true
   template = ~/.gittemplates/commit
+[pull]
+	rebase = true
