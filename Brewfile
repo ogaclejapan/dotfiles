@@ -40,6 +40,7 @@ brew 'perl-build'
 brew 'pyenv'
 brew 'pipenv'
 brew 'tfenv'
+brew 'terragrunt', args: ['ignore-dependencies']
 brew 'go'
 brew 'n'
 brew 'yarn', args: ['without-node']
