@@ -64,6 +64,8 @@ home/.config/gcloud
 home/.config/yarn
 home/.config/direnv
 home/.config/gopass
+home/.config/htop
+home/.config/wireshark
 
 home/.config/Code/User/*
 !home/.config/Code/User/keybindings.json
