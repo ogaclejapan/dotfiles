@@ -26,10 +26,17 @@ function npm_update() {
   fi
 }
 
+function npm_packages() {
+  if type -p npm > /dev/null 2>&1; then
+    npm install -g degit
+  fi
+}
+
 function main() {
   node_stable
   node_lts
   npm_update
+  npm_packages
 }
 
 main "$@"
