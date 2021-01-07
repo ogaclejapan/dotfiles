@@ -44,7 +44,7 @@ brew 'tfenv'
 brew 'terragrunt', args: ['ignore-dependencies']
 brew 'go'
 brew 'n'
-brew 'yarn', args: ['ignore-dependencies']
+brew 'yarn'
 brew 'kotlin'
 brew 'gradle'
 brew 'maven'
