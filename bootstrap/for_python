@@ -12,9 +12,13 @@ function pyenv_install() {
     return 0
   fi
   eval "$(pyenv init -)"
-  # TODO: zipimport.ZipImportError: can't decompress data; zlib not available
-  # WORKAROUND: https://qiita.com/zreactor/items/c3fd04417e0d61af0afe
-  pyenv install $PYTHON_VERSION
+  # WORKAROUND: https://qiita.com/craymaru/items/58e92fac99b5b0ec778f
+  #
+  if type -p xcrun > /dev/null 2>&1; then
+    LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib" pyenv install $PYTHON_VERSION
+  else
+    pyenv install $PYTHON_VERSION
+  fi
   pyenv global $PYTHON_VERSION
   pyenv rehash
 }
