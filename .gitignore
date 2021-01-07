@@ -23,6 +23,7 @@ home/.config/fish/*.fish
 !home/.config/fish/Linux.fish
 !home/.config/fish/alias.fish
 !home/.config/fish/host.fish
+!home/.config/fish/tmux.fish
 
 home/.config/fish/functions/*.fish
 !home/.config/fish/functions/fish_prompt.fish
