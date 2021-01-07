@@ -6,6 +6,7 @@ brew 'emacs'
 brew 'mg'
 brew 'git'
 brew 'git-lfs'
+brew 'gh'
 brew 'gibo'
 brew 'repo'
 brew 'tig'
@@ -43,7 +44,7 @@ brew 'tfenv'
 brew 'terragrunt', args: ['ignore-dependencies']
 brew 'go'
 brew 'n'
-brew 'yarn', args: ['without-node']
+brew 'yarn', args: ['ignore-dependencies']
 brew 'kotlin'
 brew 'gradle'
 brew 'maven'
@@ -107,7 +108,7 @@ brew 'youtube-dl'
 # Cask
 #------------------------------#
 
-tap 'caskroom/cask'
+tap 'homebrew/cask'
 
 cask 'alfred'
 cask 'iterm2'
@@ -146,16 +147,13 @@ cask 'pixel-picker'
 # Third-party taps
 #------------------------------#
 
-tap 'ogaclejapan/ext'
-brew 'ogaclejapan/ext/drive'
-brew 'ogaclejapan/ext/markdown-renderer'
-brew 'ogaclejapan/ext/jd-cmd'
+#tap 'ogaclejapan/ext'
+#brew 'ogaclejapan/ext/drive'
+#brew 'ogaclejapan/ext/markdown-renderer'
+#brew 'ogaclejapan/ext/jd-cmd'
 
 tap 'cjbassi/ytop'
 brew 'ytop'
-
-tap 'github/gh'
-brew 'github/gh/gh'
 
 
 ## Optional ##
