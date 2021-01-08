@@ -42,6 +42,7 @@ brew 'pyenv'
 brew 'pipenv'
 brew 'tfenv'
 brew 'terragrunt', args: ['ignore-dependencies']
+brew 'openjdk'
 brew 'go'
 brew 'n'
 brew 'yarn'
