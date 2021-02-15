@@ -96,7 +96,7 @@ brew 'youtube-dl'
 #brew 'dfu-programmer'
 #brew 'go-jira'
 #brew 'qpdf'
-#brew 'ffmpeg', args: ['with-libvpx', 'with-fdk-aacf', 'with-sdl2', 'with-freetype', 'with-libass', 'with-libquvi', 'with-libvorbis', 'with-libvpx', 'with-opus', 'with-x265', 'with-webp', 'with-fontconfig']
+brew 'ffmpeg'
 #brew 'bento4'
 #brew 'imagemagick', args: ['with-fontconfig']
 #brew 'dex2jar'
