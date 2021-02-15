@@ -57,6 +57,11 @@ if test -d "$HOME/Library/Android/sdk"
     end
 end
 
+if test -d "$HOME/.flutter"
+    set -x FLUTTER_ROOT $HOME/.flutter
+    set -x PATH $FLUTTER_ROOT/bin $PATH
+end
+
 if test -d "$HOME/.cargo"
     set -x CARGO_HOME $HOME/.cargo
     set -x PATH $CARGO_HOME/bin $PATH
