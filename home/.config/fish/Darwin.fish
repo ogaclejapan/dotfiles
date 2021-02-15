@@ -37,10 +37,18 @@ if test -e /usr/libexec/java_home
     set -x JAVA_HOME (command /usr/libexec/java_home)
 end
 
-if test -d /usr/local/share/android-sdk
-    set -x ANDROID_ROOT_SDK /usr/local/share/android-sdk
+if test -d "$HOME/.android/cmdline-tools"
+    set -x ANDROID_CMDTOOLS $HOME/.android/cmdline-tools
+    set -x PATH $ANDROID_CMDTOOLS/bin $PATH
+end
+
+if test -d "$HOME/Library/Android/sdk"
+    set -x ANDROID_ROOT_SDK $HOME/Library/Android/sdk
     set -x ANDROID_HOME $ANDROID_ROOT_SDK
     set -x ANDROID_HVPROTO ddm
+    if test -d $ANDROID_ROOT_SDK/cmdline-tools
+        set -x PATH $ANDROID_ROOT_SDK/cmdline-tools/latest/bin $PATH
+    end
     if test -d $ANDROID_ROOT_SDK/platform-tools
         set -x PATH $ANDROID_ROOT_SDK/platform-tools $PATH
     end

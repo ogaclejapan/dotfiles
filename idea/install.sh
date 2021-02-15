@@ -3,7 +3,12 @@
 
 echo "Installing configs..."
 
+CONFIGS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/configs"
+
 dirs=(
+  $HOME/Library/Application\ Support/Google/AndroidStudio*
+  $HOME/Library/Application\ Support/JetBrains/Idea*
+  # Old IDEs
   $HOME/Library/Preferences/IntelliJIdea*
   $HOME/Library/Preferences/IdeaIC*
   $HOME/Library/Preferences/AndroidStudio*
@@ -15,12 +20,9 @@ dirs=(
 # Install keymaps
 for dir in "${dirs[@]}"
 do
-  if [ -e $dir ]; then
-    if [ -d "$dir/keymaps" ]; then
-      cp -frv $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/keymaps/* "$dir/keymaps" 2> /dev/null
-    else
-      cp -frv $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/keymaps $dir 2> /dev/null
-    fi
+  if [[ -d "$dir" ]]; then
+    mkdir -p "$dir/keymaps"
+    cp -frv "$CONFIGS/keymaps"/* "$dir/keymaps"
   fi
 done
 
