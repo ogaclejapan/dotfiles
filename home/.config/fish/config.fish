@@ -4,11 +4,6 @@ set fish_greeting
 set -l PARENTS_PATH $PATH
 set -x PATH /usr/local/bin /usr/bin /bin $HOME/.local/bin $HOME/.bin /usr/local/sbin /usr/sbin /sbin
 
-set ALIAS_FISH ~/.config/fish/alias.fish
-if test -f $ALIAS_FISH
-    source $ALIAS_FISH
-end
-
 set PLATFORM_FISH ~/.config/fish/(uname -s).fish
 if test -f $PLATFORM_FISH
     source $PLATFORM_FISH
@@ -40,3 +35,8 @@ for i in $PATH
 end
 set -x PATH $NEW_PATH
 set -e NEW_PATH
+
+set ALIAS_FISH ~/.config/fish/alias.fish
+if test -f $ALIAS_FISH
+    source $ALIAS_FISH
+end
