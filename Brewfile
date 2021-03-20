@@ -5,6 +5,7 @@
 brew 'emacs'
 brew 'mg'
 brew 'git'
+brew 'git-delta'
 brew 'git-lfs'
 brew 'gh'
 brew 'gibo'

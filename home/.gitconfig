@@ -6,6 +6,7 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+  pager = delta
 [alias]
   a = add
   ap = add -p
@@ -55,3 +56,9 @@
   template = ~/.gittemplates/commit
 [pull]
 	rebase = true
+[delta]
+  line-numbers = true
+#  side-by-side = true
+  syntax-theme = Monokai Extended Bright
+[interactive]
+  diffFilter = delta --color-only
