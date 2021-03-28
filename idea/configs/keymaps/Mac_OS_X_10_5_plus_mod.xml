@@ -192,6 +192,14 @@
     <keyboard-shortcut first-keystroke="shift ctrl a" />
   </action>
   <action id="EditorMatchBrace" />
+  <action id="EditorMoveToPageBottom">
+    <keyboard-shortcut first-keystroke="meta page_down" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="ctrl period" />
+  </action>
+  <action id="EditorMoveToPageTop">
+    <keyboard-shortcut first-keystroke="meta page_up" />
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="shift less" />
+  </action>
   <action id="EditorNextWord">
     <keyboard-shortcut first-keystroke="alt right" />
     <keyboard-shortcut first-keystroke="alt f" />
@@ -393,6 +401,10 @@
   <action id="QuickList.External Tools">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="e" />
   </action>
+  <action id="RecentLocations">
+    <keyboard-shortcut first-keystroke="shift meta e" />
+    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="b" />
+  </action>
   <action id="Refactorings.QuickListPopupAction">
     <keyboard-shortcut first-keystroke="ctrl r" />
   </action>
@@ -468,11 +480,6 @@
   <action id="SwitchUp">
     <keyboard-shortcut first-keystroke="ctrl alt up" />
   </action>
-  <action id="Switcher">
-    <keyboard-shortcut first-keystroke="ctrl tab" />
-    <keyboard-shortcut first-keystroke="shift ctrl tab" />
-    <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="b" />
-  </action>
   <action id="ToggleBookmark">
     <keyboard-shortcut first-keystroke="f3" />
     <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="m" />
@@ -480,6 +487,9 @@
   <action id="ToggleLineBreakpoint">
     <keyboard-shortcut first-keystroke="meta f8" />
     <keyboard-shortcut first-keystroke="meta alt m" />
+  </action>
+  <action id="ToggleZenMode">
+    <keyboard-shortcut first-keystroke="ctrl c" second-keystroke="z" />
   </action>
   <action id="Tool_External Tools_Magit">
     <keyboard-shortcut first-keystroke="ctrl x" second-keystroke="g" />
