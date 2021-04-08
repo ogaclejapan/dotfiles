@@ -43,10 +43,10 @@ brew 'pyenv'
 brew 'pipenv'
 brew 'tfenv'
 brew 'terragrunt', args: ['ignore-dependencies']
-brew 'openjdk'
 brew 'go'
 brew 'n'
 brew 'yarn'
+brew 'jenv'
 brew 'kotlin'
 brew 'gradle'
 brew 'maven'
@@ -127,7 +127,7 @@ cask 'pixel-picker'
 
 ## Optional ##
 
-#cask 'multipass'
+cask 'multipass'
 #cask 'dash'
 #cask 'dropbox'
 #cask 'virtualbox'
@@ -139,7 +139,7 @@ cask 'pixel-picker'
 #cask 'gitup'
 #cask 'avidemux'
 #cask 'iina'
-#cask 'bathyscaphe'
+cask 'bathyscaphe'
 #cask 'balenaetcher'
 
 

@@ -14,6 +14,11 @@ if type -q pyenv
     status --is-interactive; and source (pyenv init - | psub)
 end
 
+if type -q jenv
+    status --is-interactive; and source (jenv init - | psub)
+    set -x PATH $HOME/.jenv/bin $PATH
+end
+
 if type -q direnv
     status --is-interactive; and source (direnv hook fish - | psub)
 end
@@ -31,10 +36,6 @@ if type -q go
     set -x GO111MODULE on
     set -x GOPATH (go env GOPATH)
     set -x PATH $GOPATH/bin $PATH
-end
-
-if test -e /usr/libexec/java_home
-    set -x JAVA_HOME (command /usr/libexec/java_home)
 end
 
 if test -d "$HOME/.android/cmdline-tools"
