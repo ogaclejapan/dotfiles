@@ -46,10 +46,6 @@ if type -q bat
     abbr --add p 'bat'
 end
 
-if type -q aria2c
-    abbr --add aget 'aria2c'
-end
-
 if type -q kubectl
     abbr --add k 'kubectl'
 end
