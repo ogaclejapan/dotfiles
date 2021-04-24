@@ -5,13 +5,10 @@ Brewfile.lock.json
 .DS_Store
 home/.vim/bundles
 
+home/.config
+
 home/.config/ranger/*
 !home/.config/ranger/rc.conf
-
-home/.config/configstore
-home/.config/gtk-2.0
-home/.config/gh-update
-home/.config/gh
 
 home/.config/fish/fish_history
 home/.config/fish/fish_variables
@@ -56,17 +53,6 @@ home/.config/fish/completions/*.fish
 home/.config/fish/conf.d/*.fish
 !home/.config/fish/conf.d/theme.fish
 !home/.config/fish/conf.d/n.fish
-
-home/.config/fisher
-home/.config/karabiner/assets
-home/.config/hub
-home/.config/termtosvg
-home/.config/gcloud
-home/.config/yarn
-home/.config/direnv
-home/.config/gopass
-home/.config/htop
-home/.config/wireshark
 
 home/.config/Code/User/*
 !home/.config/Code/User/keybindings.json
