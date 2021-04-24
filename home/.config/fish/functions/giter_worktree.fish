@@ -130,10 +130,13 @@ function __giter_worktree_view
     if test -z $workbranch
         return 0
     end
+    set -l viewdate (date +"%m%d")
+    set -l branchsha (git -C $repopath rev-parse --short $workbranch)
     set -l branchname (basename $workbranch)
-    read --prompt "echo -n 'Name for view? '; set_color green; echo -n '($branchname)'; set_color normal; echo -n ': '" -l viewname
+    set -l defaultname (printf "%s_%s-%s" $branchname $viewdate $branchsha)
+    read --prompt "echo -n 'Name for view? '; set_color green; echo -n '($defaultname)'; set_color normal; echo -n ': '" -l viewname
     if test -z $viewname
-        set viewname $branchname
+        set viewname $defaultname
     end
 
     set -l path (printf "%s/%s/%s/%s" $workpath $reponame 'view' $viewname)
