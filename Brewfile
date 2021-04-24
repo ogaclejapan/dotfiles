@@ -43,7 +43,8 @@ brew 'perl-build'
 brew 'pyenv'
 brew 'pipenv'
 brew 'tfenv'
-brew 'terragrunt', args: ['ignore-dependencies']
+# https://github.com/gruntwork-io/terragrunt/issues/580
+# brew 'terragrunt'
 brew 'go'
 brew 'n'
 brew 'yarn'
