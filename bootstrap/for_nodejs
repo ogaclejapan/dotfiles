@@ -5,37 +5,28 @@ set -u
 
 echo "========== node.js =========="
 
-declare -xr N_PREFIX="${HOME}/.n"
-declare -xr PATH=$N_PREFIX/bin:$PATH
+readonly NODE_VERSION="14.16.1"
 
-function node_stable() {
-  if type -p n > /dev/null 2>&1; then
-    n stable && n stable
-  fi
-}
 
-function node_lts() {
-  if type -p n > /dev/null 2>&1; then
-    n lts
+function nodenv_install() {
+  if ! type -p nodenv > /dev/null 2>&1; then
+    return 0
   fi
-}
-
-function npm_update() {
-  if type -p npm > /dev/null 2>&1; then
-    npm update -g npm
-  fi
+  eval "$(nodenv init -)"
+  nodenv install $NODE_VERSION
+  nodenv global $NODE_VERSION
+  nodenv rehash
 }
 
 function npm_packages() {
   if type -p npm > /dev/null 2>&1; then
+    npm update -g npm
     npm install -g degit
   fi
 }
 
 function main() {
-  node_stable
-  node_lts
-  npm_update
+  nodenv_install
   npm_packages
 }
 

@@ -14,6 +14,10 @@ if type -q pyenv
     status --is-interactive; and source (pyenv init - | psub)
 end
 
+if type -q nodenv
+    status --is-interactive; and source (nodenv init - | psub)
+end
+
 if type -q jenv
     status --is-interactive; and source (jenv init - | psub)
     set -x PATH $HOME/.jenv/bin $PATH
@@ -21,11 +25,6 @@ end
 
 if type -q direnv
     status --is-interactive; and source (direnv hook fish - | psub)
-end
-
-if type -q n
-    set -x N_PREFIX $HOME/.n
-    set -x PATH $N_PREFIX/bin $PATH
 end
 
 if type -q nnn

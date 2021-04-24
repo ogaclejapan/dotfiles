@@ -46,7 +46,7 @@ brew 'tfenv'
 # https://github.com/gruntwork-io/terragrunt/issues/580
 # brew 'terragrunt'
 brew 'go'
-brew 'n'
+brew 'nodenv'
 brew 'yarn'
 brew 'jenv'
 brew 'kotlin'
