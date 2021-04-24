@@ -25,6 +25,10 @@ if type -q tmux; and test -f $TMUX_FISH
     source $TMUX_FISH
 end
 
+if type -q starship
+    starship init fish | source
+end
+
 # path cleanup
 set -x PATH $PATH $PARENTS_PATH
 set NEW_PATH
