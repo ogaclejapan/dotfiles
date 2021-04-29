@@ -1,72 +1,33 @@
-;;; init.el --- Init file
+;;; init.el --- My init script -*- coding: utf-8 ; lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Package Management
 ;;--+--+--+--+--+--+--+--+--+--+
+(eval-and-compile
+  (when (or load-file-name byte-compile-current-file)
+    (setq user-emacs-directory
+          (expand-file-name
+           (file-name-directory (or load-file-name byte-compile-current-file))))))
 
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("elpy" . "https://jorgenschaefer.github.io/packages/"))
+(eval-and-compile
+  (customize-set-variable
+   'package-archives '(("gnu"   . "https://elpa.gnu.org/packages/")
+                       ("melpa" . "https://melpa.org/packages/")
+                       ("org"   . "https://orgmode.org/elpa/")))
+  (package-initialize)
+  (unless (package-installed-p 'use-package)
+    (package-refresh-contents)
+    (package-install 'use-package))
 
-(package-initialize)
-(setq package-enable-at-startup nil)
-
-;; use-package.el
-;; https://github.com/jwiegley/use-package
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(eval-when-compile
+  (setq use-package-enable-imenu-support t)
   (require 'use-package))
+
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Display Settings
 ;;--+--+--+--+--+--+--+--+--+--+
-
-;; Character Sets
-;; Do not use. Use locale instead. (e.g. LANG=ja_JP.UTF-8)
-;;(set-language-environment 'Japanese)
-;;(set-default-coding-systems 'utf-8)
-;;(prefer-coding-system 'utf-8)
-;;(set-file-name-coding-system 'utf-8)
-;;(set-keyboard-coding-system 'utf-8)
-;;(set-terminal-coding-system 'utf-8)
-
-;; WORKAROUND: multi-byte character input
-;; https://debbugs.gnu.org/cgi/bugreport.cgi?bug=23412
-(setq redisplay-dont-pause nil)
-
-;; Font
-;;(when (and (>= emacs-major-version 24) (not (null window-system)))
-;;  (let* ((font-family "Menlo")
-;;         (font-size 12)
-;;         (font-height (* font-size 10))
-;;         (jp-font-family "ヒラギノ角ゴ ProN"))
-;;    (set-face-attribute 'default nil :family font-family :height font-height)
-;;    (let ((name (frame-parameter nil 'font))
-;;          (jp-font-spec (font-spec :family jp-font-family))
-;;          (jp-characters '(katakana-jisx0201
-;;                           cp932-2-byte
-;;                           japanese-jisx0212
-;;                           japanese-jisx0213-2
-;;                           japanese-jisx0213.2004-1))
-;;          (font-spec (font-spec :family font-family))
-;;          (characters '((?\u00A0 . ?\u00FF)    ; Latin-1
-;;                        (?\u0100 . ?\u017F)    ; Latin Extended-A
-;;                        (?\u0180 . ?\u024F)    ; Latin Extended-B
-;;                        (?\u0250 . ?\u02AF)    ; IPA Extensions
-;;                        (?\u0370 . ?\u03FF)))) ; Greek and Coptic
-;;      (dolist (jp-character jp-characters)
-;;        (set-fontset-font name jp-character jp-font-spec))
-;;      (dolist (character characters)
-;;        (set-fontset-font name character font-spec))
-;;      (add-to-list 'face-font-rescale-alist (cons jp-font-family 1.2)))))
-
 
 ;; No bar
 (add-hook 'before-make-frame-hook
@@ -108,23 +69,18 @@
 
 ;; No auto save
 (setq auto-save-default nil)
-;; (setq auto-save-list-file-name nil)
-;; (setq auto-save-list-file-prefix nil)
-
-;; Delete auto save files when editor finished
-;; (setq delete-auto-save-files t)
 
 ;; Save recent files as history
-(setq recentf-max-saved-items 25)
-(setq recentf-exclude '("/recentf" "COMMIT_EDITMSG" "/.?TAGS" "^/sudo:" "/\\.emacs\\.d/games/*-scores" "/\\.emacs\\.d/\\.cask/" "/\\.emacs\\.d/bookmarks"))
-(setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
+(defvar recentf-max-saved-items 25)
+(defvar recentf-exclude '("/recentf" "COMMIT_EDITMSG" "/.?TAGS" "^/sudo:" "/\\.emacs\\.d/games/*-scores" "/\\.emacs\\.d/\\.cask/" "/\\.emacs\\.d/bookmarks"))
+(defvar recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
 (recentf-mode 1)
 
 ;; No beep sound
 (setq ring-bell-function 'ignore)
 
 ;; Share copied text to clipboard
-(setq x-select-enable-clipboard t)
+(setq select-enable-clipboard t)
 
 ;; Copy with mouse
 (setq mouse-drag-copy-region t)
@@ -139,38 +95,17 @@
 (setq-default truncate-lines t)
 
 ;; Fontify code in code blocks
-(setq org-src-fontify-natively t)
+(defvar org-src-fontify-natively t)
 
 ;; Use on scratch buffer
 (setq initial-major-mode 'org-mode)
 
 ;; Single frame to display files to be compared or merged
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(defvar ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; To be horizontally split
-(setq ediff-split-window-function 'split-window-horizontally)
+(defvar ediff-split-window-function 'split-window-horizontally)
 
-;;--+--+--+--+--+--+--+--+--+--+
-;; Server Settings
-;;--+--+--+--+--+--+--+--+--+--+
-
-;; Start server for emacs-client
-;;(when window-system
-;;  (require 'server)
-;;  (unless (eq (server-running-p) 't)
-;;    (server-start)
-;;
-;;    ;; Minimize window when start app
-;;    ;;(defun iconify-emacs-when-server-is-done ()
-;;    ;;  (unless server-clients (iconify-frame)))
-;;    ;;(add-hook 'after-init-hook 'iconify-emacs-when-server-is-done)
-;;
-;;    ;; Don't finish app
-;;    (global-set-key (kbd "C-x C-c") 'server-edit)
-;;    (defalias 'exit 'save-buffers-kill-emacs)
-;;
-;;    ;; Show confirm message when exit app
-;;    (setq confirm-kill-emacs 'yes-or-no-p)))
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Key Settings
@@ -184,33 +119,20 @@
 (global-set-key (kbd "C-x p") 'previous-buffer)
 (global-set-key (kbd "C-x n") 'next-buffer)
 
-;; Insert new line below current line
-(global-set-key (kbd "<S-return>") (lambda ()
-   (interactive)
-   (end-of-line)
-   (newline-and-indent)))
-
-;; Insert new line above current line
-(global-set-key (kbd "<M-S-return>") (lambda ()
-   (interactive)
-   (beginning-of-line)
-   (newline-and-indent)
-   (backward-char)))
-
-;; GoogleIME for Japanese Toggle Shortcuts
-;;(when (eq system-type 'darwin)
-;;  (setq google-ime "/Applications/GoogleJapaneseInput.localized")
-;;  (when (file-exists-p google-ime)
-;;    (global-set-key (kbd "C-S-j") (lambda ()
-;;       (interactive)
-;;       (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 104")))
-;;    (global-set-key (kbd "C-:") (lambda ()
-;;       (interactive)
-;;       (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 102")))))
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Package Settings
 ;;--+--+--+--+--+--+--+--+--+--+
+
+;; https://github.com/rranelli/auto-package-update.el
+;; Automatically update Emacs packages.
+(use-package auto-package-update
+  :ensure t
+  :bind ("C-x P" . auto-package-update-now)
+  :custom
+  (auto-package-update-delete-old-versions t))
+
+;;------------------------------
 
 ;; https://github.com/purcell/color-theme-sanityinc-tomorrow
 ;; Chris Kempson's 'tomorrow' themes
@@ -220,11 +142,30 @@
 
 ;;------------------------------
 
+;; https://github.com/magit/magit
+;; A Git porcelain inside Emacs.
+(use-package magit
+  :ensure t
+  :diminish auto-revert-mode
+  :bind (("C-x g" . magit-status))
+  :custom
+  (magit-repository-directories '(("~/git/" . 1)))
+  (magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+  (magit-completing-read-function 'ivy-completing-read))
+
+(use-package git-commit
+  :ensure t
+  :custom
+  (git-commit-fill-column 120))
+
+;;------------------------------
+
 ;; https://github.com/purcell/exec-path-from-shell
 ;; Make Emacs use the $PATH set up by the user's shell
 (use-package exec-path-from-shell
   :ensure t
-  :init (exec-path-from-shell-initialize))
+  :config
+  (exec-path-from-shell-initialize))
 
 ;;------------------------------
 
@@ -242,12 +183,14 @@
 (use-package ivy
   :ensure t
   :diminish ivy-mode
+  :bind (("C-c C-r" . ivy-resume)
+         ("C-x b" . ivy-switch-buffer))
+  :custom
+  (ivy-use-virtual-buffers t)
+  (ivy-count-format "(%d/%d) ")
   :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t)
-  (setq ivy-count-format "(%d/%d) ")
-  (bind-key "M-c" 'ivy-toggle-case-fold ivy-minibuffer-map)
-  :bind ("C-c C-r" . ivy-resume))
+  (ivy-mode 1))
+
 
 ;;------------------------------
 
@@ -257,29 +200,11 @@
   :ensure t
   :bind (("C-s" . swiper)
          ("M-x" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file)
          ("M-y" . counsel-yank-pop)
          ("C-c e" . counsel-recentf)
-         ("C-c f" . counsel-git)
-         ("C-c g" . counsel-grep)
+         ("C-c g" . counsel-git)
          ("C-c s" . counsel-rg)))
-
-;;------------------------------
-
-;; https://github.com/bbatsov/projectile
-;; Project Interaction Library for Emacs.
-(use-package projectile
-  :ensure t
-  :config
-  (projectile-global-mode)
-  (setq projectile-mode-line
-        '(:eval (format " [%s]" (projectile-project-name))))
-  (setq projectile-remember-window-configs t)
-  (setq projectile-completion-system 'ivy))
-
-(use-package counsel-projectile
-  :ensure t
-  :config
-  (counsel-projectile-mode))
 
 ;;------------------------------
 
@@ -287,21 +212,10 @@
 ;; Jump to things in Emacs tree-style.
 (use-package avy
   :ensure t
-  :bind (("C-j" . avy-goto-char-timer)
-         ("C-l" . avy-goto-line)))
-
-;;------------------------------
-
-;; https://github.com/magit/magit
-;; A Git porcelain inside Emacs.
-(use-package magit
-  :ensure t
-  :config
-  (setq magit-completing-read-function 'ivy-completing-read)
-  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
-  (setq magit-repository-directories '(("~/git/" . 1)))
-  :diminish auto-revert-mode
-  :bind (("C-x g" . magit-status)))
+  :bind (("C-c ." . avy-goto-word-or-subword-1)
+         ("C-c ," . avy-goto-char)
+         ("M-g f" . avy-goto-line)
+         ("M-g w" . avy-goto-word-or-subword-1)))
 
 ;;------------------------------
 
@@ -314,27 +228,11 @@
 
 ;;------------------------------
 
-;; markdown-model.el
-;; http://jblevins.org/projects/markdown-mode/
-(use-package markdown-mode
-  :ensure t
-  :init
-  (setq markdown-command "multimarkdown") ; C-c C-c p
-  (setq markdown-open-command "~/.bin/typora") ; C-c C-c o
-  :commands (markdown-mode gfm-mode)
-  :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode)))
-
-;;------------------------------
-
 ;; https://github.com/EricCrosson/unkillable-scratch
 ;; Disallow the *scratch* buffer from being killed
 (use-package unkillable-scratch
   :ensure t
-  :init
-  (setq unkillable-scratch-behavior 'do-nothing)
-  (setq unkillable-buffers '("^\\*scratch\\*$"))
+  :config
   (unkillable-scratch 1))
 
 ;;------------------------------
@@ -355,20 +253,17 @@
 
 ;;------------------------------
 
-;; https://github.com/flycheck/flycheck
-;; On the fly syntax checking for GNU Emacs
-(use-package flycheck
+;; markdown-model.el
+;; http://jblevins.org/projects/markdown-mode/
+(use-package markdown-mode
   :ensure t
-  :init (global-flycheck-mode))
-
-;;------------------------------
-
-;; https://github.com/justbur/emacs-which-key
-;; Emacs package that displays available keybindings in popup
-(use-package which-key
-  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
   :init
-  (add-hook 'after-init-hook #'which-key-mode))
+  (setq markdown-command "multimarkdown") ; C-c C-c p
+  (setq markdown-open-command "~/.bin/typora")) ; C-c C-c o
 
 ;;------------------------------
 
@@ -376,8 +271,7 @@
 ;; JSON major mode
 (use-package json-mode
   :ensure t
-  :mode (("\\.json\\'" . json-mode))
-  :config (setq-default js-indent-level 2))
+  :mode ("\\.json\\'" . json-mode))
 
 ;;------------------------------
 
@@ -385,7 +279,8 @@
 ;; Simple major mode to edit YAML file for emacs
 (use-package yaml-mode
   :ensure t
-  :mode ("\\.yml\\'" . yaml-mode))
+  :mode (("\\.yml\\'" . yaml-mode)
+         ("\\.yaml\\'" . yaml-mode)))
 
 ;;------------------------------
 
@@ -397,33 +292,35 @@
 
 ;;------------------------------
 
-;; https://github.com/rranelli/auto-package-update.el
-;; Automatically update Emacs packages.
-;;(use-package auto-package-update
-;;  :ensure t
-;;  :config
-;;  (setq auto-package-update-delete-old-versions t
-;;        auto-package-update-interval 30)
-;;  (auto-package-update-maybe))
-;;
+;; https://github.com/flycheck/flycheck
+;; On the fly syntax checking for GNU Emacs
+(use-package flycheck
+  :ensure t
+  :bind (("M-n" . flycheck-next-error)
+         ("M-p" . flycheck-previous-error))
+  :hook (after-init . global-flycheck-mode))
+
 ;;------------------------------
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(color-theme-sanityinc-tomorrow-theme use-package markdown-mode ace-jump-mode)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; https://github.com/company-mode/company-mode
+;; Modular in-buffer completion framework for Emacs
+(use-package company
+  :diminish company-mode
+  :ensure t
+  :bind
+  (:map company-active-map
+    ("M-n" . nil)
+    ("M-p" . nil)
+    ("C-n" . company-select-next)
+    ("C-p" . company-select-previous)
+    ("<tab>" . company-complete-common-or-cycle)
+    :map company-search-map
+    ("C-p" . company-select-previous)
+    ("C-n" . company-select-next))
+  :custom
+  (company-minimum-prefix-length 1)
+  :hook (after-init . global-company-mode))
 
-;; Local Variables:
-;; no-byte-compile: t
-;; End:
+;;------------------------------
 
 ;;; init.el ends here
