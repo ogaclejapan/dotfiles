@@ -126,6 +126,7 @@ cask 'ngrok'
 cask 'typora'
 cask 'mi'
 cask 'pixel-picker'
+cask 'rectangle'
 
 
 ## Optional ##
