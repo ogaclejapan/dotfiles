@@ -43,17 +43,17 @@ if test -d "$HOME/.android/cmdline-tools"
 end
 
 if test -d "$HOME/Library/Android/sdk"
-    set -x ANDROID_ROOT_SDK $HOME/Library/Android/sdk
-    set -x ANDROID_HOME $ANDROID_ROOT_SDK
+    set -x ANDROID_SDK_ROOT $HOME/Library/Android/sdk
+    set -x ANDROID_HOME $ANDROID_SDK_ROOT
     set -x ANDROID_HVPROTO ddm
-    if test -d $ANDROID_ROOT_SDK/cmdline-tools
-        set -x PATH $ANDROID_ROOT_SDK/cmdline-tools/latest/bin $PATH
+    if test -d $ANDROID_SDK_ROOT/cmdline-tools
+        set -x PATH $ANDROID_SDK_ROOT/cmdline-tools/latest/bin $PATH
     end
-    if test -d $ANDROID_ROOT_SDK/platform-tools
-        set -x PATH $ANDROID_ROOT_SDK/platform-tools $PATH
+    if test -d $ANDROID_SDK_ROOT/platform-tools
+        set -x PATH $ANDROID_SDK_ROOT/platform-tools $PATH
     end
-    if test -d $ANDROID_ROOT_SDK/emulator
-        set -x PATH $ANDROID_ROOT_SDK/emulator $PATH
+    if test -d $ANDROID_SDK_ROOT/emulator
+        set -x PATH $ANDROID_SDK_ROOT/emulator $PATH
     end
 end
 
