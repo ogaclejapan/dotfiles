@@ -26,6 +26,8 @@ function adb_fzf -d 'Execute adb command to interactive if multiple devices conn
     switch $subcommand
         case devices help version start-server kill-server connect disconnect
             __adb_exec $subcommand $argv
+        case apk
+            __adb_apkpath $argv
         case screencap
             __adb_screencapture $argv
         case screenrecord
@@ -50,6 +52,23 @@ function __adb_exec_with_serial
         return 0
     end
     command adb -s $serial $argv
+end
+
+function __adb_apkpath
+    set serial (__adb_device)
+    if test -z $serial
+        return 0
+    end
+    set -l pkg ( \
+        command adb -s $serial shell pm list packages \
+        | fzf --reverse --exact --height=25% --select-1 --exit-0 \
+        | cut -d ':' -f 2 )
+    if test -z $pkg
+        return 0
+    end
+    command adb -s $serial shell pm path $pkg \
+        | fzf --reverse --exact --height=25% --select-1 --exit-0 \
+        | cut -d ':' -f 2
 end
 
 function __adb_screencapture
@@ -134,6 +153,7 @@ function __adb_fzf_needs_command
     end
 end
 
+complete -f -c adb_fzf -n '__adb_fzf_needs_command' -a apk -d 'Print the path to the .apk'
 complete -f -c adb_fzf -n '__adb_fzf_needs_command' -a screencap -d 'Taking a screenshot of a device display'
 complete -f -c adb_fzf -n '__adb_fzf_needs_command' -a screenrecord -d 'Recording the display of devices running Android 4.4 and higher'
 complete -c adb_fzf -w adb
