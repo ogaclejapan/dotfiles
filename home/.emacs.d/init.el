@@ -318,8 +318,8 @@
     ("C-p" . company-select-previous)
     ("C-n" . company-select-next))
   :custom
-  (company-minimum-prefix-length 1)
-  :hook (after-init . global-company-mode))
+  (company-minimum-prefix-length 1))
+  ;;:hook (after-init . global-company-mode))
 
 ;;------------------------------
 
