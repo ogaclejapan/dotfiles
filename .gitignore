@@ -67,6 +67,7 @@ home/.tmux/plugins/tmux-*
 
 home/.emacs.d/*
 !home/.emacs.d/init.el
+!home/.emacs.d/byte-compile.sh
 
 home/.android/*
 !home/.android/packages.txt
