@@ -7,6 +7,7 @@ alias f0='f --depth 1'
 alias d='fuzzy_directory_commander'
 alias d0='d --depth 1'
 alias rand16='openssl rand -hex 10 | fold -w 16 | head -n 1'
+alias jcurl='curl -H "Accept: application/json" -H "Content-Type: application/json"'
 
 if type -q node
     alias aes256='node -p "require(\'crypto\').randomBytes(32).toString(\'base64\')"'
