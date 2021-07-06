@@ -11,6 +11,7 @@ function pyenv_install() {
   if ! type -p pyenv > /dev/null 2>&1; then
     return 0
   fi
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
   # WORKAROUND: https://qiita.com/craymaru/items/58e92fac99b5b0ec778f
   #

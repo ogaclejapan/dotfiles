@@ -11,7 +11,7 @@ if type -q plenv
 end
 
 if type -q pyenv
-    status --is-interactive; and source (pyenv init - | psub)
+    status --is-interactive; and source (pyenv init - | psub); and source (pyenv init --path | psub)
 end
 
 if type -q nodenv
