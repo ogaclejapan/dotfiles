@@ -164,6 +164,10 @@ tap 'cjbassi/ytop'
 brew 'ytop'
 
 
+tap 'facebook/fb'
+brew 'idb-companion'
+
+
 ## Optional ##
 
 #tap 'tsduck/tsduck'

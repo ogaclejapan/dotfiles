@@ -27,3 +27,6 @@ set -x FZF_CD_WITH_HIDDEN_COMMAND 'fd -H -E '.git' -t d .'
 
 # Build Enhancements for Docker
 #set -x DOCKER_BUILDKIT 1
+
+# iOS Debug Bridge
+#set -x IDB_UDID <udid>

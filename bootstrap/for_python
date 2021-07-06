@@ -45,6 +45,7 @@ function pipx_install() {
   pipx install adb-enhanced
   pipx install urlscan
   pipx install jc
+  pipx install fb-idb
 }
 
 function poetry_install() {
