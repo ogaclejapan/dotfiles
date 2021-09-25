@@ -6,16 +6,11 @@ alias f='fuzzy_file_commander'
 alias f0='f --depth 1'
 alias d='fuzzy_directory_commander'
 alias d0='d --depth 1'
-alias rand16='openssl rand -hex 10 | fold -w 16 | head -n 1'
+# 128bit
+alias rand16='openssl rand -hex 16'
+# 256bit
+alias rand32='openssl rand -hex 32'
 alias jcurl='curl -H "Accept: application/json" -H "Content-Type: application/json"'
-
-if type -q node
-    alias aes256='node -p "require(\'crypto\').randomBytes(32).toString(\'base64\')"'
-else if type -q python3
-    alias aes256='python3 -c "import os,base64; print(base64.b64encode(os.urandom(32)).decode(\'utf-8\'))"'
-else
-    alias aes256='echo "unavailable :(" 1>&2'
-end
 
 if type -q git
     alias g=giter
