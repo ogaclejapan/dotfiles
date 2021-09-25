@@ -55,6 +55,10 @@ if test -d "$HOME/Library/Android/sdk"
     if test -d $ANDROID_SDK_ROOT/emulator
         set -x PATH $ANDROID_SDK_ROOT/emulator $PATH
     end
+    set -x ANDROID_BUILD_TOOL_VERSION (ls $ANDROID_SDK_ROOT/build-tools/ | sort -r | head -n 1)
+    if test -d $ANDROID_SDK_ROOT/build-tools/$ANDROID_BUILD_TOOL_VERSION
+        set -x PATH $ANDROID_SDK_ROOT/build-tools/$ANDROID_BUILD_TOOL_VERSION $PATH
+    end
 end
 
 if test -d "$HOME/.flutter"
