@@ -37,6 +37,9 @@ if type -q sdkmanager
     alias sdkmanager=sdkmanager_fzf
 end
 
+if type -q bundle
+    alias be='bundle exec'
+end
 
 if type -q bat
     abbr --add p 'bat'
