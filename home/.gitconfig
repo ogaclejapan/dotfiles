@@ -31,6 +31,7 @@
   zz = stash save
   zp = stash pop
   # Other Command
+  head = rev-parse HEAD
   master = checkout master
 [gh]
   #host = your-github-enterprise
