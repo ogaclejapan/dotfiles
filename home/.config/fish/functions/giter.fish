@@ -332,7 +332,8 @@ function __giter_diet
     if test -z $repopath
         return 0
     end
-    set -l merged_branches (git -C $repopath branch --merged master | grep -vE '^\*|^master$' | tr -d '[:blank:]')
+    set -l default_branch (git -C $repopath rev-parse --abbrev-ref origin/HEAD | cut -d '/' -f2)
+    set -l merged_branches (git -C $repopath branch --merged $default_branch | grep -vE '^\*|^$default_branch$' | tr -d '[:blank:]')
     for target in $merged_branches
         git -C $repopath branch -d $target
     end
@@ -348,7 +349,8 @@ function __giter_done
     if test -z $repopath
         return 0
     end
-    set -l selected_branches (git -C $repopath branch | grep -vE '^\*|^master$' | tr -d '[:blank:]' | fzf --multi --reverse)
+    set -l default_branch (git -C $repopath rev-parse --abbrev-ref origin/HEAD | cut -d '/' -f2)
+    set -l selected_branches (git -C $repopath branch | grep -vE '^\*|^$default_branch$' | tr -d '[:blank:]' | fzf --multi --reverse)
     for target in $selected_branches
         git -C $repopath branch -D $target
     end
