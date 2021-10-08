@@ -333,10 +333,7 @@ function __giter_diet
         return 0
     end
     set -l default_branch (git -C $repopath rev-parse --abbrev-ref origin/HEAD | cut -d '/' -f2)
-    set -l merged_branches (git -C $repopath branch --merged $default_branch | grep -vE '^\*|^$default_branch$' | tr -d '[:blank:]')
-    for target in $merged_branches
-        git -C $repopath branch -d $target
-    end
+    git -C $repopath branch --merged $default_branch | egrep -v "^\*|master|main|$default_branch" | xargs git branch -d
 end
 
 function __giter_done
@@ -350,10 +347,7 @@ function __giter_done
         return 0
     end
     set -l default_branch (git -C $repopath rev-parse --abbrev-ref origin/HEAD | cut -d '/' -f2)
-    set -l selected_branches (git -C $repopath branch | grep -vE '^\*|^$default_branch$' | tr -d '[:blank:]' | fzf --multi --reverse)
-    for target in $selected_branches
-        git -C $repopath branch -D $target
-    end
+    git -C $repopath branch | egrep -v "^\*|master|main|$default_branch" | fzf --multi --reverse | xargs git branch -D
 end
 
 function __giter_select_branch

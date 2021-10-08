@@ -27,6 +27,8 @@ function giter_worktree -d 'Local git worktree management'
     switch $subcommand
         case help
             __giter_worktree_help $repopath
+        case root
+            __giter_worktree_root $repopath
         case cd
             __giter_worktree_cd $repopath $argv
         case ls
@@ -52,6 +54,7 @@ function __giter_worktree_help
     set -l workpath (__giter_worktree_path)
     printf "Usage: giter_worktree <command>\n"
     printf "\n"
+    printf "   root     Move directory to current branches root\n"
     printf "   new      Create working tree with new branch\n"
     printf "   view     Create working tree without new branch\n"
     printf "   cd       Change directory to selected git working trees\n"
@@ -66,6 +69,11 @@ function __giter_worktree_help
     printf "\n"
     printf "   giter.worktree: $workpath\n"
     printf "\n"
+end
+
+function __giter_worktree_root
+    set -l repopath $argv[1]
+    cd $repopath
 end
 
 function __giter_worktree_dir
@@ -154,11 +162,12 @@ function __giter_worktree_diet
     set -l repopath (__giter_worktree_origin_repo $argv[1])
     set -l reponame (basename $repopath)
     set -l worklist (git -C $repopath worktree list | sed 1d) # without main working tree
+    set -l default_branch (git -C $repopath rev-parse --abbrev-ref origin/HEAD | cut -d '/' -f2)
     for line in $worklist
-        set -l commit (echo $line | tr -s '[:blank:]' '\t' | cut -f 2)
-        set -l is_merged (git -C $repopath branch --contains $commit | grep -c -e '^[\* ].master$')
+        set -l commit (echo $line | awk '{print $2}')
+        set -l is_merged (git -C $repopath branch --contains $commit | egrep -c "master|main|$default_branch")
         if test $is_merged -eq 1
-            set -l workpath (echo $line | tr -s '[:blank:]' '\t' | cut -f 1)
+            set -l workpath (echo $line | awk '{print $1}')
             echo "[Removed] $workpath"
             git -C $repopath worktree remove -f $workpath
         end
@@ -173,7 +182,7 @@ function __giter_worktree_done
     set -l reponame (basename $repopath)
     set -l worklist (git -C $repopath worktree list | sed 1d | fzf --multi --reverse)
     for line in $worklist
-        set -l workpath (echo $line | tr -s '[:blank:]' '\t' | cut -f 1)
+        set -l workpath (echo $line | awk '{print $1}')
         echo "[Remove] $workpath"
         git -C $repopath worktree remove -f $workpath
     end
