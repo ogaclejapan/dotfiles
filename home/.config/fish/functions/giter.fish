@@ -272,11 +272,7 @@ function __giter_cherrypick
     if test -z $branch
         return 0
     end
-    set -l commits (git -C $repopath log --oneline --format='%h: %s' $branch | fzf --reverse --multi --exact --no-sort | cut -d ':' -f 1 | xargs)
-    if test -z $commits
-        return 0
-    end
-    git -C $repopath cherry-pick $commits
+    git -C $repopath log --oneline --format='%h: %s' $branch | fzf --reverse --multi --exact --no-sort | cut -d ':' -f 1 | xargs git -C $repopath cherry-pick
 end
 
 function __giter_checkout
@@ -314,7 +310,8 @@ function __giter_new
     if test -z $branch
         return 0
     end
-    set -l branchname (basename $branch)
+
+    set -l branchname (echo $branch | cut -d '/' -f 2-)
     read --prompt "echo -n 'Name for new branch? '; set_color green; echo -n '($branchname)'; set_color normal; echo -n ': '" -l newbranch
     if test -z $newbranch
         set newbranch $branchname
@@ -332,8 +329,8 @@ function __giter_diet
     if test -z $repopath
         return 0
     end
-    set -l default_branch (git -C $repopath rev-parse --abbrev-ref origin/HEAD | cut -d '/' -f2)
-    git -C $repopath branch --merged $default_branch | egrep -v "^\*|master|main|$default_branch" | xargs git branch -d
+    set -l default_branch (git -C $repopath rev-parse --abbrev-ref origin/HEAD | cut -d '/' -f 2-)
+    git -C $repopath branch --merged $default_branch | tr -d "+ " | egrep -v "^\*|^master\$|^main\$|^$default_branch\$" | xargs git -C $repopath branch -d
 end
 
 function __giter_done
@@ -346,14 +343,14 @@ function __giter_done
     if test -z $repopath
         return 0
     end
-    set -l default_branch (git -C $repopath rev-parse --abbrev-ref origin/HEAD | cut -d '/' -f2)
-    git -C $repopath branch | egrep -v "^\*|master|main|$default_branch" | fzf --multi --reverse | xargs git branch -D
+    set -l default_branch (git -C $repopath rev-parse --abbrev-ref origin/HEAD | cut -d '/' -f 2-)
+    git -C $repopath branch | egrep -v "^\*|master|main|$default_branch" | fzf --multi --reverse | xargs git -C $repopath branch -D
 end
 
 function __giter_select_branch
     set -l repopath $argv[1]
     set -e argv[1]
-    git -C $repopath for-each-ref --format='%(refname:short)%(if)%(authorname)%(then)%09by %(authorname)%(end)' $argv | column -t -s \t | fzf --reverse --exact --no-sort --bind=ctrl-v:page-down,alt-v:page-up,alt-n:half-page-down,alt-p:half-page-up | cut -f 1 -d ' '
+    git -C $repopath for-each-ref --format='%(refname:short)%(if)%(authorname)%(then)%09by %(authorname)%(end)' $argv | column -t -s \t | fzf --reverse --exact --no-sort --bind=ctrl-v:page-down,alt-v:page-up,alt-n:half-page-down,alt-p:half-page-up | awk '{print $1}'
 end
 
 function __giter_exec

@@ -119,7 +119,7 @@ function __giter_worktree_new
         return 0
     end
 
-    set -l branchname (basename $workbranch)
+    set -l branchname (echo $workbranch | cut -d '/' -f 2-)
     read --prompt "echo -n 'Name for new branch? '; set_color green; echo -n '($branchname)'; set_color normal; echo -n ': '" -l newbranch
     if test -z $newbranch
         set newbranch $branchname
@@ -140,7 +140,7 @@ function __giter_worktree_view
     end
     set -l viewdate (date +"%m%d")
     set -l branchsha (git -C $repopath rev-parse --short $workbranch)
-    set -l branchname (basename $workbranch)
+    set -l branchname (echo $workbranch | cut -d '/' -f 2-)
     set -l defaultname (printf "%s_%s-%s" $branchname $viewdate $branchsha)
     read --prompt "echo -n 'Name for view? '; set_color green; echo -n '($defaultname)'; set_color normal; echo -n ': '" -l viewname
     if test -z $viewname
@@ -161,11 +161,12 @@ end
 function __giter_worktree_diet
     set -l repopath (__giter_worktree_origin_repo $argv[1])
     set -l reponame (basename $repopath)
+    set -l default_branch (git -C $repopath rev-parse --abbrev-ref origin/HEAD | cut -d '/' -f 2-)
+    set -l merged_branches (git -C $repopath branch --merged $default_branch | tr -d "+ " | egrep -v "^\*|^master\$|^main\$|^$default_branch\$")
     set -l worklist (git -C $repopath worktree list | sed 1d) # without main working tree
-    set -l default_branch (git -C $repopath rev-parse --abbrev-ref origin/HEAD | cut -d '/' -f2)
     for line in $worklist
-        set -l commit (echo $line | awk '{print $2}')
-        set -l is_merged (git -C $repopath branch --contains $commit | egrep -c "master|main|$default_branch")
+        set -l workbranch (echo $line | awk '{print $3}' | tr -d '[]')
+        set -l is_merged (echo $merged_branches | egrep -c "^$workbranch\$")
         if test $is_merged -eq 1
             set -l workpath (echo $line | awk '{print $1}')
             echo "[Removed] $workpath"
@@ -213,6 +214,7 @@ function __giter_worktree_needs_command
 end
 
 complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a help -d 'Display the manual of a giter_worktree command'
+complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a root -d 'Move directory to current branches root'
 complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a new -d 'Create working tree with new branch'
 complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a view -d 'Create working tree without new branch'
 complete -f -c giter_worktree -n '__giter_worktree_needs_command' -a cd -d 'Change directory to selected git working trees'
