@@ -165,11 +165,18 @@ function __giter_worktree_diet
     set -l merged_branches (git -C $repopath branch --merged $default_branch | tr -d "+ " | egrep -v "^\*|^master\$|^main\$|^$default_branch\$")
     set -l worklist (git -C $repopath worktree list | sed 1d) # without main working tree
     for line in $worklist
+        set -l workpath (echo $line | awk '{print $1}')
         set -l workbranch (echo $line | awk '{print $3}' | tr -d '[]')
-        set -l is_merged (echo $merged_branches | egrep -c "^$workbranch\$")
+        set -l is_detached (echo "$workbranch" | grep -c "detached")
+        if test $is_detached -eq 1
+            echo "[Detached] $workpath"
+            git -C $repopath worktree remove -f $workpath
+            continue
+        end
+        set -l escaped_workbranch (echo "$workbranch" | string escape -n --style=regex)
+        set -l is_merged (echo $merged_branches | tr ' ' '\n' | egrep -c "^$escaped_workbranch\$")
         if test $is_merged -eq 1
-            set -l workpath (echo $line | awk '{print $1}')
-            echo "[Removed] $workpath"
+            echo "[Merged] $workpath"
             git -C $repopath worktree remove -f $workpath
         end
     end
