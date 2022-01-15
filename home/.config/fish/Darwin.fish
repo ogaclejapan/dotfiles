@@ -80,3 +80,10 @@ if test -d /usr/local/share/google-cloud-sdk
     set -x CLOUD_ROOT_SDK /usr/local/share/google-cloud-sdk
     source $CLOUD_ROOT_SDK/path.fish.inc
 end
+
+if test -d /usr/local/opt/llvm
+    set -x LLVM_ROOT /usr/local/opt/llvm
+    set -x PATH $LLVM_ROOT/bin $PATH
+    set -x LDFLAGS "-L/usr/local/opt/llvm/lib"
+    set -x CPPFLAGS "-I/usr/local/opt/llvm/include"
+end

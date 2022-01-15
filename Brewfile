@@ -42,6 +42,7 @@ brew 'pipenv'
 brew 'tfenv'
 # https://github.com/gruntwork-io/terragrunt/issues/580
 # brew 'terragrunt'
+brew 'llvm'
 brew 'go'
 brew 'nodenv'
 brew 'yarn'
