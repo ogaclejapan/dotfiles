@@ -3,7 +3,7 @@
 #------------------------------#
 
 brew 'emacs'
-brew 'mg'
+brew 'nano'
 brew 'git'
 brew 'git-delta'
 brew 'git-lfs'
