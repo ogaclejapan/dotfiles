@@ -18,11 +18,6 @@ if type -q nodenv
     status --is-interactive; and source (nodenv init - | psub)
 end
 
-if type -q jenv
-    status --is-interactive; and source (jenv init - | psub)
-    set -x PATH $HOME/.jenv/bin $PATH
-end
-
 if type -q direnv
     status --is-interactive; and source (direnv hook fish - | psub)
 end
@@ -35,6 +30,11 @@ if type -q go
     set -x GO111MODULE on
     set -x GOPATH (go env GOPATH)
     set -x PATH $GOPATH/bin $PATH
+end
+
+if type -q /usr/libexec/java_home
+    set -x JAVA_HOME (/usr/libexec/java_home)
+    set -x PATH $JAVA_HOME/bin $PATH
 end
 
 if test -d "$HOME/.android/cmdline-tools"
@@ -61,11 +61,6 @@ if test -d "$HOME/Library/Android/sdk"
     end
 end
 
-if test -d "$HOME/.flutter"
-    set -x FLUTTER_ROOT $HOME/.flutter
-    set -x PATH $FLUTTER_ROOT/bin $PATH
-end
-
 if test -d "$HOME/.cargo"
     set -x CARGO_HOME $HOME/.cargo
     set -x PATH $CARGO_HOME/bin $PATH
@@ -74,6 +69,11 @@ end
 if test -d "$HOME/.poetry"
     set -x POETRY_HOME $HOME/.poetry
     set -x PATH $POETRY_HOME/bin $PATH
+end
+
+if test -d "$HOME/.krew"
+    set -x KREW_HOME $HOME/.krew
+    set -x PATH $KREW_HOME/bin $PATH
 end
 
 if test -d /usr/local/share/google-cloud-sdk

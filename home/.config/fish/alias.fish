@@ -25,9 +25,6 @@ if type -q adb
     alias am='a shell am'
     alias pm='a shell pm'
     alias dumpsys='a shell dumpsys'
-    if type -q rogcat
-        alias rc='rogcat'
-    end
 end
 
 if type -q emulator
@@ -38,22 +35,11 @@ if type -q sdkmanager
     alias sdkmanager=sdkmanager_fzf
 end
 
-if type -q bundle
-    alias be='bundle exec'
-end
-
-if type -q bat
-    abbr --add p 'bat'
-end
-
 if type -q kubectl
-    abbr --add k 'kubectl'
+    alias k='kubectl'
+    alias kshell='kubectl run -it --image bash --restart Never --rm shell'
 end
 
-if type -q gcloud
-    abbr --add c 'gcloud'
-end
-
-if type -q multipass
-    abbr --add mp 'multipass'
+if type -q docker
+    alias dshell='docker run -it --rm bash'
 end

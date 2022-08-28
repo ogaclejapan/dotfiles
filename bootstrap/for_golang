@@ -7,16 +7,16 @@ echo "========== (golang) =========="
 
 declare -xr GO111MODULE=on
 
-function go_get() {
+function get_install() {
   if ! type -p go > /dev/null 2>&1; then
     return 0
   fi
-  go get -u github.com/guumaster/hostctl
-  go get -u github.com/bazelbuild/bazelisk
+  go install github.com/arsham/blush@latest
+  go install github.com/google/yamlfmt/cmd/yamlfmt@latest
 }
 
 function main() {
-  go_get
+  get_install
 }
 
 main "$@"

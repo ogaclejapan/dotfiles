@@ -28,7 +28,6 @@ function cargo_install() {
     return 0
   fi
   cargo install cargo-edit
-  cargo install rogcat
 }
 
 function main() {
