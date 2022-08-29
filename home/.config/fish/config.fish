@@ -4,20 +4,20 @@ set fish_greeting
 set -l PARENTS_PATH $PATH
 set -x PATH /usr/local/bin /usr/bin /bin $HOME/.local/bin $HOME/.bin /usr/local/sbin /usr/sbin /sbin
 
-set PLATFORM_FISH ~/.config/fish/(uname -s).fish
-if test -f $PLATFORM_FISH
-    source $PLATFORM_FISH
-else
-    echo Creating platform fish: $PLATFORM_FISH
-    touch $PLATFORM_FISH
-end
-
 set HOST_FISH ~/.config/fish/(hostname).fish
 if test -f $HOST_FISH
     source $HOST_FISH
 else
     echo Creating host fish: $HOST_FISH
     cat ~/.config/fish/host.fish >$HOST_FISH
+end
+
+set PLATFORM_FISH ~/.config/fish/(uname -s).fish
+if test -f $PLATFORM_FISH
+    source $PLATFORM_FISH
+else
+    echo Creating platform fish: $PLATFORM_FISH
+    touch $PLATFORM_FISH
 end
 
 set TMUX_FISH ~/.config/fish/tmux.fish

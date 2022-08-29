@@ -22,6 +22,10 @@ set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
 set -x FZF_CD_COMMAND 'fd -t d .'
 set -x FZF_CD_WITH_HIDDEN_COMMAND 'fd -H -E '.git' -t d .'
 
+# Version of the JDK for JAVA_HOME
+# ref. /usr/libexec/java_home -V
+#set -x JDK_VERSION 11
+
 # Android Studio for low memory
 #set -x STUDIO_VM_OPTIONS $HOME/.android/studio.vmoptions
 

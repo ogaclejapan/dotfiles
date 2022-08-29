@@ -32,8 +32,8 @@ if type -q go
     set -x PATH $GOPATH/bin $PATH
 end
 
-if type -q /usr/libexec/java_home
-    set -x JAVA_HOME (/usr/libexec/java_home)
+if set -q JDK_VERSION; and type -q /usr/libexec/java_home
+    set -x JAVA_HOME (/usr/libexec/java_home -v $JDK_VERSION)
     set -x PATH $JAVA_HOME/bin $PATH
 end
 
