@@ -20,6 +20,7 @@ def self.emacs() system("./bootstrap/for_emacs") end
 def self.cloud_sdk() system("./bootstrap/for_cloud_sdk") end
 def self.macos_prefs_symlink() system("./bootstrap/for_macos_prefs_symlink") end
 def self.macos_vscode() system("./bootstrap/for_macos_vscode") end
+def self.linux_misc() system("./bootstrap/for_linux") end
 
 
 if OS.mac?
@@ -39,5 +40,5 @@ if OS.mac?
   macos_prefs_symlink
   macos_vscode
 elsif OS.linux?
-  #todo
+  linux_misc
 end

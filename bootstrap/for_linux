@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Configure (linux)
+set -u
+
+echo "========== (linux) =========="
+
+readonly DELTA_VERSION="0.14.0"
+
+function delta_install() {
+  if type -p delta > /dev/null 2>&1; then
+    return 0
+  fi
+  local -r tmp_dir=$(mktemp -d /tmp/delta.XXXXXX)
+  curl -sL -o $tmp_dir/delta.tar.gz "https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+  tar zxvf $tmp_dir/delta.tar.gz -C $tmp_dir
+  install -m 755 "$tmp_dir/delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu/delta" /usr/local/bin/delta
+}
+
+
+function main() {
+  delta_install
+}
+
+main "$@"
+
+echo "done."
