@@ -43,3 +43,7 @@ end
 if type -q docker
     alias dshell='docker run -it --rm bash'
 end
+
+if type -q shfmt
+    alias shfmtw='shfmt -l -w -i 4'
+end
