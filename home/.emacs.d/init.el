@@ -160,6 +160,17 @@
 
 ;;------------------------------
 
+;; http://elpa.gnu.org/packages/pinentry.html
+;; GnuPG pinentry
+(use-package pinentry
+  :ensure t
+  :config
+  ;; https://github.com/emacs-mirror/emacs/blob/master/lisp/epg-config.el
+  (setq epg-pinentry-mode 'loopback)
+  (pinentry-start))
+
+;;------------------------------
+
 ;; https://github.com/purcell/exec-path-from-shell
 ;; Make Emacs use the $PATH set up by the user's shell
 (use-package exec-path-from-shell

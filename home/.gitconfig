@@ -1,6 +1,7 @@
 [user]
   name = ogaclejapan
   email = ogaclejapan@gmail.com
+	signingkey = 6AB770234A3873B2B3926E9AC21BF9035AE46144
 [color]
   ui = auto
 [core]
@@ -55,6 +56,7 @@
 [commit]
   verbose = true
   template = ~/.gittemplates/commit
+	gpgsign = true
 [pull]
 	rebase = true
 [delta]

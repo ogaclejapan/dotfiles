@@ -8,6 +8,10 @@ set -x LESS '-R'
 # Colorized format for ls command
 set -x LSCOLORS exfxcxdxbxxggxabagacad
 
+# GPG pinentry
+# ref. https://man.archlinux.org/man/gpg-agent.1
+set -x GPG_TTY (tty)
+
 # JIRA api token for go-jira
 # https://id.atlassian.com/manage/api-tokens
 #set -x JIRA_API_TOKEN 'your personal access token'
