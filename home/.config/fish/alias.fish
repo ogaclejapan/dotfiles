@@ -47,3 +47,7 @@ end
 if type -q shfmt
     alias shfmtw='shfmt -l -w -i 4'
 end
+
+if type -q btm
+    alias top=btm
+end
