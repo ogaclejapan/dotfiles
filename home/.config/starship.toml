@@ -1,13 +1,28 @@
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$container\
+$shell\
+$character"""
+
 add_newline = true
 
 [directory]
 truncate_to_repo = false
-
-[aws]
-disabled = true
-
-[gcloud]
-disabled = true
-
-[package]
-disabled = true
