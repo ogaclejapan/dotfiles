@@ -65,3 +65,5 @@
   syntax-theme = Monokai Extended Bright
 [interactive]
   diffFilter = delta --color-only
+[safe]
+	directory = ~/git
