@@ -30,6 +30,7 @@ function cargo_install() {
   cargo install cargo-audit
   cargo install cargo-outdated
   cargo install cargo-edit
+  cargo install urlencode
 }
 
 function main() {
