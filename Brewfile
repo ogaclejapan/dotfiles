@@ -41,6 +41,7 @@ brew 'tfenv'
 # brew 'terragrunt'
 brew 'go'
 brew 'nodenv'
+brew 'node-build'
 brew 'yarn'
 brew 'kotlin'
 brew 'gradle'
@@ -148,6 +149,7 @@ cask 'imageoptim'
 #cask 'ngrok'
 #cask 'pixel-picker'
 #cask 'typora'
+#cask 'wireshark'
 
 
 #------------------------------#
@@ -168,6 +170,11 @@ brew 'ytop'
 
 tap 'facebook/fb'
 brew 'idb-companion'
+
+
+# https://github.com/wader/fq
+#tap 'wader/tap'
+#brew 'fq'
 
 
 ## Optional ##
