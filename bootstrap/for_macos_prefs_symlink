@@ -27,7 +27,7 @@ function main() {
   if ! mkdir -p "${MACOS_PREFS_DIR}"; then
     exit
   fi
-  symlink "${CONFIG_DIR}/rogcat" "${MACOS_PREFS_DIR}/rogcat"
+  #symlink "${CONFIG_DIR}/rogcat" "${MACOS_PREFS_DIR}/rogcat"
 }
 
 main "$@"

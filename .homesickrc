@@ -34,9 +34,7 @@ if OS.mac?
   golang
   rust
   iterm
-  vim
   emacs
-  cloud_sdk
   macos_prefs_symlink
   macos_vscode
 elsif OS.linux?
