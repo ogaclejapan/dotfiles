@@ -2,6 +2,10 @@ alias ll='ls -lahF'
 alias lr='ll -rt'
 alias la='ls -a'
 
+if test -d "/opt/homebrew"
+    status --is-interactive; and source (/opt/homebrew/bin/brew shellenv | psub)
+end
+
 if type -q rbenv
     status --is-interactive; and source (rbenv init - | psub)
 end

@@ -12,7 +12,7 @@
     <string>gnu.emacs.daemon</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/usr/local/opt/emacs/bin/emacs</string>
+      <string>/opt/homebrew/bin/emacs</string>
       <string>--fg-daemon</string>
     </array>
     <key>RunAtLoad</key>
