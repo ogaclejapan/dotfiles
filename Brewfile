@@ -124,7 +124,7 @@ cask 'iterm2'
 cask 'rectangle'
 cask 'mi'
 cask 'imageoptim'
-
+cask 'skitch'
 
 ## Optional ##
 
