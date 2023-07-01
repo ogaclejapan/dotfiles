@@ -3,27 +3,27 @@ alias lr='ll -rt'
 alias la='ls -a'
 
 if test -d "/opt/homebrew"
-    status --is-interactive; and source (/opt/homebrew/bin/brew shellenv | psub)
+    source (/opt/homebrew/bin/brew shellenv | psub)
 end
 
 if type -q rbenv
-    status --is-interactive; and source (rbenv init - | psub)
+    source (rbenv init - | psub)
 end
 
 if type -q plenv
-    status --is-interactive; and source (plenv init - | psub)
+    source (plenv init - | psub)
 end
 
 if type -q pyenv
-    status --is-interactive; and source (pyenv init - | psub); and source (pyenv init --path | psub)
+    source (pyenv init - | psub); and source (pyenv init --path | psub)
 end
 
 if type -q nodenv
-    status --is-interactive; and source (nodenv init - | psub)
+    source (nodenv init - | psub)
 end
 
 if type -q direnv
-    status --is-interactive; and source (direnv hook fish - | psub)
+    source (direnv hook fish - | psub)
 end
 
 if type -q nnn
