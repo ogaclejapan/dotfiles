@@ -7,7 +7,6 @@ end
 
 def self.homesick() system("./bootstrap/for_homesick") end
 def self.homebrew() system("./bootstrap/for_homebrew") end
-def self.fishshell() system("./bootstrap/for_fishshell") end
 def self.fishplugins() system("./bootstrap/for_fish_plugins") end
 def self.nodejs() system("./bootstrap/for_nodejs") end
 def self.ruby() system("./bootstrap/for_ruby") end
@@ -15,9 +14,7 @@ def self.python() system("./bootstrap/for_python") end
 def self.golang() system("./bootstrap/for_golang") end
 def self.rust() system("./bootstrap/for_rust") end
 def self.iterm() system("./bootstrap/for_iterm") end
-def self.vim() system("./bootstrap/for_vim") end
 def self.emacs() system("./bootstrap/for_emacs") end
-def self.cloud_sdk() system("./bootstrap/for_cloud_sdk") end
 def self.macos_prefs_symlink() system("./bootstrap/for_macos_prefs_symlink") end
 def self.macos_vscode() system("./bootstrap/for_macos_vscode") end
 def self.linux_misc() system("./bootstrap/for_linux") end
@@ -26,7 +23,6 @@ def self.linux_misc() system("./bootstrap/for_linux") end
 if OS.mac?
   homesick
   homebrew
-  fishshell
   fishplugins
   nodejs
   ruby
