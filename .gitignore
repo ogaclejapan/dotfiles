@@ -5,7 +5,11 @@ Brewfile.lock.json
 .DS_Store
 home/.vim/bundles
 
-home/.config
+home/.config/*
+
+!home/.config/btop
+home/.config/btop/*
+!home/.config/btop/btop.conf
 
 home/.config/ranger/*
 !home/.config/ranger/rc.conf
