@@ -46,6 +46,7 @@ brew 'bat'
 brew 'fd'
 brew 'peco'
 brew 'fzf'
+brew 'tailspin'
 brew 'mkcert'
 brew 'nss'
 brew 'hadolint'
@@ -126,6 +127,7 @@ cask 'rectangle'
 cask 'mi'
 cask 'imageoptim'
 cask 'skitch'
+cask 'devutils'
 
 ## Optional ##
 
