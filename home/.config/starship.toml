@@ -23,6 +23,7 @@ $shell\
 $character"""
 
 add_newline = true
+command_timeout = 1000
 
 [directory]
 truncate_to_repo = false
