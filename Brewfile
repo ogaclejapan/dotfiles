@@ -39,7 +39,6 @@ brew 'yarn'
 brew 'kotlin'
 brew 'gradle'
 brew 'maven'
-brew 'dive'
 brew 'the_silver_searcher'
 brew 'ripgrep'
 brew 'bat'
@@ -49,6 +48,7 @@ brew 'fzf'
 brew 'tailspin'
 brew 'mkcert'
 brew 'nss'
+brew 'dive'
 brew 'hadolint'
 brew 'yamllint'
 brew 'gpg2'
@@ -113,6 +113,8 @@ brew 'ssh-copy-id'
 #brew 'k9s'
 #brew 'octant'
 #brew 'zstd'
+#brew 'trippy'
+#brew 'walk'
 
 
 #------------------------------#
@@ -153,6 +155,7 @@ cask 'devutils'
 #cask 'pixel-picker'
 #cask 'typora'
 #cask 'wireshark'
+#cask 'minisim'
 
 
 #------------------------------#
