@@ -1,5 +1,5 @@
 # デフォルトで起動するエディタ
-#set -x EDITOR 'emacsclient -t --alternate-editor=mg'
+#set -x EDITOR 'emacsclient -t --alternate-editor=nano'
 #set -x EDITOR 'vim'
 
 # ANSI "color" escape sequences are output in "raw" form
