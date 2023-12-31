@@ -1,7 +1,7 @@
 [user]
   name = ogaclejapan
   email = ogaclejapan@gmail.com
-	signingkey = 6AB770234A3873B2B3926E9AC21BF9035AE46144
+  signingkey = 6AB770234A3873B2B3926E9AC21BF9035AE46144
 [color]
   ui = auto
 [core]
@@ -37,33 +37,33 @@
 [gh]
   #host = your-github-enterprise
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
-	process = git-lfs filter-process
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true
+  process = git-lfs filter-process
 [mergetool]
-	keepBackup = false
+  keepBackup = false
 [fetch]
-	prune = true
+  prune = true
 [rebase]
-	autosquash = true
-	autostash = true
+  autosquash = true
+  autostash = true
 [giter]
   root = ~/git
   worktree = ~/git/worktree
 [github]
-	user = ogaclejapan
+  user = ogaclejapan
 [commit]
   verbose = true
   template = ~/.gittemplates/commit
-	gpgsign = true
+  gpgsign = true
 [pull]
-	rebase = true
+  rebase = true
 [delta]
   line-numbers = true
-#  side-by-side = true
+  # side-by-side = true
   syntax-theme = Monokai Extended Bright
 [interactive]
   diffFilter = delta --color-only
 [safe]
-	directory = ~/git
+  directory = ~/git
