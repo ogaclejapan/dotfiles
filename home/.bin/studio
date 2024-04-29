@@ -1,0 +1,3 @@
+#!/bin/sh
+# ref. https://www.jetbrains.com/help/idea/2023.2/working-with-the-ide-features-from-command-line.html#toolbox
+open -na "Android Studio.app" --args "$@"
