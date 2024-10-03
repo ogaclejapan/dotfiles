@@ -5,24 +5,10 @@
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Package Management
 ;;--+--+--+--+--+--+--+--+--+--+
-(eval-and-compile
-  (when (or load-file-name byte-compile-current-file)
-    (setq user-emacs-directory
-          (expand-file-name
-           (file-name-directory (or load-file-name byte-compile-current-file))))))
-
-(eval-and-compile
-  (customize-set-variable
-   'package-archives '(("gnu"   . "https://elpa.gnu.org/packages/")
-                       ("melpa" . "https://melpa.org/packages/")
-                       ("org"   . "https://orgmode.org/elpa/")))
-  (package-initialize)
-  (unless (package-installed-p 'use-package)
-    (package-refresh-contents)
-    (package-install 'use-package))
-
-  (setq use-package-enable-imenu-support t)
-  (require 'use-package))
+(require 'package)
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
+(package-initialize)
 
 
 ;;--+--+--+--+--+--+--+--+--+--+
@@ -63,6 +49,16 @@
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Editor Settings
 ;;--+--+--+--+--+--+--+--+--+--+
+
+(let ((normal-gc-cons-threshold (* 20 1024 1024))
+      (init-gc-cons-threshold (* 128 1024 1024)))
+  (setq gc-cons-threshold init-gc-cons-threshold)
+  (add-hook 'emacs-startup-hook
+            (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
+
+(setq custom-file (locate-user-emacs-file "custom.el"))
+(when (file-exists-p (expand-file-name custom-file))
+  (load-file (expand-file-name custom-file)))
 
 ;; No backup
 (setq make-backup-files nil)
@@ -123,21 +119,22 @@
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Package Settings
 ;;--+--+--+--+--+--+--+--+--+--+
+(use-package use-package
+  :config
+  (setq use-package-always-ensure t))
 
 ;; https://github.com/rranelli/auto-package-update.el
 ;; Automatically update Emacs packages.
 (use-package auto-package-update
-  :ensure t
-  :bind ("C-x P" . auto-package-update-now)
-  :custom
-  (auto-package-update-delete-old-versions t))
+  :config
+  (setq auto-package-update-interval 1)
+  (auto-package-update-maybe))
 
 ;;------------------------------
 
 ;; https://github.com/purcell/color-theme-sanityinc-tomorrow
 ;; Chris Kempson's 'tomorrow' themes
 (use-package color-theme-sanityinc-tomorrow
-  :ensure t
   :init (load-theme 'sanityinc-tomorrow-bright t))
 
 ;;------------------------------
@@ -145,25 +142,17 @@
 ;; https://github.com/magit/magit
 ;; A Git porcelain inside Emacs.
 (use-package magit
-  :ensure t
   :diminish auto-revert-mode
   :bind (("C-x g" . magit-status))
   :custom
   (magit-repository-directories '(("~/git/" . 1)))
-  (magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
-  (magit-completing-read-function 'ivy-completing-read))
-
-(use-package git-commit
-  :ensure t
-  :custom
-  (git-commit-fill-column 120))
+  (magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1))
 
 ;;------------------------------
 
 ;; http://elpa.gnu.org/packages/pinentry.html
 ;; GnuPG pinentry
 (use-package pinentry
-  :ensure t
   :config
   ;; https://github.com/emacs-mirror/emacs/blob/master/lisp/epg-config.el
   (setq epg-pinentry-mode 'loopback)
@@ -174,7 +163,6 @@
 ;; https://github.com/purcell/exec-path-from-shell
 ;; Make Emacs use the $PATH set up by the user's shell
 (use-package exec-path-from-shell
-  :ensure t
   :config
   (exec-path-from-shell-initialize))
 
@@ -183,57 +171,65 @@
 ;; https://github.com/editorconfig/editorconfig-emacs
 ;; EditorConfig plugin for emacs
 (use-package editorconfig
-  :ensure t
   :config
   (editorconfig-mode 1))
 
 ;;------------------------------
 
-;; https://github.com/abo-abo/swiper
-;; A generic completion mechanism for Emacs.
-(use-package ivy
-  :ensure t
-  :diminish ivy-mode
-  :bind (("C-c C-r" . ivy-resume)
-         ("C-x b" . ivy-switch-buffer))
+;; https://github.com/minad/vertico
+;; VERTical Interactive COmpletion
+(use-package vertico
   :custom
-  (ivy-use-virtual-buffers t)
-  (ivy-count-format "(%d/%d) ")
+  (vertico-count 20)
+  :init
+  (vertico-mode))
+
+
+;; Commands for Ido-like directory navigation.
+(use-package vertico-directory
+  :after vertico
+  :ensure nil
+  :bind (:map vertico-map
+              ("RET" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word))
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
+
+;;------------------------------
+
+;; https://github.com/oantolin/orderless
+;; Emacs completion style that matches multiple regexps in any order
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-defaults nil)
+  (completion-category-overrides '((file (styles partial-completion)))))
+
+;;------------------------------
+
+;; https://github.com/minad/marginalia
+;; Marginalia in the minibuffer
+(use-package marginalia
   :config
-  (ivy-mode 1))
-
-
-;;------------------------------
-
-;; https://github.com/abo-abo/swiper
-;; A collection of Ivy-enhanced versions of common Emacs commands.
-(use-package counsel
-  :ensure t
-  :bind (("C-s" . swiper)
-         ("M-x" . counsel-M-x)
-         ("C-x C-f" . counsel-find-file)
-         ("M-y" . counsel-yank-pop)
-         ("C-c e" . counsel-recentf)
-         ("C-c g" . counsel-git)
-         ("C-c s" . counsel-rg)))
+  (marginalia-mode))
 
 ;;------------------------------
 
-;; https://github.com/abo-abo/avy
-;; Jump to things in Emacs tree-style.
-(use-package avy
-  :ensure t
-  :bind (("C-c ." . avy-goto-word-or-subword-1)
-         ("C-c ," . avy-goto-char)
-         ("M-g f" . avy-goto-line)
-         ("M-g w" . avy-goto-word-or-subword-1)))
+;; https://github.com/minad/consult
+;; Consulting completing-read
+(use-package consult
+  :bind (("C-x b" . 'consult-buffer)
+          ("M-y" . 'consult-yank-pop)
+          ("M-s" . 'consult-line)
+          ("C-c e" . 'consult-recent-file)
+          ("C-c g" . 'consult-git-grep)
+          ("C-c s" . 'consult-ripgrep)))
 
 ;;------------------------------
 
 ;; expand-region
 ;; https://github.com/magnars/expand-region.el
 (use-package expand-region
-  :ensure t
   :bind (("C-t" . er/expand-region)
          ("M-t" . er/contract-region)))
 
@@ -242,7 +238,6 @@
 ;; https://github.com/EricCrosson/unkillable-scratch
 ;; Disallow the *scratch* buffer from being killed
 (use-package unkillable-scratch
-  :ensure t
   :config
   (unkillable-scratch 1))
 
@@ -251,7 +246,6 @@
 ;; https://github.com/Fanael/persistent-scratch
 ;; Preserve the scratch buffer across Emacs sessions
 (use-package persistent-scratch
-  :ensure t
   :config
   (persistent-scratch-setup-default))
 
@@ -259,15 +253,13 @@
 
 ;; https://github.com/emacsfodder/pbcopy.el
 ;; Emacs Interface to pbcopy
-(use-package pbcopy
-  :ensure t )
+(use-package pbcopy)
 
 ;;------------------------------
 
 ;; markdown-model.el
 ;; http://jblevins.org/projects/markdown-mode/
 (use-package markdown-mode
-  :ensure t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
@@ -281,7 +273,6 @@
 ;; https://github.com/yoshiki/yaml-mode
 ;; Simple major mode to edit YAML file for emacs
 (use-package yaml-mode
-  :ensure t
   :mode (("\\.yml\\'" . yaml-mode)
          ("\\.yaml\\'" . yaml-mode)))
 
@@ -290,7 +281,6 @@
 ;; https://github.com/wwwjfy/emacs-fish
 ;; fish-mode for emacs
 (use-package fish-mode
-  :ensure t
   :mode ("\\.fish\\'" . fish-mode))
 
 ;;------------------------------
@@ -298,7 +288,6 @@
 ;; https://github.com/flycheck/flycheck
 ;; On the fly syntax checking for GNU Emacs
 (use-package flycheck
-  :ensure t
   :bind (("M-n" . flycheck-next-error)
          ("M-p" . flycheck-previous-error))
   :hook (after-init . global-flycheck-mode))
@@ -309,7 +298,6 @@
 ;; Modular in-buffer completion framework for Emacs
 (use-package company
   :diminish company-mode
-  :ensure t
   :bind
   (:map company-active-map
     ("M-n" . nil)
@@ -329,28 +317,24 @@
 ;; https://github.com/renzmann/treesit-auto
 ;; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
 (use-package treesit-auto
-  :demand t
   :config
   (global-treesit-auto-mode))
 
+;;------------------------------
 
-;;--+--+--+--+--+--+--+--+--+--+
-;; Tree-sitter Settings
-;;--+--+--+--+--+--+--+--+--+--+
+;; https://github.com/s-kostyaev/ellama
+;; Ellama is a tool for interacting with large language models from Emacs.
+(use-package ellama
+   :init
+   ;; setup key bindings
+  (setopt ellama-keymap-prefix "C-c e")
+  (setopt ellama-language "Japanese")
 
-;; https://archive.casouri.cc/note/2023/tree-sitter-in-emacs-29/index.html
+  (require 'llm-ollama)
+  (setopt ellama-provider
+	  (make-llm-ollama
+	   :chat-model "llama3.2")))
 
-(setq treesit-language-source-alist
-   '((bash "https://github.com/tree-sitter/tree-sitter-bash")
-     (css "https://github.com/tree-sitter/tree-sitter-css")
-     (go "https://github.com/tree-sitter/tree-sitter-go")
-     (html "https://github.com/tree-sitter/tree-sitter-html")
-     (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
-     (json "https://github.com/tree-sitter/tree-sitter-json")
-     (python "https://github.com/tree-sitter/tree-sitter-python")
-     (toml "https://github.com/tree-sitter/tree-sitter-toml")
-     (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
-     (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")))
-
+;;------------------------------
 
 ;;; init.el ends here
