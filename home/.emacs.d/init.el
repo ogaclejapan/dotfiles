@@ -294,26 +294,6 @@
 
 ;;------------------------------
 
-;; https://github.com/company-mode/company-mode
-;; Modular in-buffer completion framework for Emacs
-(use-package company
-  :diminish company-mode
-  :bind
-  (:map company-active-map
-    ("M-n" . nil)
-    ("M-p" . nil)
-    ("C-n" . company-select-next)
-    ("C-p" . company-select-previous)
-    ("<tab>" . company-complete-common-or-cycle)
-    :map company-search-map
-    ("C-p" . company-select-previous)
-    ("C-n" . company-select-next))
-  :custom
-  (company-minimum-prefix-length 1))
-  ;;:hook (after-init . global-company-mode))
-
-;;------------------------------
-
 ;; https://github.com/renzmann/treesit-auto
 ;; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
 (use-package treesit-auto
