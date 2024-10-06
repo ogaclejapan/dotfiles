@@ -326,14 +326,15 @@
 ;; Ellama is a tool for interacting with large language models from Emacs.
 (use-package ellama
    :init
-   ;; setup key bindings
   (setopt ellama-keymap-prefix "C-c e")
   (setopt ellama-language "Japanese")
-
+  (setopt ellama-major-mode 'markdown-mode)
   (require 'llm-ollama)
+  (setopt ellama-naming-scheme 'ellama-generate-name-by-time)
   (setopt ellama-provider
 	  (make-llm-ollama
-	   :chat-model "llama3.2")))
+	    :chat-model "gemma2:2b-jpn"
+      :default-chat-non-standard-params '(("num_ctx" . 8192)))))
 
 ;;------------------------------
 
