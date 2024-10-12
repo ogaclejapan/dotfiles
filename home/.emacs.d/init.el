@@ -220,8 +220,9 @@
 (use-package consult
   :bind (("C-x b" . 'consult-buffer)
           ("M-y" . 'consult-yank-pop)
-          ("M-s" . 'consult-line)
+          ("C-s" . 'consult-line)
           ("C-c e" . 'consult-recent-file)
+          ("C-c f" . 'consult-fd)
           ("C-c g" . 'consult-git-grep)
           ("C-c s" . 'consult-ripgrep)))
 
