@@ -131,7 +131,8 @@ cask 'rectangle'
 cask 'mi'
 cask 'imageoptim'
 cask 'skitch'
-cask 'devutils'
+cask 'deskpad'
+
 
 ## Optional ##
 
