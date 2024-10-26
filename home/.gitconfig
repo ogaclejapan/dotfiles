@@ -34,6 +34,7 @@
   # Other Command
   head = rev-parse HEAD
   master = checkout master
+  ddiff = -c diff.external=difft diff
 [gh]
   #host = your-github-enterprise
 [filter "lfs"]
