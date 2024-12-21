@@ -5,7 +5,7 @@ set -u
 
 echo "========== (python) =========="
 
-readonly PYTHON_VERSION="3.11.4"
+readonly PYTHON_VERSION="3.13.1"
 
 function pyenv_install() {
   if ! type -p pyenv > /dev/null 2>&1; then
@@ -33,25 +33,16 @@ function pip_install() {
   if ! type -p pip > /dev/null 2>&1; then
     return 0
   fi
-  pip install -U pip
-  pip install pipx
-}
-
-function pipx_install() {
-  if ! type -p pipx > /dev/null 2>&1; then
-    return 0
-  fi
-  pipx install termtosvg
-  pipx install adb-enhanced
-  pipx install urlscan
-  pipx install jc
-  pipx install fb-idb
+  pip install termtosvg
+  pip install adb-enhanced
+  pip install urlscan
+  pip install jc
+  pip install fb-idb
 }
 
 function main() {
   pyenv_install
   pip_install
-  pipx_install
 }
 
 main "$@"
