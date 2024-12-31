@@ -80,6 +80,11 @@ if test -d "$HOME/.krew"
     set -x PATH $KREW_HOME/bin $PATH
 end
 
+if test -d "$HOME/.bun"
+    set -x BUN_INSTALL "$HOME/.bun"
+    set -x PATH $BUN_INSTALL/bin $PATH
+end
+
 if test -d "$HOME/.sdk/google-cloud-sdk"
     set -x CLOUD_ROOT_SDK $HOME/.sdk/google-cloud-sdk
     source $CLOUD_ROOT_SDK/path.fish.inc
