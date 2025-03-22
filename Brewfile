@@ -62,6 +62,7 @@ brew 'urlview'
 brew 'extract_url'
 brew 'terminal-notifier'
 brew 'ssh-copy-id'
+brew 'pinact'
 
 
 ## Optional ##
@@ -133,6 +134,7 @@ cask 'mi'
 cask 'imageoptim'
 cask 'skitch'
 cask 'deskpad'
+cask 'stats'
 
 
 ## Optional ##
