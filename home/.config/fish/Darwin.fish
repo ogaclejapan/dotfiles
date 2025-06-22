@@ -85,6 +85,11 @@ if test -d "$HOME/.bun"
     set -x PATH $BUN_INSTALL/bin $PATH
 end
 
+if test -d "$HOME/.pnpm"
+    set -x PNPM_HOME "$HOME/.pnpm"
+    set -x PATH $PNPM_HOME $PATH
+end
+
 if test -d "$HOME/.sdk/google-cloud-sdk"
     set -x CLOUD_ROOT_SDK $HOME/.sdk/google-cloud-sdk
     source $CLOUD_ROOT_SDK/path.fish.inc

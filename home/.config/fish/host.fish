@@ -38,3 +38,10 @@ set -x FZF_CD_WITH_HIDDEN_COMMAND 'fd -H -E '.git' -t d .'
 
 # iOS Debug Bridge
 #set -x IDB_UDID <udid>
+
+# Tailscale
+#alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
+# Claude Code
+#alias claude="$HOME/.claude/local/claude"
+#alias yoro="claude --dangerously-skip-permissions"
