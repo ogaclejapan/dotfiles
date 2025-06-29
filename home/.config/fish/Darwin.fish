@@ -39,6 +39,7 @@ end
 if set -q JDK_VERSION; and type -q /usr/libexec/java_home
     set -x JAVA_HOME (/usr/libexec/java_home -v $JDK_VERSION)
     set -x PATH $JAVA_HOME/bin $PATH
+    set -x GRADLE_LOCAL_JAVA_HOME $JAVA_HOME
 end
 
 if test -d "$HOME/.android/cmdline-tools"
