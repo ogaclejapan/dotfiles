@@ -14,6 +14,9 @@ home/.config/btop/*
 home/.config/ranger/*
 !home/.config/ranger/rc.conf
 
+home/.config/ghostty/*
+!home/.config/ghostty/config
+
 home/.config/fish/fish_history
 home/.config/fish/fish_variables
 home/.config/fish/fishd*
