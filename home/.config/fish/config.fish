@@ -20,10 +20,10 @@ else
     touch $PLATFORM_FISH
 end
 
-set TMUX_FISH ~/.config/fish/tmux.fish
-if type -q tmux; and test -f $TMUX_FISH
-    source $TMUX_FISH
-end
+# set TMUX_FISH ~/.config/fish/tmux.fish
+# if type -q tmux; and test -f $TMUX_FISH
+#     source $TMUX_FISH
+# end
 
 if type -q starship
     starship init fish | source
