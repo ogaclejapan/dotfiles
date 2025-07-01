@@ -249,5 +249,13 @@
     {
         "key": "ctrl+x r",
         "command": "workbench.action.tasks.runTask"
+    },
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\\\r\n"
+        },
+        "when": "terminalFocus"
     }
 ]
