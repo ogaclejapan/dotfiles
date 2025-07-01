@@ -253,7 +253,9 @@
 
 ;; https://github.com/emacsfodder/pbcopy.el
 ;; Emacs Interface to pbcopy
-(use-package pbcopy)
+(use-package pbcopy
+  :config
+  (turn-on-pbcopy))
 
 ;;------------------------------
 
