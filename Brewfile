@@ -162,6 +162,7 @@ cask 'stats'
 #cask 'typora'
 #cask 'wireshark'
 #cask 'minisim'
+#cask 'ghostty'
 
 
 #------------------------------#
