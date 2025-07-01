@@ -48,5 +48,4 @@ theme = Tomorrow Night Bright
 #window-theme = ghostty
 background-opacity = 0.85
 #macos-titlebar-style = transparent
-keybind = clear
 macos-option-as-alt = true
