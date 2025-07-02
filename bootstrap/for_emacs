@@ -8,6 +8,7 @@ echo "========== (emacs) =========="
 readonly LAUNCHD_AGENT_DIR=$HOME/Library/LaunchAgents
 readonly DOTFILES_DIR=$(homesick show_path dotfiles)
 readonly PLIST_LABEL="gnu.emacs.daemon"
+#readonly PLIST_LABEL="ghostty.emacs.daemon"
 readonly PLIST_FILE="${PLIST_LABEL}.plist"
 
 function load_plist() {
