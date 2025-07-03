@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Configure (TERMINFO)
+set -u
+
+readonly DOTFILES_DIR=$(homesick show_path dotfiles)
+readonly TERMINFO_SRC="${DOTFILES_DIR}/terminfo"
+readonly TERMINFO_DST="${HOME}/.terminfo"
+
+echo "========== (terminfo) =========="
+
+function compile() {
+  local source="${TERMINFO_SRC}/$1"
+  if type -p tic > /dev/null 2>&1; then
+    tic -x -o "${TERMINFO_DST}" "${source}"
+  fi
+}
+
+function main() {
+  compile "tmux-direct.src"  
+}
+
+main "$@"
+
+echo "done."
