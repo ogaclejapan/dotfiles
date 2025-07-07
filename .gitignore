@@ -67,8 +67,10 @@ home/.config/Code/User/*
 home/.mitmproxy
 !home/.mitmproxy/config.yaml
 
-home/.atom/*
-!home/.atom/*.cson
+home/.claude/*
+!home/.claude/CLAUDE.md
+!home/.claude/settings.json
+!home/.claude/commands/
 
 home/.tmux/plugins/tmux-*
 
