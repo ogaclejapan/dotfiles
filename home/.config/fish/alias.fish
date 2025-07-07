@@ -1,4 +1,4 @@
-alias ssh='env TERM=xterm ssh'
+alias ssh='env TERM=xterm-256color ssh'
 alias emacs='emacsclient -t --alternate-editor=mg'
 alias e='emacsclient -c -u -F "\'(fullscreen . maximized)"'
 alias ekill='emacsclient -e "(kill-emacs)"'
