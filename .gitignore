@@ -11,6 +11,15 @@ home/.config/*
 home/.config/btop/*
 !home/.config/btop/btop.conf
 
+!home/.config/claude
+home/.config/claude/*
+!home/.config/claude/CLAUDE.md
+!home/.config/claude/README.md
+!home/.config/claude/settings.json
+!home/.config/claude/commands/
+!home/.config/claude/scripts/
+
+
 home/.config/ranger/*
 !home/.config/ranger/rc.conf
 
@@ -66,11 +75,6 @@ home/.config/Code/User/*
 
 home/.mitmproxy
 !home/.mitmproxy/config.yaml
-
-home/.claude/*
-!home/.claude/CLAUDE.md
-!home/.claude/settings.json
-!home/.claude/commands/
 
 home/.tmux/plugins/tmux-*
 
