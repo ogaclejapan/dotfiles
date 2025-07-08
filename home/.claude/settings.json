@@ -42,7 +42,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.config/claude/scripts/deny-check.sh"
+            "command": "~/.claude/scripts/deny-check.sh"
           }
         ]
       }
@@ -53,7 +53,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.config/claude/scripts/push-notify-notification.sh"
+            "command": "~/.claude/scripts/push-notify-notification.sh"
           }
         ]
       }
@@ -64,7 +64,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.config/claude/scripts/push-notify-stop.sh"
+            "command": "~/.claude/scripts/push-notify-stop.sh"
           }
         ]
       }

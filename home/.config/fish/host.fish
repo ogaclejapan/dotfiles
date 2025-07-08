@@ -43,7 +43,7 @@ set -x FZF_CD_WITH_HIDDEN_COMMAND 'fd -H -E '.git' -t d .'
 #alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # Claude Code
-#set -x CLAUDE_CONFIG_DIR "$HOME/.config/claude"
-#set -x PATH "$CLAUDE_CONFIG_DIR/local/node_modules/.bin" $PATH
-#alias claude="$CLAUDE_CONFIG_DIR/local/claude"
+#set -x CLAUDE_HOME_DIR "$HOME/.claude"
+#set -x PATH "$CLAUDE_HOME_DIR/local/node_modules/.bin" $PATH
+#alias claude="$HOME/.claude/local/claude"
 #alias claude-yoro="claude --dangerously-skip-permissions"
