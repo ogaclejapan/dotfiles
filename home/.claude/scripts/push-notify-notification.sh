@@ -11,20 +11,17 @@ fi
 # リポジトリ名を取得
 REPO_NAME=$(basename -s .git `git config --get remote.origin.url`)
 
-# 確認通知を送信
-terminal-notifier -title "Claude Code" -message "Action needed 💬 (${REPO_NAME}/${BRANCH})" -sound Purr
-echo "✅ Notification sent: Action needed for ${REPO_NAME}/${BRANCH}"
-
-# ----- ここから独自追加 ----- #
-
-# tmux上で動いている場合は、ウィンドウタイトルを更新
+# tmuxのウィンドウ番号を取得してメッセージ用に整形
+TMUX_WINDOW=""
 if [ -n "$TMUX" ]; then
-    tmux rename-window "cc/notif"
+    TMUX_WINDOW=" [tmux:$(tmux display-message -p '#I')]"
 fi
+
+# 確認通知を送信
+terminal-notifier -title "Claude Code" -message "Action needed 💬 ${TMUX_WINDOW}(${REPO_NAME}/${BRANCH})" -sound Purr
+echo "✅ Notification sent: Action needed for ${REPO_NAME}/${BRANCH}"
 
 # Slack通知を送信（SLACK_WEBHOOK_URLが設定されている場合）
 if [ -n "$SLACK_WEBHOOK_URL" ]; then
-    curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"Action needed 💬 (${REPO_NAME}/${BRANCH})\"}" "$SLACK_WEBHOOK_URL"
+    curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"Action needed 💬 ${TMUX_WINDOW}(${REPO_NAME}/${BRANCH})\"}" "$SLACK_WEBHOOK_URL"
 fi
-
-# ----- ここまで独自追加 ----- #
