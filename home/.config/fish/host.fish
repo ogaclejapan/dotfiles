@@ -12,6 +12,9 @@ set -x LSCOLORS exfxcxdxbxxggxabagacad
 # ref. https://man.archlinux.org/man/gpg-agent.1
 set -x GPG_TTY (tty)
 
+# Sops
+#set -x SOPS_AGE_KEY_FILE <path>
+
 # JIRA api token for go-jira
 # https://id.atlassian.com/manage/api-tokens
 #set -x JIRA_API_TOKEN 'your personal access token'
