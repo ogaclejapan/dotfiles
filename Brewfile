@@ -28,8 +28,6 @@ brew 'python-yq'
 brew 'direnv'
 brew 'rbenv'
 brew 'ruby-build'
-brew 'pyenv'
-brew 'pipenv'
 brew 'uv'
 brew 'tfenv'
 # https://github.com/gruntwork-io/terragrunt/issues/580

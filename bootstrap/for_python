@@ -5,44 +5,16 @@ set -u
 
 echo "========== (python) =========="
 
-readonly PYTHON_VERSION="3.13.1"
-
-function pyenv_install() {
-  if ! type -p pyenv > /dev/null 2>&1; then
+function uv_tool_install() {
+  if ! type -p uv > /dev/null 2>&1; then
     return 0
   fi
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-  # WORKAROUND: https://qiita.com/craymaru/items/58e92fac99b5b0ec778f
-  #
-  if type -p xcrun > /dev/null 2>&1; then
-    LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib" pyenv install $PYTHON_VERSION
-  else
-    pyenv install $PYTHON_VERSION
-  fi
-  pyenv global $PYTHON_VERSION
-  pyenv rehash
-}
-
-function pip_install() {
-  local -r is_valid=$(python -V | grep -c "${PYTHON_VERSION}")
-  if [[ $is_valid -eq 0 ]]; then
-    echo "[skip] ${PYTHON_VERSION} not installed."
-    return 0
-  fi
-  if ! type -p pip > /dev/null 2>&1; then
-    return 0
-  fi
-  pip install termtosvg
-  pip install adb-enhanced
-  pip install urlscan
-  pip install jc
-  pip install fb-idb
+  uv tool install jc
+  uv tool install fb-idb
 }
 
 function main() {
-  pyenv_install
-  pip_install
+  uv_tool_install
 }
 
 main "$@"

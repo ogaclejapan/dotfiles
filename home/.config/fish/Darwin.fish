@@ -14,10 +14,6 @@ if type -q plenv
     source (plenv init - | psub)
 end
 
-if type -q pyenv
-    source (pyenv init - | psub); and source (pyenv init --path | psub)
-end
-
 if type -q nodenv
     source (nodenv init - | psub)
 end
@@ -69,11 +65,6 @@ end
 if test -d "$HOME/.cargo"
     set -x CARGO_HOME $HOME/.cargo
     set -x PATH $CARGO_HOME/bin $PATH
-end
-
-if test -d "$HOME/.poetry"
-    set -x POETRY_HOME $HOME/.poetry
-    set -x PATH $POETRY_HOME/bin $PATH
 end
 
 if test -d "$HOME/.krew"
