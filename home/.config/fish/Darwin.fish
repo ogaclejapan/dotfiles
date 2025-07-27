@@ -65,6 +65,7 @@ end
 if test -d "$HOME/.cargo"
     set -x CARGO_HOME $HOME/.cargo
     set -x PATH $CARGO_HOME/bin $PATH
+    source $CARGO_HOME/env.fish
 end
 
 if test -d "$HOME/.krew"

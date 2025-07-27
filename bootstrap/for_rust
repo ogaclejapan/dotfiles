@@ -13,7 +13,6 @@ function rustup_init() {
     curl https://sh.rustup.rs -sSf | sh
   fi
   rustup self update
-  rustup component add clippy rls rust-analysis rust-src rustfmt
 }
 
 function rustup_update() {
@@ -27,9 +26,7 @@ function cargo_install() {
   if ! type -p cargo > /dev/null 2>&1; then
     return 0
   fi
-  cargo install cargo-audit
-  cargo install cargo-outdated
-  cargo install cargo-edit
+  cargo install cross
   cargo install urlencode
 }
 
