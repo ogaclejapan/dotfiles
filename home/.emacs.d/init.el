@@ -304,19 +304,20 @@
 
 ;;------------------------------
 
-;; https://github.com/s-kostyaev/ellama
-;; Ellama is a tool for interacting with large language models from Emacs.
-(use-package ellama
-   :init
-  (setopt ellama-keymap-prefix "C-c e")
-  (setopt ellama-language "Japanese")
-  (setopt ellama-major-mode 'markdown-mode)
-  (require 'llm-ollama)
-  (setopt ellama-naming-scheme 'ellama-generate-name-by-time)
-  (setopt ellama-provider
-	  (make-llm-ollama
-	    :chat-model "gemma2:2b-jpn"
-      :default-chat-non-standard-params '(("num_ctx" . 8192)))))
+;; https://github.com/karthink/gptel
+;; A simple LLM client for Emacs
+(use-package gptel
+  :ensure t
+  :pin melpa
+  :config
+  (gptel-make-ollama "Ollama"
+    :host "localhost:11434"
+    :request-params '(:options (:num_ctx 131072))
+    :stream t
+    :models '(gpt-oss:20b))
+  (setq
+    gptel-model 'claude-4-sonnet
+    gptel-backend (gptel-make-gh-copilot "Copilot"))) ;Required gptel-gh-login
 
 ;;------------------------------
 
