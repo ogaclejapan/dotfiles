@@ -70,6 +70,7 @@ home/.claude/*
 !home/.claude/settings.json
 !home/.claude/commands/
 !home/.claude/scripts/
+!home/.claude/agents/
 
 home/.mitmproxy
 !home/.mitmproxy/config.yaml
