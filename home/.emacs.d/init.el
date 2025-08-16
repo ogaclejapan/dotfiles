@@ -316,7 +316,7 @@
     :stream t
     :models '(gpt-oss:20b))
   (setq
-    gptel-model 'claude-4-sonnet
+    gptel-model 'gpt-5
     gptel-backend (gptel-make-gh-copilot "Copilot"))) ;Required gptel-gh-login
 
 ;;------------------------------
