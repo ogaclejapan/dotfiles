@@ -52,3 +52,7 @@ end
 if type -q node
     alias nanoid='npx nanoid'
 end
+
+if type -q bun
+    alias difit='bunx difit'
+end
