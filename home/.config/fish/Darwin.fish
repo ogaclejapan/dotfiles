@@ -32,6 +32,10 @@ if type -q go
     set -x PATH $GOPATH/bin $PATH
 end
 
+if type -q kotlin
+    set -x KOTLIN_HOME "$(brew --prefix kotlin)/libexec"
+end
+
 if set -q JDK_VERSION; and type -q /usr/libexec/java_home
     set -x JAVA_HOME (/usr/libexec/java_home -v $JDK_VERSION)
     set -x PATH $JAVA_HOME/bin $PATH
