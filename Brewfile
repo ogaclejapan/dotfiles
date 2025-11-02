@@ -129,6 +129,7 @@ cask 'imageoptim'
 cask 'skitch'
 cask 'deskpad'
 cask 'stats'
+cask 'font-ubuntu-mono-nerd-font'
 
 
 ## Optional ##
@@ -168,16 +169,11 @@ cask 'stats'
 #brew 'ogaclejapan/ext/markdown-renderer'
 #brew 'ogaclejapan/ext/jd-cmd'
 
-tap 'homebrew/cask-fonts'
-cask 'font-ubuntu-mono-nerd-font'
-
 #tap 'cjbassi/ytop'
 #brew 'ytop'
 
-
 tap 'facebook/fb'
 brew 'idb-companion'
-
 
 # https://github.com/wader/fq
 #tap 'wader/tap'
