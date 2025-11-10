@@ -114,6 +114,7 @@ brew 'pinact'
 #brew 'zstd'
 #brew 'trippy'
 #brew 'walk'
+#brew 'glslviewer'
 
 
 #------------------------------#
