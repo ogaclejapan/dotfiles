@@ -74,6 +74,8 @@ home/.claude/*
 
 home/.codex/*
 !home/.codex/AGENTS.md
+!home/.codex/scripts/
+!home/.codex/config.toml
 
 home/.mitmproxy
 !home/.mitmproxy/config.yaml
