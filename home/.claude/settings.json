@@ -42,7 +42,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/scripts/push-notify-notification.sh"
+            "command": "~/.claude/scripts/notify-ask.sh"
           }
         ]
       }
@@ -53,7 +53,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/scripts/push-notify-stop.sh"
+            "command": "~/.claude/scripts/notify-stop.sh"
           }
         ]
       }
