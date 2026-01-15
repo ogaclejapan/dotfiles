@@ -1,2 +1,7 @@
 model = "gpt-5.2-codex"
 notify = ["~/.codex/scripts/notify.sh"]
+
+[profiles.reviewer]
+model_reasoning_effort = "xhigh"
+sandbox_mode = "read-only"
+
