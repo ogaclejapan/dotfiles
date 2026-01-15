@@ -42,18 +42,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/scripts/notify-ask.sh"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/scripts/notify-stop.sh"
+            "command": "~/.claude/scripts/notify.sh"
           }
         ]
       }

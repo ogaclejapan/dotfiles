@@ -1,16 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-# notifyは JSON を「第1引数」で渡してくる仕様
-# https://developers.openai.com/codex/config-advanced/#notifications
+# hookは JSON を「第1引数」で渡してくる仕様
+# https://github.com/disler/claude-code-hooks-mastery
 PAYLOAD="${1:-"{}"}"
-TYPE="$(printf '%s' "$PAYLOAD" | jq -r '.type')"
-
-if [ -n "$TYPE" ] && [ "$TYPE" != "agent-turn-complete" ]; then
-  exit 0
-fi
-
-ASSISTANT_MESSAGE="$(printf '%s' "$PAYLOAD" | jq -r '.["last-assistant-message"] // "Turn completed."')"
+ASSISTANT_MESSAGE="$(printf '%s' "$PAYLOAD" | jq -r '.["message"] // "Turn completed."')"
 
 # tmuxのウィンドウ番号を取得してメッセージ用に整形
 TMUX_INFO=""
@@ -27,10 +21,10 @@ fi
 
 MESSAGE="${ASSISTANT_MESSAGE}${TMUX_INFO}${GIT_INFO}"
 
-# 完了通知を送信
-terminal-notifier -title "Codex 🤖" -message "$MESSAGE" -sound Purr
+# 確認通知を送信
+terminal-notifier -title "Claude Code 🤖" -message "$MESSAGE" -sound Purr
 
-# Slack 通知（SLACK_WEBHOOK_URL が設定されている場合）
+# Slack通知を送信（SLACK_WEBHOOK_URLが設定されている場合）
 if [ -n "${SLACK_WEBHOOK_URL:-}" ]; then
   curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"${MESSAGE}\"}" "$SLACK_WEBHOOK_URL" || true
 fi
