@@ -28,14 +28,6 @@ if type -q adb
     alias dumpsys='a shell dumpsys'
 end
 
-if type -q emulator
-    alias emulator=emulator_fzf
-end
-
-if type -q sdkmanager
-    alias sdkmanager=sdkmanager_fzf
-end
-
 if type -q kubectl
     alias k='kubectl'
     alias kshell='kubectl run -it --image bash --restart Never --rm shell'

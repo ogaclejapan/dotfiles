@@ -22,9 +22,6 @@ if type -q direnv
     source (direnv hook fish - | psub)
 end
 
-if type -q nnn
-    set -x NNN_USE_EDITOR 1
-end
 
 if type -q go
     set -x GO111MODULE on
