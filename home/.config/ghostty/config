@@ -1,51 +1,45 @@
-# This is the configuration file for Ghostty.
-#
-# This template file has been automatically created at the following
-# path since Ghostty couldn't find any existing config files on your system:
-#
-#   /Users/masaki.ogata/Library/Application Support/com.mitchellh.ghostty/config
-#
-# The template does not set any default options, since Ghostty ships
-# with sensible defaults for all options. Users should only need to set
-# options that they want to change from the default.
-#
-# Run `ghostty +show-config --default --docs` to view a list of
-# all available config options and their default values.
-#
-# Additionally, each config option is also explained in detail
-# on Ghostty's website, at https://ghostty.org/docs/config.
-
-# Config syntax crash course
-# ==========================
-# # The config file consists of simple key-value pairs,
-# # separated by equals signs.
-# font-family = Iosevka
-# window-padding-x = 2
-#
-# # Spacing around the equals sign does not matter.
-# # All of these are identical:
-# key=value
-# key= value
-# key =value
-# key = value
-#
-# # Any line beginning with a # is a comment. It's not possible to put
-# # a comment after a config option, since it would be interpreted as a
-# # part of the value. For example, this will have a value of "#123abc":
-# background = #123abc
-#
-# # Empty values are used to reset config keys to default.
-# key =
-#
-# # Some config options have unique syntaxes for their value,
-# # which is explained in the docs for that config option.
-# # Just for example:
-# resize-overlay-duration = 4s 200ms
-
 font-family = UbuntuMono Nerd Font
+font-family = Hiragino Kaku Gothic ProN
 font-size = 14
 theme = Tomorrow Night Bright
-#window-theme = ghostty
 background-opacity = 0.85
-#macos-titlebar-style = transparent
+
+fullscreen = true
+window-decoration = none
+window-padding-balance = true
+window-padding-x = 4
+window-padding-y = 4
+
+macos-non-native-fullscreen = true
 macos-option-as-alt = true
+
+#keybind = cmd+r=text:\x1ba
+# Use ESC prefix key (\x1b=ESC)
+# https://gist.github.com/drewr/8255d36c1d0ee3684a08822242f9d33b
+keybind = alt+a=text:\x1ba
+keybind = alt+b=text:\x1bb
+keybind = alt+c=text:\x1bc
+keybind = alt+d=text:\x1bd
+keybind = alt+e=text:\x1be
+keybind = alt+f=text:\x1bf
+keybind = alt+g=text:\x1bg
+keybind = alt+h=text:\x1bh
+keybind = alt+i=text:\x1bi
+keybind = alt+j=text:\x1bj
+keybind = alt+k=text:\x1bk
+keybind = alt+l=text:\x1bl
+keybind = alt+m=text:\x1bm
+keybind = alt+n=text:\x1bn
+keybind = alt+o=text:\x1bo
+keybind = alt+p=text:\x1bp
+keybind = alt+q=text:\x1bq
+keybind = alt+s=text:\x1bs
+keybind = alt+t=text:\x1bt
+keybind = alt+u=text:\x1bu
+keybind = alt+v=text:\x1bv
+keybind = alt+w=text:\x1bw
+keybind = alt+x=text:\x1bx
+keybind = alt+y=text:\x1by
+keybind = alt+z=text:\x1bz
+keybind = alt+[=text:\x1b\x28
+keybind = alt+]=text:\x1b\x29
