@@ -29,6 +29,10 @@ if type -q starship
     starship init fish | source
 end
 
+if type -q zoxide
+    zoxide init fish | source
+end
+
 # path cleanup
 set -x PATH $PATH $PARENTS_PATH
 set NEW_PATH

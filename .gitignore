@@ -11,9 +11,6 @@ home/.config/*
 home/.config/btop/*
 !home/.config/btop/btop.conf
 
-home/.config/ranger/*
-!home/.config/ranger/rc.conf
-
 home/.config/ghostty/*
 !home/.config/ghostty/config
 
