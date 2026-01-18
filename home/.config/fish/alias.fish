@@ -12,7 +12,11 @@ alias rand16='openssl rand -hex 16'
 # 256bit
 alias rand32='openssl rand -hex 32'
 alias jcurl='curl -H "Accept: application/json" -H "Content-Type: application/json"'
-alias xyz='mkdir -p xyz && cd xyz'
+
+if type -q tmux
+    alias tm='tmux new -A -s main'
+    alias tmkill='tmux kill-session -t main'
+end
 
 if type -q git
     alias g=giter
