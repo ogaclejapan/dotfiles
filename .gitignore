@@ -32,13 +32,9 @@ home/.config/fish/functions/*.fish
 !home/.config/fish/functions/fish_user_key_bindings.fish
 !home/.config/fish/functions/tmux_colours.fish
 !home/.config/fish/functions/commitcheck.fish
-!home/.config/fish/functions/en_ja.fish
-!home/.config/fish/functions/ja_en.fish
 !home/.config/fish/functions/apk.fish
 !home/.config/fish/functions/adb_fzf.fish
 !home/.config/fish/functions/brew.fish
-!home/.config/fish/functions/emulator_fzf.fish
-!home/.config/fish/functions/sdkmanager_fzf.fish
 !home/.config/fish/functions/magit.fish
 !home/.config/fish/functions/giter.fish
 !home/.config/fish/functions/giter_worktree.fish
@@ -46,8 +42,6 @@ home/.config/fish/functions/*.fish
 !home/.config/fish/functions/fuzzy_file_commander.fish
 !home/.config/fish/functions/fuzzy_directory_commander.fish
 !home/.config/fish/functions/dockertags.fish
-!home/.config/fish/functions/rehosts.fish
-!home/.config/fish/functions/raspi_tty.fish
 
 home/.config/fish/completions/*.fish
 !home/.config/fish/completions/homesick.fish
