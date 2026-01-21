@@ -24,7 +24,9 @@
       "Bash(pnpm:*)",
       "Bash(bun:*)",
       "Bash(gradle:*)",
-      "Bash(./gradlew:*)"
+      "Bash(./gradlew:*)",
+      "mcp__figma__*",
+      "mcp__chrome-devtools__*"
     ],
     "deny": [
       "Bash(sudo:*)",
