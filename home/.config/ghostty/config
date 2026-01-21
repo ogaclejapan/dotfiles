@@ -1,8 +1,8 @@
 font-family = UbuntuMono Nerd Font
 font-family = Hiragino Kaku Gothic ProN
 font-size = 14
-theme = Tomorrow Night Bright
-background-opacity = 0.88
+theme = Tomorrow Night
+background-opacity = 0.95
 cursor-style-blink = false
 
 fullscreen = true
@@ -11,6 +11,7 @@ window-padding-x = 4
 window-padding-y = 4
 
 macos-non-native-fullscreen = visible-menu
+macos-titlebar-style = hidden
 macos-option-as-alt = true
 
 #keybind = cmd+r=text:\x1ba
