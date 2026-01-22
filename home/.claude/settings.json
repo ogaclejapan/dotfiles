@@ -23,8 +23,10 @@
       "Bash(yarn:*)",
       "Bash(pnpm:*)",
       "Bash(bun:*)",
+      "Bash(codex:*)",
       "Bash(gradle:*)",
       "Bash(./gradlew:*)",
+      "Skill(codex)",
       "mcp__figma__*",
       "mcp__chrome-devtools__*"
     ],
