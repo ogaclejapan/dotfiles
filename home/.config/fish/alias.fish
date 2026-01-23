@@ -32,11 +32,6 @@ if type -q adb
     alias dumpsys='a shell dumpsys'
 end
 
-if type -q kubectl
-    alias k='kubectl'
-    alias kshell='kubectl run -it --image bash --restart Never --rm shell'
-end
-
 if type -q docker
     alias dshell='docker run -it --rm bash'
 end

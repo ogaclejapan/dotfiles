@@ -55,6 +55,9 @@ home/.config/fish/conf.d/*.fish
 home/.config/Code/User/*
 !home/.config/Code/User/keybindings.json
 
+home/.config/mise/*
+!home/.config/mise/config.toml
+
 home/.claude/*
 !home/.claude/CLAUDE.md
 !home/.claude/README.md

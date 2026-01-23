@@ -6,31 +6,8 @@ if test -d "/opt/homebrew"
     source (/opt/homebrew/bin/brew shellenv | psub)
 end
 
-if type -q rbenv
-    source (rbenv init - | psub)
-end
-
-if type -q plenv
-    source (plenv init - | psub)
-end
-
-if type -q nodenv
-    source (nodenv init - | psub)
-end
-
 if type -q direnv
     source (direnv hook fish - | psub)
-end
-
-
-if type -q go
-    set -x GO111MODULE on
-    set -x GOPATH (go env GOPATH)
-    set -x PATH $GOPATH/bin $PATH
-end
-
-if type -q kotlin
-    set -x KOTLIN_HOME "$(brew --prefix kotlin)/libexec"
 end
 
 if set -q JDK_VERSION; and type -q /usr/libexec/java_home
@@ -63,25 +40,9 @@ if test -d "$HOME/Library/Android/sdk"
     end
 end
 
-if test -d "$HOME/.cargo"
-    set -x CARGO_HOME $HOME/.cargo
-    set -x PATH $CARGO_HOME/bin $PATH
-    source $CARGO_HOME/env.fish
-end
-
-if test -d "$HOME/.krew"
-    set -x KREW_HOME $HOME/.krew
-    set -x PATH $KREW_HOME/bin $PATH
-end
-
 if test -d "$HOME/.bun"
     set -x BUN_INSTALL "$HOME/.bun"
     set -x PATH $BUN_INSTALL/bin $PATH
-end
-
-if test -d "$HOME/.pnpm"
-    set -x PNPM_HOME "$HOME/.pnpm"
-    set -x PATH $PNPM_HOME $PATH
 end
 
 if test -d "$HOME/.sdk/google-cloud-sdk"
