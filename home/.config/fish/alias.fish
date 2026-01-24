@@ -39,11 +39,3 @@ end
 if type -q shfmt
     alias shfmtw='shfmt -l -w -i 4'
 end
-
-if type -q node
-    alias nanoid='npx nanoid'
-end
-
-if type -q bun
-    alias difit='bunx difit'
-end
