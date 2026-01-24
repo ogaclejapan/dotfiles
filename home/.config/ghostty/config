@@ -44,3 +44,7 @@ keybind = alt+y=text:\x1by
 keybind = alt+z=text:\x1bz
 keybind = alt+[=text:\x1b\x28
 keybind = alt+]=text:\x1b\x29
+
+# Support newline input
+# https://github.com/anthropics/claude-code/issues/1282
+keybind = shift+enter=text:\x1b\r
