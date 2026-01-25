@@ -119,17 +119,20 @@ brew 'pinact'
 #tap 'homebrew/cask'
 
 cask 'karabiner-elements'
-cask 'iterm2'
+cask 'ghostty'
 cask 'rectangle'
 cask 'imageoptim'
 cask 'skitch'
 cask 'deskpad'
 cask 'stats'
 cask 'font-ubuntu-mono-nerd-font'
+# cask 'azooKey'
+# cask 'ollama'
 
 
 ## Optional ##
 
+#cask 'iterm2'
 #cask 'alfred'
 #cask 'visual-studio-code'
 #cask 'android-file-transfer'
@@ -153,7 +156,7 @@ cask 'font-ubuntu-mono-nerd-font'
 #cask 'typora'
 #cask 'wireshark'
 #cask 'minisim'
-#cask 'ghostty'
+
 
 
 #------------------------------#
