@@ -14,6 +14,7 @@ home/.config/btop/*
 home/.config/ghostty/*
 !home/.config/ghostty/config
 
+!home/.config/fish
 home/.config/fish/fish_history
 home/.config/fish/fish_variables
 home/.config/fish/fishd*
@@ -49,8 +50,11 @@ home/.config/fish/completions/*.fish
 !home/.config/fish/completions/rustup.fish
 
 home/.config/fish/conf.d/*.fish
+!home/.config/fish/conf.d/0_brew.fish
+!home/.config/fish/conf.d/1_host.fish
+!home/.config/fish/conf.d/2_platform.fish
+!home/.config/fish/conf.d/3_alias.fish
 !home/.config/fish/conf.d/theme.fish
-!home/.config/fish/conf.d/n.fish
 
 home/.config/Code/User/*
 !home/.config/Code/User/keybindings.json
