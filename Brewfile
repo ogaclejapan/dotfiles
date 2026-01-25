@@ -164,6 +164,12 @@ cask 'font-ubuntu-mono-nerd-font'
 # Third-party taps
 #------------------------------#
 
+tap 'JetBrains/utils'
+brew 'kotlin-lsp'
+
+tap 'facebook/fb'
+brew 'idb-companion'
+
 #tap 'ogaclejapan/ext'
 #brew 'ogaclejapan/ext/drive'
 #brew 'ogaclejapan/ext/markdown-renderer'
@@ -172,13 +178,9 @@ cask 'font-ubuntu-mono-nerd-font'
 #tap 'cjbassi/ytop'
 #brew 'ytop'
 
-tap 'facebook/fb'
-brew 'idb-companion'
-
 # https://github.com/wader/fq
 #tap 'wader/tap'
 #brew 'fq'
-
 
 ## Optional ##
 
