@@ -31,7 +31,7 @@ set -x FZF_CD_WITH_HIDDEN_COMMAND 'fd -H -E '.git' -t d .'
 
 # Version of the JDK for JAVA_HOME
 # ref. /usr/libexec/java_home -V
-#set -x JDK_VERSION 11
+#set -x JDK_VERSION 21
 
 # Android Studio for low memory
 #set -x STUDIO_VM_OPTIONS $HOME/.android/studio.vmoptions
@@ -44,9 +44,3 @@ set -x FZF_CD_WITH_HIDDEN_COMMAND 'fd -H -E '.git' -t d .'
 
 # Tailscale
 #alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-
-# Claude Code
-#set -x CLAUDE_HOME_DIR "$HOME/.claude"
-#set -x PATH "$CLAUDE_HOME_DIR/local/node_modules/.bin" $PATH
-#alias claude="$HOME/.claude/local/claude"
-#alias claude-yoro="claude --dangerously-skip-permissions"
