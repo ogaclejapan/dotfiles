@@ -115,6 +115,8 @@
 (global-set-key (kbd "C-x p") 'previous-buffer)
 (global-set-key (kbd "C-x n") 'next-buffer)
 
+(which-key-mode 1)
+(which-key-setup-side-window-right-bottom)
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Package Settings
