@@ -134,6 +134,15 @@
 
 ;;------------------------------
 
+;; https://github.com/benotn/kkp
+;; Support for the Kitty Keyboard protocol in Emacs
+(use-package kkp
+  :ensure t
+  :config
+  (global-kkp-mode +1))
+
+;;------------------------------
+
 ;; https://github.com/purcell/color-theme-sanityinc-tomorrow
 ;; Chris Kempson's 'tomorrow' themes
 (use-package color-theme-sanityinc-tomorrow
