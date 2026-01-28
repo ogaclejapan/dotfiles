@@ -43,6 +43,7 @@ home/.config/fish/functions/*.fish
 !home/.config/fish/functions/fuzzy_file_commander.fish
 !home/.config/fish/functions/fuzzy_directory_commander.fish
 !home/.config/fish/functions/dockertags.fish
+!home/.config/fish/functions/y.fish
 
 home/.config/fish/completions/*.fish
 !home/.config/fish/completions/homesick.fish
@@ -61,6 +62,9 @@ home/.config/Code/User/*
 
 home/.config/mise/*
 !home/.config/mise/config.toml
+
+home/.config/yazi/*
+!home/.config/yazi/yazi.toml
 
 home/.claude/*
 !home/.claude/CLAUDE.md
