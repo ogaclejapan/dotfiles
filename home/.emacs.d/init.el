@@ -307,27 +307,14 @@
 
 ;;------------------------------
 
-;; https://github.com/renzmann/treesit-auto
-;; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
-(use-package treesit-auto
-  :config
-  (global-treesit-auto-mode))
-
-;;------------------------------
-
 ;; https://github.com/karthink/gptel
 ;; A simple LLM client for Emacs
 (use-package gptel
   :ensure t
   :pin melpa
   :config
-  (gptel-make-ollama "Ollama"
-    :host "localhost:11434"
-    :request-params '(:options (:num_ctx 131072))
-    :stream t
-    :models '(gpt-oss:20b))
   (setq
-    gptel-model 'gpt-5
+    gptel-model 'gpt-5-mini
     gptel-backend (gptel-make-gh-copilot "Copilot"))) ;Required gptel-gh-login
 
 ;;------------------------------
