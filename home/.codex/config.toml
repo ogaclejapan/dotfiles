@@ -5,3 +5,5 @@ notify = ["~/.codex/scripts/notify.sh"]
 model_reasoning_effort = "xhigh"
 sandbox_mode = "read-only"
 
+[features]
+collaboration_modes = true
