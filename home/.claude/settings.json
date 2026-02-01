@@ -27,7 +27,6 @@
       "Bash(gradle:*)",
       "Bash(./gradlew:*)",
       "Skill(codex)",
-      "mcp__plugin_*",
       "mcp__figma__*",
       "mcp__chrome-devtools__*"
     ],
