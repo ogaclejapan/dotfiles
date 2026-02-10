@@ -26,6 +26,7 @@
       "Bash(codex:*)",
       "Bash(gradle:*)",
       "Bash(./gradlew:*)",
+      "WebFetch(domain:github.com)",
       "Skill(codex)",
       "mcp__figma__*",
       "mcp__chrome-devtools__*"
