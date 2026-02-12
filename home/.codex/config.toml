@@ -1,5 +1,7 @@
-model = "gpt-5.2-codex"
+model = "gpt-5.3-codex"
 notify = ["~/.codex/scripts/notify.sh"]
+project_doc_fallback_filenames = ["CLAUDE.md"]
+personality = "pragmatic"
 
 [profiles.reviewer]
 model_reasoning_effort = "xhigh"
