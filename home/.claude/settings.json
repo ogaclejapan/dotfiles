@@ -31,12 +31,15 @@
       "mcp__figma__*",
       "mcp__chrome-devtools__*"
     ],
-    "deny": [
+    "ask": [
       "Bash(sudo:*)",
       "Bash(chmod:*)",
       "Bash(ssh:*)",
       "Bash(scp:*)",
-      "Bash(rm -rf /*)",
+      "Bash(rm -rf /*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
       "Bash(gh repo delete:*)"
     ]
   },
