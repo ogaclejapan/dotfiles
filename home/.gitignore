@@ -1,8 +1,12 @@
 ### Personal
 secret.*
 mise.local.toml
+AGENTS.local.md
+CLAUDE.local.md
+settings.local.json
+.linear.yaml
 .giter
-.kiro
+
 
 #### Windows template
 # Windows image file caches
