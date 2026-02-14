@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 # notifyは JSON を「第1引数」で渡してくる仕様
@@ -20,7 +20,7 @@ fi
 
 # リポジトリ名を取得してメッセージ用に整形
 GIT_INFO=""
-GIT_REPO_NAME=$(basename -s .git $(git config --get remote.origin.url || echo ""))
+GIT_REPO_NAME=$(basename -s .git "$(git config --get remote.origin.url || echo "")")
 if [ -n "${GIT_REPO_NAME}" ]; then
   GIT_INFO=" [git:${GIT_REPO_NAME}]"
 fi

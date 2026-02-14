@@ -1,10 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
-# hookは JSON を「第1引数」で渡してくる仕様
+# hookは JSON を標準入力で渡してくる仕様
 # https://github.com/disler/claude-code-hooks-mastery
-PAYLOAD="${1:-"{}"}"
-ASSISTANT_MESSAGE="$(printf '%s' "$PAYLOAD" | jq -r '.["message"] // "Turn completed."')"
+PAYLOAD=$(cat)
+TYPE="${1:-unknown}"
+
+case "$TYPE" in
+question)
+  ASSISTANT_MESSAGE=$(echo "$PAYLOAD" | jq -r '.tool_input.question // .tool_input.questions[0].question // "Answer needed."')
+  ;;
+notification)
+  ASSISTANT_MESSAGE=$(echo "$PAYLOAD" | jq -r '.["message"] // "Turn completed."')
+  ;;
+*)
+  exit 0
+  ;;
+esac
 
 # tmuxのウィンドウ番号を取得してメッセージ用に整形
 TMUX_INFO=""
@@ -14,7 +26,7 @@ fi
 
 # リポジトリ名を取得してメッセージ用に整形
 GIT_INFO=""
-GIT_REPO_NAME=$(basename -s .git $(git config --get remote.origin.url || echo ""))
+GIT_REPO_NAME=$(basename -s .git "$(git config --get remote.origin.url || echo "")")
 if [ -n "${GIT_REPO_NAME}" ]; then
   GIT_INFO=" [git:${GIT_REPO_NAME}]"
 fi
