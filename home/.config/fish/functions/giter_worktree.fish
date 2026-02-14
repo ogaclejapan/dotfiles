@@ -170,14 +170,14 @@ function __giter_worktree_diet
         set -l is_detached (echo "$workbranch" | grep -c "detached")
         if test $is_detached -eq 1
             echo "[Detached] $workpath"
-            git -C $repopath worktree remove -f $workpath
+            rm -rf $workpath
             continue
         end
         set -l escaped_workbranch (echo "$workbranch" | string escape -n --style=regex)
         set -l is_merged (echo $merged_branches | tr ' ' '\n' | egrep -c "^$escaped_workbranch\$")
         if test $is_merged -eq 1
             echo "[Merged] $workpath"
-            git -C $repopath worktree remove -f $workpath
+            rm -rf $workpath
         end
     end
     set -l workpath (__giter_worktree_path $repopath)
@@ -192,7 +192,7 @@ function __giter_worktree_done
     for line in $worklist
         set -l workpath (echo $line | awk '{print $1}')
         echo "[Remove] $workpath"
-        git -C $repopath worktree remove -f $workpath
+        rm -rf $workpath
     end
     git -C $repopath worktree prune
 end
