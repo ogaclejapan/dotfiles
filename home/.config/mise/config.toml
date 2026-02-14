@@ -6,5 +6,8 @@ rust = "latest"
 [settings]
 idiomatic_version_file_enable_tools = ["node", "ruby"]
 
+[settings.ruby]
+compile=false
+
 [env]
 MISE_NODE_COREPACK = true
