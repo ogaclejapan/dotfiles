@@ -1,6 +1,5 @@
 {
   "permissions": {
-    "defaultMode": "acceptEdits",
     "allow": [
       "Bash(mkdir:*)",
       "Bash(touch:*)",
@@ -31,6 +30,10 @@
       "mcp__figma__*",
       "mcp__chrome-devtools__*"
     ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(gh repo delete:*)"
+    ],
     "ask": [
       "Bash(sudo:*)",
       "Bash(chmod:*)",
@@ -38,10 +41,7 @@
       "Bash(scp:*)",
       "Bash(rm -rf /*)"
     ],
-    "deny": [
-      "Bash(rm -rf /)",
-      "Bash(gh repo delete:*)"
-    ]
+    "defaultMode": "acceptEdits"
   },
   "hooks": {
     "PreToolUse": [
