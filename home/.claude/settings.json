@@ -22,6 +22,8 @@
       "Bash(yarn:*)",
       "Bash(pnpm:*)",
       "Bash(bun:*)",
+      "Bash(make:*)",
+      "Bash(mise run:*)",
       "Bash(codex:*)",
       "Bash(gradle:*)",
       "Bash(./gradlew:*)",
