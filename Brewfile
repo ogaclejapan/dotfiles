@@ -109,6 +109,7 @@ brew 'pinact'
 #brew 'walk'
 #brew 'glslviewer'
 #brew 'python-yq'
+#brew 'hl'
 
 
 #------------------------------#
