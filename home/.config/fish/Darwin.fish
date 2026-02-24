@@ -35,11 +35,6 @@ if test -d "$HOME/Library/Android/sdk"
     end
 end
 
-if test -d "$HOME/.bun"
-    set -x BUN_INSTALL "$HOME/.bun"
-    fish_add_path --path $BUN_INSTALL/bin
-end
-
 if test -d "$HOME/.sdk/google-cloud-sdk"
     set -x CLOUD_ROOT_SDK $HOME/.sdk/google-cloud-sdk
     source $CLOUD_ROOT_SDK/path.fish.inc
