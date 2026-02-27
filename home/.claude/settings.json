@@ -1,46 +1,47 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir:*)",
-      "Bash(touch:*)",
-      "Bash(cd:*)",
-      "Bash(cp:*)",
-      "Bash(mv:*)",
-      "Bash(ls:*)",
-      "Bash(cat:*)",
-      "Bash(grep:*)",
-      "Bash(rg:*)",
-      "Bash(find:*)",
-      "Bash(fd:*)",
-      "Bash(fzf:*)",
-      "Bash(jq:*)",
-      "Bash(sed:*)",
-      "Bash(awk:*)",
-      "Bash(git:*)",
-      "Bash(gh:*)",
-      "Bash(npm:*)",
-      "Bash(yarn:*)",
-      "Bash(pnpm:*)",
-      "Bash(bun:*)",
-      "Bash(make:*)",
-      "Bash(mise run:*)",
-      "Bash(codex:*)",
-      "Bash(gradle:*)",
-      "Bash(./gradlew:*)",
+      "Bash(mkdir *)",
+      "Bash(touch *)",
+      "Bash(cd *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(find *)",
+      "Bash(fd *)",
+      "Bash(fzf *)",
+      "Bash(jq *)",
+      "Bash(sed *)",
+      "Bash(awk *)",
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(npm *)",
+      "Bash(yarn *)",
+      "Bash(pnpm *)",
+      "Bash(bun *)",
+      "Bash(make *)",
+      "Bash(mise run *)",
+      "Bash(codex *)",
+      "Bash(gradle *)",
+      "Bash(./gradlew *)",
       "WebFetch(domain:github.com)",
-      "Skill(codex)",
+      "Task(*)",
+      "Skill(*)",
       "mcp__figma__*",
       "mcp__chrome-devtools__*"
     ],
     "deny": [
       "Bash(rm -rf /)",
-      "Bash(gh repo delete:*)"
+      "Bash(gh repo delete *)"
     ],
     "ask": [
-      "Bash(sudo:*)",
-      "Bash(chmod:*)",
-      "Bash(ssh:*)",
-      "Bash(scp:*)",
+      "Bash(sudo *)",
+      "Bash(chmod *)",
+      "Bash(ssh *)",
+      "Bash(scp *)",
       "Bash(rm -rf /*)"
     ],
     "defaultMode": "acceptEdits"
@@ -90,6 +91,50 @@
         ]
       }
     ],
+    "PreToolUse": [
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/notify.sh question"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/watch.sh pending"
+          }
+        ]
+      },
+      {
+        "matcher": "EnterPlanMode",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/watch.sh pending"
+          }
+        ]
+      },
+      {
+        "matcher": "ExitPlanMode",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/watch.sh pending"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/watch.sh pending"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "",
@@ -101,26 +146,6 @@
         ]
       }
     ],
-    "PreToolUse": [
-      {
-        "matcher": "AskUserQuestion",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/scripts/notify.sh question"
-          }
-        ]
-      },
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/scripts/watch.sh pending"
-          }
-        ]
-      }
-    ],
     "Notification": [
       {
         "matcher": "",
@@ -128,12 +153,7 @@
           {
             "type": "command",
             "command": "~/.claude/scripts/notify.sh notification"
-          }
-        ]
-      },
-      {
-        "matcher": "",
-        "hooks": [
+          },
           {
             "type": "command",
             "command": "~/.claude/scripts/watch.sh pending"
