@@ -1,0 +1,9 @@
+{
+    "$schema": "../mcp-schema.json",
+    "mcpServers": {
+        "deepwiki": {
+            "type": "http",
+            "url": "https://mcp.deepwiki.com/mcp"
+        }
+    }
+}

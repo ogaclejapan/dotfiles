@@ -31,7 +31,9 @@
       "Task(*)",
       "Skill(*)",
       "mcp__figma__*",
-      "mcp__chrome-devtools__*"
+      "mcp__chrome-devtools__*",
+      "mcp__linear__*",
+      "mcp__mobile__*"
     ],
     "deny": [
       "Bash(rm -rf /)",
