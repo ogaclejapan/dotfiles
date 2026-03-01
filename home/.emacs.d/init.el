@@ -38,8 +38,8 @@
 ;; No background color in teminal
 ;; https://stackoverflow.com/questions/19054228/emacs-disable-theme-background-color-in-terminal
 (defun set-background-for-terminal (&optional frame)
-  (or frame (setq frame (selected-frame)))
   "unsets the background color in terminal mode"
+  (or frame (setq frame (selected-frame)))
   (unless (display-graphic-p frame)
     (set-face-background 'default "unspecified-bg" frame)))
 (add-hook 'after-make-frame-functions 'set-background-for-terminal)
@@ -316,6 +316,31 @@
   (setq
     gptel-model 'gpt-5-mini
     gptel-backend (gptel-make-gh-copilot "Copilot"))) ;Required gptel-gh-login
+
+;;------------------------------
+
+;; https://github.com/sshaw/git-link
+;; Get the GitHub/Bitbucket/GitLab URL for a buffer location
+(use-package git-link
+  :bind (("C-c l" . git-link)))
+
+;;------------------------------
+
+;; Copy file reference as relative path from Git root with line numbers
+(defun copy-file-line-reference ()
+  "Copy selected region as git-root-relative path#line-number format."
+  (interactive)
+  (let* ((git-root (vc-git-root (buffer-file-name)))
+         (relative-path (file-relative-name (buffer-file-name) git-root))
+         (start-line (line-number-at-pos (region-beginning)))
+         (end-line (line-number-at-pos (region-end)))
+         (ref (if (= start-line end-line)
+                  (format "%s#L%d" relative-path start-line)
+                (format "%s#L%d-L%d" relative-path start-line end-line))))
+    (kill-new ref)
+    (message "Copied: %s" ref)))
+
+(global-set-key (kbd "C-c L") 'copy-file-line-reference)
 
 ;;------------------------------
 
