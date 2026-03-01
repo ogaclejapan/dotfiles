@@ -44,6 +44,7 @@ home/.config/fish/functions/*.fish
 !home/.config/fish/functions/fuzzy_directory_commander.fish
 !home/.config/fish/functions/dockertags.fish
 !home/.config/fish/functions/y.fish
+!home/.config/fish/functions/mcp.fish
 
 home/.config/fish/completions/*.fish
 !home/.config/fish/completions/homesick.fish
@@ -73,6 +74,8 @@ home/.claude/*
 !home/.claude/commands/
 !home/.claude/scripts/
 !home/.claude/agents/
+!home/.claude/mcp/
+!home/.claude/mcp-schema.json
 
 home/.codex/*
 !home/.codex/AGENTS.md

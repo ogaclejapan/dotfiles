@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claude Code MCP Server Configuration",
+  "type": "object",
+  "required": ["mcpServers"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "mcpServers": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/server"
+      }
+    }
+  },
+  "$defs": {
+    "server": {
+      "type": "object",
+      "oneOf": [
+        { "$ref": "#/$defs/stdioServer" },
+        { "$ref": "#/$defs/httpServer" }
+      ]
+    },
+    "stdioServer": {
+      "type": "object",
+      "required": ["command"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "stdio"
+        },
+        "command": {
+          "type": "string"
+        },
+        "args": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "env": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "httpServer": {
+      "type": "object",
+      "required": ["type", "url"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["http", "sse"]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "headers": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "oauth": {
+          "type": "object",
+          "properties": {
+            "clientId": { "type": "string" },
+            "callbackPort": { "type": "integer" }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

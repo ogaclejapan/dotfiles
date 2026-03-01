@@ -44,3 +44,8 @@ if type -q bun
     alias difit='bunx difit'
     alias ccusage='bunx ccusage'
 end
+
+if type -q claude
+    alias cc='claude'
+    alias ccmcp='claude --mcp-config (mcp)'
+end

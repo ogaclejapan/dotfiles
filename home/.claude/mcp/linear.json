@@ -1,0 +1,9 @@
+{
+    "$schema": "../mcp-schema.json",
+    "mcpServers": {
+        "linear": {
+            "type": "http",
+            "url": "https://mcp.linear.app/mcp"
+        }
+    }
+}
