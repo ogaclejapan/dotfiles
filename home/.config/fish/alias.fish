@@ -41,8 +41,12 @@ if type -q shfmt
 end
 
 if type -q bun
-    alias difit='bunx difit'
-    alias ccusage='bunx ccusage'
+    alias difit='bunx --bun difit'
+    alias ccusage='bunx --bun ccusage'
+end
+
+if type -q uv
+    alias cclog='uvx claude-code-log --open-browser'
 end
 
 if type -q claude
