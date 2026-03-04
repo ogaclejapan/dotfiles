@@ -1,35 +1,9 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
-      "Bash(mkdir *)",
-      "Bash(touch *)",
-      "Bash(cd *)",
-      "Bash(cp *)",
-      "Bash(mv *)",
-      "Bash(ls *)",
-      "Bash(cat *)",
-      "Bash(grep *)",
-      "Bash(rg *)",
-      "Bash(find *)",
-      "Bash(fd *)",
-      "Bash(fzf *)",
-      "Bash(jq *)",
-      "Bash(sed *)",
-      "Bash(awk *)",
-      "Bash(git *)",
-      "Bash(gh *)",
-      "Bash(npm *)",
-      "Bash(yarn *)",
-      "Bash(pnpm *)",
-      "Bash(bun *)",
-      "Bash(make *)",
-      "Bash(mise run *)",
-      "Bash(codex *)",
-      "Bash(gradle *)",
-      "Bash(./gradlew *)",
       "WebFetch(domain:github.com)",
-      "Task(*)",
-      "Skill(*)",
+      "Skill(codex)",
       "mcp__figma__*",
       "mcp__chrome-devtools__*",
       "mcp__linear__*",
@@ -40,6 +14,7 @@
       "Bash(gh repo delete *)"
     ],
     "ask": [
+      "Bash(git push *)",
       "Bash(sudo *)",
       "Bash(chmod *)",
       "Bash(ssh *)",
@@ -47,6 +22,16 @@
       "Bash(rm -rf /*)"
     ],
     "defaultMode": "acceptEdits"
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "excludedCommands": ["git", "docker", "gradle", "gradlew", "codex"],
+    "network": {
+      "allowedDomains": ["github.com"],
+      "allowLocalBinding": true
+    }
   },
   "hooks": {
     "SessionStart": [
