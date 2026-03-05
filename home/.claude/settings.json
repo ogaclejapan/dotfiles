@@ -2,6 +2,10 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
+      "Bash(git *)",
+      "Bash(gradle *)",
+      "Bash(./gradlew *)",
+      "Bash(codex *)",
       "WebFetch(domain:github.com)",
       "Skill(codex)",
       "mcp__figma__*",
@@ -29,7 +33,7 @@
     "allowUnsandboxedCommands": true,
     "excludedCommands": ["git", "docker", "gradle", "gradlew", "codex"],
     "network": {
-      "allowedDomains": ["github.com"],
+      "allowedDomains": ["github.com", "api.github.com"],
       "allowLocalBinding": true
     }
   },
