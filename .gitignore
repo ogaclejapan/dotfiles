@@ -75,6 +75,7 @@ home/.claude/*
 !home/.claude/scripts/
 !home/.claude/agents/
 !home/.claude/mcp/
+home/.claude/mcp/*.local.json
 !home/.claude/mcp-schema.json
 
 home/.codex/*
