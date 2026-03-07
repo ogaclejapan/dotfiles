@@ -50,6 +50,5 @@ if type -q uv
 end
 
 if type -q claude
-    alias cc='claude'
     alias ccmcp='claude --mcp-config (mcp)'
 end
