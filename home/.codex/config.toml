@@ -9,3 +9,5 @@ sandbox_mode = "read-only"
 
 [features]
 collaboration_modes = true
+voice_transcription = true
+multi_agent = true
