@@ -3,6 +3,7 @@
   "permissions": {
     "allow": [
       "Bash(git *)",
+      "Bash(gh *)",
       "Bash(gradle *)",
       "Bash(./gradlew *)",
       "Bash(codex *)",
@@ -26,16 +27,6 @@
       "Bash(rm -rf /*)"
     ],
     "defaultMode": "acceptEdits"
-  },
-  "sandbox": {
-    "enabled": true,
-    "autoAllowBashIfSandboxed": true,
-    "allowUnsandboxedCommands": true,
-    "excludedCommands": ["git", "docker", "gradle", "gradlew", "codex"],
-    "network": {
-      "allowedDomains": ["github.com", "api.github.com"],
-      "allowLocalBinding": true
-    }
   },
   "hooks": {
     "SessionStart": [
@@ -176,6 +167,26 @@
     ]
   },
   "language": "japanese",
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "network": {
+      "allowedDomains": [
+        "github.com",
+        "api.github.com"
+      ],
+      "allowLocalBinding": true
+    },
+    "excludedCommands": [
+      "git",
+      "gh",
+      "docker",
+      "gradle",
+      "gradlew",
+      "codex"
+    ]
+  },
   "alwaysThinkingEnabled": true,
   "teammateMode": "tmux"
 }
