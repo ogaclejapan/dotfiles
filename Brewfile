@@ -110,6 +110,7 @@ brew 'pinact'
 #brew 'glslviewer'
 #brew 'python-yq'
 #brew 'hl'
+#brew 'witr'
 
 
 #------------------------------#
