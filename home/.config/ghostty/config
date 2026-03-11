@@ -5,7 +5,7 @@ theme = Tomorrow Night
 background-opacity = 0.95
 cursor-style-blink = false
 
-fullscreen = true
+fullscreen = non-native-visible-menu
 window-padding-balance = true
 window-padding-x = 4
 window-padding-y = 4
@@ -13,6 +13,10 @@ window-padding-y = 4
 macos-non-native-fullscreen = visible-menu
 macos-titlebar-style = hidden
 macos-option-as-alt = true
+
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = no-bell,notify
+notify-on-command-finish-after = 30s
 
 #keybind = cmd+r=text:\x1ba
 # Use ESC prefix key (\x1b=ESC)
