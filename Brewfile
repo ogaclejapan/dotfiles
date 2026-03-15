@@ -48,6 +48,7 @@ brew 'age'
 brew 'terminal-notifier'
 brew 'ssh-copy-id'
 brew 'pinact'
+brew 'aqua'
 
 
 ## Optional ##
