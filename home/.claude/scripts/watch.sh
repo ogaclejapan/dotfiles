@@ -29,7 +29,7 @@ pending)
   tmux rename-window -t "$TMUX_PANE" "🤖⏳"
   ;;
 idling)
-  tmux rename-window -t "$TMUX_PANE" "🤖"
+  tmux rename-window -t "$TMUX_PANE" "🤖🍣"
   ;;
 *)
   exit 0

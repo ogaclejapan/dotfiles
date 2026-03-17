@@ -152,6 +152,17 @@
         ]
       }
     ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/watch.sh ongoing"
+          }
+        ]
+      }
+    ],
     "Notification": [
       {
         "matcher": "",
@@ -159,10 +170,6 @@
           {
             "type": "command",
             "command": "~/.claude/scripts/notify.sh notification"
-          },
-          {
-            "type": "command",
-            "command": "~/.claude/scripts/watch.sh pending"
           }
         ]
       }
