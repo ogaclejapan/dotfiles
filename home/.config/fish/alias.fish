@@ -50,5 +50,6 @@ if type -q uv
 end
 
 if type -q claude
-    alias ccmcp='claude --mcp-config (mcp)'
+    # e.g. gopass env xxx ccmcp
+    abbr -a ccmcp --position anywhere 'claude --mcp-config (mcp)'
 end
