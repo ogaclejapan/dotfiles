@@ -34,6 +34,7 @@
       "WebFetch(domain:github.com)",
       "Skill(codex)",
       "mcp__figma__*",
+      "mcp__firebase__*",
       "mcp__chrome-devtools__*",
       "mcp__linear__*",
       "mcp__mobile__*"
