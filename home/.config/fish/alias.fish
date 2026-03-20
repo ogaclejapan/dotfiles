@@ -52,4 +52,5 @@ end
 if type -q claude
     # e.g. gopass env xxx ccmcp
     abbr -a ccmcp --position anywhere 'claude --mcp-config (mcp)'
+    abbr -a ccauto 'claude --permission-mode auto'
 end
