@@ -1,4 +1,5 @@
-model = "gpt-5.3-codex"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
 notify = ["~/.codex/scripts/notify.sh"]
 project_doc_fallback_filenames = ["CLAUDE.md"]
 personality = "pragmatic"
