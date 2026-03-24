@@ -60,8 +60,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/scripts/watch.sh session-start",
-            "async": true
+            "command": "~/.claude/scripts/watch.sh session-start"
           }
         ]
       }
@@ -72,8 +71,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/scripts/watch.sh session-end",
-            "async": true
+            "command": "~/.claude/scripts/watch.sh session-end"
           }
         ]
       }
