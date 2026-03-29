@@ -23,6 +23,7 @@ brew 'stow'
 brew 'dust'
 brew 'btop'
 brew 'jq'
+brew 'jsongrep'
 brew 'jo'
 brew 'direnv'
 brew 'uv'
@@ -166,30 +167,6 @@ cask 'coteditor'
 # Third-party taps
 #------------------------------#
 
-tap 'JetBrains/utils'
-brew 'kotlin-lsp'
-
-tap 'facebook/fb'
-brew 'idb-companion'
-
-#tap 'ogaclejapan/ext'
-#brew 'ogaclejapan/ext/drive'
-#brew 'ogaclejapan/ext/markdown-renderer'
-#brew 'ogaclejapan/ext/jd-cmd'
-
-#tap 'cjbassi/ytop'
-#brew 'ytop'
-
-# https://github.com/wader/fq
-#tap 'wader/tap'
-#brew 'fq'
-
-## Optional ##
-
-#tap 'tsduck/tsduck'
-#brew 'tsduck'
-
-
-#------------------------------#
-# vim: ft=sh
-#------------------------------#
+brew 'JetBrains/utils/kotlin-lsp'
+brew 'facebook/fb/idb-companion'
+brew 'k1LoW/tap/mo'
