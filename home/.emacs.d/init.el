@@ -278,8 +278,7 @@
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init
-  (setq markdown-command "multimarkdown") ; C-c C-c p
-  (setq markdown-open-command "code")) ; C-c C-c o
+  (setq markdown-open-command "mo")) ; C-c C-c o
 
 ;;------------------------------
 
