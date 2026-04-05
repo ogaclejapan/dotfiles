@@ -78,24 +78,40 @@
     ],
     "Stop": [
       {
-        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/scripts/watch.sh idling",
+            "command": "~/.claude/scripts/notify.sh stop",
             "async": true
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/watch.sh finish"
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/notify.sh stop",
+            "async": true
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/watch.sh abort"
           }
         ]
       }
     ],
     "UserPromptSubmit": [
       {
-        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/scripts/watch.sh ongoing",
-            "async": true
+            "command": "~/.claude/scripts/watch.sh ongoing"
           }
         ]
       }
@@ -111,40 +127,7 @@
           },
           {
             "type": "command",
-            "command": "~/.claude/scripts/watch.sh pending",
-            "async": true
-          }
-        ]
-      },
-      {
-        "matcher": "EnterPlanMode",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/scripts/watch.sh pending",
-            "async": true
-          }
-        ]
-      },
-      {
-        "matcher": "ExitPlanMode",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/scripts/watch.sh pending",
-            "async": true
-          }
-        ]
-      }
-    ],
-    "PermissionRequest": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/scripts/watch.sh pending",
-            "async": true
+            "command": "~/.claude/scripts/watch.sh pending"
           }
         ]
       }
@@ -155,8 +138,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/scripts/watch.sh ongoing",
-            "async": true
+            "command": "~/.claude/scripts/watch.sh ongoing"
           }
         ]
       }
@@ -167,19 +149,28 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/scripts/watch.sh ongoing",
-            "async": true
+            "command": "~/.claude/scripts/watch.sh ongoing"
           }
         ]
       }
     ],
     "Notification": [
       {
-        "matcher": "*",
+        "matcher": "permission_prompt",
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/scripts/notify.sh notification",
+            "command": "~/.claude/scripts/notify.sh permission",
+            "async": true
+          }
+        ]
+      },
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/notify.sh idle",
             "async": true
           }
         ]
@@ -187,7 +178,6 @@
     ],
     "WorktreeCreate": [
       {
-        "matcher": "*",
         "hooks": [
           {
             "type": "command",
@@ -198,7 +188,6 @@
     ],
     "WorktreeRemove": [
       {
-        "matcher": "*",
         "hooks": [
           {
             "type": "command",

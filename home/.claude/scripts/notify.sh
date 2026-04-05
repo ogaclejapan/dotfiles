@@ -10,8 +10,14 @@ case "$TYPE" in
 question)
   ASSISTANT_MESSAGE=$(echo "$PAYLOAD" | jq -r '.tool_input.question // .tool_input.questions[0].question // "Answer needed."')
   ;;
-notification)
+permission)
+  ASSISTANT_MESSAGE=$(echo "$PAYLOAD" | jq -r '.["message"] // "Permission needed."')
+  ;;
+idle)
   ASSISTANT_MESSAGE=$(echo "$PAYLOAD" | jq -r '.["message"] // "Turn completed."')
+  ;;
+stop)
+  ASSISTANT_MESSAGE=$(echo "$PAYLOAD" | jq -r '.["last_assistant_message"] // "Agent stopped."')
   ;;
 *)
   exit 0
