@@ -64,6 +64,12 @@ home/.config/Code/User/*
 home/.config/mise/*
 !home/.config/mise/config.toml
 
+home/.config/pnpm/*
+!home/.config/pnpm/rc
+
+home/.config/uv/*
+!home/.config/uv/uv.toml
+
 home/.config/yazi/*
 !home/.config/yazi/yazi.toml
 
