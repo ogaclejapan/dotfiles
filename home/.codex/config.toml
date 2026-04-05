@@ -1,8 +1,10 @@
+#:schema https://developers.openai.com/codex/config-schema.json
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 notify = ["~/.codex/scripts/notify.sh"]
 project_doc_fallback_filenames = ["CLAUDE.md"]
 personality = "pragmatic"
+developer_instructions = "Talk only in Japanese."
 
 [profiles.reviewer]
 model_reasoning_effort = "xhigh"
