@@ -41,8 +41,7 @@ if type -q shfmt
 end
 
 if type -q bun
-    alias difit='bunx --bun difit'
-    alias ccusage='bunx --bun ccusage'
+    alias ccusage='bunx ccusage'
 end
 
 if type -q uv
