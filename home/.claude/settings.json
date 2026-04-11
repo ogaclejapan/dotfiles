@@ -116,6 +116,22 @@
         ]
       }
     ],
+    "PermissionRequest": [
+      {
+        "matcher": "ExitPlanMode",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/notify.sh permission",
+            "async": true
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/watch.sh pending"
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "AskUserQuestion",
