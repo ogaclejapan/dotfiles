@@ -1,2 +1,3 @@
 github.com/plutov/oq
 github.com/google/yamlfmt/cmd/yamlfmt
+github.com/homeport/dyff/cmd/dyff
