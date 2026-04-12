@@ -7,10 +7,6 @@ home/.vim/bundles
 
 home/.config/*
 
-!home/.config/btop
-home/.config/btop/*
-!home/.config/btop/btop.conf
-
 home/.config/ghostty/*
 !home/.config/ghostty/config
 

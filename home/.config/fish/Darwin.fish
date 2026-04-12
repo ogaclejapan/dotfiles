@@ -5,12 +5,6 @@ alias la='ls -a'
 fish_add_path --path $HOME/.bin
 fish_add_path --path $HOME/.local/bin
 
-if set -q JDK_VERSION; and type -q /usr/libexec/java_home
-    set -x JAVA_HOME (/usr/libexec/java_home -v $JDK_VERSION)
-    set -x GRADLE_LOCAL_JAVA_HOME $JAVA_HOME
-    fish_add_path --path $JAVA_HOME/bin
-end
-
 if test -d "$HOME/.android/cmdline-tools"
     set -x ANDROID_CMDTOOLS $HOME/.android/cmdline-tools
     fish_add_path --path $ANDROID_CMDTOOLS/bin
