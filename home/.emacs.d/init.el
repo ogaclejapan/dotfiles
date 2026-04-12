@@ -6,6 +6,7 @@
 ;; Package Management
 ;;--+--+--+--+--+--+--+--+--+--+
 (require 'package)
+(require 'subr-x)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
@@ -169,8 +170,6 @@
   (setq epg-pinentry-mode 'loopback)
   (pinentry-start))
 
-;;------------------------------
-
 ;; https://github.com/purcell/exec-path-from-shell
 ;; Make Emacs use the $PATH set up by the user's shell
 (use-package exec-path-from-shell
@@ -323,7 +322,10 @@
 (use-package git-link
   :bind (("C-c l" . git-link)))
 
-;;------------------------------
+
+;;--+--+--+--+--+--+--+--+--+--+
+;; Custom functions
+;;--+--+--+--+--+--+--+--+--+--+
 
 ;; Copy file reference as relative path from Git root with line numbers
 (defun copy-file-line-reference ()
@@ -340,6 +342,76 @@
     (message "Copied: %s" ref)))
 
 (global-set-key (kbd "C-c L") 'copy-file-line-reference)
+
+;;------------------------------
+
+;; GPG signing warmup
+(defun git-global-config-value (key)
+  "Return the Git global config value for KEY."
+  (with-temp-buffer
+    (if (zerop (process-file "git" nil t nil "config" "--global" "--get" key))
+        (let ((value (string-trim (buffer-string))))
+          (unless (string-empty-p value) value))
+      nil)))
+
+(defun epg-key-matches-key-id-p (key key-id)
+  "Return non-nil when secret KEY matches KEY-ID."
+  (let ((needle (downcase (string-trim key-id)))
+        (sub-keys (epg-key-sub-key-list key))
+        (matched nil))
+    (while (and sub-keys (not matched))
+      (let* ((sub-key (car sub-keys))
+             (sub-key-id (downcase (or (epg-sub-key-id sub-key) "")))
+             (fingerprint (downcase (or (epg-sub-key-fingerprint sub-key) ""))))
+        (setq matched
+              (or (string= needle sub-key-id)
+                  (string= needle fingerprint)
+                  (string-suffix-p needle sub-key-id)
+                  (string-suffix-p needle fingerprint)))
+        (setq sub-keys (cdr sub-keys))))
+    matched))
+
+(defun epg-secret-key-for-id (context key-id)
+  "Return the secret key from CONTEXT that matches KEY-ID."
+  (let ((secret-keys (epg-list-keys context nil t))
+        (matched-key nil))
+    (while (and secret-keys (not matched-key))
+      (when (epg-key-matches-key-id-p (car secret-keys) key-id)
+        (setq matched-key (car secret-keys)))
+      (setq secret-keys (cdr secret-keys)))
+    matched-key))
+
+(defun gpg-signing-warmup ()
+  "Warm up the GPG agent for Git commit signing."
+  (interactive)
+  (unless (executable-find "git")
+    (user-error "git command not found"))
+  (require 'epg)
+  (let* ((signing-key (git-global-config-value "user.signingkey"))
+         (context (epg-make-context 'OpenPGP))
+         (payload (format "gpg-signing-warmup:%s"
+                          (format-time-string "%Y-%m-%dT%H:%M:%S%z")))
+         (secret-key nil)
+         (key-suffix nil)
+         (signed-text nil))
+    (unless signing-key
+      (user-error "Git user.signingkey is not configured"))
+    (setq key-suffix
+          (substring signing-key (max 0 (- (length signing-key) 8))))
+    (condition-case err
+        (progn
+          (setq secret-key (epg-secret-key-for-id context signing-key))
+          (when secret-key
+            (epg-context-set-signers context (list secret-key)))
+          (setq signed-text (epg-sign-string context payload 'cleartext))
+          (unless (and (stringp signed-text) (> (length signed-text) 0))
+            (error "Signature output is empty"))
+          (message "GPG signing warmup completed: %s" key-suffix))
+      (error
+       (user-error "GPG signing warmup failed: %s"
+                   (error-message-string err))))))
+
+(global-set-key (kbd "C-c G") 'gpg-signing-warmup)
 
 ;;------------------------------
 
