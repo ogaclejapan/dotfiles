@@ -78,8 +78,8 @@ function __adb_screencapture
     end
     set fpath (realpath ~/Desktop)
     argparse -s 'p/path=' 'j/jpeg' -- $argv
-    if set -q _flag_jpeg; and not type -q convert
-        echo "convert: command not found" >&2
+    if set -q _flag_jpeg; and not type -q ffmpeg
+        echo "ffmpeg: command not found" >&2
         return 1
     end
     if set -q _flag_path
@@ -101,7 +101,7 @@ function __adb_screencapture
 
     set fname (printf "screen_%s.jpg" $timestamp)
     set converted_dst (printf "%s/%s" $fpath $fname)
-    convert $dst -resize 360 $converted_dst
+    ffmpeg -i $dst -loglevel error -vf scale=320:-1 $converted_dst
     and rm $dst
     and echo $converted_dst
 
@@ -155,7 +155,7 @@ function __adb_screenrecord
 
     set fname (printf "screen_%s.gif" $timestamp)
     set converted_dst (printf "%s/%s" $fpath $fname)
-    ffmpeg -i $dst -loglevel error -vf scale=360:-1 -r 10 $converted_dst
+    ffmpeg -i $dst -loglevel error -vf scale=320:-1 -r 10 $converted_dst
     and rm $dst
     and echo $converted_dst
 

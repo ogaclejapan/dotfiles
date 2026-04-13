@@ -25,7 +25,7 @@ end
 
 if type -q adb
     alias a=adb_fzf
-    alias cap='a screencap -j'
+    alias cap='a screencap'
     alias rec='a screenrecord'
     alias am='a shell am'
     alias pm='a shell pm'
