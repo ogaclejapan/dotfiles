@@ -6,6 +6,7 @@ CLAUDE.local.md
 settings.local.json
 .linear.yaml
 .giter
+.claude/plans/*.md
 
 
 #### Windows template
