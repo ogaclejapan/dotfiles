@@ -77,9 +77,9 @@ function __adb_screencapture
         return 0
     end
     set fpath (realpath ~/Desktop)
-    argparse -s 'p/path=' 'j/jpeg' -- $argv
-    if set -q _flag_jpeg; and not type -q ffmpeg
-        echo "ffmpeg: command not found" >&2
+    argparse -s 'p/path=' 'm/mini' -- $argv
+    if set -q _flag_mini; and not type -q sips
+        echo "sips: command not found" >&2
         return 1
     end
     if set -q _flag_path
@@ -94,16 +94,15 @@ function __adb_screencapture
     and command adb -s $serial pull $tmp $dst >/dev/null
     and command adb -s $serial shell rm $tmp
 
-    if not set -q _flag_jpeg
+    if not set -q _flag_mini
         echo $dst
         return 0
     end
 
-    set fname (printf "screen_%s.jpg" $timestamp)
-    set converted_dst (printf "%s/%s" $fpath $fname)
-    ffmpeg -i $dst -loglevel error -vf scale=320:-1 $converted_dst
-    and rm $dst
-    and echo $converted_dst
+    set resized_dst (printf "%s/.screen_%s_mini.png" $fpath $timestamp)
+    sips --resampleWidth 640 $dst --out $resized_dst >/dev/null
+    and mv $resized_dst $dst
+    and echo $dst
 
 end
 
