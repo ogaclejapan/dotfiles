@@ -8,33 +8,13 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   pager = delta
+[diff]
+  # https://dandavison.github.io/delta/color-moved-support.html
+  colorMoved = default
 [alias]
-  a = add
-  ap = add -p
-  br = branch
-  ci = commit
-  d = diff
-  d1 = diff HEAD~
-  d2 = diff HEAD~~
-  d3 = diff HEAD~~~
-  d4 = diff HEAD~~~~
-  d5 = diff HEAD~~~~~
-  dc = diff --cached
-  dm = diff master
   l = log --oneline
-  ll = log --stat
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-  s = status -s
   st = status
-  # Magit-style
-  bb = checkout
-  bc = checkout -b
-  zz = stash save
-  zp = stash pop
-  # Other Command
   head = rev-parse HEAD
-  master = checkout master
-  ddiff = -c diff.external=difft diff
 [gh]
   #host = your-github-enterprise
 [filter "lfs"]
@@ -61,10 +41,14 @@
 [pull]
   rebase = true
 [delta]
+  navigate = true
+  dark = true
   line-numbers = true
-  # side-by-side = true
+  side-by-side = true
   syntax-theme = Monokai Extended Bright
 [interactive]
   diffFilter = delta --color-only
+[merge]
+  conflictStyle = zdiff3
 [safe]
   directory = ~/git

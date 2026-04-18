@@ -60,6 +60,9 @@ home/.config/Code/User/*
 home/.config/mise/*
 !home/.config/mise/config.toml
 
+home/.config/tuicr/*
+!home/.config/tuicr/config.toml
+
 home/.config/pnpm/*
 !home/.config/pnpm/rc
 

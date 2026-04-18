@@ -1,0 +1,8 @@
+appearance = "dark"
+diff_view = "side-by-side"
+
+# For AI feedback
+comment_types = [
+  { id = "ask", definition = "ask for clarification", color = "yellow" },
+  { id = "must", definition = "must be fixed", color = "red" }
+]
