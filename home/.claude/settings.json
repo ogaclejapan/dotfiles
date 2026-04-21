@@ -219,4 +219,8 @@
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "teammateMode": "tmux"
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/scripts/statusline.sh"
+  }
 }
