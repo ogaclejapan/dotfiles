@@ -54,7 +54,6 @@
     ],
     "defaultMode": "acceptEdits"
   },
-  "plansDirectory": ".claude/plans",
   "hooks": {
     "SessionStart": [
       {
@@ -120,7 +119,7 @@
     ],
     "PermissionRequest": [
       {
-        "matcher": "ExitPlanMode",
+        "matcher": "ExitPlanMode|Bash",
         "hooks": [
           {
             "type": "command",
@@ -215,12 +214,12 @@
       }
     ]
   },
-  },
-  "language": "japanese",
-  "alwaysThinkingEnabled": true,
   "statusLine": {
     "type": "command",
     "command": "~/.claude/scripts/statusline.sh"
   },
+  "language": "japanese",
+  "alwaysThinkingEnabled": true,
+  "plansDirectory": ".claude/plans",
   "teammateMode": "tmux"
 }
