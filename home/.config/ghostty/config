@@ -51,4 +51,6 @@ keybind = alt+]=text:\x1b\x29
 
 # Support newline input
 # https://github.com/anthropics/claude-code/issues/1282
-keybind = shift+enter=text:\x1b\r
+#keybind = shift+enter=text:\x1b\r
+# Codex works too.
+keybind = shift+enter=text:\x1b[13;2u
