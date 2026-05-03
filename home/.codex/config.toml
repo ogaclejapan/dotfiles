@@ -1,16 +1,21 @@
 #:schema https://developers.openai.com/codex/config-schema.json
-approval_policy = "on-request"
-sandbox_mode = "workspace-write"
+developer_instructions = "Talk only in Japanese."
 notify = ["~/.codex/scripts/notify.sh"]
+plan_mode_reasoning_effort = "xhigh"
 project_doc_fallback_filenames = ["CLAUDE.md"]
 personality = "pragmatic"
-developer_instructions = "Talk only in Japanese."
+suppress_unstable_features_warning = true
+
+[profiles.editor]
+approval_policy = "untrusted"
+approvals_reviewer = "auto_review"
+sandbox_mode = "workspace-write"
 
 [profiles.reviewer]
-model_reasoning_effort = "xhigh"
+approval_policy = "on-request"
 sandbox_mode = "read-only"
+model_reasoning_effort = "xhigh"
 
 [features]
 collaboration_modes = true
-voice_transcription = true
 multi_agent = true
