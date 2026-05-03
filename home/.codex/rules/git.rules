@@ -1,0 +1,120 @@
+prefix_rule(
+    pattern = ["git", "add"],
+    decision = "allow",
+    justification = "Allow staging changes without prompting",
+    match = [
+        "git add .",
+        "git add -A",
+        "git add --all",
+        "git add path/to/file",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", "commit"],
+    decision = "allow",
+    justification = "Allow committing changes without prompting",
+    match = [
+        "git commit -m \"msg\"",
+        "git commit --amend -m \"msg\"",
+        "git commit --amend --no-edit",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", "push"],
+    decision = "allow",
+    justification = "Allow pushing to origin without prompting",
+    match = [
+        "git push",
+        "git push origin",
+        "git push -u origin branch-name",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", "push", ["-f", "--force", "--force-with-lease", "--force-if-includes"]],
+    decision = "forbidden",
+    justification = "Forbid force pushing to prevent overwriting remote history",
+)
+
+prefix_rule(
+    pattern = ["git", "fetch"],
+    decision = "allow",
+    justification = "Allow fetching remote changes without prompting",
+    match = [
+        "git fetch",
+        "git fetch origin",
+        "git fetch --prune",
+        "git fetch --all",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", "pull"],
+    decision = "allow",
+    justification = "Allow pulling remote changes without prompting",
+    match = [
+        "git pull",
+        "git pull origin",
+        "git pull --rebase",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", ["checkout", "switch"]],
+    decision = "allow",
+    justification = "Allow switching branches without prompting",
+    match = [
+        "git checkout branch-name",
+        "git checkout -b branch-name",
+        "git checkout -",
+        "git switch branch-name",
+        "git switch -c branch-name",
+        "git switch -",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", "status"],
+    decision = "allow",
+    justification = "Allow checking working tree status without prompting",
+    match = [
+        "git status",
+        "git status -s",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", "log"],
+    decision = "allow",
+    justification = "Allow viewing commit history without prompting",
+    match = [
+        "git log",
+        "git log --oneline",
+        "git log --graph",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", "diff"],
+    decision = "allow",
+    justification = "Allow viewing diffs without prompting",
+    match = [
+        "git diff",
+        "git diff --staged",
+        "git diff branch-name",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", "reset", "--hard"],
+    decision = "forbidden",
+    justification = "Forbid hard reset to prevent losing uncommitted changes",
+)
+
+prefix_rule(
+    pattern = ["git", "clean", ["-f", "-fd", "-fx"]],
+    decision = "forbidden",
+    justification = "Forbid force clean to prevent losing untracked files",
+)

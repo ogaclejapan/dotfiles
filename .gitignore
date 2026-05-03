@@ -86,7 +86,10 @@ home/.claude/mcp/*.local.json
 home/.codex/*
 !home/.codex/AGENTS.md
 !home/.codex/scripts/
+!home/.codex/rules/
+home/.codex/rules/default.rules
 !home/.codex/config.toml
+
 
 home/.mitmproxy
 !home/.mitmproxy/config.yaml

@@ -1,0 +1,34 @@
+prefix_rule(
+    pattern = ["gh", "pr", "list"],
+    decision = "allow",
+    justification = "Allow listing pull requests without prompting",
+    match = [
+        "gh pr list",
+        "gh pr list --state open",
+        "gh pr list --state closed",
+        "gh pr list --author @me",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "pr", "diff"],
+    decision = "allow",
+    justification = "Allow viewing pull request diffs without prompting",
+    match = [
+        "gh pr diff",
+        "gh pr diff 123",
+        "gh pr diff --patch",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "pr", "create"],
+    decision = "allow",
+    justification = "Allow creating pull requests without prompting",
+    match = [
+        "gh pr create",
+        "gh pr create --title \"title\" --body \"body\"",
+        "gh pr create --draft",
+        "gh pr create --base main",
+    ],
+)
