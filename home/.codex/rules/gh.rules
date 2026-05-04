@@ -32,3 +32,17 @@ prefix_rule(
         "gh pr create --base main",
     ],
 )
+
+prefix_rule(
+    pattern = ["gh", "pr", "edit"],
+    decision = "allow",
+    justification = "Allow editing pull requests without prompting",
+    match = [
+        "gh pr edit",
+        "gh pr edit 123",
+        "gh pr edit --title \"title\"",
+        "gh pr edit --body \"body\"",
+        "gh pr edit --add-label \"label\"",
+        "gh pr edit --add-reviewer reviewer",
+    ],
+)
