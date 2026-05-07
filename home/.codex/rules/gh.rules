@@ -11,6 +11,21 @@ prefix_rule(
 )
 
 prefix_rule(
+    pattern = ["gh", "pr", "view"],
+    decision = "allow",
+    justification = "Allow viewing pull request details without prompting",
+    match = [
+        "gh pr view",
+        "gh pr view 123",
+        "gh pr view --json number -q .number",
+        "gh pr view --json title -q .title",
+        "gh pr view --json body -q .body",
+        "gh pr view --json mergeable -q .mergeable",
+        "gh pr view --json number,title,body,mergeable",
+    ],
+)
+
+prefix_rule(
     pattern = ["gh", "pr", "diff"],
     decision = "allow",
     justification = "Allow viewing pull request diffs without prompting",
