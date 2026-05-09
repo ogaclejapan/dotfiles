@@ -167,6 +167,7 @@ cask 'coteditor'
 # Third-party taps
 #------------------------------#
 
+brew 'microsoft/apm/apm'
 brew 'JetBrains/utils/kotlin-lsp'
 brew 'facebook/fb/idb-companion'
 brew 'k1LoW/tap/mo'
