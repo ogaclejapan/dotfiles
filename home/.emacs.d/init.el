@@ -22,7 +22,6 @@
     (interactive)
     (menu-bar-mode 0)      ; No menu bar
     (tool-bar-mode 0)))      ; No tool bar
-;;   (scroll-bar-mode 0)))  ; No scroll bar
 
 ;; No startup message
 (setq inhibit-startup-message 1)
@@ -113,8 +112,8 @@
 (define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "C-?") 'help-for-help)
 (global-set-key (kbd "M-h") 'backward-kill-word)
-(global-set-key (kbd "C-x p") 'previous-buffer)
-(global-set-key (kbd "C-x n") 'next-buffer)
+(global-set-key (kbd "C-c b p") 'previous-buffer)
+(global-set-key (kbd "C-c b n") 'next-buffer)
 
 (which-key-mode 1)
 (which-key-setup-side-window-right-bottom)
@@ -230,10 +229,9 @@
 (use-package consult
   :bind (("C-x b" . 'consult-buffer)
           ("M-y" . 'consult-yank-pop)
-          ("M-s" . 'consult-line)
-          ("C-c r" . 'consult-recent-file)
-          ("C-c f" . 'consult-fd)
-          ("C-c g" . 'consult-ripgrep)))
+          ("M-s d" . 'consult-fd)
+          ("M-s l" . 'consult-line)
+          ("M-s r" . 'consult-ripgrep)))
 
 ;;------------------------------
 
