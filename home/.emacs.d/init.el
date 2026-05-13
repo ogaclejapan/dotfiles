@@ -231,7 +231,9 @@
           ("M-y" . 'consult-yank-pop)
           ("M-s d" . 'consult-fd)
           ("M-s l" . 'consult-line)
-          ("M-s r" . 'consult-ripgrep)))
+          ("M-s r" . 'consult-ripgrep)
+          :map project-prefix-map
+          ("b" . consult-project-buffer)))
 
 ;;------------------------------
 
@@ -279,14 +281,6 @@
 
 ;;------------------------------
 
-;; https://github.com/yoshiki/yaml-mode
-;; Simple major mode to edit YAML file for emacs
-(use-package yaml-mode
-  :mode (("\\.yml\\'" . yaml-mode)
-         ("\\.yaml\\'" . yaml-mode)))
-
-;;------------------------------
-
 ;; https://github.com/wwwjfy/emacs-fish
 ;; fish-mode for emacs
 (use-package fish-mode
@@ -303,22 +297,22 @@
 
 ;;------------------------------
 
-;; https://github.com/karthink/gptel
-;; A simple LLM client for Emacs
-(use-package gptel
-  :ensure t
-  :pin melpa
-  :config
-  (setq
-    gptel-model 'gpt-5-mini
-    gptel-backend (gptel-make-gh-copilot "Copilot"))) ;Required gptel-gh-login
-
-;;------------------------------
-
 ;; https://github.com/sshaw/git-link
 ;; Get the GitHub/Bitbucket/GitLab URL for a buffer location
 (use-package git-link
   :bind (("C-c l" . git-link)))
+
+;;------------------------------
+
+;; https://github.com/renzmann/treesit-auto
+;; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
+(use-package treesit-auto
+  :custom
+  (treesit-auto-install 'prompt)
+  ;;(treesit-auto-langs '(go gomod python rust))
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
 
 
 ;;--+--+--+--+--+--+--+--+--+--+
