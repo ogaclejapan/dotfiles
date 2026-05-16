@@ -47,3 +47,7 @@ end
 if type -q uv
     alias cclog='uvx claude-code-log --open-browser'
 end
+
+if type -q lumen
+    alias review='lumen diff'
+end
