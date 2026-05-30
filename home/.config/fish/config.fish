@@ -18,7 +18,6 @@ if type -q claude
     abbr -a ccmcp --position anywhere 'claude --mcp-config (mcp)'
 end
 
-if type -q tuicr
-    abbr -a cr 'tuicr'
-    abbr -a crh 'tuicr -r HEAD'
+if type -q lumen
+    abbr -a review 'lumen diff'
 end
