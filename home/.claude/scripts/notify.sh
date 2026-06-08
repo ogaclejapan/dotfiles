@@ -37,12 +37,19 @@ if [ -n "${GIT_REPO_NAME}" ]; then
   GIT_INFO=" [git:${GIT_REPO_NAME}]"
 fi
 
-MESSAGE="${ASSISTANT_MESSAGE}${TMUX_INFO}${GIT_INFO}"
+TITLE="Claude Code 🤖"
+BODY="${ASSISTANT_MESSAGE}${TMUX_INFO}${GIT_INFO}"
 
 # 確認通知を送信
-terminal-notifier -title "Claude Code 🤖" -message "$MESSAGE" -sound Purr
+# https://github.com/ghostty-org/ghostty/discussions/10387
+if [ -n "$TMUX" ]; then
+  PANE_TTY=$(tmux display-message -p '#{pane_tty}')
+  printf '\ePtmux;\e\e]777;notify;%s;%s\a\e\\' "$TITLE" "$BODY" > "$PANE_TTY"
+else
+  printf '\e]777;notify;%s;%s\a' "$TITLE" "$BODY"
+fi
 
 # Slack通知を送信（SLACK_WEBHOOK_URLが設定されている場合）
 if [ -n "${SLACK_WEBHOOK_URL:-}" ]; then
-  curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"${MESSAGE}\"}" "$SLACK_WEBHOOK_URL" || true
+  curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"${BODY}\"}" "$SLACK_WEBHOOK_URL" || true
 fi
