@@ -13,11 +13,6 @@ alias rand16='openssl rand -hex 16'
 alias rand32='openssl rand -hex 32'
 alias jcurl='curl -H "Accept: application/json" -H "Content-Type: application/json"'
 
-if type -q tmux
-    alias tm='tmux new -A -s main'
-    alias tmkill='tmux kill-session -t main'
-end
-
 if type -q git
     alias g=giter
     alias t=giter_worktree
@@ -30,20 +25,4 @@ if type -q adb
     alias am='a shell am'
     alias pm='a shell pm'
     alias dumpsys='a shell dumpsys'
-end
-
-if type -q docker
-    alias dshell='docker run -it --rm bash'
-end
-
-if type -q shfmt
-    alias shfmtw='shfmt -l -w -i 4'
-end
-
-if type -q bun
-    alias ccusage='bunx ccusage'
-end
-
-if type -q uv
-    alias cclog='uvx claude-code-log --open-browser'
 end
