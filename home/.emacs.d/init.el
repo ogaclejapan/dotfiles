@@ -102,6 +102,16 @@
 ;; To be horizontally split
 (defvar ediff-split-window-function 'split-window-horizontally)
 
+;; For tmux-direct
+(defun set-extended-keys-for-terminal ()
+  "sets the extended terminal keys (modifyOtherKeys) for tmux"
+  (unless (display-graphic-p)
+    (require 'term/xterm)
+    (xterm--init-modify-other-keys)
+    ;; shift+space
+    (define-key input-decode-map "\e[27;2;32~" (kbd "S-SPC"))))
+(add-hook 'tty-setup-hook #'set-extended-keys-for-terminal)
+
 
 ;;--+--+--+--+--+--+--+--+--+--+
 ;; Key Settings
