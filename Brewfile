@@ -45,6 +45,7 @@ brew 'age'
 brew 'ssh-copy-id'
 brew 'pinact'
 brew 'aqua'
+brew 'crit'
 
 
 ## Optional ##
