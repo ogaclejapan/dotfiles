@@ -34,7 +34,3 @@ if type -q claude
     # e.g. gopass env xxx ccmcp
     abbr -a ccmcp --position anywhere 'claude --mcp-config (mcp)'
 end
-
-if type -q lumen
-    abbr -a review 'lumen diff'
-end
