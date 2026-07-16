@@ -1,0 +1,12 @@
+{
+    "$schema": "../mcp-schema.json",
+    "mcpServers": {
+        "xcode": {
+            "type": "stdio",
+            "command": "xcrun",
+            "args": [
+                "mcpbridge"
+            ]
+        }
+    }
+}
