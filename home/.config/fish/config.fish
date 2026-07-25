@@ -18,8 +18,8 @@ if type -q tmux
     abbr -a tmkill 'tmux kill-session -t main'
 end
 
-if type -q docker
-    abbr -a dshell 'docker run -it --rm bash'
+if type -q container
+    abbr -a vsh 'container run -it --rm bash'
 end
 
 if type -q shfmt

@@ -67,9 +67,6 @@ home/.config/pnpm/*
 home/.config/uv/*
 !home/.config/uv/uv.toml
 
-home/.config/yazi/*
-!home/.config/yazi/yazi.toml
-
 home/.claude/*
 !home/.claude/CLAUDE.md
 !home/.claude/README.md

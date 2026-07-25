@@ -31,7 +31,6 @@ brew 'bat'
 brew 'fd'
 brew 'fzf'
 brew 'zoxide'
-brew 'yazi'
 brew 'hyperfine'
 brew 'dwdiff'
 brew 'difftastic'
@@ -46,6 +45,7 @@ brew 'ssh-copy-id'
 brew 'pinact'
 brew 'aqua'
 brew 'crit'
+brew 'container'
 
 
 ## Optional ##
