@@ -9,11 +9,6 @@ function tmux_file_picker -d 'Pick files or directories and send them to the cur
         return 1
     end
 
-    if not type -q zoxide
-        echo "Error: Required command 'zoxide' not found. Please install it." >&2
-        return 1
-    end
-
     if not type -q fd
         echo "Error: Required command 'fd' not found. Please install it." >&2
         return 1
@@ -24,7 +19,7 @@ function tmux_file_picker -d 'Pick files or directories and send them to the cur
         return 1
     end
 
-    argparse -s 'g/git-root' 'dir-only' 'd/directories' -- $argv
+    argparse -s 'g/git-root' 'd/directories' -- $argv
     or return 1
 
     if test (count $argv) -gt 1
@@ -34,9 +29,6 @@ function tmux_file_picker -d 'Pick files or directories and send them to the cur
 
     set -l use_git_root false
     set -q _flag_git_root; and set use_git_root true
-
-    set -l dir_only false
-    set -q _flag_dir_only; and set dir_only true
 
     set -l select_directories false
     set -q _flag_directories; and set select_directories true
@@ -49,32 +41,20 @@ function tmux_file_picker -d 'Pick files or directories and send them to the cur
     set -l pane_pid (tmux display-message -p '#{pane_pid}')
 
     set -l search_dirs
-    if test -z "$path_arg"
-        set search_dirs (__tmux_file_picker_select_zoxide_dir)
-        set -l zoxide_status $status
-        if test $zoxide_status -ne 0
-            return $zoxide_status
-        end
+    set -l search_dir $pane_dir
+    test -n "$path_arg"; and set search_dir $path_arg
 
-        if test (count $search_dirs) -eq 0
-            return 0
-        end
-    else
-        set -l search_dir $pane_dir
-        test -n "$path_arg"; and set search_dir $path_arg
-
-        if not string match -q '/*' -- "$search_dir"
-            set search_dir "$pane_dir/$search_dir"
-        end
-
-        set search_dir (__tmux_file_picker_realpath "$search_dir")
-        if test -z "$search_dir"
-            echo "Error: Directory '$path_arg' does not exist." >&2
-            return 1
-        end
-
-        set search_dirs $search_dir
+    if not string match -q '/*' -- "$search_dir"
+        set search_dir "$pane_dir/$search_dir"
     end
+
+    set search_dir (__tmux_file_picker_realpath "$search_dir")
+    if test -z "$search_dir"
+        echo "Error: Directory '$path_arg' does not exist." >&2
+        return 1
+    end
+
+    set search_dirs $search_dir
 
     for dir in $search_dirs
         if not test -d "$dir"
@@ -98,11 +78,6 @@ function tmux_file_picker -d 'Pick files or directories and send them to the cur
         set git_root (__tmux_file_picker_realpath "$git_root")
     end
 
-    if test "$dir_only" = true
-        __tmux_file_picker_send_paths "$pane_id" "$at_prefix_mode" $search_dirs
-        return $status
-    end
-
     set -l fd_flags
     set -l preview_cmd
     set -l grep_toggle_flags
@@ -123,15 +98,13 @@ function tmux_file_picker -d 'Pick files or directories and send them to the cur
         end
 
         set preview_cmd (__tmux_file_picker_entry_preview)
-        if type -q rg
-            set grep_toggle_flags \
-                --prompt 'Files> ' \
-                --header 'C-s: toggle grep mode' \
-                --preview "if string match -q 'Grep*' -- \"\$FZF_PROMPT\"; rg --context 3 --color=always -- {q} {} 2>/dev/null || true; else; $preview_cmd; end" \
-                --bind 'start:unbind(change)' \
-                --bind "change:reload:rg --files-with-matches --hidden --glob '!.git' --color=never -- {q} 2>/dev/null || true" \
-                --bind "ctrl-s:transform:if test \"\$FZF_PROMPT\" = 'Files> '; printf '%s' 'change-prompt(Grep> )+disable-search+clear-query+reload(true)+rebind(change)'; else; printf '%s' 'change-prompt(Files> )+enable-search+clear-query+unbind(change)+reload(fd $fd_flags)'; end"
-        end
+        set grep_toggle_flags \
+            --prompt 'Files> ' \
+            --header 'C-s: toggle grep mode' \
+            --preview "if string match -q 'Grep*' -- \"\$FZF_PROMPT\"; rg --context 3 --color=always -- {q} {} 2>/dev/null || true; else; $preview_cmd; end" \
+            --bind 'start:unbind(change)' \
+            --bind "change:reload:rg --files-with-matches --hidden --glob '!.git' --color=never -- {q} 2>/dev/null || true" \
+            --bind "ctrl-s:transform:if test \"\$FZF_PROMPT\" = 'Files> '; printf '%s' 'change-prompt(Grep> )+disable-search+clear-query+reload(true)+rebind(change)'; else; printf '%s' 'change-prompt(Files> )+enable-search+clear-query+unbind(change)+reload(fd $fd_flags)'; end"
     end
 
     set -l selected_files
@@ -141,24 +114,28 @@ function tmux_file_picker -d 'Pick files or directories and send them to the cur
         set -l fzf_status $pipestatus[2]
         popd >/dev/null
 
-        if test $fzf_status -ne 0; and test -n "$path_arg"
+        if test $fzf_status -ne 0
             return 0
         end
     else
         set selected_files (fd $fd_flags $search_dirs | fzf --multi --reverse --freeze-right=1 --bind 'tab:toggle' --preview "$preview_cmd" $grep_toggle_flags)
         set -l fzf_status $pipestatus[2]
 
-        if test $fzf_status -ne 0; and test -n "$path_arg"
+        if test $fzf_status -ne 0
             return 0
         end
     end
 
     set -l output_paths
     if test (count $selected_files) -eq 0
-        set output_paths $search_dirs
+        return 0
     else if test (count $search_dirs) -eq 1
         for file in $selected_files
-            set -a output_paths "$search_dirs[1]/$file"
+            if test -n "$path_arg"
+                set -a output_paths "$search_dirs[1]/$file"
+            else
+                set -a output_paths "$file"
+            end
         end
     else
         set output_paths $selected_files
@@ -177,11 +154,6 @@ function tmux_file_picker -d 'Pick files or directories and send them to the cur
     end
 
     __tmux_file_picker_send_paths "$pane_id" "$at_prefix_mode" $output_paths
-end
-
-function __tmux_file_picker_select_zoxide_dir
-    zoxide query -l | fzf --multi --reverse --preview (__tmux_file_picker_dir_preview)
-    return $pipestatus[2]
 end
 
 function __tmux_file_picker_dir_preview
