@@ -38,7 +38,7 @@
 ;; No background color in teminal
 ;; https://stackoverflow.com/questions/19054228/emacs-disable-theme-background-color-in-terminal
 (defun set-background-for-terminal (&optional frame)
-  "unsets the background color in terminal mode"
+  "Unsets the background color in terminal mode."
   (or frame (setq frame (selected-frame)))
   (unless (display-graphic-p frame)
     (set-face-background 'default "unspecified-bg" frame)))
@@ -103,8 +103,9 @@
 (defvar ediff-split-window-function 'split-window-horizontally)
 
 ;; For tmux-direct
+;; https://gist.github.com/gnachman/b4fb1e643e7e82a546bc9f86f30360e4
 (defun set-extended-keys-for-terminal ()
-  "sets the extended terminal keys (modifyOtherKeys) for tmux"
+  "Set the extended terminal keys (modifyOtherKeys) for tmux."
   (unless (display-graphic-p)
     (require 'term/xterm)
     (xterm--init-modify-other-keys)
@@ -387,7 +388,7 @@
   "Warm up the GPG agent for Git commit signing."
   (interactive)
   (unless (executable-find "git")
-    (user-error "git command not found"))
+    (user-error "Git command not found"))
   (require 'epg)
   (let* ((signing-key (git-global-config-value "user.signingkey"))
          (context (epg-make-context 'OpenPGP))
