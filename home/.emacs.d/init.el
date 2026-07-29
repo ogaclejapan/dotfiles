@@ -6,7 +6,9 @@
 ;; Package Management
 ;;--+--+--+--+--+--+--+--+--+--+
 (require 'package)
+(require 'epg)
 (require 'subr-x)
+(require 'vc-git)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
@@ -334,15 +336,19 @@
 (defun copy-file-line-reference ()
   "Copy selected region as git-root-relative path#line-number format."
   (interactive)
-  (let* ((git-root (vc-git-root (buffer-file-name)))
-         (relative-path (file-relative-name (buffer-file-name) git-root))
-         (start-line (line-number-at-pos (region-beginning)))
-         (end-line (line-number-at-pos (region-end)))
-         (ref (if (= start-line end-line)
-                  (format "%s#L%d" relative-path start-line)
-                (format "%s#L%d-L%d" relative-path start-line end-line))))
-    (kill-new ref)
-    (message "Copied: %s" ref)))
+  (unless buffer-file-name
+    (user-error "Current buffer is not visiting a file"))
+  (let ((git-root (vc-git-root buffer-file-name)))
+    (unless git-root
+      (user-error "Current file is not in a Git repository"))
+    (let* ((relative-path (file-relative-name buffer-file-name git-root))
+           (start-line (line-number-at-pos (region-beginning)))
+           (end-line (line-number-at-pos (region-end)))
+           (ref (if (= start-line end-line)
+                    (format "%s#L%d" relative-path start-line)
+                  (format "%s#L%d-L%d" relative-path start-line end-line))))
+      (kill-new ref)
+      (message "Copied: %s" ref))))
 
 (global-set-key (kbd "C-c L") 'copy-file-line-reference)
 
@@ -389,7 +395,6 @@
   (interactive)
   (unless (executable-find "git")
     (user-error "Git command not found"))
-  (require 'epg)
   (let* ((signing-key (git-global-config-value "user.signingkey"))
          (context (epg-make-context 'OpenPGP))
          (payload (format "gpg-signing-warmup:%s"
@@ -405,7 +410,7 @@
         (progn
           (setq secret-key (epg-secret-key-for-id context signing-key))
           (when secret-key
-            (epg-context-set-signers context (list secret-key)))
+            (setf (epg-context-signers context) (list secret-key)))
           (setq signed-text (epg-sign-string context payload 'cleartext))
           (unless (and (stringp signed-text) (> (length signed-text) 0))
             (error "Signature output is empty"))
