@@ -1,0 +1,32 @@
+#!/bin/bash
+#
+# Configure GitHub CLI
+set -u
+
+echo "========== GitHub CLI =========="
+
+function extension_install() {
+  if ! type -p gh > /dev/null 2>&1; then
+    return 0
+  fi
+
+  gh extension install github/gh-stack
+}
+
+function skill_install() {
+  if ! type -p gh > /dev/null 2>&1; then
+    return 0
+  fi
+
+  gh skill install github/gh-stack gh-stack --scope user --agent claude-code
+  gh skill install github/gh-stack gh-stack --scope user --agent codex
+}
+
+function main() {
+  extension_install
+  skill_install
+}
+
+main "$@"
+
+echo "done."
