@@ -11,6 +11,7 @@ plan_mode_reasoning_effort = "xhigh"
 sandbox_mode = "workspace-write"
 
 [features]
+default_mode_request_user_input = true
 collaboration_modes = true
 multi_agent = true
 rmcp_client = true
