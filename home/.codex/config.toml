@@ -1,6 +1,5 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 developer_instructions = "Talk only in Japanese."
-notify = ["~/.codex/scripts/notify.sh"]
 project_doc_fallback_filenames = ["CLAUDE.md"]
 personality = "pragmatic"
 suppress_unstable_features_warning = true
@@ -22,6 +21,10 @@ status_line = [
   "git-branch",
 ]
 status_line_use_colors = true
+# https://github.com/openai/codex/issues/16855
+notifications = true
+notification_method = "bel"
+
 
 [features]
 default_mode_request_user_input = true
