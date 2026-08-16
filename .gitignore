@@ -84,6 +84,7 @@ home/.codex/*
 !home/.codex/rules/
 home/.codex/rules/default.rules
 !home/.codex/config.toml
+!home/.codex/cc-review.config.toml
 
 
 home/.mitmproxy
