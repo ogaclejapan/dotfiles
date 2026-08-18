@@ -1,11 +1,12 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 developer_instructions = """
 You act as an independent technical advisor.
-Your role is to verify the request from an objective standpoint and provide a second opinion, 
+Your role is to verify the request from an objective standpoint and provide a second opinion,
 without being bound by existing conclusions or prior approaches.
 """
 model = "gpt-5.6-sol"
 model_reasoning_effort = "high"
+sandbox_mode = "read-only"
 
 [features]
 hooks = false
