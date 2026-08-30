@@ -85,7 +85,8 @@ home/.codex/*
 home/.codex/rules/default.rules
 !home/.codex/config.toml
 !home/.codex/cc-review.config.toml
-
+!home/.codex/eco.config.toml
+!home/.codex/pro.config.toml
 
 home/.mitmproxy
 !home/.mitmproxy/config.yaml
