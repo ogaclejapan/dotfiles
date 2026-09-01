@@ -34,3 +34,9 @@ if type -q claude
     # e.g. gopass env xxx ccmcp
     abbr -a ccmcp --position anywhere 'claude --mcp-config (mcp)'
 end
+
+if type -q codex
+    abbr -a eco 'codex --profile eco'
+    abbr -a pro 'codex --profile pro'
+    abbr -a review 'codex --profile ccreview'
+end
