@@ -40,3 +40,7 @@ if type -q codex
     abbr -a pro 'codex --profile pro'
     abbr -a review 'codex --profile ccreview'
 end
+
+if type -q
+    abbr -a cafe 'caffeinate -dimsu'
+end
