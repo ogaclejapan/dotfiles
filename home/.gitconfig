@@ -14,6 +14,7 @@
 [alias]
   l = log --oneline
   st = status
+  pf = push --force-with-lease
   head = rev-parse HEAD
 [gh]
   #host = your-github-enterprise
