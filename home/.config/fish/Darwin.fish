@@ -34,6 +34,11 @@ if test -d "$HOME/Library/Android/sdk"
     end
 end
 
+if test -d "$HOME/.docker"
+    set -x DOCKER_ROOT $HOME/.docker
+    fish_add_path --path $DOCKER_ROOT/bin
+end
+
 if test -d "$HOME/.sdk/google-cloud-sdk"
     set -x CLOUD_ROOT_SDK $HOME/.sdk/google-cloud-sdk
     source $CLOUD_ROOT_SDK/path.fish.inc
