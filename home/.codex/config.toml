@@ -29,9 +29,9 @@ notification_method = "bel"
 
 [features]
 default_mode_request_user_input = true
+codex_git_commit = true
 collaboration_modes = true
 multi_agent = true
-rmcp_client = true
 plugins = true
 hooks = true
 plugin_hooks = true
