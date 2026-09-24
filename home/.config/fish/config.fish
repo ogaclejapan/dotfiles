@@ -38,7 +38,7 @@ end
 if type -q codex
     abbr -a eco 'codex --profile eco'
     abbr -a pro 'codex --profile pro'
-    abbr -a review 'codex --profile ccreview'
+    abbr -a review 'codex --profile cc-review'
 end
 
 if type -q
