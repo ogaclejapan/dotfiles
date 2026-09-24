@@ -7,7 +7,7 @@ without being bound by existing conclusions or prior approaches.
 
 default_permissions = ":read-only"
 model = "gpt-6-sol"
-model_reasoning_effort = "high"
+model_reasoning_effort = "xhigh"
 
 [features]
 hooks = false
