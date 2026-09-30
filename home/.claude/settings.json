@@ -4,7 +4,8 @@
     "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1",
     "CLAUDE_CODE_NEW_INIT": "1",
     "BASH_DEFAULT_TIMEOUT_MS": "1800000",
-    "BASH_MAX_TIMEOUT_MS": "3600000"
+    "BASH_MAX_TIMEOUT_MS": "3600000",
+    "ENABLE_LSP_TOOL": "1"
   },
   "permissions": {
     "allow": [
@@ -220,6 +221,7 @@
     "type": "command",
     "command": "~/.claude/scripts/statusline.sh"
   },
+  "advisorModel": "claude-fable-5-1",
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "plansDirectory": ".claude/plans",
