@@ -2,7 +2,6 @@
 
 model = "gpt-6-1-sol"
 model_reasoning_effort = "high"
-service_tier = "fast"
 
 [agents]
 default_subagent_model = "gpt-6-luna"
