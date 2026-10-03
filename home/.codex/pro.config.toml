@@ -7,5 +7,3 @@ model_reasoning_effort = "xhigh"
 default_subagent_model = "gpt-6-astra"
 default_subagent_reasoning_effort = "medium"
 
-[features]
-context_management.experimental_mode = true

@@ -1,15 +1,12 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
-model = "gpt-6-sol"
-model_reasoning_effort = "xhigh"
+model = "gpt-6-1-sol"
+model_reasoning_effort = "high"
 service_tier = "fast"
 
 [agents]
 default_subagent_model = "gpt-6-luna"
 default_subagent_reasoning_effort = "max"
-
-[features]
-context_management.experimental_mode = true
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
