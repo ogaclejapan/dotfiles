@@ -112,7 +112,8 @@
     (require 'term/xterm)
     (xterm--init-modify-other-keys)
     ;; shift+space
-    (define-key input-decode-map "\e[27;2;32~" (kbd "S-SPC"))))
+    (define-key input-decode-map "\e[27;2;32~" (kbd "S-SPC"))
+    (define-key input-decode-map "\e[32;2u" (kbd "SPC"))))
 (add-hook 'tty-setup-hook #'set-extended-keys-for-terminal)
 
 
