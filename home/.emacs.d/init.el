@@ -318,15 +318,12 @@
 
 ;;------------------------------
 
-;; https://github.com/renzmann/treesit-auto
-;; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
-(use-package treesit-auto
+;; Use Emacs 31's built-in tree-sitter modes and automatic grammar installation.
+(use-package treesit
+  :ensure nil
   :custom
-  (treesit-auto-install 'prompt)
-  ;;(treesit-auto-langs '(go gomod python rust))
-  :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode))
+  (treesit-enabled-modes t)
+  (treesit-auto-install-grammar 'ask))
 
 
 ;;--+--+--+--+--+--+--+--+--+--+
